@@ -1,0 +1,33 @@
+section,quantity,value,source
+3.1,ProsQA-hard valid 13-gram overlap with its own train,37.0%,governance/critic_log.md (rows 2026-10-19T00:11Z and the ProsQA-hard data row; manifest rates recomputed by the reviewer)
+3.1,GSM8k-Aug valid items sharing a 13-gram with the GSM8k-Aug train set (question),7 of 500,governance/critic_log.md (rows 2026-10-17T21:29Z and the following row: 7/500 = 1.4%)
+4.1,paper-style emitted-token count of the GSM8k-Aug cot cell,30.6,governance/critic_log.md (K1 verdict entry 2026-10-20T14:08Z)
+4.1,token count of the reference GSM8k-Aug test chains under our definition,30.1,governance/critic_log.md (K1 verdict entry 2026-10-20T14:08Z)
+4.2,ProsQA coconut seed 0 strict fp32 vs fp32-tf32 test accuracy,96.8 / 96.8,governance/critic_log.md (precision pair entry 2026-10-19T19:55Z)
+4.2,per-example agreement of the precision pair,476 of 500,governance/critic_log.md (precision pair entry 2026-10-19T19:55Z)
+4.3,ProsQA coconut scrambled drop (seeds 0 / 1 / 2; test 500),0.0 / 0.0 / 0.0 (0 of 500 examples change on each),results/evals/k1-eval-main and k1-eval-s12-main/prosqa_coconut_s{0;1;2}_test_{none;scrambled}/examples.csv
+4.3,ProsQA coconut zero-latent drop (seeds 0 / 1 / 2; test 500),-0.4 / -0.2 / 0.0,results/evals/k1-eval-main and k1-eval-s12-main/prosqa_coconut_s{0;1;2}_test_{none;zero_latent}/examples.csv
+4.3,ProsQA coconut step sweeps n = 0 to 8 (largest spread over the three seeds),0.4,data/table7_step_sweep.csv (Phase 1 rows) from the same evals directories
+4.3,own vs donor fed-vector pairs per checkpoint (valid 300 x 6 ranks); pairs at zero distance,1800; 0,results/diag/diag-k1-main/prosqa_coconut_s{0;1;2}_valid_latent_path/summary.json (results.*.scramble.fed_vectors.pairs; zero_distance)
+4.3,valid examples whose first-answer logits move under donor latents; examples whose argmax changes,300 of 300; 0,same summary.json (results.*.scramble.first_answer_logits.changed; argmax_changed)
+4.3,largest first-answer logit change under donor latents (seeds 0 / 1 / 2; tf32 on and off),1.49 to 2.26 (printed 1.5 to 2.3),same summary.json (results.*.scramble.first_answer_logits.max_abs_diff_max)
+4.3,mean cosine between an example's fed latent and its donor's at the same rank,0.990 to 0.991,same summary.json (results.*.scramble.fed_vectors.mean_cos)
+4.3,GSM8k-Aug coconut test accuracy own / scrambled / zero-latent,34.65 / 3.94 / 6.52,results/evals/k1-eval-gsm-main/gsm_coconut_s0_test_{none;scrambled;zero_latent}/examples.csv
+4.3,GSM8k-Aug scrambled drop [95% interval],30.71 [28.06; 33.35],recomputed from the examples.csv files above: paired bootstrap 10000 draws numpy default_rng(0) in chunks of 1000; Delta +- 1.96 SD (Section 3.6)
+4.3,GSM8k-Aug zero-latent drop [95% interval],28.13 [25.52; 30.73],as above
+5.1,GSM-50k bar trials at lr 3e-5 / 1e-4 / 3e-4 (valid 500),21.0 / 23.8 / 25.6,results/screens/gsm50k/gsm50k_screen_with_no_curriculum.json (runs[0..2].points; lines[bar])
+5.2,ProsQA-hard bar trials at lr 3e-5 / 1e-4 / 3e-4 (valid 300),80.3 / 70.7 / 73.0,results/screens/prosqa_hard/prosqa_hard_screen_with_no_curriculum.json (runs[0..2].points; lines[bar])
+5.3,fraction of records whose last supervised C2 target contains the answer (GSM-50k / ProsQA-hard),0.770 / 1.00,governance/registration.md (A5 item 5) and critic_log.md (row on R3 coverage)
+5.4,GSM-50k no-curriculum control: selected epoch; resumes; valid accuracy,20; 0; 9.8 (49 of 500),results/screens/gsm50k/gsm50k_screen_with_no_curriculum.json (runs[14])
+5.4,GSM-50k no-curriculum control: E'; passes; GFLOPs,2.262; 9.262; 11.656,results/evals/screen-eval-gsm50k-nocur-*/gsm50k_coconut_no_curriculum_s0_valid_none/examples.csv
+5.4,GSM-50k no-curriculum control: scrambled; zero-latent; sweep n = 0 / 1 / 2 / 4 / 8,8.2; 8.8; 8.8 / 9.0 / 9.8 / 9.2 / 9.8,data/table7_step_sweep.csv from screen-eval-gsm50k-nocur-*/*/examples.csv
+5.4,ProsQA-hard no-curriculum control: selected epoch; resumes; valid accuracy,2 of 30; 1; 58.0 (174 of 300),results/screens/prosqa_hard/prosqa_hard_screen_with_no_curriculum.json
+6.3,C3 minus C3-foreign scrambled-drop difference [95% interval],+8.4 [+5.11; +11.69],results/screens/gsm50k/gsm50k_screen_with_hinge.json (A6.1 rule 2 line)
+6.3,C2+C3 minus C3-foreign scrambled-drop difference [95% interval],+9.8 [+6.46; +13.14],results/screens/gsm50k/gsm50k_screen_with_hinge.json (A6.1 rule 2 line)
+B,spot preemptions and stockouts in the 2026-10-19 storm (05:00 to 05:55 UTC),7 preemptions; 2 stockouts,governance/deviations.md (2026-10-19 05:00 entry)
+B,resumes of prosqa_cot_lr3e-5_s0 (fragmented),5,"governance/deviations.md (fragmented-run entry: ""The run has 5 resumes"")"
+B,real attempts of the ProsQA-hard screen job before the hand relaunch,11,governance/deviations.md (relaunch-counter entry; MAX_RELAUNCH 10)
+B,shape of the plain-depth 355M out-of-memory probe,32 x 1024,governance/deviations.md (plain-depth entry)
+B,examples differing between the C1b band path and the reference path at batch 1 (GSM-50k / ProsQA-hard),2 of 500 / 2 of 300,governance/critic_log.md (C1b like-for-like entries: GSM-50k idx 273 and 497; ProsQA-hard idx 21 and 268)
+B,first-token logit difference band vs reference at float64 (GSM-50k / ProsQA-hard),<= 2.3e-13 / <= 1.7e-12,results/diag/diag-band-gsm50k-cpu/gsm50k_coconut_s0_valid_band_logits_cpu_float64/summary.json and results/diag/diag-band-prosqa-hard-main/prosqa_hard_coconut_s0_valid_band_logits_cuda_float64/summary.json (results.checks.1.first_answer_logits.max: 2.27e-13 / 1.65e-12)
+B,same at strict fp32 on the GPU (GSM-50k / ProsQA-hard),6.4e-4 / 7.6e-4,results/diag/diag-band-gsm50k-main/gsm50k_coconut_s0_valid_band_logits/summary.json and results/diag/diag-band-prosqa-hard-main/prosqa_hard_coconut_s0_valid_band_logits/summary.json (results.checks.1.first_answer_logits.max: 6.41e-4 / 7.63e-4)

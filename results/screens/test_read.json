@@ -1,0 +1,1284 @@
+{
+ "title": "Screen round: the end-of-round test read (A3.4)",
+ "labels": [
+  "end-of-round test read (A3.4): reporting only, no decision attached; 1 seed; one registered read per checkpoint (4.5)",
+  "valid of record: the screen table's selection (A3.4: screen decisions use valid only)",
+  "test minus valid: descriptive, decides nothing"
+ ],
+ "tasks": {
+  "gsm50k": {
+   "job": "screen-test-gsm50k-acctc",
+   "project": "acctc",
+   "attempt": "silent-eval-20261021-153214-e5fa",
+   "registered_read": "2026-10-21T15:27Z",
+   "test_file": "data/gsm_test.json",
+   "test_sha256": "46ce5b0c44fde0bfc8cf1e7492aa640b96111d9dcb80a54340d9911141a9caa9",
+   "n_test": 1319,
+   "n_valid": 500,
+   "rows": [
+    {
+     "run": "gsm50k_cot_lr3e-4_s0",
+     "role": "bar trial: cot, lr 3e-4",
+     "read": "primary",
+     "label": "primary read: the selected checkpoint",
+     "entry": "gsm50k_cot_lr3e-4_s0_test_none",
+     "file": "ckpt_best_final.pt",
+     "epoch": 17,
+     "stage": 0,
+     "n_latent": 0,
+     "checkpoint_sha256": "d549ca7063d5a3a5b87f52a4ecd424c961f1fd0816b274125c36badc9c6f46b9",
+     "valid": {
+      "k": 128,
+      "n": 500,
+      "points": 25.6,
+      "emitted_mean": 30.436
+     },
+     "test": {
+      "k": 277,
+      "n": 1319,
+      "points": 21.00075815011372,
+      "se_points": 1.121518781002968,
+      "ci95": [
+       18.802581339347903,
+       23.19893496087954
+      ]
+     },
+     "test_emitted_mean": 30.68385140257771,
+     "gap_points_descriptive": -4.59924184988628,
+     "gpu_type": "NVIDIA A100-SXM4-80GB",
+     "commit": "eab5f95f35346a48a54c0f228d86c4f96827f285",
+     "utc": "2026-10-21T15:41:11Z",
+     "summary_sha256": "e837001d782f9c3531ab911a4c1ae2fc84896806d1e1ed00907022422159ca61",
+     "examples_csv_sha256": "42da62a2aa536cb06c60a92ed6a27a897d4495b78e5faa56d6c039bd7edef874"
+    },
+    {
+     "run": "gsm50k_no_cot_s0",
+     "role": "floor; the 124M plain-depth point (7.7)",
+     "read": "primary",
+     "label": "primary read: the selected checkpoint",
+     "entry": "gsm50k_no_cot_s0_test_none",
+     "file": "ckpt_best_final.pt",
+     "epoch": 22,
+     "stage": 0,
+     "n_latent": 0,
+     "checkpoint_sha256": "ad884395e66611527802bf4245cf4ed68eb9849fef280c29019bd5735c345160",
+     "valid": {
+      "k": 31,
+      "n": 500,
+      "points": 6.2,
+      "emitted_mean": 2.206
+     },
+     "test": {
+      "k": 85,
+      "n": 1319,
+      "points": 6.444275966641396,
+      "se_points": 0.6760827409257245,
+      "ci95": [
+       5.119153794426976,
+       7.7693981388558155
+      ]
+     },
+     "test_emitted_mean": 2.2797573919636087,
+     "gap_points_descriptive": 0.2442759666413954,
+     "gpu_type": "NVIDIA A100-SXM4-80GB",
+     "commit": "eab5f95f35346a48a54c0f228d86c4f96827f285",
+     "utc": "2026-10-21T15:41:40Z",
+     "summary_sha256": "fa1596bfdb49b5e6483c13330c2ce42c01109af9a0cf59e92e64999e62d470fc",
+     "examples_csv_sha256": "b8cfc0576600be1978504b7dacc5f3b252ff5c4021fa9cd20e23516a8de17d41"
+    },
+    {
+     "run": "gsm50k_plain_depth_355m_s0",
+     "role": "plain depth: 355M no_cot (7.7, A13.2)",
+     "read": "primary",
+     "label": "primary read: the selected checkpoint",
+     "entry": "gsm50k_plain_depth_355m_s0_test_none",
+     "file": "ckpt_best_final.pt",
+     "epoch": 24,
+     "stage": 0,
+     "n_latent": 0,
+     "checkpoint_sha256": "b6ab7ad59a73594bf1763727ea994e57725155df3608f649114ae98685e909b2",
+     "valid": {
+      "k": 40,
+      "n": 500,
+      "points": 8.0,
+      "emitted_mean": 2.332
+     },
+     "test": {
+      "k": 98,
+      "n": 1319,
+      "points": 7.429871114480667,
+      "se_points": 0.7221105274482634,
+      "ci95": [
+       6.014534480682071,
+       8.845207748279263
+      ]
+     },
+     "test_emitted_mean": 2.3510235026535256,
+     "gap_points_descriptive": -0.5701288855193329,
+     "gpu_type": "NVIDIA A100-SXM4-80GB",
+     "commit": "eab5f95f35346a48a54c0f228d86c4f96827f285",
+     "utc": "2026-10-21T15:42:26Z",
+     "summary_sha256": "df1bbe05e5b57900c5443a53a2f505ae09e083d1eb138cd0ca8f920021a6b295",
+     "examples_csv_sha256": "5dd8a7be36bf35fc79da92ce52553fa9a6c30ae87f188d6d7ecd12ad770a0f52"
+    },
+    {
+     "run": "gsm50k_pause_s0",
+     "role": "control: pause-same-curriculum",
+     "read": "primary",
+     "label": "primary read: the selected checkpoint",
+     "entry": "gsm50k_pause_s0_test_none",
+     "file": "ckpt_best_final.pt",
+     "epoch": 22,
+     "stage": 7,
+     "n_latent": 6,
+     "checkpoint_sha256": "213e3bb2a0f6246ff26344c3509a5bcb12805b636a09d56fa026c7a568b64c23",
+     "valid": {
+      "k": 48,
+      "n": 500,
+      "points": 9.6,
+      "emitted_mean": 2.21
+     },
+     "test": {
+      "k": 91,
+      "n": 1319,
+      "points": 6.899166034874906,
+      "se_points": 0.6978349011678078,
+      "ci95": [
+       5.531409628586003,
+       8.266922441163809
+      ]
+     },
+     "test_emitted_mean": 2.205458680818802,
+     "gap_points_descriptive": -2.700833965125094,
+     "gpu_type": "NVIDIA A100-SXM4-80GB",
+     "commit": "eab5f95f35346a48a54c0f228d86c4f96827f285",
+     "utc": "2026-10-21T15:42:54Z",
+     "summary_sha256": "08fcb94f354deebd33625ffc4c9dd9dd334989ad2b294137b57b01806d1bdab8",
+     "examples_csv_sha256": "44f3e09fabad8c11a2a8a864893552201b00d7cbf2cc2e562754ed6053c95b66"
+    },
+    {
+     "run": "gsm50k_coconut_s0",
+     "role": "control: full-depth coconut (C1b null; C2 / C3 base)",
+     "read": "primary",
+     "label": "primary read: the selected checkpoint",
+     "entry": "gsm50k_coconut_s0_test_none",
+     "file": "ckpt_best_final.pt",
+     "epoch": 17,
+     "stage": 5,
+     "n_latent": 6,
+     "checkpoint_sha256": "ca25839a826f25f4ed9feb9be98fdbff20a9685af9f16582dcfadafac7151da6",
+     "valid": {
+      "k": 55,
+      "n": 500,
+      "points": 11.0,
+      "emitted_mean": 2.396
+     },
+     "test": {
+      "k": 121,
+      "n": 1319,
+      "points": 9.173616376042457,
+      "se_points": 0.7947927573008964,
+      "ci95": [
+       7.6158225717327,
+       10.731410180352214
+      ]
+     },
+     "test_emitted_mean": 2.3002274450341167,
+     "gap_points_descriptive": -1.8263836239575433,
+     "gpu_type": "NVIDIA A100-SXM4-80GB",
+     "commit": "eab5f95f35346a48a54c0f228d86c4f96827f285",
+     "utc": "2026-10-21T15:43:27Z",
+     "summary_sha256": "12b6846323889acb33288beb07120147efc85d6e594762584d399adf3bddbf28",
+     "examples_csv_sha256": "97e945d6007bb7a7f0ea642a4543156faa8be661b28582c88c3615673685286f"
+    },
+    {
+     "run": "gsm50k_c1b_k8_s0",
+     "role": "card C1b, k = 8 (band [2, 10))",
+     "read": "primary",
+     "label": "primary read: the selected checkpoint",
+     "entry": "gsm50k_c1b_k8_s0_test_none",
+     "file": "ckpt_best_final.pt",
+     "epoch": 19,
+     "stage": 6,
+     "n_latent": 6,
+     "checkpoint_sha256": "56d06429f8a8c91741076f03c99c9404b17b67a3e24a92e7ed98ff9fe1e73637",
+     "valid": {
+      "k": 47,
+      "n": 500,
+      "points": 9.4,
+      "emitted_mean": 2.28
+     },
+     "test": {
+      "k": 109,
+      "n": 1319,
+      "points": 8.263836239575435,
+      "se_points": 0.7581213735980266,
+      "ci95": [
+       6.777918347323302,
+       9.749754131827567
+      ]
+     },
+     "test_emitted_mean": 2.256254738438211,
+     "gap_points_descriptive": -1.1361637604245658,
+     "gpu_type": "NVIDIA A100-SXM4-80GB",
+     "commit": "eab5f95f35346a48a54c0f228d86c4f96827f285",
+     "utc": "2026-10-21T15:43:57Z",
+     "summary_sha256": "c20ea199027e5194efcaea97a3603f2cdfe70c01cb798ad441a761f746585e80",
+     "examples_csv_sha256": "55be25eaa4f2fe831d907626146c8677d750ec42aca7adcde47b353b807a0927"
+    },
+    {
+     "run": "gsm50k_c1b_k4_s0",
+     "role": "card C1b, k = 4 (band [4, 8))",
+     "read": "primary",
+     "label": "primary read: the selected checkpoint",
+     "entry": "gsm50k_c1b_k4_s0_test_none",
+     "file": "ckpt_best_final.pt",
+     "epoch": 15,
+     "stage": 4,
+     "n_latent": 6,
+     "checkpoint_sha256": "95acb9e0386b1045e71f97512aaca2e78fa9ecbbbc1c7c70966f2849e0f631e0",
+     "valid": {
+      "k": 47,
+      "n": 500,
+      "points": 9.4,
+      "emitted_mean": 2.284
+     },
+     "test": {
+      "k": 99,
+      "n": 1319,
+      "points": 7.505686125852919,
+      "se_points": 0.7254881436138283,
+      "ci95": [
+       6.083729364369816,
+       8.927642887336022
+      ]
+     },
+     "test_emitted_mean": 2.3540561031084155,
+     "gap_points_descriptive": -1.8943138741470813,
+     "gpu_type": "NVIDIA A100-SXM4-80GB",
+     "commit": "eab5f95f35346a48a54c0f228d86c4f96827f285",
+     "utc": "2026-10-21T15:44:26Z",
+     "summary_sha256": "b8b2702d62d3e784f5326a56a1b30f60659836f52c3a2f955c5e0741ac3c2d7e",
+     "examples_csv_sha256": "1cbf27374a5740735d15d20a7de016a044a5163df2dc31d26721e443ff07e109"
+    },
+    {
+     "run": "gsm50k_c2_s0",
+     "role": "card C2",
+     "read": "primary",
+     "label": "primary read: the selected checkpoint",
+     "entry": "gsm50k_c2_s0_test_none",
+     "file": "ckpt_best_final.pt",
+     "epoch": 20,
+     "stage": 6,
+     "n_latent": 6,
+     "checkpoint_sha256": "0a6339b45a2f9787f0f6b1426e758901b18751b6b931c053fd6cbae55f08cef2",
+     "valid": {
+      "k": 60,
+      "n": 500,
+      "points": 12.0,
+      "emitted_mean": 2.31
+     },
+     "test": {
+      "k": 134,
+      "n": 1319,
+      "points": 10.159211523881728,
+      "se_points": 0.8318487743103361,
+      "ci95": [
+       8.52878792623347,
+       11.789635121529987
+      ]
+     },
+     "test_emitted_mean": 2.2691432903714936,
+     "gap_points_descriptive": -1.8407884761182718,
+     "gpu_type": "NVIDIA A100-SXM4-80GB",
+     "commit": "eab5f95f35346a48a54c0f228d86c4f96827f285",
+     "utc": "2026-10-21T15:44:58Z",
+     "summary_sha256": "6421beee7f8f29f9bccdd5314e1337da45dae3e87fa2a1359efe57d502a3dcda",
+     "examples_csv_sha256": "c597b2305accb3b86634cb5dca4ce254343bd8a9901b0e57b818d49d5b6c3f87"
+    },
+    {
+     "run": "gsm50k_c2_shuffled_s0",
+     "role": "null: C2-shuffled",
+     "read": "primary",
+     "label": "primary read: the selected checkpoint",
+     "entry": "gsm50k_c2_shuffled_s0_test_none",
+     "file": "ckpt_best_final.pt",
+     "epoch": 17,
+     "stage": 5,
+     "n_latent": 6,
+     "checkpoint_sha256": "93fd0c2e929cb696cc66e8829900f4b6e6a9861ba84da92a4f1b6cc71357861f",
+     "valid": {
+      "k": 58,
+      "n": 500,
+      "points": 11.600000000000001,
+      "emitted_mean": 2.23
+     },
+     "test": {
+      "k": 131,
+      "n": 1319,
+      "points": 9.931766489764973,
+      "se_points": 0.8235247859429489,
+      "ci95": [
+       8.317657909316793,
+       11.545875070213153
+      ]
+     },
+     "test_emitted_mean": 2.2592873388931007,
+     "gap_points_descriptive": -1.6682335102350283,
+     "gpu_type": "NVIDIA A100-SXM4-80GB",
+     "commit": "eab5f95f35346a48a54c0f228d86c4f96827f285",
+     "utc": "2026-10-21T15:45:30Z",
+     "summary_sha256": "444537c603bb027b747da07d8035c94d53094241a0e8bc2315102e0ca9fd14f0",
+     "examples_csv_sha256": "b1be9d43033ec0ec715ae3b69b997be0c40f714f8c81e93f2a9b0a9a7f4af0db"
+    },
+    {
+     "run": "gsm50k_c3_s0",
+     "role": "card C3",
+     "read": "primary",
+     "label": "primary read: the selected checkpoint",
+     "entry": "gsm50k_c3_s0_test_none",
+     "file": "ckpt_best_final.pt",
+     "epoch": 25,
+     "stage": 8,
+     "n_latent": 6,
+     "checkpoint_sha256": "b162dfeeae5422a74de1c5aff372e7196c56114de04783518340891fe392eb07",
+     "valid": {
+      "k": 52,
+      "n": 500,
+      "points": 10.4,
+      "emitted_mean": 2.226
+     },
+     "test": {
+      "k": 118,
+      "n": 1319,
+      "points": 8.946171341925702,
+      "se_points": 0.7858602354837273,
+      "ci95": [
+       7.405885280377596,
+       10.486457403473807
+      ]
+     },
+     "test_emitted_mean": 2.2289613343442003,
+     "gap_points_descriptive": -1.4538286580742987,
+     "gpu_type": "NVIDIA A100-SXM4-80GB",
+     "commit": "eab5f95f35346a48a54c0f228d86c4f96827f285",
+     "utc": "2026-10-21T15:46:02Z",
+     "summary_sha256": "937a08f2f93103dba04b4ec0dcc7b113ccb3f03397d8a4b22d1f86d7d2e23dff",
+     "examples_csv_sha256": "1120ee1f853c8905406f20fb5cdd99a016e2a742f3c0d761031e8b932bb19558"
+    },
+    {
+     "run": "gsm50k_c3_foreign_s0",
+     "role": "null: C3-foreign",
+     "read": "primary",
+     "label": "primary read: the selected checkpoint",
+     "entry": "gsm50k_c3_foreign_s0_test_none",
+     "file": "ckpt_best_final.pt",
+     "epoch": 16,
+     "stage": 5,
+     "n_latent": 6,
+     "checkpoint_sha256": "5beb0542b761e2398fbc4f1e020561e77f7dadc199d731144e92b1ae910c3687",
+     "valid": {
+      "k": 50,
+      "n": 500,
+      "points": 10.0,
+      "emitted_mean": 2.216
+     },
+     "test": {
+      "k": 119,
+      "n": 1319,
+      "points": 9.021986353297953,
+      "se_points": 0.7888545056358248,
+      "ci95": [
+       7.475831522251736,
+       10.568141184344169
+      ]
+     },
+     "test_emitted_mean": 2.2312357846853677,
+     "gap_points_descriptive": -0.9780136467020473,
+     "gpu_type": "NVIDIA A100-SXM4-80GB",
+     "commit": "eab5f95f35346a48a54c0f228d86c4f96827f285",
+     "utc": "2026-10-21T15:46:34Z",
+     "summary_sha256": "a3a843ede5cc21c2be4258230a4aba974eaad18f100ac57d5f1bea35f543ebf7",
+     "examples_csv_sha256": "db0084d2bdfa994fb027775a88faabf6f2c8b164b7ef7ec88ce02e7d71ffb21b"
+    },
+    {
+     "run": "gsm50k_c2c3_s0",
+     "role": "card C2+C3",
+     "read": "primary",
+     "label": "primary read: the selected checkpoint",
+     "entry": "gsm50k_c2c3_s0_test_none",
+     "file": "ckpt_best_final.pt",
+     "epoch": 21,
+     "stage": 6,
+     "n_latent": 6,
+     "checkpoint_sha256": "14f7f0cf548563150d0be39631620f3efe5ae969c7e9c67bfa9457ac3dc3ba2a",
+     "valid": {
+      "k": 60,
+      "n": 500,
+      "points": 12.0,
+      "emitted_mean": 2.268
+     },
+     "test": {
+      "k": 123,
+      "n": 1319,
+      "points": 9.32524639878696,
+      "se_points": 0.800665198937069,
+      "ci95": [
+       7.755942608870305,
+       10.894550188703615
+      ]
+     },
+     "test_emitted_mean": 2.278241091736164,
+     "gap_points_descriptive": -2.6747536012130393,
+     "gpu_type": "NVIDIA A100-SXM4-80GB",
+     "commit": "eab5f95f35346a48a54c0f228d86c4f96827f285",
+     "utc": "2026-10-21T15:47:06Z",
+     "summary_sha256": "7f8fc3f58608be28d0a059e2d90b31e25c162bfc678d1deec27a99024d09da2c",
+     "examples_csv_sha256": "7373f7855c152837d1613c33ea03ff4eb2645d12f1dd5aff291cdc2918656e7e"
+    },
+    {
+     "run": "gsm50k_pause_s0",
+     "role": "control: pause-same-curriculum",
+     "read": "secondary",
+     "label": "secondary read (3.3 item 3): all-epoch best, an earlier stage; earlier-stage checkpoint, n latents = its stage; decides nothing",
+     "entry": "gsm50k_pause_s0_test_best",
+     "file": "ckpt_best.pt",
+     "epoch": 5,
+     "stage": 1,
+     "n_latent": 2,
+     "checkpoint_sha256": "ea1ddeda26c0d479d54db87d0ed3e1b1e0f840e21c7fc6849c4785e2158876a8",
+     "valid": {
+      "k": 68,
+      "n": 500,
+      "points": 13.600000000000001,
+      "emitted_mean": 22.194
+     },
+     "test": {
+      "k": 156,
+      "n": 1319,
+      "points": 11.827141774071267,
+      "se_points": 0.8891703311706227,
+      "ci95": [
+       10.084367924976846,
+       13.569915623165688
+      ]
+     },
+     "test_emitted_mean": 22.45489006823351,
+     "gap_points_descriptive": -1.7728582259287347,
+     "gpu_type": "NVIDIA A100-SXM4-80GB",
+     "commit": "eab5f95f35346a48a54c0f228d86c4f96827f285",
+     "utc": "2026-10-21T15:48:05Z",
+     "summary_sha256": "3c96f0cb14ca03f2f6edb1fad5ee3d06b7496672c1bf668b76c3a308e7687034",
+     "examples_csv_sha256": "5fab3132ed04e7b64f67dcd2ae94d006115ea6e57371589d0f1ac77d6ae2ab03"
+    },
+    {
+     "run": "gsm50k_coconut_s0",
+     "role": "control: full-depth coconut (C1b null; C2 / C3 base)",
+     "read": "secondary",
+     "label": "secondary read (3.3 item 3): all-epoch best, an earlier stage; earlier-stage checkpoint, n latents = its stage; decides nothing",
+     "entry": "gsm50k_coconut_s0_test_best",
+     "file": "ckpt_best.pt",
+     "epoch": 6,
+     "stage": 1,
+     "n_latent": 2,
+     "checkpoint_sha256": "1834bb109d2366ace8ce08ee1a91bd93efaa2fa1ac0218f92ebb00c7eabe1235",
+     "valid": {
+      "k": 63,
+      "n": 500,
+      "points": 12.6,
+      "emitted_mean": 21.384
+     },
+     "test": {
+      "k": 167,
+      "n": 1319,
+      "points": 12.661106899166036,
+      "se_points": 0.9156242405123782,
+      "ci95": [
+       10.866483387761775,
+       14.455730410570297
+      ]
+     },
+     "test_emitted_mean": 21.47990902198635,
+     "gap_points_descriptive": 0.0611068991660364,
+     "gpu_type": "NVIDIA A100-SXM4-80GB",
+     "commit": "eab5f95f35346a48a54c0f228d86c4f96827f285",
+     "utc": "2026-10-21T15:49:04Z",
+     "summary_sha256": "010e40463cc619d9354b79d55822c1f5d77324c9a0dee19f54dd3b6ae18920eb",
+     "examples_csv_sha256": "03162c91a0a1ffd25a70b4c0c4629c6ee417dadddcc94fb59f3ce84e9b989875"
+    },
+    {
+     "run": "gsm50k_c1b_k8_s0",
+     "role": "card C1b, k = 8 (band [2, 10))",
+     "read": "secondary",
+     "label": "secondary read (3.3 item 3): all-epoch best, an earlier stage; earlier-stage checkpoint, n latents = its stage; decides nothing",
+     "entry": "gsm50k_c1b_k8_s0_test_best",
+     "file": "ckpt_best.pt",
+     "epoch": 6,
+     "stage": 1,
+     "n_latent": 2,
+     "checkpoint_sha256": "3e697a6c4e1d85fc901a320caef1e52d0536726d8cfaf9f7630c97968f525d6f",
+     "valid": {
+      "k": 70,
+      "n": 500,
+      "points": 14.000000000000002,
+      "emitted_mean": 21.724
+     },
+     "test": {
+      "k": 158,
+      "n": 1319,
+      "points": 11.978771796815769,
+      "se_points": 0.8940822232472546,
+      "ci95": [
+       10.22637063925115,
+       13.731172954380387
+      ]
+     },
+     "test_emitted_mean": 21.90447308567096,
+     "gap_points_descriptive": -2.021228203184233,
+     "gpu_type": "NVIDIA A100-SXM4-80GB",
+     "commit": "eab5f95f35346a48a54c0f228d86c4f96827f285",
+     "utc": "2026-10-21T15:49:54Z",
+     "summary_sha256": "4342247728d6186b036e567bff9bdaab033a16115d840031662168c03e96dfe3",
+     "examples_csv_sha256": "eb38316fad58441101b961d943a59c678e613eb64f1e4677c917fc4042936315"
+    },
+    {
+     "run": "gsm50k_c1b_k4_s0",
+     "role": "card C1b, k = 4 (band [4, 8))",
+     "read": "secondary",
+     "label": "secondary read (3.3 item 3): all-epoch best, an earlier stage; earlier-stage checkpoint, n latents = its stage; decides nothing",
+     "entry": "gsm50k_c1b_k4_s0_test_best",
+     "file": "ckpt_best.pt",
+     "epoch": 6,
+     "stage": 1,
+     "n_latent": 2,
+     "checkpoint_sha256": "03affb209577a0f1ef6a67f59421a2c6913f721343a897abffd7d8ffe7220867",
+     "valid": {
+      "k": 73,
+      "n": 500,
+      "points": 14.6,
+      "emitted_mean": 22.858
+     },
+     "test": {
+      "k": 184,
+      "n": 1319,
+      "points": 13.949962092494314,
+      "se_points": 0.9539808326231907,
+      "ci95": [
+       12.08015966055286,
+       15.819764524435767
+      ]
+     },
+     "test_emitted_mean": 23.016679302501895,
+     "gap_points_descriptive": -0.6500379075056859,
+     "gpu_type": "NVIDIA A100-SXM4-80GB",
+     "commit": "eab5f95f35346a48a54c0f228d86c4f96827f285",
+     "utc": "2026-10-21T15:50:45Z",
+     "summary_sha256": "a8e296118b640679b1374721f3a5c7ec9f8b2f6e8306da8994f501cfcbd27f2b",
+     "examples_csv_sha256": "1d36bfd630284cca40b37f6045eddd10c2e9f1684ba63da2609e4dccb5691564"
+    },
+    {
+     "run": "gsm50k_c2_s0",
+     "role": "card C2",
+     "read": "secondary",
+     "label": "secondary read (3.3 item 3): all-epoch best, an earlier stage; earlier-stage checkpoint, n latents = its stage; decides nothing",
+     "entry": "gsm50k_c2_s0_test_best",
+     "file": "ckpt_best.pt",
+     "epoch": 6,
+     "stage": 1,
+     "n_latent": 2,
+     "checkpoint_sha256": "8d4be009a7b03823b1c66d07b328d0749fe34c29f4a70c6c644eab1b53987976",
+     "valid": {
+      "k": 63,
+      "n": 500,
+      "points": 12.6,
+      "emitted_mean": 21.47
+     },
+     "test": {
+      "k": 178,
+      "n": 1319,
+      "points": 13.495072024260804,
+      "se_points": 0.9407747011245773,
+      "ci95": [
+       11.651153610056632,
+       15.338990438464975
+      ]
+     },
+     "test_emitted_mean": 21.322971948445794,
+     "gap_points_descriptive": 0.8950720242608039,
+     "gpu_type": "NVIDIA A100-SXM4-80GB",
+     "commit": "eab5f95f35346a48a54c0f228d86c4f96827f285",
+     "utc": "2026-10-21T15:51:44Z",
+     "summary_sha256": "903c20d30e728727c89370fdfe43f3c6dfe5307066090e2ce643162268f9ef77",
+     "examples_csv_sha256": "2095989aea7b5575d7ef9106d360dfb3bb94b0ed6dc8ae131f5caa9b12b8e8e6"
+    },
+    {
+     "run": "gsm50k_c2_shuffled_s0",
+     "role": "null: C2-shuffled",
+     "read": "secondary",
+     "label": "secondary read (3.3 item 3): all-epoch best, an earlier stage; earlier-stage checkpoint, n latents = its stage; decides nothing",
+     "entry": "gsm50k_c2_shuffled_s0_test_best",
+     "file": "ckpt_best.pt",
+     "epoch": 6,
+     "stage": 1,
+     "n_latent": 2,
+     "checkpoint_sha256": "d2590575322782478c3514743491f354517e4233c49c193081d5e837fbe91ed5",
+     "valid": {
+      "k": 65,
+      "n": 500,
+      "points": 13.0,
+      "emitted_mean": 21.302
+     },
+     "test": {
+      "k": 177,
+      "n": 1319,
+      "points": 13.419257012888552,
+      "se_points": 0.9385393627003913,
+      "ci95": [
+       11.579719861995786,
+       15.25879416378132
+      ]
+     },
+     "test_emitted_mean": 21.347232752084913,
+     "gap_points_descriptive": 0.41925701288855244,
+     "gpu_type": "NVIDIA A100-SXM4-80GB",
+     "commit": "eab5f95f35346a48a54c0f228d86c4f96827f285",
+     "utc": "2026-10-21T15:52:46Z",
+     "summary_sha256": "5bbbdbe12716e1ebeff16bc42feebb336352b44fdfbe295e6976b15c25285435",
+     "examples_csv_sha256": "2d868b837a260c80c48e183347ce128f64175819e69911938662008816a1549b"
+    },
+    {
+     "run": "gsm50k_c3_s0",
+     "role": "card C3",
+     "read": "secondary",
+     "label": "secondary read (3.3 item 3): all-epoch best, an earlier stage; earlier-stage checkpoint, n latents = its stage; decides nothing",
+     "entry": "gsm50k_c3_s0_test_best",
+     "file": "ckpt_best.pt",
+     "epoch": 6,
+     "stage": 1,
+     "n_latent": 2,
+     "checkpoint_sha256": "9a538227e0f6eab055d168c59ff27c80f00db212f4a9872f869be641c4beffa9",
+     "valid": {
+      "k": 67,
+      "n": 500,
+      "points": 13.4,
+      "emitted_mean": 21.536
+     },
+     "test": {
+      "k": 165,
+      "n": 1319,
+      "points": 12.509476876421532,
+      "se_points": 0.9109146424961536,
+      "ci95": [
+       10.724084177129072,
+       14.294869575713992
+      ]
+     },
+     "test_emitted_mean": 20.989385898407885,
+     "gap_points_descriptive": -0.8905231235784683,
+     "gpu_type": "NVIDIA A100-SXM4-80GB",
+     "commit": "eab5f95f35346a48a54c0f228d86c4f96827f285",
+     "utc": "2026-10-21T15:53:46Z",
+     "summary_sha256": "755dd5ef897093364d0f1402089ad0e2a250b69a0389622c6215c21bc4a19406",
+     "examples_csv_sha256": "60a3f7b394f0532c4ea55a25048d4700f417f0b74c5f41c7d9260c6d3d26edbc"
+    },
+    {
+     "run": "gsm50k_c3_foreign_s0",
+     "role": "null: C3-foreign",
+     "read": "secondary",
+     "label": "secondary read (3.3 item 3): all-epoch best, an earlier stage; earlier-stage checkpoint, n latents = its stage; decides nothing",
+     "entry": "gsm50k_c3_foreign_s0_test_best",
+     "file": "ckpt_best.pt",
+     "epoch": 6,
+     "stage": 1,
+     "n_latent": 2,
+     "checkpoint_sha256": "49bf1b36af14ae5ea60311bb9f72e087f6649975acf58832ce8b4938143bd1fe",
+     "valid": {
+      "k": 55,
+      "n": 500,
+      "points": 11.0,
+      "emitted_mean": 22.856
+     },
+     "test": {
+      "k": 155,
+      "n": 1319,
+      "points": 11.751326762699014,
+      "se_points": 0.8866968097598772,
+      "ci95": [
+       10.013401015569654,
+       13.489252509828374
+      ]
+     },
+     "test_emitted_mean": 22.815011372251707,
+     "gap_points_descriptive": 0.7513267626990139,
+     "gpu_type": "NVIDIA A100-SXM4-80GB",
+     "commit": "eab5f95f35346a48a54c0f228d86c4f96827f285",
+     "utc": "2026-10-21T15:54:49Z",
+     "summary_sha256": "eb1ab13b249bdf02c277fefedd250ba33add1d9a9d3a20d9c2b4e8ee9349408d",
+     "examples_csv_sha256": "51af78f2be2cb14c02303e5703b077fee0c65380df20af040c36620f35846bae"
+    },
+    {
+     "run": "gsm50k_c2c3_s0",
+     "role": "card C2+C3",
+     "read": "secondary",
+     "label": "secondary read (3.3 item 3): all-epoch best, an earlier stage; earlier-stage checkpoint, n latents = its stage; decides nothing",
+     "entry": "gsm50k_c2c3_s0_test_best",
+     "file": "ckpt_best.pt",
+     "epoch": 5,
+     "stage": 1,
+     "n_latent": 2,
+     "checkpoint_sha256": "8ae5028ae75532370376952f802517692076463af5eba5c935ecf3a145d1e716",
+     "valid": {
+      "k": 64,
+      "n": 500,
+      "points": 12.8,
+      "emitted_mean": 22.756
+     },
+     "test": {
+      "k": 170,
+      "n": 1319,
+      "points": 12.888551933282791,
+      "se_points": 0.9226081394161175,
+      "ci95": [
+       11.080239980027201,
+       14.696863886538381
+      ]
+     },
+     "test_emitted_mean": 23.197877179681576,
+     "gap_points_descriptive": 0.08855193328279043,
+     "gpu_type": "NVIDIA A100-SXM4-80GB",
+     "commit": "eab5f95f35346a48a54c0f228d86c4f96827f285",
+     "utc": "2026-10-21T15:55:52Z",
+     "summary_sha256": "b33b94ebcac3384a03ae279fa817eb7c54196c12a1b512f5a6a1d70cd2bb41f2",
+     "examples_csv_sha256": "be1e8e1da333762440cdac7d6ea3e00003f542b52f7a8eab4ba6e310ad347e2f"
+    }
+   ],
+   "valid_table": {
+    "file": "results/screens/gsm50k/gsm50k_screen_with_hinge.json",
+    "commit": "4a0e33d4d9e1f0dda3144f91f99e2e9a26c88cc5",
+    "sha256": "d36b5fbb226761e2239a8079707981ba65b39236b073c1196667fd42790c4a19"
+   },
+   "results_dir": {
+    "dir": "results/evals/screen-test-gsm50k-acctc",
+    "commit": "44960005eab468d2fa3df188add7c2e57ab87c88"
+   }
+  },
+  "prosqa_hard": {
+   "job": "screen-test-prosqa-hard-acctb",
+   "project": "acctb",
+   "attempt": "silent-eval-20261021-155218-0999",
+   "registered_read": "2026-10-21T15:27Z",
+   "test_file": "data/prosqa_hard_test.json",
+   "test_sha256": "85a26a32ae6f01bc0961451221292f218e87dd7ed1098426387dd6c5c28aafbf",
+   "n_test": 500,
+   "n_valid": 300,
+   "rows": [
+    {
+     "run": "prosqa_hard_cot_lr3e-5_s0",
+     "role": "bar trial: cot, lr 3e-5",
+     "read": "primary",
+     "label": "primary read: the selected checkpoint",
+     "entry": "prosqa_hard_cot_lr3e-5_s0_test_none",
+     "file": "ckpt_best_final.pt",
+     "epoch": 14,
+     "stage": 0,
+     "n_latent": 0,
+     "checkpoint_sha256": "aefce29c737f9d3952a3c90979e200234e866c9431a1955a1a58d28a23ff94de",
+     "valid": {
+      "k": 241,
+      "n": 300,
+      "points": 80.33333333333333,
+      "emitted_mean": 76.07
+     },
+     "test": {
+      "k": 417,
+      "n": 500,
+      "points": 83.39999999999999,
+      "se_points": 1.6639951923007472,
+      "ci95": [
+       80.13856942309053,
+       86.66143057690945
+      ]
+     },
+     "test_emitted_mean": 77.794,
+     "gap_points_descriptive": 3.066666666666663,
+     "gpu_type": "NVIDIA A100-SXM4-80GB",
+     "commit": "eab5f95f35346a48a54c0f228d86c4f96827f285",
+     "utc": "2026-10-21T16:00:14Z",
+     "summary_sha256": "c43e2412090f739c54c087c0aa92b2f134ce629ca0758e3a57726415ebe43733",
+     "examples_csv_sha256": "ba0c189994f5a3ec6d0674cbad1071b8ce5636edd48398aac47c3b7a8275098e"
+    },
+    {
+     "run": "prosqa_hard_no_cot_s0",
+     "role": "floor; the 124M plain-depth point (7.7)",
+     "read": "primary",
+     "label": "primary read: the selected checkpoint",
+     "entry": "prosqa_hard_no_cot_s0_test_none",
+     "file": "ckpt_best_final.pt",
+     "epoch": 8,
+     "stage": 0,
+     "n_latent": 0,
+     "checkpoint_sha256": "0165fbb8e72f7a406a81ad359418b038f9909b2b138a222644b6f8c7d1730f6b",
+     "valid": {
+      "k": 173,
+      "n": 300,
+      "points": 57.666666666666664,
+      "emitted_mean": 8.19
+     },
+     "test": {
+      "k": 266,
+      "n": 500,
+      "points": 53.2,
+      "se_points": 2.2314838112789435,
+      "ci95": [
+       48.82629172989327,
+       57.573708270106735
+      ]
+     },
+     "test_emitted_mean": 8.186,
+     "gap_points_descriptive": -4.4666666666666615,
+     "gpu_type": "NVIDIA A100-SXM4-80GB",
+     "commit": "eab5f95f35346a48a54c0f228d86c4f96827f285",
+     "utc": "2026-10-21T16:00:43Z",
+     "summary_sha256": "9941ec9ae91658fe1f8ac706e6cb9465a11e5d21602f21628e1b4810590abcee",
+     "examples_csv_sha256": "4ec44790b9f343d322222a76bb7b4cb708a06f968c12ba8f99492f4fed517a54"
+    },
+    {
+     "run": "prosqa_hard_plain_depth_355m_s0",
+     "role": "plain depth: 355M no_cot (7.7, A13.2)",
+     "read": "primary",
+     "label": "primary read: the selected checkpoint",
+     "entry": "prosqa_hard_plain_depth_355m_s0_test_none",
+     "file": "ckpt_best_final.pt",
+     "epoch": 28,
+     "stage": 0,
+     "n_latent": 0,
+     "checkpoint_sha256": "ae2e48b54ebcf6e20f837cc59f22da21c4abf7edf649f29b3fea5162e1b028bb",
+     "valid": {
+      "k": 185,
+      "n": 300,
+      "points": 61.66666666666667,
+      "emitted_mean": 8.18
+     },
+     "test": {
+      "k": 302,
+      "n": 500,
+      "points": 60.4,
+      "se_points": 2.187162545399861,
+      "ci95": [
+       56.11316141101627,
+       64.68683858898373
+      ]
+     },
+     "test_emitted_mean": 8.172,
+     "gap_points_descriptive": -1.2666666666666728,
+     "gpu_type": "NVIDIA A100-SXM4-80GB",
+     "commit": "eab5f95f35346a48a54c0f228d86c4f96827f285",
+     "utc": "2026-10-21T16:01:31Z",
+     "summary_sha256": "b7ee7bac0f38126fef663abcd4854c487300a6a09e40b3e8d9bc11918bd0ddb9",
+     "examples_csv_sha256": "cc8fea4ebfb7b3da84107bed4ab4c408c55ca6f341b4fc5fbd92f5ac5a3e6c51"
+    },
+    {
+     "run": "prosqa_hard_pause_s0",
+     "role": "control: pause-same-curriculum",
+     "read": "primary",
+     "label": "primary read: the selected checkpoint",
+     "entry": "prosqa_hard_pause_s0_test_none",
+     "file": "ckpt_best_final.pt",
+     "epoch": 30,
+     "stage": 9,
+     "n_latent": 7,
+     "checkpoint_sha256": "0e5f68e8531999a2017dced8204ff45aa493ed52931819b4ef0860688ebdd200",
+     "valid": {
+      "k": 224,
+      "n": 300,
+      "points": 74.66666666666667,
+      "emitted_mean": 8.153333333333334
+     },
+     "test": {
+      "k": 374,
+      "n": 500,
+      "points": 74.8,
+      "se_points": 1.9416281827373643,
+      "ci95": [
+       70.99440876183476,
+       78.60559123816523
+      ]
+     },
+     "test_emitted_mean": 8.182,
+     "gap_points_descriptive": 0.13333333333332575,
+     "gpu_type": "NVIDIA A100-SXM4-80GB",
+     "commit": "eab5f95f35346a48a54c0f228d86c4f96827f285",
+     "utc": "2026-10-21T16:02:00Z",
+     "summary_sha256": "326001a4b8035b4382b8e77ec0580eb597be00e7d05e0df40ac4bf6628e1e72b",
+     "examples_csv_sha256": "40c47b5943377a8893194fd3f1dedfcf768c53c1b81c766848f1ffc5ffff9741"
+    },
+    {
+     "run": "prosqa_hard_coconut_s0",
+     "role": "control: full-depth coconut (C1b null; C2 / C3 base)",
+     "read": "primary",
+     "label": "primary read: the selected checkpoint",
+     "entry": "prosqa_hard_coconut_s0_test_none",
+     "file": "ckpt_best_final.pt",
+     "epoch": 30,
+     "stage": 9,
+     "n_latent": 7,
+     "checkpoint_sha256": "37cd86030812286333b40185ea5b45fe575764210ce65a6e5c050259da290865",
+     "valid": {
+      "k": 220,
+      "n": 300,
+      "points": 73.33333333333333,
+      "emitted_mean": 8.146666666666667
+     },
+     "test": {
+      "k": 364,
+      "n": 500,
+      "points": 72.8,
+      "se_points": 1.9900552756142227,
+      "ci95": [
+       68.89949165979613,
+       76.70050834020387
+      ]
+     },
+     "test_emitted_mean": 8.178,
+     "gap_points_descriptive": -0.5333333333333314,
+     "gpu_type": "NVIDIA A100-SXM4-80GB",
+     "commit": "eab5f95f35346a48a54c0f228d86c4f96827f285",
+     "utc": "2026-10-21T16:02:32Z",
+     "summary_sha256": "a0ba20522f176871f728fb2c9daf939121bb321dba60fb31f8905fe63bf26bd1",
+     "examples_csv_sha256": "ef046104b4114fbf35b0c97b738ac2fcdedc7f0ad17db1b7db4776bf27880e96"
+    },
+    {
+     "run": "prosqa_hard_c1b_k8_s0",
+     "role": "card C1b, k = 8 (band [2, 10))",
+     "read": "primary",
+     "label": "primary read: the selected checkpoint",
+     "entry": "prosqa_hard_c1b_k8_s0_test_none",
+     "file": "ckpt_best_final.pt",
+     "epoch": 27,
+     "stage": 8,
+     "n_latent": 7,
+     "checkpoint_sha256": "16b1614a62732a640f8bc9aca088a5700a5902097583ff1ecbe11afd6d36ab18",
+     "valid": {
+      "k": 215,
+      "n": 300,
+      "points": 71.66666666666667,
+      "emitted_mean": 8.163333333333334
+     },
+     "test": {
+      "k": 368,
+      "n": 500,
+      "points": 73.6,
+      "se_points": 1.9713142824014644,
+      "ci95": [
+       69.73622400649313,
+       77.46377599350686
+      ]
+     },
+     "test_emitted_mean": 8.18,
+     "gap_points_descriptive": 1.933333333333323,
+     "gpu_type": "NVIDIA A100-SXM4-80GB",
+     "commit": "eab5f95f35346a48a54c0f228d86c4f96827f285",
+     "utc": "2026-10-21T16:03:01Z",
+     "summary_sha256": "9ec06221e8460ef56dc8835f5a58b5558570bd4c51a693789ec6d18c38365f30",
+     "examples_csv_sha256": "cc98f3fc7d126a7e56e4b91073575e1459244cdbbede940cddcbf601325222e5"
+    },
+    {
+     "run": "prosqa_hard_c1b_k4_s0",
+     "role": "card C1b, k = 4 (band [4, 8))",
+     "read": "primary",
+     "label": "primary read: the selected checkpoint",
+     "entry": "prosqa_hard_c1b_k4_s0_test_none",
+     "file": "ckpt_best_final.pt",
+     "epoch": 30,
+     "stage": 9,
+     "n_latent": 7,
+     "checkpoint_sha256": "5d4a010ca665c1f25b97ea37f90e8f9b439f18f71adcf223a5f3d947defd3d47",
+     "valid": {
+      "k": 212,
+      "n": 300,
+      "points": 70.66666666666667,
+      "emitted_mean": 8.146666666666667
+     },
+     "test": {
+      "k": 356,
+      "n": 500,
+      "points": 71.2,
+      "se_points": 2.0251222185339826,
+      "ci95": [
+       67.23076045167339,
+       75.16923954832662
+      ]
+     },
+     "test_emitted_mean": 8.178,
+     "gap_points_descriptive": 0.5333333333333314,
+     "gpu_type": "NVIDIA A100-SXM4-80GB",
+     "commit": "eab5f95f35346a48a54c0f228d86c4f96827f285",
+     "utc": "2026-10-21T16:03:30Z",
+     "summary_sha256": "9d97a9747fe7bd9b0cf41e7387a33fa630cbf05236e62ee374c475ac7cbe9ccb",
+     "examples_csv_sha256": "a101b09b67cd99d1f49dd13e07cbe62494e139f11f8b38a02dcc35e6bb6e12d6"
+    },
+    {
+     "run": "prosqa_hard_c2_s0",
+     "role": "card C2",
+     "read": "primary",
+     "label": "primary read: the selected checkpoint",
+     "entry": "prosqa_hard_c2_s0_test_none",
+     "file": "ckpt_best_final.pt",
+     "epoch": 27,
+     "stage": 8,
+     "n_latent": 7,
+     "checkpoint_sha256": "e44501b349b7ce553cd01082c8444d1ad88a878dbe23c63fcef52c9271de94d0",
+     "valid": {
+      "k": 217,
+      "n": 300,
+      "points": 72.33333333333334,
+      "emitted_mean": 8.18
+     },
+     "test": {
+      "k": 379,
+      "n": 500,
+      "points": 75.8,
+      "se_points": 1.9153902996517445,
+      "ci95": [
+       72.04583501268257,
+       79.55416498731742
+      ]
+     },
+     "test_emitted_mean": 8.198,
+     "gap_points_descriptive": 3.4666666666666544,
+     "gpu_type": "NVIDIA A100-SXM4-80GB",
+     "commit": "eab5f95f35346a48a54c0f228d86c4f96827f285",
+     "utc": "2026-10-21T16:04:02Z",
+     "summary_sha256": "f2eb91bc581fccbe5a572637d92fdcf98088232f66bd165c67e43cdab9be9bdc",
+     "examples_csv_sha256": "4b3191061a0954f46421e8593b8a8a641331ece9005c869103d194cd85bdbf40"
+    },
+    {
+     "run": "prosqa_hard_c2_shuffled_s0",
+     "role": "null: C2-shuffled",
+     "read": "primary",
+     "label": "primary read: the selected checkpoint",
+     "entry": "prosqa_hard_c2_shuffled_s0_test_none",
+     "file": "ckpt_best_final.pt",
+     "epoch": 30,
+     "stage": 9,
+     "n_latent": 7,
+     "checkpoint_sha256": "5f3d881a60da35409efa04fe7d03fa23c186b602d3435e5f5bdac772bbefb54f",
+     "valid": {
+      "k": 214,
+      "n": 300,
+      "points": 71.33333333333334,
+      "emitted_mean": 8.146666666666667
+     },
+     "test": {
+      "k": 363,
+      "n": 500,
+      "points": 72.6,
+      "se_points": 1.9946127443691921,
+      "ci95": [
+       68.69055902103638,
+       76.50944097896361
+      ]
+     },
+     "test_emitted_mean": 8.182,
+     "gap_points_descriptive": 1.2666666666666515,
+     "gpu_type": "NVIDIA A100-SXM4-80GB",
+     "commit": "eab5f95f35346a48a54c0f228d86c4f96827f285",
+     "utc": "2026-10-21T16:04:33Z",
+     "summary_sha256": "2dae7aa284ed67a5d99e2050f2c15de2d63d0ddcee1fb0d2ce58faf723a46d15",
+     "examples_csv_sha256": "e617f462143efe246efb12e9576bf0a96cb3a25e0814f81aaaccf2a5b3d9f193"
+    },
+    {
+     "run": "prosqa_hard_coconut_s0",
+     "role": "control: full-depth coconut (C1b null; C2 / C3 base)",
+     "read": "secondary",
+     "label": "secondary read (3.3 item 3): all-epoch best, an earlier stage; earlier-stage checkpoint, n latents = its stage; decides nothing",
+     "entry": "prosqa_hard_coconut_s0_test_best",
+     "file": "ckpt_best.pt",
+     "epoch": 8,
+     "stage": 2,
+     "n_latent": 2,
+     "checkpoint_sha256": "23c37716d527a0630bb26753259c29bc680e7d2443d0ac90301e13948567e134",
+     "valid": {
+      "k": 230,
+      "n": 300,
+      "points": 76.66666666666667,
+      "emitted_mean": 54.026666666666664
+     },
+     "test": {
+      "k": 369,
+      "n": 500,
+      "points": 73.8,
+      "se_points": 1.9664994279175367,
+      "ci95": [
+       69.94566112128163,
+       77.65433887871836
+      ]
+     },
+     "test_emitted_mean": 55.262,
+     "gap_points_descriptive": -2.8666666666666742,
+     "gpu_type": "NVIDIA A100-SXM4-80GB",
+     "commit": "eab5f95f35346a48a54c0f228d86c4f96827f285",
+     "utc": "2026-10-21T16:05:26Z",
+     "summary_sha256": "fe4b6cfeff57b071fd645bacc6977d7791c417b2f1ebe89a23f277bf22e4cacf",
+     "examples_csv_sha256": "bf5ed80812ffdc025b6ca8f9ead9976ae7a6ef14b6daa6cc4ec2a762b72dd5ec"
+    },
+    {
+     "run": "prosqa_hard_c1b_k8_s0",
+     "role": "card C1b, k = 8 (band [2, 10))",
+     "read": "secondary",
+     "label": "secondary read (3.3 item 3): all-epoch best, an earlier stage; earlier-stage checkpoint, n latents = its stage; decides nothing",
+     "entry": "prosqa_hard_c1b_k8_s0_test_best",
+     "file": "ckpt_best.pt",
+     "epoch": 14,
+     "stage": 4,
+     "n_latent": 4,
+     "checkpoint_sha256": "416a4dce98580c97d9265aa047ccae8428a140beaa24f3e42a45e6773c39423e",
+     "valid": {
+      "k": 225,
+      "n": 300,
+      "points": 75.0,
+      "emitted_mean": 34.306666666666665
+     },
+     "test": {
+      "k": 384,
+      "n": 500,
+      "points": 76.8,
+      "se_points": 1.8877287940803362,
+      "ci95": [
+       73.10005156360253,
+       80.49994843639746
+      ]
+     },
+     "test_emitted_mean": 32.546,
+     "gap_points_descriptive": 1.7999999999999972,
+     "gpu_type": "NVIDIA A100-SXM4-80GB",
+     "commit": "eab5f95f35346a48a54c0f228d86c4f96827f285",
+     "utc": "2026-10-21T16:06:07Z",
+     "summary_sha256": "56dff8aa5b35649fc01ed43147bff583ff146ecd5fe66cc18c8ba1d8d02f3b94",
+     "examples_csv_sha256": "57a31267698075dc77e0147282818d2c6cb2bad0fa55d06c151a211308ba7f6c"
+    },
+    {
+     "run": "prosqa_hard_c1b_k4_s0",
+     "role": "card C1b, k = 4 (band [4, 8))",
+     "read": "secondary",
+     "label": "secondary read (3.3 item 3): all-epoch best, an earlier stage; earlier-stage checkpoint, n latents = its stage; decides nothing",
+     "entry": "prosqa_hard_c1b_k4_s0_test_best",
+     "file": "ckpt_best.pt",
+     "epoch": 18,
+     "stage": 5,
+     "n_latent": 5,
+     "checkpoint_sha256": "94e040e5872fe3031cfc5e2da6fc8e8823a34f5f651f5ea8ab512f7a1189424f",
+     "valid": {
+      "k": 223,
+      "n": 300,
+      "points": 74.33333333333333,
+      "emitted_mean": 22.763333333333332
+     },
+     "test": {
+      "k": 356,
+      "n": 500,
+      "points": 71.2,
+      "se_points": 2.0251222185339826,
+      "ci95": [
+       67.23076045167339,
+       75.16923954832662
+      ]
+     },
+     "test_emitted_mean": 25.164,
+     "gap_points_descriptive": -3.1333333333333258,
+     "gpu_type": "NVIDIA A100-SXM4-80GB",
+     "commit": "eab5f95f35346a48a54c0f228d86c4f96827f285",
+     "utc": "2026-10-21T16:06:50Z",
+     "summary_sha256": "8877bcc13fb4c67c12ad83b1456a1f96f9fbf4b7edb38aeea44e8df4da41e189",
+     "examples_csv_sha256": "5eb3e7cf45624341a5f4590dea8f85318a63d602834f2d0aaf2cef9e09195cac"
+    },
+    {
+     "run": "prosqa_hard_c2_s0",
+     "role": "card C2",
+     "read": "secondary",
+     "label": "secondary read (3.3 item 3): all-epoch best, an earlier stage; earlier-stage checkpoint, n latents = its stage; decides nothing",
+     "entry": "prosqa_hard_c2_s0_test_best",
+     "file": "ckpt_best.pt",
+     "epoch": 9,
+     "stage": 2,
+     "n_latent": 2,
+     "checkpoint_sha256": "94b26a32f07903b0da1ecb44a742ff1ecf25f9c7ca31dc2eb79ea107f475572f",
+     "valid": {
+      "k": 245,
+      "n": 300,
+      "points": 81.66666666666667,
+      "emitted_mean": 55.97
+     },
+     "test": {
+      "k": 393,
+      "n": 500,
+      "points": 78.60000000000001,
+      "se_points": 1.8341428515794511,
+      "ci95": [
+       75.00508001090428,
+       82.19491998909574
+      ]
+     },
+     "test_emitted_mean": 56.804,
+     "gap_points_descriptive": -3.066666666666663,
+     "gpu_type": "NVIDIA A100-SXM4-80GB",
+     "commit": "eab5f95f35346a48a54c0f228d86c4f96827f285",
+     "utc": "2026-10-21T16:07:47Z",
+     "summary_sha256": "43857b9fcfc82452986864f079477576c4730dcdce84118d78418ccff119e73d",
+     "examples_csv_sha256": "2ae53e7ef803e3ab9d8a90b804107efa8149d2b25e838b0a6378938bab1a1626"
+    },
+    {
+     "run": "prosqa_hard_c2_shuffled_s0",
+     "role": "null: C2-shuffled",
+     "read": "secondary",
+     "label": "secondary read (3.3 item 3): all-epoch best, an earlier stage; earlier-stage checkpoint, n latents = its stage; decides nothing",
+     "entry": "prosqa_hard_c2_shuffled_s0_test_best",
+     "file": "ckpt_best.pt",
+     "epoch": 9,
+     "stage": 2,
+     "n_latent": 2,
+     "checkpoint_sha256": "ce9c38ab925f54cb98084f6fd09a0703cbfb27ea26c797c3754a605802a5d43b",
+     "valid": {
+      "k": 230,
+      "n": 300,
+      "points": 76.66666666666667,
+      "emitted_mean": 57.06
+     },
+     "test": {
+      "k": 394,
+      "n": 500,
+      "points": 78.8,
+      "se_points": 1.8278730809331374,
+      "ci95": [
+       75.21736876137105,
+       82.38263123862895
+      ]
+     },
+     "test_emitted_mean": 55.312,
+     "gap_points_descriptive": 2.1333333333333258,
+     "gpu_type": "NVIDIA A100-SXM4-80GB",
+     "commit": "eab5f95f35346a48a54c0f228d86c4f96827f285",
+     "utc": "2026-10-21T16:08:42Z",
+     "summary_sha256": "019e5801deba84da3fc787930ddda08e317e0b6e1c5105a42ad03fff742bcd0c",
+     "examples_csv_sha256": "89940be6954573669e33bdc1744d11da19797a348fd17c6d48f12b564c760a31"
+    }
+   ],
+   "valid_table": {
+    "file": "results/screens/prosqa_hard/prosqa_hard_screen_with_plain_depth.json",
+    "commit": "af1f57398a061a7dc58e3b3d6e831a194a3d04cd",
+    "sha256": "ff561a152a39ca42d3546adc2481e96dd8f87323c462802d86b676e6222e0465"
+   },
+   "results_dir": {
+    "dir": "results/evals/screen-test-prosqa-hard-acctb",
+    "commit": "7db3c391fe08f701752ac9135214589f7fd4fb0d"
+   }
+  }
+ },
+ "notes": [
+  "Reporting only (A3.4): no verdict, kill line, selection or screen outcome is computed or changed here; every screen decision stays on valid, in the screen tables cited above.",
+  "1 seed (seed 0); each checkpoint scored once on test under its registered read (4.5); the primary rows are each run's selected checkpoint (3.3 item 1); among the bar's three cot trials only the bar's selected trial was read.",
+  "14 secondary reads (3.3 item 3): the all-epoch best of a run whose earlier stage scored higher on valid, at that stage's latent count; labelled, never a primary cell.",
+  "The interval is 6.2's form for one accuracy (binomial SE); the test minus valid gap is descriptive: valid is the selection split and test the scoring split (1.3)."
+ ],
+ "generated_utc": "2026-10-21T16:22:13Z"
+}

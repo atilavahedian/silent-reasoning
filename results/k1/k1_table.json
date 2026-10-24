@@ -1,0 +1,256 @@
+{
+  "rows": [
+    {
+      "task": "prosqa",
+      "arm": "cot",
+      "gates": true,
+      "seeds": {
+        "0": 75.0
+      },
+      "gpu_types": {
+        "0": "NVIDIA A100-SXM4-40GB"
+      },
+      "labels": [
+        "single seed"
+      ],
+      "n": 1,
+      "mean": 75.0,
+      "sd": null,
+      "sigma_cell": 1.9,
+      "tolerance": 3.8,
+      "published": 77.5,
+      "diff": -2.5,
+      "matched": true,
+      "verdict": "matched"
+    },
+    {
+      "task": "prosqa",
+      "arm": "no_cot",
+      "gates": true,
+      "seeds": {
+        "0": 78.0
+      },
+      "gpu_types": {
+        "0": "NVIDIA A100-SXM4-40GB"
+      },
+      "labels": [
+        "single seed"
+      ],
+      "n": 1,
+      "mean": 78.0,
+      "sd": null,
+      "sigma_cell": 1.0,
+      "tolerance": 2.0,
+      "published": 76.7,
+      "diff": 1.2999999999999972,
+      "matched": true,
+      "verdict": "matched"
+    },
+    {
+      "task": "prosqa",
+      "arm": "coconut",
+      "gates": true,
+      "seeds": {
+        "0": 96.8
+      },
+      "gpu_types": {
+        "0": "NVIDIA A100-SXM4-40GB"
+      },
+      "labels": [
+        "single seed"
+      ],
+      "n": 1,
+      "mean": 96.8,
+      "sd": null,
+      "sigma_cell": 1.0,
+      "tolerance": 2.0,
+      "published": 97.0,
+      "diff": -0.20000000000000284,
+      "matched": true,
+      "verdict": "matched"
+    },
+    {
+      "task": "prosqa",
+      "arm": "pause",
+      "gates": true,
+      "seeds": {
+        "0": 97.0
+      },
+      "gpu_types": {
+        "0": "NVIDIA A100-SXM4-40GB"
+      },
+      "labels": [
+        "single seed"
+      ],
+      "n": 1,
+      "mean": 97.0,
+      "sd": null,
+      "sigma_cell": 1.0,
+      "tolerance": 2.0,
+      "published": 96.6,
+      "diff": 0.4000000000000057,
+      "matched": true,
+      "verdict": "matched"
+    },
+    {
+      "task": "prosqa",
+      "arm": "coconut_no_curriculum",
+      "gates": false,
+      "seeds": {},
+      "gpu_types": {},
+      "labels": [
+        "relative to our no_cot"
+      ],
+      "verdict": "UNTESTED"
+    },
+    {
+      "task": "prontoqa",
+      "arm": "cot",
+      "gates": true,
+      "seeds": {},
+      "gpu_types": {},
+      "labels": [],
+      "verdict": "UNTESTED"
+    },
+    {
+      "task": "prontoqa",
+      "arm": "no_cot",
+      "gates": true,
+      "seeds": {},
+      "gpu_types": {},
+      "labels": [],
+      "verdict": "UNTESTED"
+    },
+    {
+      "task": "prontoqa",
+      "arm": "coconut",
+      "gates": true,
+      "seeds": {},
+      "gpu_types": {},
+      "labels": [],
+      "verdict": "UNTESTED"
+    },
+    {
+      "task": "prontoqa",
+      "arm": "pause",
+      "gates": true,
+      "seeds": {},
+      "gpu_types": {},
+      "labels": [],
+      "verdict": "UNTESTED"
+    },
+    {
+      "task": "prontoqa",
+      "arm": "coconut_no_curriculum",
+      "gates": true,
+      "seeds": {},
+      "gpu_types": {},
+      "labels": [],
+      "verdict": "UNTESTED"
+    },
+    {
+      "task": "gsm",
+      "arm": "cot",
+      "gates": true,
+      "seeds": {},
+      "gpu_types": {},
+      "labels": [],
+      "verdict": "UNTESTED"
+    },
+    {
+      "task": "gsm",
+      "arm": "no_cot",
+      "gates": true,
+      "seeds": {},
+      "gpu_types": {},
+      "labels": [],
+      "verdict": "UNTESTED"
+    },
+    {
+      "task": "gsm",
+      "arm": "coconut",
+      "gates": true,
+      "seeds": {},
+      "gpu_types": {},
+      "labels": [],
+      "verdict": "UNTESTED"
+    },
+    {
+      "task": "gsm",
+      "arm": "pause",
+      "gates": false,
+      "seeds": {},
+      "gpu_types": {},
+      "labels": [],
+      "verdict": "UNTESTED"
+    },
+    {
+      "task": "gsm",
+      "arm": "coconut_no_curriculum",
+      "gates": false,
+      "seeds": {},
+      "gpu_types": {},
+      "labels": [],
+      "verdict": "UNTESTED"
+    }
+  ],
+  "tasks": {
+    "prosqa": {
+      "gating": [
+        "cot",
+        "no_cot",
+        "coconut",
+        "pause"
+      ],
+      "missed": [],
+      "untested": [],
+      "provisional": true,
+      "verdict": "pass"
+    },
+    "prontoqa": {
+      "gating": [
+        "cot",
+        "no_cot",
+        "coconut",
+        "pause",
+        "coconut_no_curriculum"
+      ],
+      "missed": [],
+      "untested": [
+        "cot",
+        "no_cot",
+        "coconut",
+        "pause",
+        "coconut_no_curriculum"
+      ],
+      "provisional": true,
+      "verdict": "UNTESTED"
+    },
+    "gsm": {
+      "gating": [
+        "cot",
+        "no_cot",
+        "coconut"
+      ],
+      "missed": [],
+      "untested": [
+        "cot",
+        "no_cot",
+        "coconut"
+      ],
+      "provisional": true,
+      "verdict": "UNTESTED"
+    }
+  },
+  "sentences": {
+    "prosqa": "K1 ProsQA: pass (cot, no_cot, coconut, pause) [provisional]",
+    "prontoqa": "K1 ProntoQA: UNTESTED (cot, no_cot, coconut, pause, coconut_no_curriculum not read)",
+    "gsm": "K1 GSM8k-Aug: UNTESTED (cot, no_cot, coconut not read) [single seed]",
+    "phase1_registered": "K1 (registered, ProsQA and ProntoQA): UNTESTED; ProntoQA UNTESTED (A3.3)",
+    "window": "K1 for the window (A3.3) = K1 on ProsQA: pass"
+  },
+  "published_source": "pdf",
+  "published_problems": [],
+  "published_file": "governance/oracle_published.json",
+  "utc": "2026-10-19T15:21:04Z"
+}

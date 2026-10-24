@@ -1,0 +1,109 @@
+{
+  "summary": {
+    "n": 300,
+    "accuracy": 0.7066666666666667,
+    "accuracy_ci95": [
+      0.6533333333333333,
+      0.7566666666666667
+    ],
+    "cot_em": 0.0,
+    "prefill_tokens_mean": 596.1133333333333,
+    "prefill_tokens_median": 597.5,
+    "prefill_tokens_mean_ci95": [
+      582.74325,
+      609.2505
+    ],
+    "latent_steps_mean": 4.0,
+    "latent_steps_median": 4.0,
+    "latent_steps_mean_ci95": [
+      4.0,
+      4.0
+    ],
+    "emitted_tokens_mean": 8.146666666666667,
+    "emitted_tokens_median": 8.0,
+    "emitted_tokens_mean_ci95": [
+      8.086666666666666,
+      8.206666666666667
+    ],
+    "sequential_passes_mean": 13.146666666666667,
+    "sequential_passes_median": 13.0,
+    "sequential_passes_mean_ci95": [
+      13.086666666666666,
+      13.206666666666667
+    ],
+    "flops_mean": 110922048245.76,
+    "flops_median": 110905404928.0,
+    "flops_mean_ci95": [
+      108348993455.104,
+      113459784024.832
+    ],
+    "reference_flops_mean": 2049104696094.72,
+    "reference_flops_median": 2036318109696.0,
+    "reference_flops_mean_ci95": [
+      2000424123105.792,
+      2096967682161.408
+    ],
+    "paper_style_tokens_mean": 12.146666666666667
+  },
+  "task": "prosqa_hard",
+  "run": "prosqa_hard_c1b_k4_s0",
+  "arm": "coconut",
+  "seed": 0,
+  "variant": {
+    "latent_band": [
+      4,
+      8
+    ],
+    "layer_fraction": 0.3333333333333333,
+    "state_sup": false,
+    "state_null": "none",
+    "dep_loss": false,
+    "dep_null": "none"
+  },
+  "config": "configs/screen/prosqa_hard_c1b_k4.json",
+  "overrides": [
+    "device=\"cuda\"",
+    "model_id=\"/opt/silent/out/hf/hub/models--openai-community--gpt2/snapshots/607a30d783dfa663caf39e06633721c8d4cfcd7e\"",
+    "seed=0",
+    "name=\"prosqa_hard_c1b_k4_s0\""
+  ],
+  "checkpoint": "/opt/silent/out/eval_ckpts/prosqa_hard_c1b_k4_s0_valid_n4/ckpt_best_final.pt",
+  "checkpoint_sha256": "5d4a010ca665c1f25b97ea37f90e8f9b439f18f71adcf223a5f3d947defd3d47",
+  "split": "valid",
+  "split_file": "data/prosqa_hard_valid.json",
+  "split_sha256": "2d7123f2cc5e97639cf8cce6eb466b61ec8db09126502c46ddf20b5317075cae",
+  "intervention": "none",
+  "n_latent": 4,
+  "scramble_seed": 0,
+  "max_new_tokens": 128,
+  "precision": "bf16",
+  "device": "cuda",
+  "gpu_type": "NVIDIA A100-SXM4-40GB",
+  "torch": "2.14.1+cu130",
+  "transformers": "4.57.6",
+  "commit": "979b8f70cfb1268594999dc6e257464a10bfd73d",
+  "registered_read": "2026-10-20T19:15Z",
+  "audit_rescore": false,
+  "numerics": {
+    "tf32_requested": true,
+    "cuda.matmul.allow_tf32": true,
+    "cudnn.allow_tf32": true,
+    "float32_matmul_precision": "high",
+    "torch": "2.14.1+cu130",
+    "cuda": "13.0",
+    "cuda.matmul.fp32_precision": "tf32",
+    "cudnn.fp32_precision": "tf32"
+  },
+  "eval_seconds": 3.829427719116211,
+  "timing": {
+    "prefill_passes": 10,
+    "prefill_ms_per_pass": 128.8036486999772,
+    "latent_passes": 40,
+    "latent_ms_per_pass": 8.83401685001104,
+    "token_passes": 93,
+    "token_ms_per_pass": 11.54509579567676,
+    "latent_over_token_ms": 0.7651748418855974
+  },
+  "examples_csv_sha256": "757174b5cf3e912e29837a730f68493aff6db3c471b5af212bcc93f5fe7e3a3e",
+  "utc": "2026-10-20T20:13:29Z"
+}

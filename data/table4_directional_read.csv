@@ -1,0 +1,5 @@
+arm,delta_scr,delta_scr_lo,delta_scr_hi,scored,r_dir,k_dir,r_own,k_own,delta_dir,delta_dir_lo,delta_dir_hi,g_chg,k_g_chg,garbage_vs_r_dir,status,k2_cell
+C3,10.4,7.71,13.09,289 of 295,0.000,0,0.014,4,-0.014,-0.027,-0.000,0.997,288,exceeded,absent,K2 not independent; counts as fired (hinge arms): drop without direction (fingerprint-consistent)
+C3-foreign,2.0,0.00,4.00,289 of 295,0.014,4,0.010,3,0.003,-0.003,0.010,0.481,139,exceeded,absent,K2 not independent; fired on the drop leg
+C2+C3,11.8,8.99,14.61,289 of 295,0.000,0,0.007,2,-0.007,-0.016,0.003,0.993,287,exceeded,absent,K2 not independent; counts as fired (hinge arms): drop without direction (fingerprint-consistent)
+coconut (reference; no hinge; diagnostic),7.0,4.11,9.89,289 of 295,0.024,7,0.007,2,0.017,-0.003,0.038,0.830,240,exceeded,absent,reference arm (no hinge); diagnostic; decides nothing

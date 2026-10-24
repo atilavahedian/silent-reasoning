@@ -1,0 +1,62 @@
+{
+  "device": "cuda",
+  "model": "openai-community/gpt2 (local cache)",
+  "torch": "2.14.1+cu130",
+  "transformers": "4.57.6",
+  "platform": "Linux-6.8.0-1070-gcp-x86_64-with-glibc2.35",
+  "machine": "x86_64",
+  "bench": [
+    {
+      "precision": "fp32",
+      "n_latent": 0,
+      "steps": 20,
+      "batch": 32,
+      "seq": 320,
+      "sec_per_step": 0.5241982830500319,
+      "tokens_per_s": 19534.592788856287,
+      "peak_mem_mb": 17695.35107421875,
+      "final_loss": 10.906983375549316
+    },
+    {
+      "precision": "fp16",
+      "n_latent": 0,
+      "steps": 20,
+      "batch": 32,
+      "seq": 320,
+      "sec_per_step": 0.14427072450007472,
+      "tokens_per_s": 70977.67087178312,
+      "peak_mem_mb": 14414.5048828125,
+      "final_loss": 10.899943351745605
+    },
+    {
+      "precision": "bf16",
+      "n_latent": 0,
+      "steps": 20,
+      "batch": 32,
+      "seq": 320,
+      "sec_per_step": 0.1421839323499853,
+      "tokens_per_s": 72019.38946796233,
+      "peak_mem_mb": 14414.50390625,
+      "final_loss": 10.92341136932373
+    },
+    {
+      "precision": "fp32",
+      "n_latent": 6,
+      "steps": 20,
+      "batch": 32,
+      "seq": 320,
+      "sec_per_step": 0.6593464185999209,
+      "tokens_per_s": 15530.531009395594,
+      "peak_mem_mb": 21649.57275390625,
+      "final_loss": 10.95580005645752
+    }
+  ],
+  "parity": {
+    "device": "cuda",
+    "dtype": "float32",
+    "reference": "cpu float64",
+    "n_latent_max": 3,
+    "max_abs_logit_diff": 1.4339646353667135e-07
+  },
+  "time": "2026-10-19T00:20:52"
+}

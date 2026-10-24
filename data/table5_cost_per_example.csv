@@ -1,0 +1,22 @@
+task,arm,latent_steps,emitted_tokens_mean,emitted_over_bar,passes_mean,passes_over_bar,flops_gflops_mean,flop_ratio_lo,flop_ratio_hi,training_flops_pflops_own,training_flops_pflops_charged,charged_over_bar,label,flop_ratio_at_fmeas_lo,flop_ratio_at_fmeas_hi,charged_epochs,bar_training_pflops_at_same_epochs
+GSM-50k,cot lr3e-4 (bar),0,30.436,1.000,31.436,1.000,[17.312; 17.357],0.997,1.003,64.8,64.8,1.00,,,,25,64.8
+GSM-50k,no_cot,0,2.206,0.072,3.206,0.102,[10.261; 10.269],0.591,0.593,43.3,43.3,0.67,,,,25,64.8
+GSM-50k,plain depth 355M,0,2.332,0.077,3.332,0.106,[35.948; 35.972],2.071,2.078,124.0,124.0,1.91,training-heavy,,,25,64.8
+GSM-50k,pause,6 pause positions,2.210,0.073,3.210,0.102,11.643,0.671,0.673,46.7,111.5,0.92,,,,47,121.8
+GSM-50k,coconut,6,2.396,0.079,9.396,0.299,11.689,0.673,0.675,46.7,111.5,0.92,billing claim only,,,47,121.8
+GSM-50k,C1b k=8,6,2.280,0.075,9.280,0.295,11.315 nominal / 11.371 at f_meas 0.7200 / 11.660 at 1,0.652,0.654,45.8,110.6,0.91,billing claim only,0.655,0.657,47,121.8
+GSM-50k,C1b k=4,6,2.284,0.075,9.284,0.295,10.972 nominal / 11.074 at f_meas 0.4326 / 11.661 at 1,0.632,0.634,44.8,109.6,0.90,billing claim only,0.638,0.640,47,121.8
+GSM-50k,C2,6,2.310,0.076,9.310,0.296,11.668,0.672,0.674,48.9,113.7,0.93,billing claim only,,,47,121.8
+GSM-50k,C2-shuffled,6,2.230,0.073,9.230,0.294,11.648,0.671,0.673,48.9,113.7,0.93,billing claim only,,,47,121.8
+GSM-50k,C3,6,2.226,0.073,9.226,0.293,11.647,0.671,0.673,93.5,158.3,1.30,training-heavy; billing claim only,,,47,121.8
+GSM-50k,C3-foreign,6,2.216,0.073,9.216,0.293,11.644,0.671,0.673,140.2,205.0,1.68,training-heavy; billing claim only,,,47,121.8
+GSM-50k,C2+C3,6,2.268,0.075,9.268,0.295,11.657,0.672,0.673,95.6,160.4,1.32,training-heavy; billing claim only,,,47,121.8
+ProsQA-hard,cot lr3e-5 (bar),0,76.070,1.000,77.070,1.000,[128.523; 128.960],0.997,1.003,157.8,157.8,1.00,,,,30,157.8
+ProsQA-hard,no_cot,0,8.190,0.108,9.190,0.119,[110.239; 110.376],0.855,0.859,142.1,142.1,0.90,,,,30,157.8
+ProsQA-hard,plain depth 355M,0,8.180,0.108,9.180,0.119,[384.111; 384.477],2.979,2.992,405.3,405.3,2.57,training-heavy,,,30,157.8
+ProsQA-hard,pause,7 pause positions,8.153,0.107,9.153,0.119,112.014,0.869,0.872,149.3,149.3,0.95,,,,30,157.8
+ProsQA-hard,coconut,7,8.147,0.107,16.147,0.210,112.012,0.869,0.872,149.3,149.3,0.95,billing claim only,,,30,157.8
+ProsQA-hard,C1b k=8,7,8.163,0.107,16.163,0.210,111.568 nominal / 111.651 at f_meas 0.7280 / 112.017 at 1,0.865,0.868,149.1,149.1,0.94,billing claim only,0.866,0.869,30,157.8
+ProsQA-hard,C1b k=4,7,8.147,0.107,16.147,0.210,111.115 nominal / 111.258 at f_meas 0.4391 / 112.012 at 1,0.862,0.865,148.9,148.9,0.94,billing claim only,0.863,0.866,30,157.8
+ProsQA-hard,C2,7,8.180,0.108,16.180,0.210,112.021,0.869,0.872,149.4,149.4,0.95,billing claim only,,,30,157.8
+ProsQA-hard,C2-shuffled,7,8.147,0.107,16.147,0.210,112.012,0.869,0.872,149.4,149.4,0.95,billing claim only,,,30,157.8

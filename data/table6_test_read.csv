@@ -1,0 +1,36 @@
+task,run,read,checkpoint,latents_at_read,valid_of_record,test_acc,test_lo,test_hi,test_count,test_emitted_tokens_mean,test_minus_valid
+GSM-50k,cot lr3e-4 (bar),primary,ckpt_best_final.pt epoch 17,0,25.6,21.0,18.8,23.2,277/1319,30.68,-4.6
+GSM-50k,no_cot,primary,ckpt_best_final.pt epoch 22,0,6.2,6.4,5.1,7.8,85/1319,2.28,0.2
+GSM-50k,plain depth 355M,primary,ckpt_best_final.pt epoch 24,0,8.0,7.4,6.0,8.8,98/1319,2.35,-0.6
+GSM-50k,pause,primary,ckpt_best_final.pt epoch 22,6,9.6,6.9,5.5,8.3,91/1319,2.21,-2.7
+GSM-50k,coconut,primary,ckpt_best_final.pt epoch 17,6,11.0,9.2,7.6,10.7,121/1319,2.30,-1.8
+GSM-50k,C1b k=8,primary,ckpt_best_final.pt epoch 19,6,9.4,8.3,6.8,9.7,109/1319,2.26,-1.1
+GSM-50k,C1b k=4,primary,ckpt_best_final.pt epoch 15,6,9.4,7.5,6.1,8.9,99/1319,2.35,-1.9
+GSM-50k,C2,primary,ckpt_best_final.pt epoch 20,6,12.0,10.2,8.5,11.8,134/1319,2.27,-1.8
+GSM-50k,C2-shuffled,primary,ckpt_best_final.pt epoch 17,6,11.6,9.9,8.3,11.5,131/1319,2.26,-1.7
+GSM-50k,C3,primary,ckpt_best_final.pt epoch 25,6,10.4,8.9,7.4,10.5,118/1319,2.23,-1.5
+GSM-50k,C3-foreign,primary,ckpt_best_final.pt epoch 16,6,10.0,9.0,7.5,10.6,119/1319,2.23,-1.0
+GSM-50k,C2+C3,primary,ckpt_best_final.pt epoch 21,6,12.0,9.3,7.8,10.9,123/1319,2.28,-2.7
+GSM-50k,pause,secondary (earlier stage),ckpt_best.pt epoch 5,2,13.6,11.8,10.1,13.6,156/1319,22.45,-1.8
+GSM-50k,coconut,secondary (earlier stage),ckpt_best.pt epoch 6,2,12.6,12.7,10.9,14.5,167/1319,21.48,0.1
+GSM-50k,C1b k=8,secondary (earlier stage),ckpt_best.pt epoch 6,2,14.0,12.0,10.2,13.7,158/1319,21.90,-2.0
+GSM-50k,C1b k=4,secondary (earlier stage),ckpt_best.pt epoch 6,2,14.6,13.9,12.1,15.8,184/1319,23.02,-0.7
+GSM-50k,C2,secondary (earlier stage),ckpt_best.pt epoch 6,2,12.6,13.5,11.7,15.3,178/1319,21.32,0.9
+GSM-50k,C2-shuffled,secondary (earlier stage),ckpt_best.pt epoch 6,2,13.0,13.4,11.6,15.3,177/1319,21.35,0.4
+GSM-50k,C3,secondary (earlier stage),ckpt_best.pt epoch 6,2,13.4,12.5,10.7,14.3,165/1319,20.99,-0.9
+GSM-50k,C3-foreign,secondary (earlier stage),ckpt_best.pt epoch 6,2,11.0,11.8,10.0,13.5,155/1319,22.82,0.8
+GSM-50k,C2+C3,secondary (earlier stage),ckpt_best.pt epoch 5,2,12.8,12.9,11.1,14.7,170/1319,23.20,0.1
+ProsQA-hard,cot lr3e-5 (bar),primary,ckpt_best_final.pt epoch 14,0,80.3,83.4,80.1,86.7,417/500,77.79,3.1
+ProsQA-hard,no_cot,primary,ckpt_best_final.pt epoch 8,0,57.7,53.2,48.8,57.6,266/500,8.19,-4.5
+ProsQA-hard,plain depth 355M,primary,ckpt_best_final.pt epoch 28,0,61.7,60.4,56.1,64.7,302/500,8.17,-1.3
+ProsQA-hard,pause,primary,ckpt_best_final.pt epoch 30,7,74.7,74.8,71.0,78.6,374/500,8.18,0.1
+ProsQA-hard,coconut,primary,ckpt_best_final.pt epoch 30,7,73.3,72.8,68.9,76.7,364/500,8.18,-0.5
+ProsQA-hard,C1b k=8,primary,ckpt_best_final.pt epoch 27,7,71.7,73.6,69.7,77.5,368/500,8.18,1.9
+ProsQA-hard,C1b k=4,primary,ckpt_best_final.pt epoch 30,7,70.7,71.2,67.2,75.2,356/500,8.18,0.5
+ProsQA-hard,C2,primary,ckpt_best_final.pt epoch 27,7,72.3,75.8,72.0,79.6,379/500,8.20,3.5
+ProsQA-hard,C2-shuffled,primary,ckpt_best_final.pt epoch 30,7,71.3,72.6,68.7,76.5,363/500,8.18,1.3
+ProsQA-hard,coconut,secondary (earlier stage),ckpt_best.pt epoch 8,2,76.7,73.8,69.9,77.7,369/500,55.26,-2.9
+ProsQA-hard,C1b k=8,secondary (earlier stage),ckpt_best.pt epoch 14,4,75.0,76.8,73.1,80.5,384/500,32.55,1.8
+ProsQA-hard,C1b k=4,secondary (earlier stage),ckpt_best.pt epoch 18,5,74.3,71.2,67.2,75.2,356/500,25.16,-3.1
+ProsQA-hard,C2,secondary (earlier stage),ckpt_best.pt epoch 9,2,81.7,78.6,75.0,82.2,393/500,56.80,-3.1
+ProsQA-hard,C2-shuffled,secondary (earlier stage),ckpt_best.pt epoch 9,2,76.7,78.8,75.2,82.4,394/500,55.31,2.1

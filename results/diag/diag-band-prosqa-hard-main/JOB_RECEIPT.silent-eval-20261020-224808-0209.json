@@ -1,0 +1,212 @@
+{
+ "job": "diag-band-prosqa-hard-main",
+ "kind": "eval",
+ "attempt": "silent-eval-20261020-224808-0209",
+ "status": "complete",
+ "spec_sha256": "80315743d70fc8c9f4f3beeab744b6fd3d21d087a9410cf85127636d8087f76a",
+ "spec": {
+  "name": "diag-band-prosqa-hard-main",
+  "kind": "eval",
+  "provider": "gcp",
+  "project": "cloud-main",
+  "project_alias": "main",
+  "bucket": "store://bucket-main",
+  "gpu": "A100-40GB",
+  "max_hours": 1.0,
+  "provisioning": "SPOT",
+  "precision": "fp32-tf32",
+  "tf32": true,
+  "parity_first": false,
+  "evals": [
+   {
+    "name": "prosqa_hard_coconut_s0_valid_band_logits_cuda_float64",
+    "tool": "diag",
+    "mode": "band_logits",
+    "checkpoint": "store://bucket-b/silent/runs/prosqa_hard_coconut_s0/ckpt_best_final.pt",
+    "checkpoint_sha256": "37cd86030812286333b40185ea5b45fe575764210ce65a6e5c050259da290865",
+    "config": "configs/screen/prosqa_hard_coconut.json",
+    "split": "valid",
+    "seed": 0,
+    "run": "prosqa_hard_coconut_s0",
+    "device": "cuda",
+    "critic_row": "2026-10-20T21:33Z",
+    "dtype": "float64",
+    "strict_only": true,
+    "tol": 1e-08,
+    "extra_idx": [
+     21,
+     268
+    ],
+    "checks": [
+     "1",
+     "1b",
+     "3"
+    ],
+    "not_run_reason": "not run: CUDA out of memory in the same-shape companion swap at float64 on A100-40GB (attempt 2ad4; float64_attempt_2ad4_failed.log); check (4) of record on this checkpoint is the strict-fp32 entry's, results commit rev23, 0.0 at both numerics",
+    "est_hours": 0.25,
+    "_note": "prosqa_hard_coconut_s0, seed 0, ckpt_best_final.pt sha256 37cd86030812286333b40185ea5b45fe575764210ce65a6e5c050259da290865 (the f_meas denominator on ProsQA-hard, A6.2 rule 1; pinned as screen-eval-prosqa-hard-main pinned prosqa_hard_coconut_s0_valid_band0-12_timed_bs1, A10.2), configs/screen/prosqa_hard_coconut.json, valid split (data/prosqa_hard_valid.json, 300), the first file-order batch of 32 (idx 0 to 31) at B = 32 and band [0, 12] at B = 1 on it plus idx 21, 268 (33 targets: idx 21 is inside the batch), device cuda, a diagnostic on valid registered by critic entry 2026-10-20T21:33Z (not a 4.5 read): REQUIRED: rule 3's float64 record (critic entry 2026-10-20T21:03Z row 3) on the A100 (critic entry 2026-10-20T21:33Z), second admission (critic entries 2026-10-20T22:36Z): run_diag.py --dtype float64 --strict-only --tol 1e-08 --checks 1,1b,3, weights and every module output asserted float64 (DtypeWatch; refused otherwise), TF32 off, 'highest', no autocast, read back at the start and the end; checks (1), (1b) (the HF path at B = 1 vs band [0, 12] at B = 1 on the targets), (3); (2) not run (strict set alone); (4) not run (--checks), its reason in the record's checks_not_run: the same-shape companion swap at float64 holds three [32, 861, 50257] logits tensors (10.32 GiB each: the batch's prefill, its repeat and the swapped batch's) and asks for a fourth in the concatenation, which the 40 GB card does not hold (attempt 2ad4: out of memory at 37.2 GiB in use); check (4) of record on this checkpoint is the strict-fp32 record's (results commit rev23, 0.0 at both numerics on all 32), which is not rerun (write-once). examples.csv 32 + 33 + 33 = 98 rows. Line (14:54Z row 1 part (5)): <= 1e-08 on all 32 at B = 32 and all 33 at B = 1, the fed latents <= 1e-08, 0 first-argmax differences, 0 diverging generations, the shape comparator likewise. Memory: checks (1), (1b), (3) ran at float64 on this card in 2ad4 (one generate at a time: the prefill's logits pieces and their concatenation, two 10.3 GiB tensors, plus the cache and the float64 weights); the cuda allocator's cache is emptied between checks; after each check run_diag.py writes partial.json / partial_examples.csv (never a record; summary.json and examples.csv once at the end); the record carries the peak device memory."
+   }
+  ],
+  "_note": "max_hours: critic entries 2026-10-20T21:33Z and 2026-10-20T22:36Z: about 15 min of work at these lengths (one entry, with the boot, data and model steps); 1.3 x 0.250 + 0.5 = 0.825 h, up to the quarter hour: 1.0 h (refused above 1.0 h). Measured comparators (not the cap): screen-eval-prosqa-hard-main (silent-eval-20261020-195306-b3c4): in-VM 2026-10-20T19:59:54Z..2026-10-20T20:25:03Z = 1509 s / 45 entries = 33.5 s per entry (ledger close runtime 2274 s incl. boot); prosqa_hard_coconut_s0_valid_band0-12_timed_bs1: 58.9 s for 300 examples at batch 1 (0.196 s each); the entry generates 66 examples at batch 1 at float64 (band [0, 12] and the HF path, checks (3) and (1b), on the 33 targets: idx 21 is inside the first batch), about 13 s at the bf16 rate, plus the batch-32 generations at 861 tokens. Memory: the first file-order batch is 861 columns wide; one [32, 861, 50257] logits tensor is 11 GB (10.32 GiB) at float64, so the entry needs the A100's 40 GB (CHANGELOG 21:35Z: the CPU run was killed at the container's 14.3 GB); check (4) is not run at float64 (out of memory on this card in 2ad4; its record is the strict-fp32 one, rev23). Second admission (critic entries 2026-10-20T22:36Z): the float64 entry alone, --checks 1,1b,3; the strict-fp32 entry is not rerun (its record rev23 stands, write-once); the optional latent_path entry is not in this job. Numerics: the job's fp32-tf32 / tf32 fields do not reach a diag entry (--tf32 both); --dtype float64 --strict-only --tol 1e-08 on cuda. Not a read: no registered_read; the record carries critic_row 2026-10-20T21:33Z (run_diag.py --critic-row) beside the mode's row 2026-10-20T12:40Z. Fetched record: results/diag/diag-band-prosqa-hard-main/<entry>/ (read_screen DIAG_RECORDS).",
+  "critic_rows_required": [
+   "2026-10-20T22:36Z",
+   "2026-10-20T21:33Z",
+   "2026-10-20T21:03Z"
+  ],
+  "_launch": {
+   "ledger_id": "silent-eval-20261020-224808-0209",
+   "provider": "gcp",
+   "project": "cloud-main",
+   "zones": [
+    "us-central1-a",
+    "us-central1-c",
+    "us-central1-b",
+    "us-central1-f"
+   ],
+   "bucket": "store://bucket-main",
+   "machine": "a2-highgpu-1g",
+   "gpu": "A100-40GB",
+   "provisioning": "SPOT",
+   "max_run_s": 3600,
+   "deadline_epoch": 1792540089,
+   "code_uri": "store://bucket-main/silent/code/feeafe180d581baf5dbcc67523c12964ce5f16df-silent-eval-20261020-224808-0209.tar.gz",
+   "code_commit": "feeafe180d581baf5dbcc67523c12964ce5f16df",
+   "code_sha256": "e1141ba02316106312e6e9df06c41aaba180eca67559bb80f40913db60c8568f",
+   "admitted": "2026-10-20T22:48:09Z",
+   "critic_rows": [
+    "2026-10-18T22:31Z",
+    "2026-10-18T23:27Z",
+    "2026-10-19T01:06Z",
+    "2026-10-19T01:07Z",
+    "2026-10-19T01:08Z",
+    "2026-10-19T01:09Z",
+    "2026-10-19T01:10Z",
+    "2026-10-19T01:14Z",
+    "2026-10-19T03:00Z",
+    "2026-10-19T03:05Z",
+    "2026-10-19T12:07Z",
+    "2026-10-19T12:11Z",
+    "2026-10-19T15:35Z",
+    "2026-10-19T15:39Z",
+    "2026-10-19T15:40Z",
+    "2026-10-19T15:45Z",
+    "2026-10-19T16:59Z",
+    "2026-10-19T17:01Z",
+    "2026-10-20T12:40Z",
+    "2026-10-20T14:54Z",
+    "2026-10-20T15:26Z",
+    "2026-10-20T19:14Z",
+    "2026-10-20T19:15Z",
+    "2026-10-20T21:03Z",
+    "2026-10-20T21:33Z",
+    "2026-10-20T21:34Z",
+    "2026-10-20T22:36Z",
+    "2026-10-20T22:37Z"
+   ],
+   "image_family": "common-cu129-ubuntu-2204-nvidia-580"
+  }
+ },
+ "started": "2026-10-20T22:53:39Z",
+ "ended": "2026-10-20T22:54:45Z",
+ "deadline": "2026-10-20T23:48:09Z",
+ "steps": [
+  {
+   "step": "env_reference",
+   "ok": true,
+   "time": "2026-10-20T22:53:42Z",
+   "mismatches": []
+  },
+  {
+   "step": "data",
+   "ok": true,
+   "time": "2026-10-20T22:53:49Z",
+   "source": "bucket",
+   "tasks": [
+    "prosqa_hard"
+   ],
+   "files": 3
+  },
+  {
+   "step": "model",
+   "ok": true,
+   "time": "2026-10-20T22:53:55Z",
+   "pinned": {
+    "id": "openai-community/gpt2",
+    "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+    "weights_sha256": "248dfc3911869ec493c76e65bf2fcf7f615828b0254c12b473182f0f81d3a707"
+   },
+   "got": {
+    "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+    "weights_sha256": "248dfc3911869ec493c76e65bf2fcf7f615828b0254c12b473182f0f81d3a707",
+    "path": "/opt/silent/out/hf/hub/models--openai-community--gpt2/snapshots/607a30d783dfa663caf39e06633721c8d4cfcd7e"
+   }
+  }
+ ],
+ "runs": [],
+ "evals": [
+  {
+   "name": "prosqa_hard_coconut_s0_valid_band_logits_cuda_float64",
+   "checkpoint": "store://bucket-b/silent/runs/prosqa_hard_coconut_s0/ckpt_best_final.pt",
+   "config": "configs/screen/prosqa_hard_coconut.json",
+   "intervention": null,
+   "split": "valid",
+   "n_latent": null,
+   "audit_rescore": null,
+   "batch_size": null,
+   "seed": 0,
+   "run": "prosqa_hard_coconut_s0",
+   "dtype": "float64",
+   "strict_only": true,
+   "tol": 1e-08,
+   "extra_idx": [
+    21,
+    268
+   ],
+   "device": "cuda",
+   "checks": [
+    "1",
+    "1b",
+    "3"
+   ],
+   "not_run_reason": "not run: CUDA out of memory in the same-shape companion swap at float64 on A100-40GB (attempt 2ad4; float64_attempt_2ad4_failed.log); check (4) of record on this checkpoint is the strict-fp32 entry's, results commit rev23, 0.0 at both numerics",
+   "tool": "diag",
+   "mode": "band_logits",
+   "checkpoint_sha256": "37cd86030812286333b40185ea5b45fe575764210ce65a6e5c050259da290865",
+   "rc": 0,
+   "status": "done"
+  }
+ ],
+ "env": {
+  "host": "silent-eval-20261020-224808-0209",
+  "python": "3.10.12",
+  "platform": "Linux-6.8.0-1070-gcp-x86_64-with-glibc2.35",
+  "time": "2026-10-20T22:53:40Z",
+  "gpu_name": "NVIDIA A100-SXM4-40GB",
+  "driver": "580.178.04",
+  "gpu_memory": "40960 MiB",
+  "torch": "2.14.1",
+  "transformers": "4.57.6",
+  "numpy": "2.2.6",
+  "scipy": "1.15.3",
+  "huggingface_hub": "0.36.2",
+  "tokenizers": "0.22.2",
+  "safetensors": "0.8.0",
+  "torch_cuda": "13.0",
+  "cudnn": 92400,
+  "git_commit": "feeafe180d581baf5dbcc67523c12964ce5f16df",
+  "code_sha256": "e1141ba02316106312e6e9df06c41aaba180eca67559bb80f40913db60c8568f",
+  "code_uri": "store://bucket-main/silent/code/feeafe180d581baf5dbcc67523c12964ce5f16df-silent-eval-20261020-224808-0209.tar.gz",
+  "ledger_id": "silent-eval-20261020-224808-0209",
+  "image_family": "common-cu129-ubuntu-2204-nvidia-580",
+  "machine": "a2-highgpu-1g",
+  "gpu": "A100-40GB",
+  "project": "cloud-main",
+  "zones": [
+   "us-central1-a",
+   "us-central1-c",
+   "us-central1-b",
+   "us-central1-f"
+  ],
+  "image": "projects/deeplearning-platform-release/global/images/common-cu129-ubuntu-2204-nvidia-580-v20261019"
+ }
+}

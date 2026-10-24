@@ -1,0 +1,117 @@
+{
+  "source": "snippet",
+  "pdf_sha256": null,
+  "pdf_url": null,
+  "critic_log_row": null,
+  "_note": "registration 4.2 snippet values; the critic replaces source with 'pdf', fills pdf_sha256, critic_log_row and per cell pdf_table / pdf_row (and corrects value / spread) from the PDF",
+  "cells": [
+    {
+      "task": "prosqa",
+      "arm": "coconut",
+      "value": 97.0,
+      "spread": 0.3,
+      "gates": true,
+      "pdf_table": null,
+      "pdf_row": null
+    },
+    {
+      "task": "prosqa",
+      "arm": "pause",
+      "value": 96.6,
+      "spread": 0.8,
+      "gates": true,
+      "pdf_table": null,
+      "pdf_row": null
+    },
+    {
+      "task": "prosqa",
+      "arm": "cot",
+      "value": 77.5,
+      "spread": null,
+      "gates": true,
+      "pdf_table": null,
+      "pdf_row": null
+    },
+    {
+      "task": "prosqa",
+      "arm": "no_cot",
+      "value": 76.7,
+      "spread": null,
+      "gates": true,
+      "pdf_table": null,
+      "pdf_row": null
+    },
+    {
+      "task": "prosqa",
+      "arm": "coconut_no_curriculum",
+      "relative_to": "no_cot",
+      "spread": null,
+      "gates": true,
+      "pdf_table": null,
+      "pdf_row": null
+    },
+    {
+      "task": "prontoqa",
+      "arm": "coconut",
+      "value": 99.8,
+      "spread": null,
+      "gates": true,
+      "pdf_table": null,
+      "pdf_row": null
+    },
+    {
+      "task": "prontoqa",
+      "arm": "cot",
+      "value": 98.8,
+      "spread": null,
+      "gates": true,
+      "pdf_table": null,
+      "pdf_row": null
+    },
+    {
+      "task": "prontoqa",
+      "arm": "no_cot",
+      "value": 93.8,
+      "spread": null,
+      "gates": true,
+      "pdf_table": null,
+      "pdf_row": null
+    },
+    {
+      "task": "gsm",
+      "arm": "cot",
+      "value": 42.9,
+      "spread": null,
+      "gates": true,
+      "pdf_table": null,
+      "pdf_row": null
+    },
+    {
+      "task": "gsm",
+      "arm": "coconut",
+      "value": 34.1,
+      "spread": null,
+      "gates": true,
+      "pdf_table": null,
+      "pdf_row": null
+    },
+    {
+      "task": "gsm",
+      "arm": "no_cot",
+      "value": 16.5,
+      "spread": null,
+      "gates": true,
+      "pdf_table": null,
+      "pdf_row": null
+    },
+    {
+      "task": "gsm",
+      "arm": "pause",
+      "value": 24.1,
+      "spread": 0.7,
+      "gates": false,
+      "pdf_table": null,
+      "pdf_row": null
+    }
+  ]
+}

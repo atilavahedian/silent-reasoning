@@ -1,0 +1,1319 @@
+{
+  "rates": {
+    "tps": 70000.0,
+    "step_s": 0.02,
+    "val_s_per_ex": 0.1,
+    "source": "manual"
+  },
+  "margin": 1.3,
+  "overhead_h": 0.5,
+  "jobs": {
+    "screen-gsm50k-acctc": {
+      "project_alias": "acctc",
+      "gpu": "A100-80GB",
+      "current_max_hours": 24.0,
+      "sum_est_hours": 15.259153282611553,
+      "proposed_max_hours": 20.5,
+      "runs": [
+        {
+          "run": "gsm50k_cot_lr3e-5_s0",
+          "config": "configs/screen/gsm50k_cot_lr3e-5.json",
+          "epochs": 25,
+          "n_train": 50000,
+          "n_val": 500,
+          "train_h": 0.6273190476190476,
+          "val_h": 0.1736111111111111,
+          "hours": 0.8009301587301587,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 6323376,
+              "batches": 1563,
+              "latent_steps": 0
+            }
+          },
+          "pass_factor": 1.0,
+          "model_id": "openai-community/gpt2",
+          "model_cost_factor": 1.0
+        },
+        {
+          "run": "gsm50k_cot_lr1e-4_s0",
+          "config": "configs/screen/gsm50k_cot_lr1e-4.json",
+          "epochs": 25,
+          "n_train": 50000,
+          "n_val": 500,
+          "train_h": 0.6273190476190476,
+          "val_h": 0.1736111111111111,
+          "hours": 0.8009301587301587,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 6323376,
+              "batches": 1563,
+              "latent_steps": 0
+            }
+          },
+          "pass_factor": 1.0,
+          "model_id": "openai-community/gpt2",
+          "model_cost_factor": 1.0
+        },
+        {
+          "run": "gsm50k_cot_lr3e-4_s0",
+          "config": "configs/screen/gsm50k_cot_lr3e-4.json",
+          "epochs": 25,
+          "n_train": 50000,
+          "n_val": 500,
+          "train_h": 0.6273190476190476,
+          "val_h": 0.1736111111111111,
+          "hours": 0.8009301587301587,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 6323376,
+              "batches": 1563,
+              "latent_steps": 0
+            }
+          },
+          "pass_factor": 1.0,
+          "model_id": "openai-community/gpt2",
+          "model_cost_factor": 1.0
+        },
+        {
+          "run": "gsm50k_no_cot_s0",
+          "config": "configs/screen/gsm50k_no_cot.json",
+          "epochs": 25,
+          "n_train": 50000,
+          "n_val": 500,
+          "train_h": 0.40852857142857135,
+          "val_h": 0.1736111111111111,
+          "hours": 0.5821396825396824,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 4117968,
+              "batches": 1563,
+              "latent_steps": 0
+            }
+          },
+          "pass_factor": 1.0,
+          "model_id": "openai-community/gpt2",
+          "model_cost_factor": 1.0
+        },
+        {
+          "run": "gsm50k_plain_depth_355m_s0",
+          "config": "configs/screen/gsm50k_plain_depth_355m.json",
+          "epochs": 25,
+          "n_train": 50000,
+          "n_val": 500,
+          "train_h": 1.1658781811127124,
+          "val_h": 0.4954596094353446,
+          "hours": 1.661337790548057,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 4117968,
+              "batches": 1563,
+              "latent_steps": 0
+            }
+          },
+          "pass_factor": 1.0,
+          "model_id": "openai-community/gpt2-medium",
+          "model_cost_factor": 2.8538
+        },
+        {
+          "run": "gsm50k_pause_s0",
+          "config": "configs/screen/gsm50k_pause.json",
+          "epochs": 22,
+          "n_train": 50000,
+          "n_val": 500,
+          "train_h": 0.4612586666666667,
+          "val_h": 0.1527777777777778,
+          "hours": 0.6140364444444445,
+          "stages": {
+            "1": {
+              "padded_tokens_per_epoch": 6619536,
+              "batches": 1563,
+              "latent_steps": 0
+            },
+            "2": {
+              "padded_tokens_per_epoch": 6278048,
+              "batches": 1563,
+              "latent_steps": 0
+            },
+            "3": {
+              "padded_tokens_per_epoch": 5895712,
+              "batches": 1563,
+              "latent_steps": 0
+            },
+            "4": {
+              "padded_tokens_per_epoch": 4609968,
+              "batches": 1563,
+              "latent_steps": 0
+            },
+            "5": {
+              "padded_tokens_per_epoch": 4596928,
+              "batches": 1563,
+              "latent_steps": 0
+            },
+            "6": {
+              "padded_tokens_per_epoch": 4603936,
+              "batches": 1563,
+              "latent_steps": 0
+            },
+            "7": {
+              "padded_tokens_per_epoch": 4603248,
+              "batches": 1563,
+              "latent_steps": 0
+            },
+            "8": {
+              "padded_tokens_per_epoch": 4615056,
+              "batches": 1563,
+              "latent_steps": 0
+            }
+          },
+          "pass_factor": 1.0,
+          "model_id": "openai-community/gpt2",
+          "model_cost_factor": 1.0
+        },
+        {
+          "run": "gsm50k_coconut_s0",
+          "config": "configs/screen/gsm50k_coconut.json",
+          "epochs": 22,
+          "n_train": 50000,
+          "n_val": 500,
+          "train_h": 1.4511586666666672,
+          "val_h": 0.5486111111111112,
+          "hours": 1.9997697777777783,
+          "stages": {
+            "1": {
+              "padded_tokens_per_epoch": 6619536,
+              "batches": 1563,
+              "latent_steps": 2
+            },
+            "2": {
+              "padded_tokens_per_epoch": 6278048,
+              "batches": 1563,
+              "latent_steps": 4
+            },
+            "3": {
+              "padded_tokens_per_epoch": 5895712,
+              "batches": 1563,
+              "latent_steps": 6
+            },
+            "4": {
+              "padded_tokens_per_epoch": 4609968,
+              "batches": 1563,
+              "latent_steps": 6
+            },
+            "5": {
+              "padded_tokens_per_epoch": 4596928,
+              "batches": 1563,
+              "latent_steps": 6
+            },
+            "6": {
+              "padded_tokens_per_epoch": 4603936,
+              "batches": 1563,
+              "latent_steps": 6
+            },
+            "7": {
+              "padded_tokens_per_epoch": 4603248,
+              "batches": 1563,
+              "latent_steps": 6
+            },
+            "8": {
+              "padded_tokens_per_epoch": 4615056,
+              "batches": 1563,
+              "latent_steps": 6
+            }
+          },
+          "pass_factor": 1.0,
+          "model_id": "openai-community/gpt2",
+          "model_cost_factor": 1.0
+        },
+        {
+          "run": "gsm50k_c1b_k8_s0",
+          "config": "configs/screen/gsm50k_c1b_k8.json",
+          "epochs": 22,
+          "n_train": 50000,
+          "n_val": 500,
+          "train_h": 1.4511586666666672,
+          "val_h": 0.5486111111111112,
+          "hours": 1.9997697777777783,
+          "stages": {
+            "1": {
+              "padded_tokens_per_epoch": 6619536,
+              "batches": 1563,
+              "latent_steps": 2
+            },
+            "2": {
+              "padded_tokens_per_epoch": 6278048,
+              "batches": 1563,
+              "latent_steps": 4
+            },
+            "3": {
+              "padded_tokens_per_epoch": 5895712,
+              "batches": 1563,
+              "latent_steps": 6
+            },
+            "4": {
+              "padded_tokens_per_epoch": 4609968,
+              "batches": 1563,
+              "latent_steps": 6
+            },
+            "5": {
+              "padded_tokens_per_epoch": 4596928,
+              "batches": 1563,
+              "latent_steps": 6
+            },
+            "6": {
+              "padded_tokens_per_epoch": 4603936,
+              "batches": 1563,
+              "latent_steps": 6
+            },
+            "7": {
+              "padded_tokens_per_epoch": 4603248,
+              "batches": 1563,
+              "latent_steps": 6
+            },
+            "8": {
+              "padded_tokens_per_epoch": 4615056,
+              "batches": 1563,
+              "latent_steps": 6
+            }
+          },
+          "pass_factor": 1.0,
+          "model_id": "openai-community/gpt2",
+          "model_cost_factor": 1.0
+        },
+        {
+          "run": "gsm50k_c1b_k4_s0",
+          "config": "configs/screen/gsm50k_c1b_k4.json",
+          "epochs": 22,
+          "n_train": 50000,
+          "n_val": 500,
+          "train_h": 1.4511586666666672,
+          "val_h": 0.5486111111111112,
+          "hours": 1.9997697777777783,
+          "stages": {
+            "1": {
+              "padded_tokens_per_epoch": 6619536,
+              "batches": 1563,
+              "latent_steps": 2
+            },
+            "2": {
+              "padded_tokens_per_epoch": 6278048,
+              "batches": 1563,
+              "latent_steps": 4
+            },
+            "3": {
+              "padded_tokens_per_epoch": 5895712,
+              "batches": 1563,
+              "latent_steps": 6
+            },
+            "4": {
+              "padded_tokens_per_epoch": 4609968,
+              "batches": 1563,
+              "latent_steps": 6
+            },
+            "5": {
+              "padded_tokens_per_epoch": 4596928,
+              "batches": 1563,
+              "latent_steps": 6
+            },
+            "6": {
+              "padded_tokens_per_epoch": 4603936,
+              "batches": 1563,
+              "latent_steps": 6
+            },
+            "7": {
+              "padded_tokens_per_epoch": 4603248,
+              "batches": 1563,
+              "latent_steps": 6
+            },
+            "8": {
+              "padded_tokens_per_epoch": 4615056,
+              "batches": 1563,
+              "latent_steps": 6
+            }
+          },
+          "pass_factor": 1.0,
+          "model_id": "openai-community/gpt2",
+          "model_cost_factor": 1.0
+        },
+        {
+          "run": "gsm50k_c2_s0",
+          "config": "configs/screen/gsm50k_c2.json",
+          "epochs": 22,
+          "n_train": 50000,
+          "n_val": 500,
+          "train_h": 1.4511586666666672,
+          "val_h": 0.5486111111111112,
+          "hours": 1.9997697777777783,
+          "stages": {
+            "1": {
+              "padded_tokens_per_epoch": 6619536,
+              "batches": 1563,
+              "latent_steps": 2
+            },
+            "2": {
+              "padded_tokens_per_epoch": 6278048,
+              "batches": 1563,
+              "latent_steps": 4
+            },
+            "3": {
+              "padded_tokens_per_epoch": 5895712,
+              "batches": 1563,
+              "latent_steps": 6
+            },
+            "4": {
+              "padded_tokens_per_epoch": 4609968,
+              "batches": 1563,
+              "latent_steps": 6
+            },
+            "5": {
+              "padded_tokens_per_epoch": 4596928,
+              "batches": 1563,
+              "latent_steps": 6
+            },
+            "6": {
+              "padded_tokens_per_epoch": 4603936,
+              "batches": 1563,
+              "latent_steps": 6
+            },
+            "7": {
+              "padded_tokens_per_epoch": 4603248,
+              "batches": 1563,
+              "latent_steps": 6
+            },
+            "8": {
+              "padded_tokens_per_epoch": 4615056,
+              "batches": 1563,
+              "latent_steps": 6
+            }
+          },
+          "pass_factor": 1.0,
+          "model_id": "openai-community/gpt2",
+          "model_cost_factor": 1.0
+        },
+        {
+          "run": "gsm50k_c2_shuffled_s0",
+          "config": "configs/screen/gsm50k_c2_shuffled.json",
+          "epochs": 22,
+          "n_train": 50000,
+          "n_val": 500,
+          "train_h": 1.4511586666666672,
+          "val_h": 0.5486111111111112,
+          "hours": 1.9997697777777783,
+          "stages": {
+            "1": {
+              "padded_tokens_per_epoch": 6619536,
+              "batches": 1563,
+              "latent_steps": 2
+            },
+            "2": {
+              "padded_tokens_per_epoch": 6278048,
+              "batches": 1563,
+              "latent_steps": 4
+            },
+            "3": {
+              "padded_tokens_per_epoch": 5895712,
+              "batches": 1563,
+              "latent_steps": 6
+            },
+            "4": {
+              "padded_tokens_per_epoch": 4609968,
+              "batches": 1563,
+              "latent_steps": 6
+            },
+            "5": {
+              "padded_tokens_per_epoch": 4596928,
+              "batches": 1563,
+              "latent_steps": 6
+            },
+            "6": {
+              "padded_tokens_per_epoch": 4603936,
+              "batches": 1563,
+              "latent_steps": 6
+            },
+            "7": {
+              "padded_tokens_per_epoch": 4603248,
+              "batches": 1563,
+              "latent_steps": 6
+            },
+            "8": {
+              "padded_tokens_per_epoch": 4615056,
+              "batches": 1563,
+              "latent_steps": 6
+            }
+          },
+          "pass_factor": 1.0,
+          "model_id": "openai-community/gpt2",
+          "model_cost_factor": 1.0
+        }
+      ]
+    },
+    "screen-gsm50k-accta": {
+      "project_alias": "accta",
+      "gpu": "A100-80GB",
+      "current_max_hours": 24.0,
+      "sum_est_hours": 11.803944,
+      "proposed_max_hours": 16.0,
+      "runs": [
+        {
+          "run": "gsm50k_c3_s0",
+          "config": "configs/screen/gsm50k_c3.json",
+          "epochs": 22,
+          "n_train": 50000,
+          "n_val": 500,
+          "train_h": 2.9023173333333343,
+          "val_h": 0.5486111111111112,
+          "hours": 3.4509284444444455,
+          "stages": {
+            "1": {
+              "padded_tokens_per_epoch": 6619536,
+              "batches": 1563,
+              "latent_steps": 2
+            },
+            "2": {
+              "padded_tokens_per_epoch": 6278048,
+              "batches": 1563,
+              "latent_steps": 4
+            },
+            "3": {
+              "padded_tokens_per_epoch": 5895712,
+              "batches": 1563,
+              "latent_steps": 6
+            },
+            "4": {
+              "padded_tokens_per_epoch": 4609968,
+              "batches": 1563,
+              "latent_steps": 6
+            },
+            "5": {
+              "padded_tokens_per_epoch": 4596928,
+              "batches": 1563,
+              "latent_steps": 6
+            },
+            "6": {
+              "padded_tokens_per_epoch": 4603936,
+              "batches": 1563,
+              "latent_steps": 6
+            },
+            "7": {
+              "padded_tokens_per_epoch": 4603248,
+              "batches": 1563,
+              "latent_steps": 6
+            },
+            "8": {
+              "padded_tokens_per_epoch": 4615056,
+              "batches": 1563,
+              "latent_steps": 6
+            }
+          },
+          "pass_factor": 2.0,
+          "model_id": "openai-community/gpt2",
+          "model_cost_factor": 1.0
+        },
+        {
+          "run": "gsm50k_c3_foreign_s0",
+          "config": "configs/screen/gsm50k_c3_foreign.json",
+          "epochs": 22,
+          "n_train": 50000,
+          "n_val": 500,
+          "train_h": 4.353475999999999,
+          "val_h": 0.5486111111111112,
+          "hours": 4.9020871111111095,
+          "stages": {
+            "1": {
+              "padded_tokens_per_epoch": 6619536,
+              "batches": 1563,
+              "latent_steps": 2
+            },
+            "2": {
+              "padded_tokens_per_epoch": 6278048,
+              "batches": 1563,
+              "latent_steps": 4
+            },
+            "3": {
+              "padded_tokens_per_epoch": 5895712,
+              "batches": 1563,
+              "latent_steps": 6
+            },
+            "4": {
+              "padded_tokens_per_epoch": 4609968,
+              "batches": 1563,
+              "latent_steps": 6
+            },
+            "5": {
+              "padded_tokens_per_epoch": 4596928,
+              "batches": 1563,
+              "latent_steps": 6
+            },
+            "6": {
+              "padded_tokens_per_epoch": 4603936,
+              "batches": 1563,
+              "latent_steps": 6
+            },
+            "7": {
+              "padded_tokens_per_epoch": 4603248,
+              "batches": 1563,
+              "latent_steps": 6
+            },
+            "8": {
+              "padded_tokens_per_epoch": 4615056,
+              "batches": 1563,
+              "latent_steps": 6
+            }
+          },
+          "pass_factor": 3.0,
+          "model_id": "openai-community/gpt2",
+          "model_cost_factor": 1.0
+        },
+        {
+          "run": "gsm50k_c2c3_s0",
+          "config": "configs/screen/gsm50k_c2c3.json",
+          "epochs": 22,
+          "n_train": 50000,
+          "n_val": 500,
+          "train_h": 2.9023173333333343,
+          "val_h": 0.5486111111111112,
+          "hours": 3.4509284444444455,
+          "stages": {
+            "1": {
+              "padded_tokens_per_epoch": 6619536,
+              "batches": 1563,
+              "latent_steps": 2
+            },
+            "2": {
+              "padded_tokens_per_epoch": 6278048,
+              "batches": 1563,
+              "latent_steps": 4
+            },
+            "3": {
+              "padded_tokens_per_epoch": 5895712,
+              "batches": 1563,
+              "latent_steps": 6
+            },
+            "4": {
+              "padded_tokens_per_epoch": 4609968,
+              "batches": 1563,
+              "latent_steps": 6
+            },
+            "5": {
+              "padded_tokens_per_epoch": 4596928,
+              "batches": 1563,
+              "latent_steps": 6
+            },
+            "6": {
+              "padded_tokens_per_epoch": 4603936,
+              "batches": 1563,
+              "latent_steps": 6
+            },
+            "7": {
+              "padded_tokens_per_epoch": 4603248,
+              "batches": 1563,
+              "latent_steps": 6
+            },
+            "8": {
+              "padded_tokens_per_epoch": 4615056,
+              "batches": 1563,
+              "latent_steps": 6
+            }
+          },
+          "pass_factor": 2.0,
+          "model_id": "openai-community/gpt2",
+          "model_cost_factor": 1.0
+        }
+      ]
+    },
+    "screen-prosqa-hard-acctb": {
+      "project_alias": "acctb",
+      "gpu": "A100-80GB",
+      "current_max_hours": 24.0,
+      "sum_est_hours": 31.345663408208118,
+      "proposed_max_hours": 41.5,
+      "runs": [
+        {
+          "run": "prosqa_hard_cot_lr3e-5_s0",
+          "config": "configs/screen/prosqa_hard_cot_lr3e-5.json",
+          "epochs": 30,
+          "n_train": 10000,
+          "n_val": 300,
+          "train_h": 1.0682209523809518,
+          "val_h": 0.25,
+          "hours": 1.3182209523809518,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 8973056,
+              "batches": 313,
+              "latent_steps": 0
+            }
+          },
+          "pass_factor": 1.0,
+          "model_id": "openai-community/gpt2",
+          "model_cost_factor": 1.0
+        },
+        {
+          "run": "prosqa_hard_cot_lr1e-4_s0",
+          "config": "configs/screen/prosqa_hard_cot_lr1e-4.json",
+          "epochs": 30,
+          "n_train": 10000,
+          "n_val": 300,
+          "train_h": 1.0682209523809518,
+          "val_h": 0.25,
+          "hours": 1.3182209523809518,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 8973056,
+              "batches": 313,
+              "latent_steps": 0
+            }
+          },
+          "pass_factor": 1.0,
+          "model_id": "openai-community/gpt2",
+          "model_cost_factor": 1.0
+        },
+        {
+          "run": "prosqa_hard_cot_lr3e-4_s0",
+          "config": "configs/screen/prosqa_hard_cot_lr3e-4.json",
+          "epochs": 30,
+          "n_train": 10000,
+          "n_val": 300,
+          "train_h": 1.0682209523809518,
+          "val_h": 0.25,
+          "hours": 1.3182209523809518,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 8973056,
+              "batches": 313,
+              "latent_steps": 0
+            }
+          },
+          "pass_factor": 1.0,
+          "model_id": "openai-community/gpt2",
+          "model_cost_factor": 1.0
+        },
+        {
+          "run": "prosqa_hard_no_cot_s0",
+          "config": "configs/screen/prosqa_hard_no_cot.json",
+          "epochs": 30,
+          "n_train": 10000,
+          "n_val": 300,
+          "train_h": 0.9942895238095238,
+          "val_h": 0.25,
+          "hours": 1.2442895238095237,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 8352032,
+              "batches": 313,
+              "latent_steps": 0
+            }
+          },
+          "pass_factor": 1.0,
+          "model_id": "openai-community/gpt2",
+          "model_cost_factor": 1.0
+        },
+        {
+          "run": "prosqa_hard_pause_s0",
+          "config": "configs/screen/prosqa_hard_pause.json",
+          "epochs": 30,
+          "n_train": 10000,
+          "n_val": 300,
+          "train_h": 1.0397306666666666,
+          "val_h": 0.25,
+          "hours": 1.2897306666666666,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 8993056,
+              "batches": 313,
+              "latent_steps": 0
+            },
+            "1": {
+              "padded_tokens_per_epoch": 9103376,
+              "batches": 313,
+              "latent_steps": 0
+            },
+            "2": {
+              "padded_tokens_per_epoch": 8996816,
+              "batches": 313,
+              "latent_steps": 0
+            },
+            "3": {
+              "padded_tokens_per_epoch": 8861440,
+              "batches": 313,
+              "latent_steps": 0
+            },
+            "4": {
+              "padded_tokens_per_epoch": 8776112,
+              "batches": 313,
+              "latent_steps": 0
+            },
+            "5": {
+              "padded_tokens_per_epoch": 8673712,
+              "batches": 313,
+              "latent_steps": 0
+            },
+            "6": {
+              "padded_tokens_per_epoch": 8581808,
+              "batches": 313,
+              "latent_steps": 0
+            },
+            "7": {
+              "padded_tokens_per_epoch": 8473008,
+              "batches": 313,
+              "latent_steps": 0
+            },
+            "8": {
+              "padded_tokens_per_epoch": 8438176,
+              "batches": 313,
+              "latent_steps": 0
+            },
+            "9": {
+              "padded_tokens_per_epoch": 8439872,
+              "batches": 313,
+              "latent_steps": 0
+            }
+          },
+          "pass_factor": 1.0,
+          "model_id": "openai-community/gpt2",
+          "model_cost_factor": 1.0
+        },
+        {
+          "run": "prosqa_hard_coconut_s0",
+          "config": "configs/screen/prosqa_hard_coconut.json",
+          "epochs": 30,
+          "n_train": 10000,
+          "n_val": 300,
+          "train_h": 1.258830666666667,
+          "val_h": 0.775,
+          "hours": 2.0338306666666672,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 8993056,
+              "batches": 313,
+              "latent_steps": 0
+            },
+            "1": {
+              "padded_tokens_per_epoch": 9103376,
+              "batches": 313,
+              "latent_steps": 1
+            },
+            "2": {
+              "padded_tokens_per_epoch": 8996816,
+              "batches": 313,
+              "latent_steps": 2
+            },
+            "3": {
+              "padded_tokens_per_epoch": 8861440,
+              "batches": 313,
+              "latent_steps": 3
+            },
+            "4": {
+              "padded_tokens_per_epoch": 8776112,
+              "batches": 313,
+              "latent_steps": 4
+            },
+            "5": {
+              "padded_tokens_per_epoch": 8673712,
+              "batches": 313,
+              "latent_steps": 5
+            },
+            "6": {
+              "padded_tokens_per_epoch": 8581808,
+              "batches": 313,
+              "latent_steps": 6
+            },
+            "7": {
+              "padded_tokens_per_epoch": 8473008,
+              "batches": 313,
+              "latent_steps": 7
+            },
+            "8": {
+              "padded_tokens_per_epoch": 8438176,
+              "batches": 313,
+              "latent_steps": 7
+            },
+            "9": {
+              "padded_tokens_per_epoch": 8439872,
+              "batches": 313,
+              "latent_steps": 7
+            }
+          },
+          "pass_factor": 1.0,
+          "model_id": "openai-community/gpt2",
+          "model_cost_factor": 1.0
+        },
+        {
+          "run": "prosqa_hard_c1b_k8_s0",
+          "config": "configs/screen/prosqa_hard_c1b_k8.json",
+          "epochs": 30,
+          "n_train": 10000,
+          "n_val": 300,
+          "train_h": 1.258830666666667,
+          "val_h": 0.775,
+          "hours": 2.0338306666666672,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 8993056,
+              "batches": 313,
+              "latent_steps": 0
+            },
+            "1": {
+              "padded_tokens_per_epoch": 9103376,
+              "batches": 313,
+              "latent_steps": 1
+            },
+            "2": {
+              "padded_tokens_per_epoch": 8996816,
+              "batches": 313,
+              "latent_steps": 2
+            },
+            "3": {
+              "padded_tokens_per_epoch": 8861440,
+              "batches": 313,
+              "latent_steps": 3
+            },
+            "4": {
+              "padded_tokens_per_epoch": 8776112,
+              "batches": 313,
+              "latent_steps": 4
+            },
+            "5": {
+              "padded_tokens_per_epoch": 8673712,
+              "batches": 313,
+              "latent_steps": 5
+            },
+            "6": {
+              "padded_tokens_per_epoch": 8581808,
+              "batches": 313,
+              "latent_steps": 6
+            },
+            "7": {
+              "padded_tokens_per_epoch": 8473008,
+              "batches": 313,
+              "latent_steps": 7
+            },
+            "8": {
+              "padded_tokens_per_epoch": 8438176,
+              "batches": 313,
+              "latent_steps": 7
+            },
+            "9": {
+              "padded_tokens_per_epoch": 8439872,
+              "batches": 313,
+              "latent_steps": 7
+            }
+          },
+          "pass_factor": 1.0,
+          "model_id": "openai-community/gpt2",
+          "model_cost_factor": 1.0
+        },
+        {
+          "run": "prosqa_hard_c1b_k4_s0",
+          "config": "configs/screen/prosqa_hard_c1b_k4.json",
+          "epochs": 30,
+          "n_train": 10000,
+          "n_val": 300,
+          "train_h": 1.258830666666667,
+          "val_h": 0.775,
+          "hours": 2.0338306666666672,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 8993056,
+              "batches": 313,
+              "latent_steps": 0
+            },
+            "1": {
+              "padded_tokens_per_epoch": 9103376,
+              "batches": 313,
+              "latent_steps": 1
+            },
+            "2": {
+              "padded_tokens_per_epoch": 8996816,
+              "batches": 313,
+              "latent_steps": 2
+            },
+            "3": {
+              "padded_tokens_per_epoch": 8861440,
+              "batches": 313,
+              "latent_steps": 3
+            },
+            "4": {
+              "padded_tokens_per_epoch": 8776112,
+              "batches": 313,
+              "latent_steps": 4
+            },
+            "5": {
+              "padded_tokens_per_epoch": 8673712,
+              "batches": 313,
+              "latent_steps": 5
+            },
+            "6": {
+              "padded_tokens_per_epoch": 8581808,
+              "batches": 313,
+              "latent_steps": 6
+            },
+            "7": {
+              "padded_tokens_per_epoch": 8473008,
+              "batches": 313,
+              "latent_steps": 7
+            },
+            "8": {
+              "padded_tokens_per_epoch": 8438176,
+              "batches": 313,
+              "latent_steps": 7
+            },
+            "9": {
+              "padded_tokens_per_epoch": 8439872,
+              "batches": 313,
+              "latent_steps": 7
+            }
+          },
+          "pass_factor": 1.0,
+          "model_id": "openai-community/gpt2",
+          "model_cost_factor": 1.0
+        },
+        {
+          "run": "prosqa_hard_c2_s0",
+          "config": "configs/screen/prosqa_hard_c2.json",
+          "epochs": 30,
+          "n_train": 10000,
+          "n_val": 300,
+          "train_h": 1.258830666666667,
+          "val_h": 0.775,
+          "hours": 2.0338306666666672,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 8993056,
+              "batches": 313,
+              "latent_steps": 0
+            },
+            "1": {
+              "padded_tokens_per_epoch": 9103376,
+              "batches": 313,
+              "latent_steps": 1
+            },
+            "2": {
+              "padded_tokens_per_epoch": 8996816,
+              "batches": 313,
+              "latent_steps": 2
+            },
+            "3": {
+              "padded_tokens_per_epoch": 8861440,
+              "batches": 313,
+              "latent_steps": 3
+            },
+            "4": {
+              "padded_tokens_per_epoch": 8776112,
+              "batches": 313,
+              "latent_steps": 4
+            },
+            "5": {
+              "padded_tokens_per_epoch": 8673712,
+              "batches": 313,
+              "latent_steps": 5
+            },
+            "6": {
+              "padded_tokens_per_epoch": 8581808,
+              "batches": 313,
+              "latent_steps": 6
+            },
+            "7": {
+              "padded_tokens_per_epoch": 8473008,
+              "batches": 313,
+              "latent_steps": 7
+            },
+            "8": {
+              "padded_tokens_per_epoch": 8438176,
+              "batches": 313,
+              "latent_steps": 7
+            },
+            "9": {
+              "padded_tokens_per_epoch": 8439872,
+              "batches": 313,
+              "latent_steps": 7
+            }
+          },
+          "pass_factor": 1.0,
+          "model_id": "openai-community/gpt2",
+          "model_cost_factor": 1.0
+        },
+        {
+          "run": "prosqa_hard_c2_shuffled_s0",
+          "config": "configs/screen/prosqa_hard_c2_shuffled.json",
+          "epochs": 30,
+          "n_train": 10000,
+          "n_val": 300,
+          "train_h": 1.258830666666667,
+          "val_h": 0.775,
+          "hours": 2.0338306666666672,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 8993056,
+              "batches": 313,
+              "latent_steps": 0
+            },
+            "1": {
+              "padded_tokens_per_epoch": 9103376,
+              "batches": 313,
+              "latent_steps": 1
+            },
+            "2": {
+              "padded_tokens_per_epoch": 8996816,
+              "batches": 313,
+              "latent_steps": 2
+            },
+            "3": {
+              "padded_tokens_per_epoch": 8861440,
+              "batches": 313,
+              "latent_steps": 3
+            },
+            "4": {
+              "padded_tokens_per_epoch": 8776112,
+              "batches": 313,
+              "latent_steps": 4
+            },
+            "5": {
+              "padded_tokens_per_epoch": 8673712,
+              "batches": 313,
+              "latent_steps": 5
+            },
+            "6": {
+              "padded_tokens_per_epoch": 8581808,
+              "batches": 313,
+              "latent_steps": 6
+            },
+            "7": {
+              "padded_tokens_per_epoch": 8473008,
+              "batches": 313,
+              "latent_steps": 7
+            },
+            "8": {
+              "padded_tokens_per_epoch": 8438176,
+              "batches": 313,
+              "latent_steps": 7
+            },
+            "9": {
+              "padded_tokens_per_epoch": 8439872,
+              "batches": 313,
+              "latent_steps": 7
+            }
+          },
+          "pass_factor": 1.0,
+          "model_id": "openai-community/gpt2",
+          "model_cost_factor": 1.0
+        },
+        {
+          "run": "prosqa_hard_c3_s0",
+          "config": "configs/screen/prosqa_hard_c3.json",
+          "epochs": 30,
+          "n_train": 10000,
+          "n_val": 300,
+          "train_h": 2.517661333333334,
+          "val_h": 0.775,
+          "hours": 3.292661333333334,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 8993056,
+              "batches": 313,
+              "latent_steps": 0
+            },
+            "1": {
+              "padded_tokens_per_epoch": 9103376,
+              "batches": 313,
+              "latent_steps": 1
+            },
+            "2": {
+              "padded_tokens_per_epoch": 8996816,
+              "batches": 313,
+              "latent_steps": 2
+            },
+            "3": {
+              "padded_tokens_per_epoch": 8861440,
+              "batches": 313,
+              "latent_steps": 3
+            },
+            "4": {
+              "padded_tokens_per_epoch": 8776112,
+              "batches": 313,
+              "latent_steps": 4
+            },
+            "5": {
+              "padded_tokens_per_epoch": 8673712,
+              "batches": 313,
+              "latent_steps": 5
+            },
+            "6": {
+              "padded_tokens_per_epoch": 8581808,
+              "batches": 313,
+              "latent_steps": 6
+            },
+            "7": {
+              "padded_tokens_per_epoch": 8473008,
+              "batches": 313,
+              "latent_steps": 7
+            },
+            "8": {
+              "padded_tokens_per_epoch": 8438176,
+              "batches": 313,
+              "latent_steps": 7
+            },
+            "9": {
+              "padded_tokens_per_epoch": 8439872,
+              "batches": 313,
+              "latent_steps": 7
+            }
+          },
+          "pass_factor": 2.0,
+          "model_id": "openai-community/gpt2",
+          "model_cost_factor": 1.0
+        },
+        {
+          "run": "prosqa_hard_c3_foreign_s0",
+          "config": "configs/screen/prosqa_hard_c3_foreign.json",
+          "epochs": 30,
+          "n_train": 10000,
+          "n_val": 300,
+          "train_h": 3.776491999999999,
+          "val_h": 0.775,
+          "hours": 4.551491999999999,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 8993056,
+              "batches": 313,
+              "latent_steps": 0
+            },
+            "1": {
+              "padded_tokens_per_epoch": 9103376,
+              "batches": 313,
+              "latent_steps": 1
+            },
+            "2": {
+              "padded_tokens_per_epoch": 8996816,
+              "batches": 313,
+              "latent_steps": 2
+            },
+            "3": {
+              "padded_tokens_per_epoch": 8861440,
+              "batches": 313,
+              "latent_steps": 3
+            },
+            "4": {
+              "padded_tokens_per_epoch": 8776112,
+              "batches": 313,
+              "latent_steps": 4
+            },
+            "5": {
+              "padded_tokens_per_epoch": 8673712,
+              "batches": 313,
+              "latent_steps": 5
+            },
+            "6": {
+              "padded_tokens_per_epoch": 8581808,
+              "batches": 313,
+              "latent_steps": 6
+            },
+            "7": {
+              "padded_tokens_per_epoch": 8473008,
+              "batches": 313,
+              "latent_steps": 7
+            },
+            "8": {
+              "padded_tokens_per_epoch": 8438176,
+              "batches": 313,
+              "latent_steps": 7
+            },
+            "9": {
+              "padded_tokens_per_epoch": 8439872,
+              "batches": 313,
+              "latent_steps": 7
+            }
+          },
+          "pass_factor": 3.0,
+          "model_id": "openai-community/gpt2",
+          "model_cost_factor": 1.0
+        },
+        {
+          "run": "prosqa_hard_c2c3_s0",
+          "config": "configs/screen/prosqa_hard_c2c3.json",
+          "epochs": 30,
+          "n_train": 10000,
+          "n_val": 300,
+          "train_h": 2.517661333333334,
+          "val_h": 0.775,
+          "hours": 3.292661333333334,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 8993056,
+              "batches": 313,
+              "latent_steps": 0
+            },
+            "1": {
+              "padded_tokens_per_epoch": 9103376,
+              "batches": 313,
+              "latent_steps": 1
+            },
+            "2": {
+              "padded_tokens_per_epoch": 8996816,
+              "batches": 313,
+              "latent_steps": 2
+            },
+            "3": {
+              "padded_tokens_per_epoch": 8861440,
+              "batches": 313,
+              "latent_steps": 3
+            },
+            "4": {
+              "padded_tokens_per_epoch": 8776112,
+              "batches": 313,
+              "latent_steps": 4
+            },
+            "5": {
+              "padded_tokens_per_epoch": 8673712,
+              "batches": 313,
+              "latent_steps": 5
+            },
+            "6": {
+              "padded_tokens_per_epoch": 8581808,
+              "batches": 313,
+              "latent_steps": 6
+            },
+            "7": {
+              "padded_tokens_per_epoch": 8473008,
+              "batches": 313,
+              "latent_steps": 7
+            },
+            "8": {
+              "padded_tokens_per_epoch": 8438176,
+              "batches": 313,
+              "latent_steps": 7
+            },
+            "9": {
+              "padded_tokens_per_epoch": 8439872,
+              "batches": 313,
+              "latent_steps": 7
+            }
+          },
+          "pass_factor": 2.0,
+          "model_id": "openai-community/gpt2",
+          "model_cost_factor": 1.0
+        },
+        {
+          "run": "prosqa_hard_plain_depth_355m_s0",
+          "config": "configs/screen/prosqa_hard_plain_depth_355m.json",
+          "epochs": 30,
+          "n_train": 10000,
+          "n_val": 300,
+          "train_h": 2.8375505230021703,
+          "val_h": 0.7134618375868964,
+          "hours": 3.551012360589066,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 8352032,
+              "batches": 313,
+              "latent_steps": 0
+            }
+          },
+          "pass_factor": 1.0,
+          "model_id": "openai-community/gpt2-medium",
+          "model_cost_factor": 2.8538
+        }
+      ]
+    }
+  }
+}

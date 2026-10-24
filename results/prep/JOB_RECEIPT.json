@@ -1,0 +1,216 @@
+{
+ "job": "prep-main",
+ "kind": "prep",
+ "attempt": "silent-prep-20261018-233840-a4d5",
+ "status": "running",
+ "spec_sha256": "934c4b1b30ecca458c254d46ec15faeb31b97a18b3154024210b3fa0240467b8",
+ "spec": {
+  "name": "prep-main",
+  "kind": "prep",
+  "provider": "gcp",
+  "project": "cloud-main",
+  "project_alias": "main",
+  "bucket": "store://bucket-main",
+  "gpu": "A100-40GB",
+  "max_hours": 2,
+  "provisioning": "SPOT",
+  "precision": "fp32-tf32",
+  "tf32": true,
+  "prep": {
+   "tasks": [
+    "prosqa",
+    "gsm",
+    "prontoqa"
+   ],
+   "smoke_config": "configs/smoke_prosqa.json",
+   "paper_url": "https://arxiv.org/pdf/2412.06769",
+   "model": "openai-community/gpt2"
+  },
+  "_launch": {
+   "ledger_id": "silent-prep-20261018-233840-a4d5",
+   "provider": "gcp",
+   "project": "cloud-main",
+   "zones": [
+    "us-central1-a",
+    "us-central1-c"
+   ],
+   "bucket": "store://bucket-main",
+   "machine": "a2-highgpu-1g",
+   "gpu": "A100-40GB",
+   "provisioning": "SPOT",
+   "max_run_s": 7200,
+   "deadline_epoch": 1792373920,
+   "code_uri": "store://bucket-main/silent/code/917f8db68c4ea6e0cbe83c3be00b0fc54bd064a5-silent-prep-20261018-233840-a4d5.tar.gz",
+   "code_commit": "917f8db68c4ea6e0cbe83c3be00b0fc54bd064a5",
+   "code_sha256": "133d620b7c29a9ba051d16bb1ae2178fc584333d4e4822988a5b55c131e5cbbd",
+   "admitted": "2026-10-18T23:38:40Z",
+   "critic_rows": [
+    "2026-10-18T22:31Z",
+    "2026-10-18T23:27Z"
+   ],
+   "image_family": "common-cu129-ubuntu-2204-nvidia-580"
+  }
+ },
+ "started": "2026-10-18T23:44:37Z",
+ "ended": null,
+ "deadline": "2026-10-19T01:38:40Z",
+ "steps": [
+  {
+   "step": "data",
+   "ok": true,
+   "time": "2026-10-19T00:18:51Z",
+   "source": "fetch_data.py",
+   "tasks": [
+    "prosqa",
+    "gsm",
+    "prontoqa"
+   ],
+   "files": 13
+  },
+  {
+   "step": "pin",
+   "ok": true,
+   "time": "2026-10-19T00:18:58Z",
+   "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+   "weights_sha256": "248dfc3911869ec493c76e65bf2fcf7f615828b0254c12b473182f0f81d3a707"
+  },
+  {
+   "step": "paper",
+   "ok": true,
+   "time": "2026-10-19T00:18:58Z",
+   "url": "https://arxiv.org/pdf/2412.06769",
+   "sha256": "27db5069d4361a607f02133ab4da4d9dae601bfbff0677191b3ba7febe2f987c",
+   "curl_status": "done",
+   "excerpt_pages": [
+    4,
+    5,
+    9,
+    10,
+    17
+   ]
+  },
+  {
+   "step": "pytest_cpu",
+   "ok": false,
+   "time": "2026-10-19T00:20:15Z",
+   "rc": 1,
+   "status": "failed",
+   "tail": [
+    "=========================== short test summary info ============================",
+    "FAILED common/latent/tests/test_state_targets.py::test_gsm_parser_on_1000_real_records",
+    "1 failed, 1028 passed, 2 skipped in 73.48s (0:01:13)"
+   ]
+  },
+  {
+   "step": "calibrate",
+   "ok": true,
+   "time": "2026-10-19T00:20:53Z",
+   "rc": 0,
+   "status": "done"
+  },
+  {
+   "step": "calibrate_real",
+   "ok": true,
+   "time": "2026-10-19T00:21:42Z",
+   "rc": 0,
+   "status": "done"
+  },
+  {
+   "step": "smoke_prosqa_gpu_resume",
+   "ok": false,
+   "time": "2026-10-19T00:23:26Z",
+   "phase1": {
+    "rc": -15,
+    "status": "failed",
+    "killed": true,
+    "log_rows": 1
+   },
+   "restore": {
+    "ok": true,
+    "why": "restored 6 files at log row 1",
+    "snapshot_files": [
+     "ckpt_best.pt",
+     "ckpt_last.pt",
+     "ckpt_state.json",
+     "config.json",
+     "log.jsonl",
+     "runs_index_row.csv"
+    ]
+   },
+   "phase2": {
+    "rc": 1,
+    "status": "failed",
+    "log_epochs": [
+     1
+    ],
+    "latest_epoch": 1
+   }
+  },
+  {
+   "step": "smoke_prosqa_cot_gpu_resume",
+   "ok": true,
+   "time": "2026-10-19T00:27:20Z",
+   "phase1": {
+    "rc": -15,
+    "status": "failed",
+    "killed": true,
+    "log_rows": 1
+   },
+   "restore": {
+    "ok": true,
+    "why": "restored 7 files at log row 1",
+    "snapshot_files": [
+     "ckpt_best.pt",
+     "ckpt_best_final.pt",
+     "ckpt_state.json",
+     "config.json",
+     "log.jsonl",
+     "optimizer_last.pth",
+     "runs_index_row.csv"
+    ]
+   },
+   "phase2": {
+    "rc": 0,
+    "status": "done",
+    "log_epochs": [
+     1,
+     2
+    ],
+    "latest_epoch": 2
+   }
+  }
+ ],
+ "runs": [],
+ "evals": [],
+ "env": {
+  "host": "silent-prep-20261018-233840-a4d5",
+  "python": "3.10.12",
+  "platform": "Linux-6.8.0-1070-gcp-x86_64-with-glibc2.35",
+  "time": "2026-10-18T23:44:37Z",
+  "gpu_name": "NVIDIA A100-SXM4-40GB",
+  "driver": "580.178.04",
+  "gpu_memory": "40960 MiB",
+  "torch": "2.14.1",
+  "transformers": "4.57.6",
+  "numpy": "2.2.6",
+  "scipy": "1.15.3",
+  "huggingface_hub": "0.36.2",
+  "tokenizers": "0.22.2",
+  "safetensors": "0.8.0",
+  "torch_cuda": "13.0",
+  "cudnn": 92400,
+  "git_commit": "917f8db68c4ea6e0cbe83c3be00b0fc54bd064a5",
+  "code_sha256": "133d620b7c29a9ba051d16bb1ae2178fc584333d4e4822988a5b55c131e5cbbd",
+  "code_uri": "store://bucket-main/silent/code/917f8db68c4ea6e0cbe83c3be00b0fc54bd064a5-silent-prep-20261018-233840-a4d5.tar.gz",
+  "ledger_id": "silent-prep-20261018-233840-a4d5",
+  "image_family": "common-cu129-ubuntu-2204-nvidia-580",
+  "machine": "a2-highgpu-1g",
+  "gpu": "A100-40GB",
+  "project": "cloud-main",
+  "zones": [
+   "us-central1-a",
+   "us-central1-c"
+  ],
+  "image": "projects/deeplearning-platform-release/global/images/common-cu129-ubuntu-2204-nvidia-580-v20261016"
+ }
+}

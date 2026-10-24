@@ -1,0 +1,409 @@
+{
+  "tool": "run_diag.py",
+  "mode": "band_logits",
+  "answers": "A6.2 rule 3's strict-fp32 logits check (critic entry 2026-10-20T12:40Z, the registered diagnostic; A14.1; the 10:51Z row part (3))",
+  "critic_row": "2026-10-20T21:33Z",
+  "critic_row_in_log": true,
+  "mode_critic_row": "2026-10-20T12:40Z",
+  "task": "prosqa_hard",
+  "run": "prosqa_hard_coconut_s0",
+  "arm": "coconut",
+  "seed": 0,
+  "config": "configs/screen/prosqa_hard_coconut.json",
+  "overrides": [
+    "device=\"cuda\"",
+    "model_id=\"/opt/silent/out/hf/hub/models--openai-community--gpt2/snapshots/607a30d783dfa663caf39e06633721c8d4cfcd7e\"",
+    "seed=0",
+    "name=\"prosqa_hard_coconut_s0\""
+  ],
+  "checkpoint": "/opt/silent/out/eval_ckpts/prosqa_hard_coconut_s0_valid_band_logits_cuda_float64/ckpt_best_final.pt",
+  "checkpoint_sha256": "37cd86030812286333b40185ea5b45fe575764210ce65a6e5c050259da290865",
+  "split": "valid",
+  "split_file": "data/prosqa_hard_valid.json",
+  "split_sha256": "2d7123f2cc5e97639cf8cce6eb466b61ec8db09126502c46ddf20b5317075cae",
+  "n": 300,
+  "batch_size": 32,
+  "batch": {
+    "rule": "the split's first batch_size examples in file order (the read's first batch)",
+    "idx": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31
+    ]
+  },
+  "extra_idx": [
+    21,
+    268
+  ],
+  "band": [
+    0,
+    12
+  ],
+  "n_layer": 12,
+  "max_new_tokens": 128,
+  "n_latent": 7,
+  "perm_seed": 0,
+  "tol": 1e-08,
+  "precision": "bf16",
+  "tf32_modes": [
+    "strict"
+  ],
+  "dtype": "float64",
+  "strict_only": true,
+  "base": null,
+  "dtypes": {
+    "weights": [
+      "float64"
+    ],
+    "activations": [
+      "float64"
+    ]
+  },
+  "numerics": {
+    "strict": {
+      "set": "strict float64: model weights and activations float64 on cuda, no autocast (TF32 off and float32 matmul precision highest as for strict fp32; float64 matmuls do not use TF32)",
+      "registered_flags": "fp32",
+      "autocast": null,
+      "dtype": "float64",
+      "tf32_requested": false,
+      "cuda.matmul.allow_tf32": false,
+      "cudnn.allow_tf32": false,
+      "float32_matmul_precision": "highest",
+      "torch": "2.14.1+cu130",
+      "cuda": "13.0",
+      "cuda.matmul.fp32_precision": "ieee",
+      "cudnn.fp32_precision": "ieee",
+      "torch_at_start": {
+        "cuda.matmul.allow_tf32": false,
+        "cudnn.allow_tf32": false,
+        "float32_matmul_precision": "highest",
+        "autocast_enabled": false,
+        "autocast_dtype": null
+      },
+      "torch_at_end": {
+        "cuda.matmul.allow_tf32": false,
+        "cudnn.allow_tf32": false,
+        "float32_matmul_precision": "highest",
+        "autocast_enabled": false,
+        "autocast_dtype": null
+      },
+      "seconds": 24.068
+    }
+  },
+  "numerics_per_check": {
+    "1": "strict",
+    "1b": "strict",
+    "2": "not run (--strict-only)",
+    "3": "strict (the line)",
+    "4": "not run (--checks)"
+  },
+  "numerics_note": "set by run_diag.py --mode band_logits itself, per check: a diag entry may not set precision (the launcher's FORBIDDEN_SET and DIAG_FORBIDDEN), and the job's tf32 field does not reach a diag entry (--tf32 both)",
+  "device": "cuda",
+  "gpu_type": "NVIDIA A100-SXM4-40GB",
+  "torch": "2.14.1+cu130",
+  "cuda": "13.0",
+  "cudnn": 92400,
+  "transformers": "4.57.6",
+  "attn_implementation": "sdpa",
+  "sdpa_backends_enabled": {
+    "flash": true,
+    "mem_efficient": true,
+    "math": true,
+    "cudnn": true
+  },
+  "peak_memory": {
+    "device_max_allocated_bytes": 28302166528,
+    "device_max_reserved_bytes": 30576476160,
+    "host_max_rss_bytes": 2103812096
+  },
+  "commit": "feeafe180d581baf5dbcc67523c12964ce5f16df",
+  "registered_read": null,
+  "bug": false,
+  "verdicts": {
+    "1": "pass",
+    "1b": "pass",
+    "2": "not run (strict set alone)",
+    "3": "0 diverging at strict float64",
+    "4": "not run (--checks)"
+  },
+  "flags": [
+    "check (1), strict float64: max |first-answer-token logits| HF path vs band [0, 12] = 1.648e-12 over 32 examples (idx 14), line <= 1e-08: pass; 0 of 32 greedy generations diverge between the two paths",
+    "check (1b), strict float64: max |first-answer-token logits| HF path vs band [0, 12] at B = 1 = 1.364e-12 over 33 examples (idx 22), line <= 1e-08: pass; latents max 0.000e+00; 0 argmax differences; 0 of 33 greedy generations diverge",
+    "check (2), registered numerics: not run (strict set alone)",
+    "check (3), strict: band [0, 12] B = 1 vs B = 32: 0 of 33 greedy generations diverge (0 of the batch's 32; idx []); max |first-answer-token logits| 1.023e-12"
+  ],
+  "complete": false,
+  "checks_requested": [
+    "1",
+    "1b",
+    "3"
+  ],
+  "checks_run": [
+    "1",
+    "1b",
+    "3"
+  ],
+  "checks_not_run": {
+    "4": "not run: CUDA out of memory in the same-shape companion swap at float64 on A100-40GB (attempt 2ad4; float64_attempt_2ad4_failed.log); check (4) of record on this checkpoint is the strict-fp32 entry's, results commit rev23, 0.0 at both numerics"
+  },
+  "results": {
+    "checks": {
+      "1": {
+        "numerics": "strict",
+        "line": "<= 1e-08",
+        "verdict": "pass",
+        "n": 32,
+        "first_answer_logits": {
+          "n": 32,
+          "max": 1.6484591469634324e-12,
+          "idx_max": 14,
+          "over_tol": 0,
+          "idx_over_tol": [],
+          "nan": 0
+        },
+        "latents": {
+          "n": 32,
+          "max": 0.0,
+          "idx_max": 0,
+          "over_tol": 0,
+          "idx_over_tol": [],
+          "nan": 0
+        },
+        "first_argmax_differs": 0,
+        "diverging": 0,
+        "idx_diverging": [],
+        "divergences": [],
+        "correct": {
+          "hf": 23,
+          "band": 23
+        },
+        "correct_differs": 0,
+        "idx_correct_differs": [],
+        "step0_inconsistent": [],
+        "widths": [
+          861
+        ],
+        "rule": "read against 1e-08 (float64, off the registered check; critic entry 2026-10-20T14:54Z for the float64 run); A6.2 rule 3's registered line is 1e-4 at strict fp32"
+      },
+      "1b": {
+        "numerics": "strict",
+        "line": "<= 1e-08",
+        "verdict": "pass",
+        "B": 1,
+        "n": 33,
+        "first_answer_logits": {
+          "n": 33,
+          "max": 1.3642420526593924e-12,
+          "idx_max": 22,
+          "over_tol": 0,
+          "idx_over_tol": [],
+          "nan": 0
+        },
+        "latents": {
+          "n": 33,
+          "max": 0.0,
+          "idx_max": 0,
+          "over_tol": 0,
+          "idx_over_tol": [],
+          "nan": 0
+        },
+        "first_argmax_differs": 0,
+        "diverging": 0,
+        "idx_diverging": [],
+        "divergences": [],
+        "correct": {
+          "hf": 24,
+          "band": 24
+        },
+        "correct_differs": 0,
+        "idx_correct_differs": [],
+        "step0_inconsistent": [],
+        "widths": [
+          358,
+          437,
+          458,
+          464,
+          466,
+          491,
+          505,
+          510,
+          516,
+          522,
+          540,
+          547,
+          572,
+          590,
+          595,
+          616,
+          626,
+          629,
+          630,
+          633,
+          644,
+          647,
+          650,
+          653,
+          657,
+          658,
+          683,
+          700,
+          719,
+          763,
+          861
+        ],
+        "of_batch": {
+          "n": 32,
+          "first_answer_logits": {
+            "n": 32,
+            "max": 1.3642420526593924e-12,
+            "idx_max": 22,
+            "over_tol": 0,
+            "idx_over_tol": [],
+            "nan": 0
+          }
+        },
+        "rule": "beside (1): the HF path vs band [0, L] at B = 1, line 1e-08 (critic entry 2026-10-20T14:54Z)"
+      },
+      "2": {
+        "numerics": "registered",
+        "line": null,
+        "verdict": "not run (strict set alone)",
+        "rule": null
+      },
+      "3": {
+        "numerics": "strict (line)",
+        "line": "0 diverging at strict float64",
+        "verdict": "0 diverging at strict float64",
+        "strict": {
+          "n": 33,
+          "first_answer_logits": {
+            "n": 33,
+            "max": 1.0231815394945443e-12,
+            "idx_max": 26,
+            "over_tol": 0,
+            "idx_over_tol": [],
+            "nan": 0
+          },
+          "latents": {
+            "n": 33,
+            "max": 5.115907697472721e-13,
+            "idx_max": 23,
+            "over_tol": 0,
+            "idx_over_tol": [],
+            "nan": 0
+          },
+          "first_argmax_differs": 0,
+          "diverging": 0,
+          "idx_diverging": [],
+          "divergences": [],
+          "correct": {
+            "b1": 24,
+            "batch": 24
+          },
+          "correct_differs": 0,
+          "idx_correct_differs": [],
+          "step0_inconsistent": [],
+          "widths": [
+            861,
+            879
+          ],
+          "of_batch": {
+            "n": 32,
+            "diverging": 0
+          },
+          "extra": {
+            "21": {
+              "batch_start": 0,
+              "B_batch": 32,
+              "width_b1": 616,
+              "width_batch": 861,
+              "first_maxabs": 7.958078640513122e-13,
+              "latents_maxabs": 1.9895196601282805e-13,
+              "first_margin_b1": 17.875296095455496,
+              "first_margin_batch": 17.87529609545578,
+              "first_argmax_b1": 21017,
+              "first_argmax_batch": 21017,
+              "diverges": false,
+              "div_pos": null,
+              "margin_b1": null,
+              "margin_batch": null,
+              "top2_b1": null,
+              "top2_batch": null,
+              "emitted_b1": 8,
+              "emitted_batch": 8,
+              "correct_b1": false,
+              "correct_batch": false
+            },
+            "268": {
+              "batch_start": 256,
+              "B_batch": 32,
+              "width_b1": 657,
+              "width_batch": 879,
+              "first_maxabs": 7.673861546209082e-13,
+              "latents_maxabs": 1.4210854715202004e-13,
+              "first_margin_b1": 17.369735893818216,
+              "first_margin_batch": 17.369735893818216,
+              "first_argmax_b1": 21017,
+              "first_argmax_batch": 21017,
+              "diverges": false,
+              "div_pos": null,
+              "margin_b1": null,
+              "margin_batch": null,
+              "top2_b1": null,
+              "top2_batch": null,
+              "emitted_b1": 8,
+              "emitted_batch": 8,
+              "correct_b1": true,
+              "correct_batch": true
+            }
+          }
+        },
+        "rule": "A14.1: a count of 0 diverging greedy generations at strict fp32 is the shape pass; a diverging generation at strict fp32 is A12.3's outcome B condition (critic entry 2026-10-20T12:40Z (3))"
+      },
+      "4": {
+        "numerics": "strict",
+        "line": null,
+        "verdict": "not run (--checks)",
+        "rule": null
+      }
+    },
+    "bug": [],
+    "swap_pool": 268
+  },
+  "files": {
+    "partial_examples.csv": "671704d795b18d355c0ae074012865b8ce63c28b5a85cfb0f5d29360e2ebf973"
+  },
+  "examples_csv_sha256": "671704d795b18d355c0ae074012865b8ce63c28b5a85cfb0f5d29360e2ebf973",
+  "partial_files": null,
+  "seconds": 25.8752601146698,
+  "utc": "2026-10-20T22:54:37Z"
+}

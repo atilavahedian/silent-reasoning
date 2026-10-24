@@ -1,0 +1,772 @@
+{
+  "tool": "run_diag.py",
+  "mode": "band_logits",
+  "answers": "A6.2 rule 3's strict-fp32 logits check (critic entry 2026-10-20T12:40Z, the registered diagnostic; A14.1; the 10:51Z row part (3))",
+  "critic_row": "2026-10-20T12:40Z",
+  "critic_row_in_log": true,
+  "task": "gsm50k",
+  "run": "gsm50k_coconut_s0",
+  "arm": "coconut",
+  "seed": 0,
+  "config": "configs/screen/gsm50k_coconut.json",
+  "overrides": [
+    "device=\"cuda\"",
+    "model_id=\"/opt/silent/out/hf/hub/models--openai-community--gpt2/snapshots/607a30d783dfa663caf39e06633721c8d4cfcd7e\"",
+    "seed=0",
+    "name=\"gsm50k_coconut_s0\""
+  ],
+  "checkpoint": "/opt/silent/out/eval_ckpts/gsm50k_coconut_s0_valid_band_logits/ckpt_best_final.pt",
+  "checkpoint_sha256": "ca25839a826f25f4ed9feb9be98fdbff20a9685af9f16582dcfadafac7151da6",
+  "split": "valid",
+  "split_file": "data/gsm_valid.json",
+  "split_sha256": "1833a3479186e4e6c0183aad32fb7ee343479c958f2a1b57631ec22f5ee3aa7f",
+  "n": 500,
+  "batch_size": 32,
+  "batch": {
+    "rule": "the split's first batch_size examples in file order (the read's first batch)",
+    "idx": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31
+    ]
+  },
+  "extra_idx": [
+    273,
+    497
+  ],
+  "band": [
+    0,
+    12
+  ],
+  "n_layer": 12,
+  "max_new_tokens": 64,
+  "n_latent": 6,
+  "perm_seed": 0,
+  "tol": 0.0001,
+  "precision": "bf16",
+  "tf32_modes": [
+    "strict",
+    "registered"
+  ],
+  "numerics": {
+    "strict": {
+      "set": "strict fp32: TF32 off (matmul and cuDNN), float32 matmul precision highest, no autocast",
+      "registered_flags": "fp32",
+      "autocast": null,
+      "tf32_requested": false,
+      "cuda.matmul.allow_tf32": false,
+      "cudnn.allow_tf32": false,
+      "float32_matmul_precision": "highest",
+      "torch": "2.14.1+cu130",
+      "cuda": "13.0",
+      "cuda.matmul.fp32_precision": "ieee",
+      "cudnn.fp32_precision": "ieee",
+      "torch_at_start": {
+        "cuda.matmul.allow_tf32": false,
+        "cudnn.allow_tf32": false,
+        "float32_matmul_precision": "highest",
+        "autocast_enabled": false,
+        "autocast_dtype": null
+      },
+      "torch_at_end": {
+        "cuda.matmul.allow_tf32": false,
+        "cudnn.allow_tf32": false,
+        "float32_matmul_precision": "highest",
+        "autocast_enabled": false,
+        "autocast_dtype": null
+      },
+      "seconds": 10.286
+    },
+    "registered": {
+      "set": "the read's registered numerics: precision bf16 (autocast bf16) over REGISTERED_FLAGS['bf16'] = (True, True, 'high') (A10.1, A10.5)",
+      "registered_flags": "bf16",
+      "autocast": "bf16",
+      "tf32_requested": true,
+      "cuda.matmul.allow_tf32": true,
+      "cudnn.allow_tf32": true,
+      "float32_matmul_precision": "high",
+      "torch": "2.14.1+cu130",
+      "cuda": "13.0",
+      "cuda.matmul.fp32_precision": "tf32",
+      "cudnn.fp32_precision": "tf32",
+      "torch_at_start": {
+        "cuda.matmul.allow_tf32": true,
+        "cudnn.allow_tf32": true,
+        "float32_matmul_precision": "high",
+        "autocast_enabled": true,
+        "autocast_dtype": "bfloat16"
+      },
+      "torch_at_end": {
+        "cuda.matmul.allow_tf32": true,
+        "cudnn.allow_tf32": true,
+        "float32_matmul_precision": "high",
+        "autocast_enabled": true,
+        "autocast_dtype": "bfloat16"
+      },
+      "seconds": 8.635
+    }
+  },
+  "numerics_per_check": {
+    "1": "strict",
+    "2": "registered",
+    "3": "strict (the line); registered beside",
+    "4": "strict and registered (the line at each)"
+  },
+  "numerics_note": "set by run_diag.py --mode band_logits itself, per check: a diag entry may not set precision (the launcher's FORBIDDEN_SET and DIAG_FORBIDDEN), and the job's tf32 field does not reach a diag entry (--tf32 both)",
+  "device": "cuda",
+  "gpu_type": "NVIDIA A100-SXM4-40GB",
+  "torch": "2.14.1+cu130",
+  "cuda": "13.0",
+  "cudnn": 92400,
+  "transformers": "4.57.6",
+  "commit": "7eb0d2ff9d7e5e17da497455a8bb62798f5a0877",
+  "registered_read": null,
+  "bug": true,
+  "verdicts": {
+    "1": "BUG",
+    "2": "printed (no line)",
+    "3": "0 diverging at strict fp32",
+    "4": "within 0.0001 at each"
+  },
+  "flags": [
+    "check (1), strict fp32: max |first-answer-token logits| HF path vs band [0, 12] = 6.409e-04 over 32 examples (idx 20), line <= 0.0001: BUG; 0 of 32 greedy generations diverge between the two paths",
+    "check (2), registered numerics: max |first-answer-token logits| HF path vs band [0, 12] = 2.000e+00; 1 of 32 greedy generations diverge (no line)",
+    "check (3), strict: band [0, 12] B = 1 vs B = 32: 0 of 34 greedy generations diverge (0 of the batch's 32; idx []); max |first-answer-token logits| 6.409e-04",
+    "check (3), registered: band [0, 12] B = 1 vs B = 32: 2 of 34 greedy generations diverge (0 of the batch's 32; idx [273, 497]); max |first-answer-token logits| 2.000e+00 (beside)",
+    "check (4), strict: same-shape companion swap on band [0, 12] at B = 32: max last 0.000e+00, logits 0.000e+00, latents 0.000e+00 (line <= 0.0001); batch repeated: last 0.000e+00",
+    "check (4), registered: same-shape companion swap on band [0, 12] at B = 32: max last 0.000e+00, logits 0.000e+00, latents 0.000e+00 (line <= 0.0001); batch repeated: last 0.000e+00",
+    "check (1) is over its line: BUG until explained; A6.2 rule 3: expected <= 1e-4; larger is a BUG until explained, and no saving label may be written on either C1b arm while it stands (critic entry 2026-10-20T12:40Z (1))",
+    "check (1): 32 of 32 examples' first-answer-token logits differ by more than 0.0001 between the HF path and band [0, 12] at strict fp32 (max 6.409e-04)"
+  ],
+  "results": {
+    "checks": {
+      "1": {
+        "numerics": "strict",
+        "line": "<= 0.0001",
+        "verdict": "BUG",
+        "n": 32,
+        "first_answer_logits": {
+          "n": 32,
+          "max": 0.000640869140625,
+          "idx_max": 20,
+          "over_tol": 32,
+          "idx_over_tol": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31
+          ],
+          "nan": 0
+        },
+        "latents": {
+          "n": 32,
+          "max": 0.0,
+          "idx_max": 0,
+          "over_tol": 0,
+          "idx_over_tol": [],
+          "nan": 0
+        },
+        "first_argmax_differs": 0,
+        "diverging": 0,
+        "idx_diverging": [],
+        "divergences": [],
+        "correct": {
+          "hf": 2,
+          "band": 2
+        },
+        "correct_differs": 0,
+        "idx_correct_differs": [],
+        "step0_inconsistent": [],
+        "widths": [
+          145
+        ],
+        "rule": "A6.2 rule 3: expected <= 1e-4; larger is a BUG until explained, and no saving label may be written on either C1b arm while it stands (critic entry 2026-10-20T12:40Z (1))"
+      },
+      "2": {
+        "numerics": "registered",
+        "line": null,
+        "verdict": "printed (no line)",
+        "n": 32,
+        "first_answer_logits": {
+          "n": 32,
+          "max": 2.0,
+          "idx_max": 0,
+          "over_tol": 32,
+          "idx_over_tol": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31
+          ],
+          "nan": 0
+        },
+        "latents": {
+          "n": 32,
+          "max": 0.0,
+          "idx_max": 0,
+          "over_tol": 0,
+          "idx_over_tol": [],
+          "nan": 0
+        },
+        "first_argmax_differs": 0,
+        "diverging": 1,
+        "idx_diverging": [
+          13
+        ],
+        "divergences": [
+          {
+            "idx": 13,
+            "div_pos": 1,
+            "margin_hf": 0.0,
+            "margin_band": 0.0625,
+            "top2_hf": "12713|7982",
+            "top2_band": "12713|7982",
+            "first_margin_hf": 19.0,
+            "first_margin_band": 19.0,
+            "correct_hf": false,
+            "correct_band": false,
+            "width_hf": 145,
+            "width_band": 145,
+            "prompt_len": 71
+          }
+        ],
+        "correct": {
+          "hf": 2,
+          "band": 2
+        },
+        "correct_differs": 0,
+        "idx_correct_differs": [],
+        "step0_inconsistent": [],
+        "widths": [
+          145
+        ],
+        "rule": "printed beside (1) at the read's registered numerics, with the diverging greedy generations; no line (critic entry 2026-10-20T12:40Z (2))"
+      },
+      "3": {
+        "numerics": "strict (line); registered beside",
+        "line": "0 diverging at strict fp32",
+        "verdict": "0 diverging at strict fp32",
+        "strict": {
+          "n": 34,
+          "first_answer_logits": {
+            "n": 34,
+            "max": 0.000640869140625,
+            "idx_max": 20,
+            "over_tol": 34,
+            "idx_over_tol": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31,
+              273,
+              497
+            ],
+            "nan": 0
+          },
+          "latents": {
+            "n": 34,
+            "max": 0.00014495849609375,
+            "idx_max": 14,
+            "over_tol": 2,
+            "idx_over_tol": [
+              14,
+              25
+            ],
+            "nan": 0
+          },
+          "first_argmax_differs": 0,
+          "diverging": 0,
+          "idx_diverging": [],
+          "divergences": [],
+          "correct": {
+            "b1": 3,
+            "batch": 3
+          },
+          "correct_differs": 0,
+          "idx_correct_differs": [],
+          "step0_inconsistent": [],
+          "widths": [
+            99,
+            106,
+            145
+          ],
+          "of_batch": {
+            "n": 32,
+            "diverging": 0
+          },
+          "extra": {
+            "273": {
+              "batch_start": 256,
+              "B_batch": 32,
+              "width_b1": 42,
+              "width_batch": 106,
+              "first_maxabs": 0.00054931640625,
+              "latents_maxabs": 5.638599395751953e-05,
+              "first_margin_b1": 23.485702514648438,
+              "first_margin_batch": 23.486007690429688,
+              "first_argmax_b1": 21017,
+              "first_argmax_batch": 21017,
+              "diverges": false,
+              "div_pos": null,
+              "margin_b1": null,
+              "margin_batch": null,
+              "top2_b1": null,
+              "top2_batch": null,
+              "emitted_b1": 2,
+              "emitted_batch": 2,
+              "correct_b1": true,
+              "correct_batch": true
+            },
+            "497": {
+              "batch_start": 480,
+              "B_batch": 20,
+              "width_b1": 83,
+              "width_batch": 99,
+              "first_maxabs": 0.000518798828125,
+              "latents_maxabs": 3.4332275390625e-05,
+              "first_margin_b1": 21.59063720703125,
+              "first_margin_batch": 21.590606689453125,
+              "first_argmax_b1": 21017,
+              "first_argmax_batch": 21017,
+              "diverges": false,
+              "div_pos": null,
+              "margin_b1": null,
+              "margin_batch": null,
+              "top2_b1": null,
+              "top2_batch": null,
+              "emitted_b1": 2,
+              "emitted_batch": 2,
+              "correct_b1": false,
+              "correct_batch": false
+            }
+          }
+        },
+        "registered": {
+          "n": 34,
+          "first_answer_logits": {
+            "n": 34,
+            "max": 2.0,
+            "idx_max": 0,
+            "over_tol": 34,
+            "idx_over_tol": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31,
+              273,
+              497
+            ],
+            "nan": 0
+          },
+          "latents": {
+            "n": 34,
+            "max": 0.5711555480957031,
+            "idx_max": 10,
+            "over_tol": 34,
+            "idx_over_tol": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31,
+              273,
+              497
+            ],
+            "nan": 0
+          },
+          "first_argmax_differs": 0,
+          "diverging": 2,
+          "idx_diverging": [
+            273,
+            497
+          ],
+          "divergences": [
+            {
+              "idx": 273,
+              "div_pos": 1,
+              "margin_b1": 0.0,
+              "margin_batch": 0.0625,
+              "top2_b1": "718|642",
+              "top2_batch": "718|642",
+              "first_margin_b1": 24.0,
+              "first_margin_batch": 23.0,
+              "correct_b1": false,
+              "correct_batch": true,
+              "width_b1": 42,
+              "width_batch": 106,
+              "prompt_len": 42
+            },
+            {
+              "idx": 497,
+              "div_pos": 1,
+              "margin_b1": 0.125,
+              "margin_batch": 0.0,
+              "top2_b1": "1679|1315",
+              "top2_batch": "1679|1315",
+              "first_margin_b1": 21.0,
+              "first_margin_batch": 21.0,
+              "correct_b1": false,
+              "correct_batch": true,
+              "width_b1": 83,
+              "width_batch": 99,
+              "prompt_len": 83
+            }
+          ],
+          "correct": {
+            "b1": 2,
+            "batch": 4
+          },
+          "correct_differs": 2,
+          "idx_correct_differs": [
+            273,
+            497
+          ],
+          "step0_inconsistent": [],
+          "widths": [
+            99,
+            106,
+            145
+          ],
+          "of_batch": {
+            "n": 32,
+            "diverging": 0
+          },
+          "extra": {
+            "273": {
+              "batch_start": 256,
+              "B_batch": 32,
+              "width_b1": 42,
+              "width_batch": 106,
+              "first_maxabs": 2.0,
+              "latents_maxabs": 0.46275901794433594,
+              "first_margin_b1": 24.0,
+              "first_margin_batch": 23.0,
+              "first_argmax_b1": 21017,
+              "first_argmax_batch": 21017,
+              "diverges": true,
+              "div_pos": 1,
+              "margin_b1": 0.0,
+              "margin_batch": 0.0625,
+              "top2_b1": "718|642",
+              "top2_batch": "718|642",
+              "emitted_b1": 2,
+              "emitted_batch": 2,
+              "correct_b1": false,
+              "correct_batch": true
+            },
+            "497": {
+              "batch_start": 480,
+              "B_batch": 20,
+              "width_b1": 83,
+              "width_batch": 99,
+              "first_maxabs": 2.0,
+              "latents_maxabs": 0.4366922378540039,
+              "first_margin_b1": 21.0,
+              "first_margin_batch": 21.0,
+              "first_argmax_b1": 21017,
+              "first_argmax_batch": 21017,
+              "diverges": true,
+              "div_pos": 1,
+              "margin_b1": 0.125,
+              "margin_batch": 0.0,
+              "top2_b1": "1679|1315",
+              "top2_batch": "1679|1315",
+              "emitted_b1": 2,
+              "emitted_batch": 2,
+              "correct_b1": false,
+              "correct_batch": true
+            }
+          }
+        },
+        "rule": "A14.1: a count of 0 diverging greedy generations at strict fp32 is the shape pass; a diverging generation at strict fp32 is A12.3's outcome B condition (critic entry 2026-10-20T12:40Z (3))"
+      },
+      "4": {
+        "numerics": "strict and registered",
+        "line": "<= 0.0001 at each",
+        "verdict": "within 0.0001 at each",
+        "strict": {
+          "n": 32,
+          "last_swap": {
+            "n": 32,
+            "max": 0.0,
+            "idx_max": 0,
+            "over_tol": 0,
+            "idx_over_tol": [],
+            "nan": 0
+          },
+          "logits_swap": {
+            "n": 32,
+            "max": 0.0,
+            "idx_max": 0,
+            "over_tol": 0,
+            "idx_over_tol": [],
+            "nan": 0
+          },
+          "latents_swap": {
+            "n": 32,
+            "max": 0.0,
+            "idx_max": 0,
+            "over_tol": 0,
+            "idx_over_tol": [],
+            "nan": 0
+          },
+          "last_rep": {
+            "n": 32,
+            "max": 0.0,
+            "idx_max": 0,
+            "over_tol": 0,
+            "idx_over_tol": [],
+            "nan": 0
+          },
+          "logits_rep": {
+            "n": 32,
+            "max": 0.0,
+            "idx_max": 0,
+            "over_tol": 0,
+            "idx_over_tol": [],
+            "nan": 0
+          },
+          "latents_rep": {
+            "n": 32,
+            "max": 0.0,
+            "idx_max": 0,
+            "over_tol": 0,
+            "idx_over_tol": [],
+            "nan": 0
+          }
+        },
+        "registered": {
+          "n": 32,
+          "last_swap": {
+            "n": 32,
+            "max": 0.0,
+            "idx_max": 0,
+            "over_tol": 0,
+            "idx_over_tol": [],
+            "nan": 0
+          },
+          "logits_swap": {
+            "n": 32,
+            "max": 0.0,
+            "idx_max": 0,
+            "over_tol": 0,
+            "idx_over_tol": [],
+            "nan": 0
+          },
+          "latents_swap": {
+            "n": 32,
+            "max": 0.0,
+            "idx_max": 0,
+            "over_tol": 0,
+            "idx_over_tol": [],
+            "nan": 0
+          },
+          "last_rep": {
+            "n": 32,
+            "max": 0.0,
+            "idx_max": 0,
+            "over_tol": 0,
+            "idx_over_tol": [],
+            "nan": 0
+          },
+          "logits_rep": {
+            "n": 32,
+            "max": 0.0,
+            "idx_max": 0,
+            "over_tol": 0,
+            "idx_over_tol": [],
+            "nan": 0
+          },
+          "latents_rep": {
+            "n": 32,
+            "max": 0.0,
+            "idx_max": 0,
+            "over_tol": 0,
+            "idx_over_tol": [],
+            "nan": 0
+          }
+        },
+        "rule": "A14.1: a swap difference above 1e-4 at either numerics is A12.3's outcome B condition (critic entry 2026-10-20T12:40Z (4))"
+      }
+    },
+    "bug": [
+      "check (1) is over its line: BUG until explained; A6.2 rule 3: expected <= 1e-4; larger is a BUG until explained, and no saving label may be written on either C1b arm while it stands (critic entry 2026-10-20T12:40Z (1))",
+      "check (1): 32 of 32 examples' first-answer-token logits differ by more than 0.0001 between the HF path and band [0, 12] at strict fp32 (max 6.409e-04)"
+    ],
+    "swap_pool": 468
+  },
+  "files": {
+    "examples.csv": "b1fb0d55401d65db4f3d1e7caabc0c0ce092fca2dcde94523a562817d4ba6997"
+  },
+  "examples_csv_sha256": "b1fb0d55401d65db4f3d1e7caabc0c0ce092fca2dcde94523a562817d4ba6997",
+  "seconds": 19.1530442237854,
+  "utc": "2026-10-20T14:38:46Z"
+}

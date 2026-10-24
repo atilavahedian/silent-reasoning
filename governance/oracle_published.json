@@ -1,0 +1,192 @@
+{
+  "source": "pdf",
+  "pdf_sha256": "27db5069d4361a607f02133ab4da4d9dae601bfbff0677191b3ba7febe2f987c",
+  "pdf_url": "https://arxiv.org/pdf/2412.06769",
+  "critic_log_row": "2026-10-19T01:07Z",
+  "registration": "4.2 as superseded by A7.2; window scope A3.3",
+  "_note": "Values, spreads and emitted tokens exactly as the critic's PDF row 2026-10-19T01:07Z prints them (Table 1, accuracy %, +- as printed, statistic unstated; 4.1's reading: a 3-run SD, df 2; floor 1.0). Single-seed cells: sigma_cell = max(1.0, spread), tolerance = max(2.0, 2 sigma_cell). Our arms map to the rows: cot = CoT, no_cot = No-CoT, coconut = Coconut, pause = pause as thought, coconut_no_curriculum = w/o curriculum. Read with the four plain test reads only (e.g. evals/k1-eval-main/*_test_none/summary.json): the step sweep entries are also intervention none on test and collide with the coconut cell.",
+  "spread_statistic": "as printed, statistic unstated",
+  "cells": [
+    {
+      "task": "prosqa",
+      "arm": "cot",
+      "value": 77.5,
+      "spread": 1.9,
+      "emitted_tokens": 49.4,
+      "gates": true,
+      "pdf_table": "Table 1",
+      "pdf_row": "CoT"
+    },
+    {
+      "task": "prosqa",
+      "arm": "no_cot",
+      "value": 76.7,
+      "spread": 1.0,
+      "emitted_tokens": 8.2,
+      "gates": true,
+      "pdf_table": "Table 1",
+      "pdf_row": "No-CoT"
+    },
+    {
+      "task": "prosqa",
+      "arm": "coconut",
+      "value": 97.0,
+      "spread": 0.3,
+      "emitted_tokens": 14.2,
+      "gates": true,
+      "pdf_table": "Table 1",
+      "pdf_row": "Coconut"
+    },
+    {
+      "task": "prosqa",
+      "arm": "pause",
+      "value": 96.6,
+      "spread": 0.8,
+      "emitted_tokens": 8.2,
+      "gates": true,
+      "pdf_table": "Table 1",
+      "pdf_row": "pause as thought",
+      "gates_rule": "our pause arm is 'pause as thought', never the Pause Token row (75.9 +- 0.7)"
+    },
+    {
+      "task": "prosqa",
+      "arm": "coconut_no_curriculum",
+      "value": 76.1,
+      "spread": 0.2,
+      "emitted_tokens": 14.2,
+      "gates": false,
+      "pdf_table": "Table 1",
+      "pdf_row": "w/o curriculum",
+      "relative_to": "no_cot",
+      "gates_rule": "registered (4.2 + critic 2026-10-19T01:07Z): gates when the arm runs, matched iff within tolerance of our own no_cot mean AND within tolerance of 76.1 (read_oracle.py computes the relative test only). UNTESTED in the window (A3.3: the window's ProsQA K1 gates on cot, coconut, no_cot, pause), so false here; a read that runs this arm sets gates true"
+    },
+    {
+      "task": "prontoqa",
+      "arm": "cot",
+      "value": 98.8,
+      "spread": 0.8,
+      "emitted_tokens": 92.5,
+      "gates": true,
+      "pdf_table": "Table 1",
+      "pdf_row": "CoT",
+      "gates_rule": "ProntoQA UNTESTED in the window (A3.3)"
+    },
+    {
+      "task": "prontoqa",
+      "arm": "no_cot",
+      "value": 93.8,
+      "spread": 0.7,
+      "emitted_tokens": 3.0,
+      "gates": true,
+      "pdf_table": "Table 1",
+      "pdf_row": "No-CoT",
+      "gates_rule": "ProntoQA UNTESTED in the window (A3.3)"
+    },
+    {
+      "task": "prontoqa",
+      "arm": "coconut",
+      "value": 99.8,
+      "spread": 0.2,
+      "emitted_tokens": 9.0,
+      "gates": true,
+      "pdf_table": "Table 1",
+      "pdf_row": "Coconut",
+      "gates_rule": "ProntoQA UNTESTED in the window (A3.3)"
+    },
+    {
+      "task": "prontoqa",
+      "arm": "pause",
+      "value": 100.0,
+      "spread": 0.1,
+      "emitted_tokens": 3.0,
+      "gates": true,
+      "pdf_table": "Table 1",
+      "pdf_row": "pause as thought",
+      "gates_rule": "gates only if the arm runs (critic 2026-10-19T01:07Z); ProntoQA UNTESTED in the window (A3.3)"
+    },
+    {
+      "task": "prontoqa",
+      "arm": "coconut_no_curriculum",
+      "value": 52.4,
+      "spread": 0.4,
+      "emitted_tokens": 9.0,
+      "gates": true,
+      "pdf_table": "Table 1",
+      "pdf_row": "w/o curriculum",
+      "gates_rule": "gates only if the arm runs (critic 2026-10-19T01:07Z); ProntoQA UNTESTED in the window (A3.3)"
+    },
+    {
+      "task": "gsm",
+      "arm": "cot",
+      "value": 42.9,
+      "spread": 0.2,
+      "emitted_tokens": 25.0,
+      "gates": true,
+      "pdf_table": "Table 1",
+      "pdf_row": "CoT",
+      "gates_rule": "single seed"
+    },
+    {
+      "task": "gsm",
+      "arm": "no_cot",
+      "value": 16.5,
+      "spread": 0.5,
+      "emitted_tokens": 2.2,
+      "gates": true,
+      "pdf_table": "Table 1",
+      "pdf_row": "No-CoT",
+      "gates_rule": "single seed"
+    },
+    {
+      "task": "gsm",
+      "arm": "coconut",
+      "value": 34.1,
+      "spread": 1.5,
+      "emitted_tokens": 8.2,
+      "gates": true,
+      "pdf_table": "Table 1",
+      "pdf_row": "Coconut",
+      "gates_rule": "single seed"
+    },
+    {
+      "task": "gsm",
+      "arm": "pause",
+      "value": 24.1,
+      "spread": 0.7,
+      "emitted_tokens": 2.2,
+      "gates": false,
+      "pdf_table": "Table 1",
+      "pdf_row": "pause as thought",
+      "gates_rule": "gates nothing (no arm run; registration 4.2, critic 2026-10-19T01:07Z); not the Pause Token row (16.4 +- 1.8)"
+    },
+    {
+      "task": "gsm",
+      "arm": "coconut_no_curriculum",
+      "value": 14.4,
+      "spread": 0.8,
+      "emitted_tokens": 8.2,
+      "gates": false,
+      "pdf_table": "Table 1",
+      "pdf_row": "w/o curriculum",
+      "gates_rule": "gates nothing (not a registration 4.2 cell; no arm run)"
+    }
+  ],
+  "not_our_arms": {
+    "_note": "Table 1 rows recorded for the report's footnotes (A7.2); no cell, no gate",
+    "gsm": {
+      "iCoT": "30.0 (2.2)",
+      "Pause Token": "16.4 +- 1.8 (2.2)",
+      "w/o thought": "21.6 +- 0.5 (2.3)"
+    },
+    "prontoqa": {
+      "iCoT": "99.8 +- 0.3 (3.0)",
+      "Pause Token": "77.7 +- 21.0 (3.0)",
+      "w/o thought": "99.9 +- 0.1 (3.0)"
+    },
+    "prosqa": {
+      "iCoT": "98.2 +- 0.3 (8.2)",
+      "Pause Token": "75.9 +- 0.7 (8.2)",
+      "w/o thought": "95.5 +- 1.1 (8.2)"
+    }
+  }
+}

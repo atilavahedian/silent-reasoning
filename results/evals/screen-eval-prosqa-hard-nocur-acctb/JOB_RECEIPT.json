@@ -1,0 +1,451 @@
+{
+ "job": "screen-eval-prosqa-hard-nocur-acctb",
+ "kind": "eval",
+ "attempt": "silent-eval-20261022-093212-83da",
+ "status": "complete",
+ "spec_sha256": "43948e7cf81d389ced7352a879c76903e7b23e45568584809d24137e330949b0",
+ "spec": {
+  "name": "screen-eval-prosqa-hard-nocur-acctb",
+  "kind": "eval",
+  "provider": "gcp",
+  "project": "cloud-b",
+  "project_alias": "acctb",
+  "bucket": "store://bucket-b",
+  "gpu": "A100-80GB",
+  "max_hours": 1.0,
+  "provisioning": "SPOT",
+  "precision": "fp32-tf32",
+  "tf32": true,
+  "parity_first": false,
+  "evals": [
+   {
+    "name": "prosqa_hard_coconut_no_curriculum_s0_valid_none",
+    "checkpoint": "store://bucket-b/silent/runs/prosqa_hard_coconut_no_curriculum_s0/ckpt_best_final.pt",
+    "checkpoint_sha256": "1248315bb8e72b7dbed23e1ce1ffd5c2a7516214664f0f1f55a6aa395ed211ce",
+    "config": "configs/screen/prosqa_hard_coconut_no_curriculum.json",
+    "split": "valid",
+    "intervention": "none",
+    "n_latent": null,
+    "registered_read": "2026-10-22T09:30Z",
+    "est_hours": 0.009,
+    "seed": 0,
+    "run": "prosqa_hard_coconut_no_curriculum_s0",
+    "_note": "prosqa_hard_coconut_no_curriculum_s0, seed 0, ckpt_best_final.pt = epoch 2 (epoch_index 1, the selection over every epoch: arm coconut_no_curriculum), registered read 2026-10-22T09:30Z; trained from the pinned base model (load_model_path null, A3.4.5): no start checkpoint, the init check does not apply",
+    "time_steps": true
+   },
+   {
+    "name": "prosqa_hard_coconut_no_curriculum_s0_valid_scrambled",
+    "checkpoint": "store://bucket-b/silent/runs/prosqa_hard_coconut_no_curriculum_s0/ckpt_best_final.pt",
+    "checkpoint_sha256": "1248315bb8e72b7dbed23e1ce1ffd5c2a7516214664f0f1f55a6aa395ed211ce",
+    "config": "configs/screen/prosqa_hard_coconut_no_curriculum.json",
+    "split": "valid",
+    "intervention": "scrambled",
+    "n_latent": null,
+    "registered_read": "2026-10-22T09:30Z",
+    "est_hours": 0.009,
+    "seed": 0,
+    "run": "prosqa_hard_coconut_no_curriculum_s0",
+    "_note": "prosqa_hard_coconut_no_curriculum_s0, seed 0, ckpt_best_final.pt = epoch 2 (epoch_index 1, the selection over every epoch: arm coconut_no_curriculum), registered read 2026-10-22T09:30Z; trained from the pinned base model (load_model_path null, A3.4.5): no start checkpoint, the init check does not apply"
+   },
+   {
+    "name": "prosqa_hard_coconut_no_curriculum_s0_valid_zero_latent",
+    "checkpoint": "store://bucket-b/silent/runs/prosqa_hard_coconut_no_curriculum_s0/ckpt_best_final.pt",
+    "checkpoint_sha256": "1248315bb8e72b7dbed23e1ce1ffd5c2a7516214664f0f1f55a6aa395ed211ce",
+    "config": "configs/screen/prosqa_hard_coconut_no_curriculum.json",
+    "split": "valid",
+    "intervention": "zero_latent",
+    "n_latent": null,
+    "registered_read": "2026-10-22T09:30Z",
+    "est_hours": 0.009,
+    "seed": 0,
+    "run": "prosqa_hard_coconut_no_curriculum_s0",
+    "_note": "prosqa_hard_coconut_no_curriculum_s0, seed 0, ckpt_best_final.pt = epoch 2 (epoch_index 1, the selection over every epoch: arm coconut_no_curriculum), registered read 2026-10-22T09:30Z; trained from the pinned base model (load_model_path null, A3.4.5): no start checkpoint, the init check does not apply"
+   },
+   {
+    "name": "prosqa_hard_coconut_no_curriculum_s0_valid_n0",
+    "checkpoint": "store://bucket-b/silent/runs/prosqa_hard_coconut_no_curriculum_s0/ckpt_best_final.pt",
+    "checkpoint_sha256": "1248315bb8e72b7dbed23e1ce1ffd5c2a7516214664f0f1f55a6aa395ed211ce",
+    "config": "configs/screen/prosqa_hard_coconut_no_curriculum.json",
+    "split": "valid",
+    "intervention": "none",
+    "n_latent": 0,
+    "registered_read": "2026-10-22T09:30Z",
+    "est_hours": 0.009,
+    "seed": 0,
+    "run": "prosqa_hard_coconut_no_curriculum_s0",
+    "_note": "prosqa_hard_coconut_no_curriculum_s0, seed 0, ckpt_best_final.pt = epoch 2 (epoch_index 1, the selection over every epoch: arm coconut_no_curriculum), registered read 2026-10-22T09:30Z; trained from the pinned base model (load_model_path null, A3.4.5): no start checkpoint, the init check does not apply; step sweep n_latent 0, trained n 7 (max_latent_stage x c_thought)"
+   },
+   {
+    "name": "prosqa_hard_coconut_no_curriculum_s0_valid_n1",
+    "checkpoint": "store://bucket-b/silent/runs/prosqa_hard_coconut_no_curriculum_s0/ckpt_best_final.pt",
+    "checkpoint_sha256": "1248315bb8e72b7dbed23e1ce1ffd5c2a7516214664f0f1f55a6aa395ed211ce",
+    "config": "configs/screen/prosqa_hard_coconut_no_curriculum.json",
+    "split": "valid",
+    "intervention": "none",
+    "n_latent": 1,
+    "registered_read": "2026-10-22T09:30Z",
+    "est_hours": 0.009,
+    "seed": 0,
+    "run": "prosqa_hard_coconut_no_curriculum_s0",
+    "_note": "prosqa_hard_coconut_no_curriculum_s0, seed 0, ckpt_best_final.pt = epoch 2 (epoch_index 1, the selection over every epoch: arm coconut_no_curriculum), registered read 2026-10-22T09:30Z; trained from the pinned base model (load_model_path null, A3.4.5): no start checkpoint, the init check does not apply; step sweep n_latent 1, trained n 7 (max_latent_stage x c_thought)"
+   },
+   {
+    "name": "prosqa_hard_coconut_no_curriculum_s0_valid_n2",
+    "checkpoint": "store://bucket-b/silent/runs/prosqa_hard_coconut_no_curriculum_s0/ckpt_best_final.pt",
+    "checkpoint_sha256": "1248315bb8e72b7dbed23e1ce1ffd5c2a7516214664f0f1f55a6aa395ed211ce",
+    "config": "configs/screen/prosqa_hard_coconut_no_curriculum.json",
+    "split": "valid",
+    "intervention": "none",
+    "n_latent": 2,
+    "registered_read": "2026-10-22T09:30Z",
+    "est_hours": 0.009,
+    "seed": 0,
+    "run": "prosqa_hard_coconut_no_curriculum_s0",
+    "_note": "prosqa_hard_coconut_no_curriculum_s0, seed 0, ckpt_best_final.pt = epoch 2 (epoch_index 1, the selection over every epoch: arm coconut_no_curriculum), registered read 2026-10-22T09:30Z; trained from the pinned base model (load_model_path null, A3.4.5): no start checkpoint, the init check does not apply; step sweep n_latent 2, trained n 7 (max_latent_stage x c_thought)"
+   },
+   {
+    "name": "prosqa_hard_coconut_no_curriculum_s0_valid_n4",
+    "checkpoint": "store://bucket-b/silent/runs/prosqa_hard_coconut_no_curriculum_s0/ckpt_best_final.pt",
+    "checkpoint_sha256": "1248315bb8e72b7dbed23e1ce1ffd5c2a7516214664f0f1f55a6aa395ed211ce",
+    "config": "configs/screen/prosqa_hard_coconut_no_curriculum.json",
+    "split": "valid",
+    "intervention": "none",
+    "n_latent": 4,
+    "registered_read": "2026-10-22T09:30Z",
+    "est_hours": 0.009,
+    "seed": 0,
+    "run": "prosqa_hard_coconut_no_curriculum_s0",
+    "_note": "prosqa_hard_coconut_no_curriculum_s0, seed 0, ckpt_best_final.pt = epoch 2 (epoch_index 1, the selection over every epoch: arm coconut_no_curriculum), registered read 2026-10-22T09:30Z; trained from the pinned base model (load_model_path null, A3.4.5): no start checkpoint, the init check does not apply; step sweep n_latent 4, trained n 7 (max_latent_stage x c_thought)"
+   },
+   {
+    "name": "prosqa_hard_coconut_no_curriculum_s0_valid_n8",
+    "checkpoint": "store://bucket-b/silent/runs/prosqa_hard_coconut_no_curriculum_s0/ckpt_best_final.pt",
+    "checkpoint_sha256": "1248315bb8e72b7dbed23e1ce1ffd5c2a7516214664f0f1f55a6aa395ed211ce",
+    "config": "configs/screen/prosqa_hard_coconut_no_curriculum.json",
+    "split": "valid",
+    "intervention": "none",
+    "n_latent": 8,
+    "registered_read": "2026-10-22T09:30Z",
+    "est_hours": 0.009,
+    "seed": 0,
+    "run": "prosqa_hard_coconut_no_curriculum_s0",
+    "_note": "prosqa_hard_coconut_no_curriculum_s0, seed 0, ckpt_best_final.pt = epoch 2 (epoch_index 1, the selection over every epoch: arm coconut_no_curriculum), registered read 2026-10-22T09:30Z; trained from the pinned base model (load_model_path null, A3.4.5): no start checkpoint, the init check does not apply; step sweep n_latent 8, trained n 7 (max_latent_stage x c_thought): out of distribution"
+   },
+   {
+    "name": "prosqa_hard_coconut_no_curriculum_s0_valid_band0-12_timed_bs1",
+    "checkpoint": "store://bucket-b/silent/runs/prosqa_hard_coconut_no_curriculum_s0/ckpt_best_final.pt",
+    "checkpoint_sha256": "1248315bb8e72b7dbed23e1ce1ffd5c2a7516214664f0f1f55a6aa395ed211ce",
+    "config": "configs/screen/prosqa_hard_coconut_no_curriculum.json",
+    "split": "valid",
+    "intervention": "none",
+    "n_latent": null,
+    "registered_read": "2026-10-22T09:30Z",
+    "est_hours": 0.009,
+    "seed": 0,
+    "run": "prosqa_hard_coconut_no_curriculum_s0",
+    "_note": "prosqa_hard_coconut_no_curriculum_s0, seed 0, ckpt_best_final.pt = epoch 2 (epoch_index 1, the selection over every epoch: arm coconut_no_curriculum), registered read 2026-10-22T09:30Z; trained from the pinned base model (load_model_path null, A3.4.5): no start checkpoint, the init check does not apply",
+    "time_steps": true,
+    "batch_size": 1,
+    "set": {
+     "latent_band": [
+      0,
+      12
+     ]
+    }
+   },
+   {
+    "name": "prosqa_hard_coconut_no_curriculum_s0_valid_band0-12_timed_bs32",
+    "checkpoint": "store://bucket-b/silent/runs/prosqa_hard_coconut_no_curriculum_s0/ckpt_best_final.pt",
+    "checkpoint_sha256": "1248315bb8e72b7dbed23e1ce1ffd5c2a7516214664f0f1f55a6aa395ed211ce",
+    "config": "configs/screen/prosqa_hard_coconut_no_curriculum.json",
+    "split": "valid",
+    "intervention": "none",
+    "n_latent": null,
+    "registered_read": "2026-10-22T09:30Z",
+    "est_hours": 0.009,
+    "seed": 0,
+    "run": "prosqa_hard_coconut_no_curriculum_s0",
+    "_note": "prosqa_hard_coconut_no_curriculum_s0, seed 0, ckpt_best_final.pt = epoch 2 (epoch_index 1, the selection over every epoch: arm coconut_no_curriculum), registered read 2026-10-22T09:30Z; trained from the pinned base model (load_model_path null, A3.4.5): no start checkpoint, the init check does not apply",
+    "time_steps": true,
+    "set": {
+     "latent_band": [
+      0,
+      12
+     ]
+    }
+   }
+  ],
+  "_note": "Closing fact (b) (critic entries 2026-10-21T20:21Z (b) (4) and, for E2, 2026-10-22T03:18Z (4)): the coconut_no_curriculum arm's valid reads on prosqa_hard, the coconut control's ten entries (none timed at the eval batch, scrambled, zero_latent, n in {0, 1, 2, 4, 8}, band [0, 12] timed at batch 1 and 32), on acctb, the project that trained it (no mirror); read on A100-80GB, trained on A100-80GB; us-central1-c / -a only (A2.1). max_hours: screen-eval-prosqa-hard-main (silent-eval-20261020-195306-b3c4): in-VM 2026-10-20T19:59:54Z..2026-10-20T20:25:03Z = 1509 s / 45 entries = 33.5 s per entry (ledger close runtime 2274 s incl. boot). 10 entries x 33.5 s = 0.093 h; 1.3 x 0.093 + 0.5 = 0.621 h, up to the half hour: 1.0 h (the registered 1.0 h; the rate is main's A100-40GB, the A100-80GB errs long). Numerics: the checkpoint's own (A10.1, A10.5: bf16 autocast from the config over TF32 on, --tf32 on from tf32 true). Pin: RUN_DONE.json 1248315bb8e72b7dbed23e1ce1ffd5c2a7516214664f0f1f55a6aa395ed211ce, epoch 2, named by row 2026-10-22T09:30Z.",
+  "critic_rows_required": [
+   "2026-10-20T19:14Z",
+   "2026-10-20T19:15Z",
+   "2026-10-21T20:21Z",
+   "2026-10-22T03:18Z",
+   "2026-10-22T09:30Z",
+   "2026-10-22T09:31Z"
+  ],
+  "_launch": {
+   "ledger_id": "silent-eval-20261022-093212-83da",
+   "provider": "gcp",
+   "project": "cloud-b",
+   "zones": [
+    "us-central1-c",
+    "us-central1-a"
+   ],
+   "bucket": "store://bucket-b",
+   "machine": "a2-ultragpu-1g",
+   "gpu": "A100-80GB",
+   "provisioning": "SPOT",
+   "max_run_s": 3600,
+   "deadline_epoch": 1792665132,
+   "code_uri": "store://bucket-b/silent/code/aa48ff5c954154afd65c00a57008ae38ad6b6c32-silent-eval-20261022-093212-83da.tar.gz",
+   "code_commit": "aa48ff5c954154afd65c00a57008ae38ad6b6c32",
+   "code_sha256": "5a2ab69c580a5dccfd7cb6686df431aa8583c4d79e264e8b408770f5fbc3e644",
+   "admitted": "2026-10-22T09:32:12Z",
+   "critic_rows": [
+    "2026-10-20T19:14Z",
+    "2026-10-20T19:15Z",
+    "2026-10-21T20:21Z",
+    "2026-10-22T03:18Z",
+    "2026-10-22T09:30Z",
+    "2026-10-22T09:31Z"
+   ],
+   "image_family": "common-cu129-ubuntu-2204-nvidia-580"
+  }
+ },
+ "started": "2026-10-22T09:38:20Z",
+ "ended": "2026-10-22T09:44:08Z",
+ "deadline": "2026-10-22T10:32:12Z",
+ "steps": [
+  {
+   "step": "env_reference",
+   "ok": true,
+   "time": "2026-10-22T09:38:22Z",
+   "mismatches": []
+  },
+  {
+   "step": "data",
+   "ok": true,
+   "time": "2026-10-22T09:38:27Z",
+   "source": "bucket",
+   "tasks": [
+    "prosqa_hard"
+   ],
+   "files": 3
+  },
+  {
+   "step": "model",
+   "ok": true,
+   "time": "2026-10-22T09:38:33Z",
+   "pinned": {
+    "id": "openai-community/gpt2",
+    "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+    "weights_sha256": "248dfc3911869ec493c76e65bf2fcf7f615828b0254c12b473182f0f81d3a707"
+   },
+   "got": {
+    "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+    "weights_sha256": "248dfc3911869ec493c76e65bf2fcf7f615828b0254c12b473182f0f81d3a707",
+    "path": "/opt/silent/out/hf/hub/models--openai-community--gpt2/snapshots/607a30d783dfa663caf39e06633721c8d4cfcd7e"
+   }
+  }
+ ],
+ "runs": [],
+ "evals": [
+  {
+   "name": "prosqa_hard_coconut_no_curriculum_s0_valid_none",
+   "checkpoint": "store://bucket-b/silent/runs/prosqa_hard_coconut_no_curriculum_s0/ckpt_best_final.pt",
+   "config": "configs/screen/prosqa_hard_coconut_no_curriculum.json",
+   "intervention": "none",
+   "split": "valid",
+   "n_latent": null,
+   "audit_rescore": null,
+   "batch_size": null,
+   "seed": 0,
+   "run": "prosqa_hard_coconut_no_curriculum_s0",
+   "time_steps": true,
+   "checkpoint_sha256": "1248315bb8e72b7dbed23e1ce1ffd5c2a7516214664f0f1f55a6aa395ed211ce",
+   "rc": 0,
+   "status": "done"
+  },
+  {
+   "name": "prosqa_hard_coconut_no_curriculum_s0_valid_scrambled",
+   "checkpoint": "store://bucket-b/silent/runs/prosqa_hard_coconut_no_curriculum_s0/ckpt_best_final.pt",
+   "config": "configs/screen/prosqa_hard_coconut_no_curriculum.json",
+   "intervention": "scrambled",
+   "split": "valid",
+   "n_latent": null,
+   "audit_rescore": null,
+   "batch_size": null,
+   "seed": 0,
+   "run": "prosqa_hard_coconut_no_curriculum_s0",
+   "checkpoint_sha256": "1248315bb8e72b7dbed23e1ce1ffd5c2a7516214664f0f1f55a6aa395ed211ce",
+   "rc": 0,
+   "status": "done"
+  },
+  {
+   "name": "prosqa_hard_coconut_no_curriculum_s0_valid_zero_latent",
+   "checkpoint": "store://bucket-b/silent/runs/prosqa_hard_coconut_no_curriculum_s0/ckpt_best_final.pt",
+   "config": "configs/screen/prosqa_hard_coconut_no_curriculum.json",
+   "intervention": "zero_latent",
+   "split": "valid",
+   "n_latent": null,
+   "audit_rescore": null,
+   "batch_size": null,
+   "seed": 0,
+   "run": "prosqa_hard_coconut_no_curriculum_s0",
+   "checkpoint_sha256": "1248315bb8e72b7dbed23e1ce1ffd5c2a7516214664f0f1f55a6aa395ed211ce",
+   "rc": 0,
+   "status": "done"
+  },
+  {
+   "name": "prosqa_hard_coconut_no_curriculum_s0_valid_n0",
+   "checkpoint": "store://bucket-b/silent/runs/prosqa_hard_coconut_no_curriculum_s0/ckpt_best_final.pt",
+   "config": "configs/screen/prosqa_hard_coconut_no_curriculum.json",
+   "intervention": "none",
+   "split": "valid",
+   "n_latent": 0,
+   "audit_rescore": null,
+   "batch_size": null,
+   "seed": 0,
+   "run": "prosqa_hard_coconut_no_curriculum_s0",
+   "checkpoint_sha256": "1248315bb8e72b7dbed23e1ce1ffd5c2a7516214664f0f1f55a6aa395ed211ce",
+   "rc": 0,
+   "status": "done"
+  },
+  {
+   "name": "prosqa_hard_coconut_no_curriculum_s0_valid_n1",
+   "checkpoint": "store://bucket-b/silent/runs/prosqa_hard_coconut_no_curriculum_s0/ckpt_best_final.pt",
+   "config": "configs/screen/prosqa_hard_coconut_no_curriculum.json",
+   "intervention": "none",
+   "split": "valid",
+   "n_latent": 1,
+   "audit_rescore": null,
+   "batch_size": null,
+   "seed": 0,
+   "run": "prosqa_hard_coconut_no_curriculum_s0",
+   "checkpoint_sha256": "1248315bb8e72b7dbed23e1ce1ffd5c2a7516214664f0f1f55a6aa395ed211ce",
+   "rc": 0,
+   "status": "done"
+  },
+  {
+   "name": "prosqa_hard_coconut_no_curriculum_s0_valid_n2",
+   "checkpoint": "store://bucket-b/silent/runs/prosqa_hard_coconut_no_curriculum_s0/ckpt_best_final.pt",
+   "config": "configs/screen/prosqa_hard_coconut_no_curriculum.json",
+   "intervention": "none",
+   "split": "valid",
+   "n_latent": 2,
+   "audit_rescore": null,
+   "batch_size": null,
+   "seed": 0,
+   "run": "prosqa_hard_coconut_no_curriculum_s0",
+   "checkpoint_sha256": "1248315bb8e72b7dbed23e1ce1ffd5c2a7516214664f0f1f55a6aa395ed211ce",
+   "rc": 0,
+   "status": "done"
+  },
+  {
+   "name": "prosqa_hard_coconut_no_curriculum_s0_valid_n4",
+   "checkpoint": "store://bucket-b/silent/runs/prosqa_hard_coconut_no_curriculum_s0/ckpt_best_final.pt",
+   "config": "configs/screen/prosqa_hard_coconut_no_curriculum.json",
+   "intervention": "none",
+   "split": "valid",
+   "n_latent": 4,
+   "audit_rescore": null,
+   "batch_size": null,
+   "seed": 0,
+   "run": "prosqa_hard_coconut_no_curriculum_s0",
+   "checkpoint_sha256": "1248315bb8e72b7dbed23e1ce1ffd5c2a7516214664f0f1f55a6aa395ed211ce",
+   "rc": 0,
+   "status": "done"
+  },
+  {
+   "name": "prosqa_hard_coconut_no_curriculum_s0_valid_n8",
+   "checkpoint": "store://bucket-b/silent/runs/prosqa_hard_coconut_no_curriculum_s0/ckpt_best_final.pt",
+   "config": "configs/screen/prosqa_hard_coconut_no_curriculum.json",
+   "intervention": "none",
+   "split": "valid",
+   "n_latent": 8,
+   "audit_rescore": null,
+   "batch_size": null,
+   "seed": 0,
+   "run": "prosqa_hard_coconut_no_curriculum_s0",
+   "checkpoint_sha256": "1248315bb8e72b7dbed23e1ce1ffd5c2a7516214664f0f1f55a6aa395ed211ce",
+   "rc": 0,
+   "status": "done"
+  },
+  {
+   "name": "prosqa_hard_coconut_no_curriculum_s0_valid_band0-12_timed_bs1",
+   "checkpoint": "store://bucket-b/silent/runs/prosqa_hard_coconut_no_curriculum_s0/ckpt_best_final.pt",
+   "config": "configs/screen/prosqa_hard_coconut_no_curriculum.json",
+   "intervention": "none",
+   "split": "valid",
+   "n_latent": null,
+   "audit_rescore": null,
+   "batch_size": 1,
+   "seed": 0,
+   "run": "prosqa_hard_coconut_no_curriculum_s0",
+   "time_steps": true,
+   "set": {
+    "latent_band": [
+     0,
+     12
+    ]
+   },
+   "checkpoint_sha256": "1248315bb8e72b7dbed23e1ce1ffd5c2a7516214664f0f1f55a6aa395ed211ce",
+   "rc": 0,
+   "status": "done"
+  },
+  {
+   "name": "prosqa_hard_coconut_no_curriculum_s0_valid_band0-12_timed_bs32",
+   "checkpoint": "store://bucket-b/silent/runs/prosqa_hard_coconut_no_curriculum_s0/ckpt_best_final.pt",
+   "config": "configs/screen/prosqa_hard_coconut_no_curriculum.json",
+   "intervention": "none",
+   "split": "valid",
+   "n_latent": null,
+   "audit_rescore": null,
+   "batch_size": null,
+   "seed": 0,
+   "run": "prosqa_hard_coconut_no_curriculum_s0",
+   "time_steps": true,
+   "set": {
+    "latent_band": [
+     0,
+     12
+    ]
+   },
+   "checkpoint_sha256": "1248315bb8e72b7dbed23e1ce1ffd5c2a7516214664f0f1f55a6aa395ed211ce",
+   "rc": 0,
+   "status": "done"
+  }
+ ],
+ "env": {
+  "host": "silent-eval-20261022-093212-83da",
+  "python": "3.10.12",
+  "platform": "Linux-6.8.0-1070-gcp-x86_64-with-glibc2.35",
+  "time": "2026-10-22T09:38:20Z",
+  "gpu_name": "NVIDIA A100-SXM4-80GB",
+  "driver": "580.178.04",
+  "gpu_memory": "81920 MiB",
+  "torch": "2.14.1",
+  "transformers": "4.57.6",
+  "numpy": "2.2.6",
+  "scipy": "1.15.3",
+  "huggingface_hub": "0.36.2",
+  "tokenizers": "0.22.2",
+  "safetensors": "0.8.0",
+  "torch_cuda": "13.0",
+  "cudnn": 92400,
+  "git_commit": "aa48ff5c954154afd65c00a57008ae38ad6b6c32",
+  "code_sha256": "5a2ab69c580a5dccfd7cb6686df431aa8583c4d79e264e8b408770f5fbc3e644",
+  "code_uri": "store://bucket-b/silent/code/aa48ff5c954154afd65c00a57008ae38ad6b6c32-silent-eval-20261022-093212-83da.tar.gz",
+  "ledger_id": "silent-eval-20261022-093212-83da",
+  "image_family": "common-cu129-ubuntu-2204-nvidia-580",
+  "machine": "a2-ultragpu-1g",
+  "gpu": "A100-80GB",
+  "project": "cloud-b",
+  "zones": [
+   "us-central1-c",
+   "us-central1-a"
+  ],
+  "image": "projects/deeplearning-platform-release/global/images/common-cu129-ubuntu-2204-nvidia-580-v20261019"
+ }
+}

@@ -1,0 +1,1888 @@
+{
+ "task": "gsm50k",
+ "table": "gsm50k_screen_with_plain_depth",
+ "generated_utc": "2026-10-20T16:21:10Z",
+ "argv": [
+  "--task",
+  "gsm50k",
+  "--records",
+  "<scratch>",
+  "--source-uri",
+  "store://bucket-c/silent",
+  "--receipts",
+  "<scratch>",
+  "--eval-dir",
+  "results/evals/screen-eval-gsm50k-main",
+  "--first-commit",
+  "rev10",
+  "--plain-depth-dir",
+  "<scratch>",
+  "--second-commit",
+  "rev11"
+ ],
+ "records_root": "<scratch>",
+ "source_uri": "store://bucket-c/silent",
+ "receipt_globs": [
+  "<scratch>"
+ ],
+ "git": {
+  "head": "7b62de6e842bc510780421c46ca84e3e2a230b25",
+  "tool_uncommitted": false
+ },
+ "versions": {
+  "python": "3.13.16",
+  "torch": "2.14.1+cu130",
+  "transformers": "4.57.6",
+  "numpy": "2.5.3"
+ },
+ "inputs": [
+  {
+   "role": "memory-probe evidence (an earlier attempt of the plain-depth job)",
+   "sha256": "923ae1ad95637083f8abe803a53d5628ecf3033db5dd4aba727543b12a680256",
+   "bytes": 6569,
+   "root": "plain_depth_records",
+   "path": "receipts/screen-plain-depth-355m-acctc/silent-train-20261020-094517-e910/JOB_RECEIPT.json",
+   "source_uri": "store://bucket-c/silent/receipts/screen-plain-depth-355m-acctc/silent-train-20261020-094517-e910/JOB_RECEIPT.json"
+  },
+  {
+   "role": "memory-probe evidence (an earlier attempt of the plain-depth job)",
+   "sha256": "78e2cedf9e00ef58444a54203217ec2c214e0baabee4688bbc6bcddc05a9ee30",
+   "bytes": 1581,
+   "root": "plain_depth_records",
+   "path": "receipts/screen-plain-depth-355m-acctc/silent-train-20261020-094517-e910/memory_probe.json",
+   "source_uri": "store://bucket-c/silent/receipts/screen-plain-depth-355m-acctc/silent-train-20261020-094517-e910/memory_probe.json"
+  },
+  {
+   "role": "job receipt",
+   "sha256": "84693efb80c579046fc6c762623c139135070878e5e2f8ebf18d58d7bc84aa0a",
+   "bytes": 9569,
+   "root": "plain_depth_records",
+   "path": "receipts/screen-plain-depth-355m-acctc/silent-train-20261020-104337-3293/JOB_RECEIPT.json",
+   "source_uri": "store://bucket-c/silent/receipts/screen-plain-depth-355m-acctc/silent-train-20261020-104337-3293/JOB_RECEIPT.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "006eb9ceeb379002e8b874292ca583ec2d2cdb59c38723bee77eee74be860bdc",
+   "bytes": 1250,
+   "root": "plain_depth_records",
+   "path": "runs/gsm50k_plain_depth_355m_s0/RUN_DONE.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_plain_depth_355m_s0/RUN_DONE.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "807bd122fbc7f18273ab2a4c85f6349f184163e2dd3d71e0abec21e4fef4d305",
+   "bytes": 1169,
+   "root": "plain_depth_records",
+   "path": "runs/gsm50k_plain_depth_355m_s0/SYNC_MANIFEST.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_plain_depth_355m_s0/SYNC_MANIFEST.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "072ccd1c7ea6972b3330aee4d2d4de9917928a252b3ff300f82a2f58e837a228",
+   "bytes": 378,
+   "root": "plain_depth_records",
+   "path": "runs/gsm50k_plain_depth_355m_s0/ckpt_state.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_plain_depth_355m_s0/ckpt_state.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "ec120a4eadb9c3d93a0eca58369b058b1c3b65b1cb05eb89d864858cd8bbcfd2",
+   "bytes": 1154,
+   "root": "plain_depth_records",
+   "path": "runs/gsm50k_plain_depth_355m_s0/config.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_plain_depth_355m_s0/config.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "6f35fad06a9ea49eab675de8d8bf7eb580aacab8cc9f1ac7ea1ece05328c38a4",
+   "bytes": 16063,
+   "root": "plain_depth_records",
+   "path": "runs/gsm50k_plain_depth_355m_s0/log.jsonl",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_plain_depth_355m_s0/log.jsonl"
+  },
+  {
+   "role": "run record",
+   "sha256": "1ea8d8072a7e9ba9e1d900d9adb9e2a18b5092c02e13f680e65ee04dc3edff92",
+   "bytes": 137,
+   "root": "plain_depth_records",
+   "path": "runs/gsm50k_plain_depth_355m_s0/runs_index_row.csv",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_plain_depth_355m_s0/runs_index_row.csv"
+  },
+  {
+   "role": "run record",
+   "sha256": "88c7d6155cd5dcc21f6d8072b6917ba93afb61da09e6d52ac07f53fcbc7a2ad9",
+   "bytes": 1303,
+   "root": "plain_depth_records",
+   "path": "runs/prosqa_hard_plain_depth_355m_s0/RUN_DONE.json",
+   "source_uri": "store://bucket-c/silent/runs/prosqa_hard_plain_depth_355m_s0/RUN_DONE.json"
+  },
+  {
+   "role": "job receipt",
+   "sha256": "166ba3a7528d01dfb2942662c5225b4503011747f0ce34b23fdea6802ab27c3c",
+   "bytes": 4659,
+   "root": "records",
+   "path": "receipts/screen-gsm50k-bar-acctc/silent-train-20261019-153923-d3bb/JOB_RECEIPT.json",
+   "source_uri": "store://bucket-c/silent/receipts/screen-gsm50k-bar-acctc/silent-train-20261019-153923-d3bb/JOB_RECEIPT.json"
+  },
+  {
+   "role": "job receipt",
+   "sha256": "579bf52d57a2e8c6530567f0b688578b0e3a9e1f4e414e8ae654d4220f059204",
+   "bytes": 4750,
+   "root": "records",
+   "path": "receipts/screen-gsm50k-bar-acctc/silent-train-20261019-154904-c083/JOB_RECEIPT.json",
+   "source_uri": "store://bucket-c/silent/receipts/screen-gsm50k-bar-acctc/silent-train-20261019-154904-c083/JOB_RECEIPT.json"
+  },
+  {
+   "role": "job receipt",
+   "sha256": "68fea499429aa273d4f872567e5f64e6e6aec3ef2861a73eb5def32c48b31205",
+   "bytes": 4456,
+   "root": "records",
+   "path": "receipts/screen-gsm50k-bar-acctc/silent-train-20261019-160323-4299/JOB_RECEIPT.json",
+   "source_uri": "store://bucket-c/silent/receipts/screen-gsm50k-bar-acctc/silent-train-20261019-160323-4299/JOB_RECEIPT.json"
+  },
+  {
+   "role": "job receipt",
+   "sha256": "9cc09756291d6233cdddcd1305cbe1a336ac62ab7abfc8453e3f7d1b16bf3060",
+   "bytes": 12424,
+   "root": "records",
+   "path": "receipts/screen-gsm50k-bar-acctc/silent-train-20261019-172741-7fff/JOB_RECEIPT.json",
+   "source_uri": "store://bucket-c/silent/receipts/screen-gsm50k-bar-acctc/silent-train-20261019-172741-7fff/JOB_RECEIPT.json"
+  },
+  {
+   "role": "job receipt",
+   "sha256": "d942d07301d7e21e641c7a1729281302adc2c6e1bea825f473ebda64138f73da",
+   "bytes": 5549,
+   "root": "records",
+   "path": "receipts/screen-gsm50k-latent-acctc/silent-train-20261019-203810-7ebd/JOB_RECEIPT.json",
+   "source_uri": "store://bucket-c/silent/receipts/screen-gsm50k-latent-acctc/silent-train-20261019-203810-7ebd/JOB_RECEIPT.json"
+  },
+  {
+   "role": "job receipt",
+   "sha256": "64e67a7ad784dfdb4d8786a81a872b3f51869ffc1f7ee35907d9c79e8642672c",
+   "bytes": 13500,
+   "root": "records",
+   "path": "receipts/screen-gsm50k-latent-acctc/silent-train-20261019-204820-d318/JOB_RECEIPT.json",
+   "source_uri": "store://bucket-c/silent/receipts/screen-gsm50k-latent-acctc/silent-train-20261019-204820-d318/JOB_RECEIPT.json"
+  },
+  {
+   "role": "job receipt",
+   "sha256": "e42fe4796b7b66e8455ba4b4006136fdab8aec5b2e9d0ffe9e073b9b2b7c5028",
+   "bytes": 7025,
+   "root": "records",
+   "path": "receipts/screen-gsm50k-latent-acctc/silent-train-20261020-025152-49e0/JOB_RECEIPT.json",
+   "source_uri": "store://bucket-c/silent/receipts/screen-gsm50k-latent-acctc/silent-train-20261020-025152-49e0/JOB_RECEIPT.json"
+  },
+  {
+   "role": "job receipt",
+   "sha256": "c59d31c638b2eb6fd52536b3ea8b4d9685046c1946db4167cf9f1373e5d352be",
+   "bytes": 7025,
+   "root": "records",
+   "path": "receipts/screen-gsm50k-latent-acctc/silent-train-20261020-030355-f2b5/JOB_RECEIPT.json",
+   "source_uri": "store://bucket-c/silent/receipts/screen-gsm50k-latent-acctc/silent-train-20261020-030355-f2b5/JOB_RECEIPT.json"
+  },
+  {
+   "role": "job receipt",
+   "sha256": "892e3e0156d39663e3232b8c67583e7042e16aa55a8df0165d8cf7954ff53c11",
+   "bytes": 14402,
+   "root": "records",
+   "path": "receipts/screen-gsm50k-latent-acctc/silent-train-20261020-031905-622a/JOB_RECEIPT.json",
+   "source_uri": "store://bucket-c/silent/receipts/screen-gsm50k-latent-acctc/silent-train-20261020-031905-622a/JOB_RECEIPT.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "7c734e966ac10dc4b03f16f3ed625b290ff4828b8e9c9eb43a208af1880a9d5c",
+   "bytes": 1972,
+   "root": "records",
+   "path": "runs/gsm50k_c1b_k4_s0/RUN_DONE.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_c1b_k4_s0/RUN_DONE.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "ed318b31a5946a2e7ee81f03a30f4d1a303969aaf6502d4446450e96427be69d",
+   "bytes": 1161,
+   "root": "records",
+   "path": "runs/gsm50k_c1b_k4_s0/SYNC_MANIFEST.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_c1b_k4_s0/SYNC_MANIFEST.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "2543791e8471633ad77eba962a1d78a01fea8ce0cfa3ae7e4c13afb769cc0339",
+   "bytes": 1007,
+   "root": "records",
+   "path": "runs/gsm50k_c1b_k4_s0/ckpt_state.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_c1b_k4_s0/ckpt_state.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "1096d4bb6615e048e651e4c4643312b05741158ea74710d8543747645af1c2fa",
+   "bytes": 1261,
+   "root": "records",
+   "path": "runs/gsm50k_c1b_k4_s0/config.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_c1b_k4_s0/config.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "8e820f4df73d49c25521d6a366a113b8266b208efaef84422e75f6d8eb507921",
+   "bytes": 19648,
+   "root": "records",
+   "path": "runs/gsm50k_c1b_k4_s0/log.jsonl",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_c1b_k4_s0/log.jsonl"
+  },
+  {
+   "role": "run record",
+   "sha256": "8f6d5cec4106fec631af9715350744ef2f4cba650d5ea7e06839512f1f2d277e",
+   "bytes": 127,
+   "root": "records",
+   "path": "runs/gsm50k_c1b_k4_s0/runs_index_row.csv",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_c1b_k4_s0/runs_index_row.csv"
+  },
+  {
+   "role": "run record",
+   "sha256": "4489cea9377525560ce0ec3dad2f2376385ccb2bed8173a78ad9b4266de9d448",
+   "bytes": 1721,
+   "root": "records",
+   "path": "runs/gsm50k_c1b_k8_s0/RUN_DONE.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_c1b_k8_s0/RUN_DONE.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "0dadc57b97dd56e6490b43341ade2ec0ad65de8c61061bebf3a5db9d965ec962",
+   "bytes": 1160,
+   "root": "records",
+   "path": "runs/gsm50k_c1b_k8_s0/SYNC_MANIFEST.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_c1b_k8_s0/SYNC_MANIFEST.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "c696daf35c4dae8720fdcd929ba73f72887a7031bcc51289ad7aa81179dd2980",
+   "bytes": 240,
+   "root": "records",
+   "path": "runs/gsm50k_c1b_k8_s0/ckpt_state.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_c1b_k8_s0/ckpt_state.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "bab16efafd38365444e1c81cc43ab26d5079b51cccf441af74cb9715202259bc",
+   "bytes": 1262,
+   "root": "records",
+   "path": "runs/gsm50k_c1b_k8_s0/config.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_c1b_k8_s0/config.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "96d1672665502a12f23d3cea43ef7ce19824833132f8786937d12c501f479aa1",
+   "bytes": 19048,
+   "root": "records",
+   "path": "runs/gsm50k_c1b_k8_s0/log.jsonl",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_c1b_k8_s0/log.jsonl"
+  },
+  {
+   "role": "run record",
+   "sha256": "d7430723ade746bf03d5edb1125a725803900700518a5b12722a34110a54fe96",
+   "bytes": 127,
+   "root": "records",
+   "path": "runs/gsm50k_c1b_k8_s0/runs_index_row.csv",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_c1b_k8_s0/runs_index_row.csv"
+  },
+  {
+   "role": "run record",
+   "sha256": "e6f9e147d21313362ff956a84927915a9546f29baaeb67371f979f7c2e1ed06b",
+   "bytes": 1701,
+   "root": "records",
+   "path": "runs/gsm50k_c2_s0/RUN_DONE.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_c2_s0/RUN_DONE.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "124540b109264507a9df72499df5b17a707115727ac1f1de408272094603bdc9",
+   "bytes": 1705,
+   "root": "records",
+   "path": "runs/gsm50k_c2_s0/SYNC_MANIFEST.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_c2_s0/SYNC_MANIFEST.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "1c93e75c644c7194a37c83eeaa6e98d1d250df63cf7f26173f933ca2088b7387",
+   "bytes": 236,
+   "root": "records",
+   "path": "runs/gsm50k_c2_s0/ckpt_state.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_c2_s0/ckpt_state.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "304d3dab66b38ef2a11cc3600564ce6ca2da5c6e788ad348df0670899412cc06",
+   "bytes": 1517,
+   "root": "records",
+   "path": "runs/gsm50k_c2_s0/config.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_c2_s0/config.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "531baae2eccae851c5e4bba7996cd069313f88b2bc21b3beb504ef2faf96a054",
+   "bytes": 20864,
+   "root": "records",
+   "path": "runs/gsm50k_c2_s0/log.jsonl",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_c2_s0/log.jsonl"
+  },
+  {
+   "role": "run record",
+   "sha256": "63128f50e617f2dec008b9f2edca7a8f3639453fa1319c1d1010170a627c39fd",
+   "bytes": 123,
+   "root": "records",
+   "path": "runs/gsm50k_c2_s0/runs_index_row.csv",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_c2_s0/runs_index_row.csv"
+  },
+  {
+   "role": "run record",
+   "sha256": "3835a39434b92f4bc350b8691936c5db7c472608a994f28ede474fe48ada5589",
+   "bytes": 1746,
+   "root": "records",
+   "path": "runs/gsm50k_c2_shuffled_s0/RUN_DONE.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_c2_shuffled_s0/RUN_DONE.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "621ba245bdfbb264c62972eca3cc9a196ff7e334773905315d245f3e83d44c41",
+   "bytes": 1705,
+   "root": "records",
+   "path": "runs/gsm50k_c2_shuffled_s0/SYNC_MANIFEST.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_c2_shuffled_s0/SYNC_MANIFEST.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "a34c628b7c7738a29e1205871e4b2d909f09213829bf8d6ff18d06b3a7b07148",
+   "bytes": 245,
+   "root": "records",
+   "path": "runs/gsm50k_c2_shuffled_s0/ckpt_state.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_c2_shuffled_s0/ckpt_state.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "e841ecd19d879935a7f8d497f026e09738a90c0c5395ba219228d321ad35edc9",
+   "bytes": 1591,
+   "root": "records",
+   "path": "runs/gsm50k_c2_shuffled_s0/config.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_c2_shuffled_s0/config.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "f56dddb0f2d252b52921ce34936fc683a69f9760cee5aa09389902632950d231",
+   "bytes": 20813,
+   "root": "records",
+   "path": "runs/gsm50k_c2_shuffled_s0/log.jsonl",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_c2_shuffled_s0/log.jsonl"
+  },
+  {
+   "role": "run record",
+   "sha256": "fb8347d357e71a3635017b831347e8fe12af1844e1b6294324a0b3e379a19737",
+   "bytes": 132,
+   "root": "records",
+   "path": "runs/gsm50k_c2_shuffled_s0/runs_index_row.csv",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_c2_shuffled_s0/runs_index_row.csv"
+  },
+  {
+   "role": "run record",
+   "sha256": "4000de136599e64a0e0721fa26435171a6f4c2f4ca9441d1ab33902bec5d61d5",
+   "bytes": 1726,
+   "root": "records",
+   "path": "runs/gsm50k_coconut_s0/RUN_DONE.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_coconut_s0/RUN_DONE.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "5600c473059e941c88cb05e8825a4db11522b89a89720aaa65a9e395aaf42ccf",
+   "bytes": 1160,
+   "root": "records",
+   "path": "runs/gsm50k_coconut_s0/SYNC_MANIFEST.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_coconut_s0/SYNC_MANIFEST.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "2d914fab4f12a44bf2fb2f820091f3e43227e469133edb881eb6e874b3b5faf4",
+   "bytes": 241,
+   "root": "records",
+   "path": "runs/gsm50k_coconut_s0/ckpt_state.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_coconut_s0/ckpt_state.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "5fbb8901b7df7f608d42034350fc16ffb3d43a79a19b94a6ddf430ea75ed8867",
+   "bytes": 1249,
+   "root": "records",
+   "path": "runs/gsm50k_coconut_s0/config.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_coconut_s0/config.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "e80f9d257a05b5d09dfba7b4fb70e9be74e312a4dac5a7bdfb0dada8b96712f6",
+   "bytes": 16153,
+   "root": "records",
+   "path": "runs/gsm50k_coconut_s0/log.jsonl",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_coconut_s0/log.jsonl"
+  },
+  {
+   "role": "run record",
+   "sha256": "7127b335a05b4aaeb1fc0d70566819f81dab9ac785e712e6cdae40a79ab89756",
+   "bytes": 128,
+   "root": "records",
+   "path": "runs/gsm50k_coconut_s0/runs_index_row.csv",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_coconut_s0/runs_index_row.csv"
+  },
+  {
+   "role": "run record",
+   "sha256": "89a950877f0d7626a092fd177c49593b2328f4de940a516ae90f1661c01a3324",
+   "bytes": 1215,
+   "root": "records",
+   "path": "runs/gsm50k_cot_lr1e-4_s0/RUN_DONE.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_cot_lr1e-4_s0/RUN_DONE.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "0314b4f35e155ff2342fd015521e2235e39cc143a48e951a7f499b2c9cdfe65a",
+   "bytes": 1166,
+   "root": "records",
+   "path": "runs/gsm50k_cot_lr1e-4_s0/SYNC_MANIFEST.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_cot_lr1e-4_s0/SYNC_MANIFEST.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "b458f89b2169a8351df2d3dbbe8872e6b09cae962ab7eac33176660402a994f4",
+   "bytes": 374,
+   "root": "records",
+   "path": "runs/gsm50k_cot_lr1e-4_s0/ckpt_state.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_cot_lr1e-4_s0/ckpt_state.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "e1f520da4bd142e9f3b3bdb6a64e82c2c17af960490271ed246126ff0ef0cbb5",
+   "bytes": 1132,
+   "root": "records",
+   "path": "runs/gsm50k_cot_lr1e-4_s0/config.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_cot_lr1e-4_s0/config.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "946d0e28d3feec9c9de0db8eb90dc5aa8ed41c83e3751ce321645501432aa09e",
+   "bytes": 16312,
+   "root": "records",
+   "path": "runs/gsm50k_cot_lr1e-4_s0/log.jsonl",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_cot_lr1e-4_s0/log.jsonl"
+  },
+  {
+   "role": "run record",
+   "sha256": "6180d3050e550c07f40ab9aa0e2680ab7df63a9b25f12facee05bd93fbe4cbb9",
+   "bytes": 131,
+   "root": "records",
+   "path": "runs/gsm50k_cot_lr1e-4_s0/runs_index_row.csv",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_cot_lr1e-4_s0/runs_index_row.csv"
+  },
+  {
+   "role": "run record",
+   "sha256": "3996217beb6d0bb8529385013d39980d3ac0984c34de3d0e796e3dd96c391cef",
+   "bytes": 1215,
+   "root": "records",
+   "path": "runs/gsm50k_cot_lr3e-4_s0/RUN_DONE.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_cot_lr3e-4_s0/RUN_DONE.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "1d85440d4577792f821989635d04de8482f65c9a76f692457954d864829fc6e9",
+   "bytes": 1166,
+   "root": "records",
+   "path": "runs/gsm50k_cot_lr3e-4_s0/SYNC_MANIFEST.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_cot_lr3e-4_s0/SYNC_MANIFEST.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "c31a70c4a8c20c85c90d879cc70858e44fd623d8ee97eeeab689ddc26f7e8cf1",
+   "bytes": 374,
+   "root": "records",
+   "path": "runs/gsm50k_cot_lr3e-4_s0/ckpt_state.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_cot_lr3e-4_s0/ckpt_state.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "cbeb9aef29e075dd79b74828724b68eb77c69475ec91353ee96838676accf444",
+   "bytes": 1132,
+   "root": "records",
+   "path": "runs/gsm50k_cot_lr3e-4_s0/config.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_cot_lr3e-4_s0/config.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "099c7837c79d828d840e61e88ee046e10c205d5032b08588512ad32d227f8cf3",
+   "bytes": 16191,
+   "root": "records",
+   "path": "runs/gsm50k_cot_lr3e-4_s0/log.jsonl",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_cot_lr3e-4_s0/log.jsonl"
+  },
+  {
+   "role": "run record",
+   "sha256": "8315d2c47c1c33b5eba1598e298a1ecf7ed16254e71624648803f0872ad235c7",
+   "bytes": 131,
+   "root": "records",
+   "path": "runs/gsm50k_cot_lr3e-4_s0/runs_index_row.csv",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_cot_lr3e-4_s0/runs_index_row.csv"
+  },
+  {
+   "role": "run record",
+   "sha256": "98609924863624772a83f269e714b67f2dde8e361068d027c3179e86193d5816",
+   "bytes": 1362,
+   "root": "records",
+   "path": "runs/gsm50k_cot_lr3e-5_s0/RUN_DONE.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_cot_lr3e-5_s0/RUN_DONE.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "e67d3e33ac3e36c15de83a2cbe4512e725a2ef7393a3d5d3e63ad253d0c18db4",
+   "bytes": 1165,
+   "root": "records",
+   "path": "runs/gsm50k_cot_lr3e-5_s0/SYNC_MANIFEST.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_cot_lr3e-5_s0/SYNC_MANIFEST.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "5b59cbb242a579bef19028db4c1a6fdee1770e8f26db637b418fa723802bc905",
+   "bytes": 626,
+   "root": "records",
+   "path": "runs/gsm50k_cot_lr3e-5_s0/ckpt_state.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_cot_lr3e-5_s0/ckpt_state.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "bba920db7bed8904e6d702389f17d233ed4020eb88945c08a952452810c43809",
+   "bytes": 1131,
+   "root": "records",
+   "path": "runs/gsm50k_cot_lr3e-5_s0/config.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_cot_lr3e-5_s0/config.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "f29ee866d9ebf72c02897c4695b208e741dbc0452b8c7e40d4adb3c54b836aa8",
+   "bytes": 16629,
+   "root": "records",
+   "path": "runs/gsm50k_cot_lr3e-5_s0/log.jsonl",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_cot_lr3e-5_s0/log.jsonl"
+  },
+  {
+   "role": "run record",
+   "sha256": "4734345999fd2bf6ab36f550c7ee130ebd96d9de091fde9aa36324ed6bbd83d4",
+   "bytes": 131,
+   "root": "records",
+   "path": "runs/gsm50k_cot_lr3e-5_s0/runs_index_row.csv",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_cot_lr3e-5_s0/runs_index_row.csv"
+  },
+  {
+   "role": "run record",
+   "sha256": "f39eb59ad83a656c2ac56347de44039123d1b8a10a26940d5337255f9d216d87",
+   "bytes": 1195,
+   "root": "records",
+   "path": "runs/gsm50k_no_cot_s0/RUN_DONE.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_no_cot_s0/RUN_DONE.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "dfca66c26290eb0dcf841ecc8a329bcebb35be1585b492de2c345ca69c8a60dc",
+   "bytes": 1166,
+   "root": "records",
+   "path": "runs/gsm50k_no_cot_s0/SYNC_MANIFEST.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_no_cot_s0/SYNC_MANIFEST.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "aec63135ba4bc99ba892943fcc867a3ed270bf6419ff9b6f3c65209b9e8fa00c",
+   "bytes": 370,
+   "root": "records",
+   "path": "runs/gsm50k_no_cot_s0/ckpt_state.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_no_cot_s0/ckpt_state.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "09121298f4bf8b5ef403b1f510dd161361e9614d7932ed4cf92babcf97756f32",
+   "bytes": 1127,
+   "root": "records",
+   "path": "runs/gsm50k_no_cot_s0/config.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_no_cot_s0/config.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "eeec9ff9b98c8a90a65093ca2fb7a8bd1083eb746a9d5d470d54b4bcc8eed17f",
+   "bytes": 15922,
+   "root": "records",
+   "path": "runs/gsm50k_no_cot_s0/log.jsonl",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_no_cot_s0/log.jsonl"
+  },
+  {
+   "role": "run record",
+   "sha256": "48902a3dd35bf8f4a5a5f72d292a372278cfe582dcec89794c3fa6cd5bd4b49a",
+   "bytes": 127,
+   "root": "records",
+   "path": "runs/gsm50k_no_cot_s0/runs_index_row.csv",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_no_cot_s0/runs_index_row.csv"
+  },
+  {
+   "role": "run record",
+   "sha256": "96076c654ae94c02fd958b3eebc31b2f0c5b3721eb7918135fbf0269893c2946",
+   "bytes": 1865,
+   "root": "records",
+   "path": "runs/gsm50k_pause_s0/RUN_DONE.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_pause_s0/RUN_DONE.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "90ae4f8fc2516743f512cd41354929a8c7056c81259cce74a071255df8681149",
+   "bytes": 1160,
+   "root": "records",
+   "path": "runs/gsm50k_pause_s0/SYNC_MANIFEST.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_pause_s0/SYNC_MANIFEST.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "c7fddc27f634116a906dae15c5cb2e07cc38966a5b0f7f09ce07fc3d822db787",
+   "bytes": 493,
+   "root": "records",
+   "path": "runs/gsm50k_pause_s0/ckpt_state.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_pause_s0/ckpt_state.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "529b90b17b90865523b9973d6bca94aba9bb485eb29da09a023cbd1115be3a3a",
+   "bytes": 1243,
+   "root": "records",
+   "path": "runs/gsm50k_pause_s0/config.json",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_pause_s0/config.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "e22bf5951ada7b6718eeed7071f5bb865450322ae5ddde444de9b02f44da145a",
+   "bytes": 14591,
+   "root": "records",
+   "path": "runs/gsm50k_pause_s0/log.jsonl",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_pause_s0/log.jsonl"
+  },
+  {
+   "role": "run record",
+   "sha256": "7d631f84cbb0cec038fddd1c55b1533e4fe25e093cda52a07b3e1344952af515",
+   "bytes": 126,
+   "root": "records",
+   "path": "runs/gsm50k_pause_s0/runs_index_row.csv",
+   "source_uri": "store://bucket-c/silent/runs/gsm50k_pause_s0/runs_index_row.csv"
+  },
+  {
+   "role": "tokenizer (pinned files)",
+   "sha256": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5",
+   "bytes": 456318,
+   "root": "repo",
+   "path": "common/babylm/recipes/sprint1_port/gpt2_tokenizer/merges.txt"
+  },
+  {
+   "role": "tokenizer (pinned files)",
+   "sha256": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6",
+   "bytes": 1355256,
+   "root": "repo",
+   "path": "common/babylm/recipes/sprint1_port/gpt2_tokenizer/tokenizer.json"
+  },
+  {
+   "role": "tokenizer (pinned files)",
+   "sha256": "5e04eb606e3a1583530a42e36c2a6b6615c86f34fe77e44d9ddeb43ff940931f",
+   "bytes": 26,
+   "root": "repo",
+   "path": "common/babylm/recipes/sprint1_port/gpt2_tokenizer/tokenizer_config.json"
+  },
+  {
+   "role": "tokenizer (pinned files)",
+   "sha256": "196139668be63f3b5d6574427317ae82f612a97c5d1cdaf36ed2256dbf636783",
+   "bytes": 1042301,
+   "root": "repo",
+   "path": "common/babylm/recipes/sprint1_port/gpt2_tokenizer/vocab.json"
+  },
+  {
+   "role": "code (5.1 / 5.3 / 5.5 (c))",
+   "sha256": "06bb503ab21af652e86302fd379d6603a880bdc4e78fe21dcec69d2cbfb59ed0",
+   "bytes": 13381,
+   "root": "repo",
+   "path": "common/latent/accounting.py"
+  },
+  {
+   "role": "code (tokenize_examples)",
+   "sha256": "8cfb7e78bbb96268a60c1455034ab45274ddbbf115b94f4284625adbf29a31a9",
+   "bytes": 14001,
+   "root": "repo",
+   "path": "common/latent/data.py"
+  },
+  {
+   "role": "code (this tool)",
+   "sha256": "4e68ae55b95a39f72cce76a9fc5f2fe4bcbeda410f9ef2c77cdf292064b0f24b",
+   "bytes": 217073,
+   "root": "repo",
+   "path": "code/read_screen.py"
+  },
+  {
+   "role": "data manifest (pins, valid hash)",
+   "sha256": "198c57103082ab6f91133a7b9f73e6be9ef56371d25fab1b38fad8c0eb32d0f4",
+   "bytes": 23828,
+   "root": "repo",
+   "path": "configs/data_manifest.json"
+  },
+  {
+   "role": "registered config",
+   "sha256": "602c1275b3caffb9e6a7e113b93776ecd4f486f9ef04d4ff293d6347097332ee",
+   "bytes": 1439,
+   "root": "repo",
+   "path": "configs/screen/gsm50k_c1b_k4.json"
+  },
+  {
+   "role": "registered config",
+   "sha256": "45b638eb886369342d3c137f5449767526d98f6c459d1c404121b3f828144d15",
+   "bytes": 1441,
+   "root": "repo",
+   "path": "configs/screen/gsm50k_c1b_k8.json"
+  },
+  {
+   "role": "registered config",
+   "sha256": "ee3025133f98b74fabd7fc2c1fba3845d3c30db73371dd108ac56f603cca58c6",
+   "bytes": 1393,
+   "root": "repo",
+   "path": "configs/screen/gsm50k_c2.json"
+  },
+  {
+   "role": "registered config",
+   "sha256": "0c6efe6c0eba1a37ce85def82962f14216100bf3200af4c5a0f3dd752af754ad",
+   "bytes": 1455,
+   "root": "repo",
+   "path": "configs/screen/gsm50k_c2_shuffled.json"
+  },
+  {
+   "role": "registered config",
+   "sha256": "d76aa76adaa902bb4d992bf65392980794616d17e5a0621cf836a4b93b5e4b9a",
+   "bytes": 1434,
+   "root": "repo",
+   "path": "configs/screen/gsm50k_coconut.json"
+  },
+  {
+   "role": "registered config",
+   "sha256": "e10d6d874d12fa6f2a779a916b7de072af091badd1aefb4ba8db0524f548fcbb",
+   "bytes": 1297,
+   "root": "repo",
+   "path": "configs/screen/gsm50k_cot_lr1e-4.json"
+  },
+  {
+   "role": "registered config",
+   "sha256": "bf5a0b6966cf53955b177c0a77338f391323d10478b49ad8c5939b4c7930d6d4",
+   "bytes": 1297,
+   "root": "repo",
+   "path": "configs/screen/gsm50k_cot_lr3e-4.json"
+  },
+  {
+   "role": "registered config",
+   "sha256": "a030bd04174248278889139f6f780fefb657746894dd76992f0e21fd06f8e62f",
+   "bytes": 1296,
+   "root": "repo",
+   "path": "configs/screen/gsm50k_cot_lr3e-5.json"
+  },
+  {
+   "role": "registered config",
+   "sha256": "9188c71fce3db7d090a2c9aade632bd3c7de66de486c413b3f94d52383bfc781",
+   "bytes": 1239,
+   "root": "repo",
+   "path": "configs/screen/gsm50k_no_cot.json"
+  },
+  {
+   "role": "registered config",
+   "sha256": "657efa387b97bab2beee909dcb9f187192ae85eab615999bf7e0a265e296c5f4",
+   "bytes": 1408,
+   "root": "repo",
+   "path": "configs/screen/gsm50k_pause.json"
+  },
+  {
+   "role": "registered config",
+   "sha256": "221ea6ed6f98a6eafa8bf6047f335a6d10e13b4f279d3e47b806f38a7dbc4af2",
+   "bytes": 1541,
+   "root": "repo",
+   "path": "configs/screen/gsm50k_plain_depth_355m.json"
+  },
+  {
+   "role": "valid split",
+   "sha256": "1833a3479186e4e6c0183aad32fb7ee343479c958f2a1b57631ec22f5ee3aa7f",
+   "bytes": 165759,
+   "root": "repo",
+   "path": "data/gsm_valid.json"
+  },
+  {
+   "role": "rules (critic log)",
+   "sha256": "aeedda1cdaa4e38750f5d115c23c334fbf26a3b7ced035ef7737c1e6eba7e0ff",
+   "bytes": 420739,
+   "root": "repo",
+   "path": "governance/critic_log.md"
+  },
+  {
+   "role": "rules (registration)",
+   "sha256": "5186c4a2bbcaa60dc79752883f58f76f3afe6fba2801c49000c103c954e6200f",
+   "bytes": 192975,
+   "root": "repo",
+   "path": "governance/registration.md"
+  },
+  {
+   "role": "diag record (A6.2 rule 3 logits check, float64)",
+   "sha256": "59646b1998bb12a58d8bca0616c0576c0df1d81846fba281ee498dfe6ad618e3",
+   "bytes": 12950,
+   "root": "repo",
+   "path": "results/diag/diag-band-gsm50k-cpu/gsm50k_coconut_s0_valid_band_logits_cpu_float64/summary.json"
+  },
+  {
+   "role": "diag record (A6.2 rule 3 logits check, gpu)",
+   "sha256": "c37195d10372808a9218e05375cb8aa9c0486c0353660d38da1de83c4d0f3b02",
+   "bytes": 21160,
+   "root": "repo",
+   "path": "results/diag/diag-band-gsm50k-main/gsm50k_coconut_s0_valid_band_logits/summary.json"
+  },
+  {
+   "role": "eval job receipt",
+   "sha256": "5cc22e035ec86dbf6142ba53619a49369f6a29e366f4241758f4de65ca9136b7",
+   "bytes": 63215,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/JOB_RECEIPT.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "6c1be5051ac13b6dce7635a1ba3abda5c2369a18353f8443e6f89193d54e0340",
+   "bytes": 1597,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k4_s0_valid_n0/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "ea7069edc07adc60909d9445f80eed0386e3a81e80753240e137f3f8b2ec5a75",
+   "bytes": 27748,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k4_s0_valid_n0/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "71d0ce2c87604a115496fa6fbce862964ef221e5bc6628d4e64d5cb87196bff3",
+   "bytes": 2958,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k4_s0_valid_n0/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "4fd955def76295059f7a7f74ed637fbb3d97db092996b0c18ae7df0702635f2b",
+   "bytes": 1597,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k4_s0_valid_n1/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "fc1c5e841700f92766293e418757653a7c3f673227743ed2b329e24b8c629a07",
+   "bytes": 27788,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k4_s0_valid_n1/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "0d33b54c6e94ab699cffa4a5409e5ed9ee194a32110947ad323de4bd877c1f6a",
+   "bytes": 3024,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k4_s0_valid_n1/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "368fecf06f62a6fb29e9891d240f07ca150e3b2257a9f5896a55f7e83ba850da",
+   "bytes": 1598,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k4_s0_valid_n2/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "0ee9e5c9fe570af59335bdf012df793283407dd03d54f0bc9712a57fae19d22a",
+   "bytes": 27841,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k4_s0_valid_n2/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "10ee3f6b5488b99c725656e4b4a0dfeaf3d3ed595a0e9ae0af563add8df2de04",
+   "bytes": 3022,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k4_s0_valid_n2/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "ca2ec537cfbeb04cafb248d11e5fae4982b6dedf356a44787788daaa85764212",
+   "bytes": 1601,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k4_s0_valid_n4/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "1ed5e364bf5ba7b1fe3bf01f7fe92e6e72defd7bbe61e381a168e4dee5c33e05",
+   "bytes": 28008,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k4_s0_valid_n4/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "5e5b99b989f44cbf1e540f0e37de1f0595a619fc7a346e1ac89cacd7c4157c93",
+   "bytes": 3034,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k4_s0_valid_n4/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "fd1ab5479043411ac15dc4926e6cbb9a685e6eec086698c19d0dacfc4905376a",
+   "bytes": 1604,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k4_s0_valid_n8/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "0563e8e29471be61414b4f74e89e77ddc54e451f9af03f3bac1777c1ce378f0a",
+   "bytes": 28740,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k4_s0_valid_n8/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "33b33cf5e4beddd80b071a619aec1df60b6bc033375c444ce30470503c0a719b",
+   "bytes": 3033,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k4_s0_valid_n8/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "1dd52144096f4338bf757411078536f932d772f2a806aa621135c51cb1da3cb9",
+   "bytes": 1618,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k4_s0_valid_none/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "844ebf02e536f9a7a11339d4c3bc68b2dbf9c98be4a9e507ef35f08da7aa34e2",
+   "bytes": 28249,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k4_s0_valid_none/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "1e8845322822d73e0380c2e3f572d7f18891026f7366853649906ea692aa4458",
+   "bytes": 3039,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k4_s0_valid_none/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "443130d547766cd2de3d2b1eb931a5aa6bdd0fb2e748a67f3b69104b45396ead",
+   "bytes": 1625,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k4_s0_valid_scrambled/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "40c386f7dd6816aaec7d3c6b8dfd24516393c26f84c63e6fc392fb1bb12cc837",
+   "bytes": 28256,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k4_s0_valid_scrambled/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "e3cd22bd8ce1d58bf5e5946edbc206dba9ebb5219d1b6887167d94c4d819adf9",
+   "bytes": 3050,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k4_s0_valid_scrambled/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "439a679084878d89b2f6e017e5a5fa85dc3b18e1b27829cfc41677b73df77c09",
+   "bytes": 1636,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k4_s0_valid_timed_bs1/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "6690b52c7cf317aa4c6ef1ba63491ee97433b29c48fd77d560cd4859f9fbbecc",
+   "bytes": 28251,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k4_s0_valid_timed_bs1/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "9d906a08b072d52bdabd8d66d9406e874a3fc062ab759f2fbf0ab031a887cb73",
+   "bytes": 3039,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k4_s0_valid_timed_bs1/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "3ed10eb073f6addc34dfb6a608b3111befca37c8bb1cca6aab9ddf7ca823300d",
+   "bytes": 1618,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k4_s0_valid_zero_latent/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "ea7069edc07adc60909d9445f80eed0386e3a81e80753240e137f3f8b2ec5a75",
+   "bytes": 27748,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k4_s0_valid_zero_latent/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "1b591fa6f766035a293780c9c8d638dc453bcdf2fd5f542c38edac3a7647bef9",
+   "bytes": 2975,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k4_s0_valid_zero_latent/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "faff1d5f2ae712aa9d0eef0815224584ccf9f75d1012a5c8ca690ad0aa6188a2",
+   "bytes": 1596,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k8_s0_valid_n0/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "02d7d6ed303eadfb2cb6b77bea47817f435b42b87c46c8ec469588ea6806dc74",
+   "bytes": 27748,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k8_s0_valid_n0/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "be4b1cf554245a2e541c290db1c1ef5b93e2acf965b67fe1d10aef90e0ded7d7",
+   "bytes": 2974,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k8_s0_valid_n0/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "4551bb7b2f76bb919f4d11d9f13d1826d3cdea1480b07e0f6f6639700d293e4b",
+   "bytes": 1597,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k8_s0_valid_n1/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "2ccaf264bb7d3a7ddd2ba73d8b47e4e2a74020e9451b2270b075a51990e1d14a",
+   "bytes": 27785,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k8_s0_valid_n1/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "9b3a1087ac04fccfa0f259bd05db8ec01bc6d7533c1d57bb6dfc2fa96aea63dc",
+   "bytes": 3024,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k8_s0_valid_n1/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "910046c962c518a8540f1b78b72f02688b255dad0dbc41df511b9bc65a8cfa80",
+   "bytes": 1598,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k8_s0_valid_n2/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "273377726eaebdb4278354b2225face8e5ebd01b8c094858f7cbc009df1684d0",
+   "bytes": 27845,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k8_s0_valid_n2/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "7ad002909dcdcd5b90404b562ff2f3220074e97959ecfffd8a4eb81cfcb8a700",
+   "bytes": 3025,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k8_s0_valid_n2/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "e1bc8159fb8167f63670e1d9fd36c65496720ca03f783a453e03f6145e104bd4",
+   "bytes": 1597,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k8_s0_valid_n4/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "69e264dd755c381399b55f775d9356f359707e8828e148af4527ef246a5358e1",
+   "bytes": 28003,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k8_s0_valid_n4/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "a59a2204deefcb1bcd85c5b85ddd25be03bdc0d2ce984d54e13accc733c9c2f0",
+   "bytes": 3028,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k8_s0_valid_n4/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "0777aa50e8e1c049ad2e43e039bdf579daea56ab1ad859922c57961d655e99c4",
+   "bytes": 1604,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k8_s0_valid_n8/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "23930af3b12d5ab1a1ce4fe805e39cb360ee63e756b6bc8033f151c0513388df",
+   "bytes": 28774,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k8_s0_valid_n8/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "21ccc478778998554af96f25e1b1dd3fd9d533e000199588bc1277ba8050d6d9",
+   "bytes": 3033,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k8_s0_valid_n8/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "7ea26a803da0c6241d763ce30c07f081873b991955d3c44127b4553ad6be4df4",
+   "bytes": 1604,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k8_s0_valid_none/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "97b06039c205e712fe8148f1120efc8911a115e77a70bde2f2a29997b9ffb2e5",
+   "bytes": 28268,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k8_s0_valid_none/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "8c60202000fef854b83d5ce2405c0b153c24a19dbb760f57f26187b267d38c94",
+   "bytes": 3027,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k8_s0_valid_none/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "9094f10bf81ad8d94868844d454e9da33d0f3ba6fd5f769ed0156dc0fa6260d5",
+   "bytes": 1614,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k8_s0_valid_scrambled/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "f96f6a90456217748b5af47704b4198da20b5e3cc84798913f1daf5789352a8d",
+   "bytes": 28281,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k8_s0_valid_scrambled/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "251cda25375dcbd290b0d504c4cd83c513c989fe9c90e1a22309732c59c28bd5",
+   "bytes": 3041,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k8_s0_valid_scrambled/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "0db3168d5fea9c5299caa7d2dacf20d7d6f213e3b1f4b00b81ae1c69074cee17",
+   "bytes": 1637,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k8_s0_valid_timed_bs1/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "648c8c51c1d933b1450b8edeae29af464da24579adec1a887a7c0f2f71e51914",
+   "bytes": 28265,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k8_s0_valid_timed_bs1/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "5d56c631a8acce092cb0047fb8a3a80ae47ec8932429d037fde85a1384240756",
+   "bytes": 3039,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k8_s0_valid_timed_bs1/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "4f802ad2596f20e20801e2260970eb2fadfcb0a5045a528dcf9fa195588aa1cf",
+   "bytes": 1617,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k8_s0_valid_zero_latent/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "02d7d6ed303eadfb2cb6b77bea47817f435b42b87c46c8ec469588ea6806dc74",
+   "bytes": 27748,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k8_s0_valid_zero_latent/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "34993716852bab1b94b3b279aa6e2394493d73cc43102bcb7426a2201ea20a2d",
+   "bytes": 2990,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k8_s0_valid_zero_latent/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "f6372e3a903715acf27b983d205c006242447c66c7d6147277c204f832d7f9ec",
+   "bytes": 1579,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_s0_valid_n0/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "82f4b5fb93584dc23582b709d379dc360c7cc3df29dcba0c191093b1952823e6",
+   "bytes": 28179,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_s0_valid_n0/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "acaaa28fae3227cde4cf935894c055da23e01b949a4e71189df94df7028f92ab",
+   "bytes": 2909,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_s0_valid_n0/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "f89935fc33c1cb5d67d66f45acd22388611cfcd3ad5f951d1b6b1d39cb218a5d",
+   "bytes": 1577,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_s0_valid_n1/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "eeb47e251e0c39f26027344d77bfd0a02c26b455a6efee452898b2e3d9c01781",
+   "bytes": 27815,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_s0_valid_n1/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "8259d121f56b897285e037343e90456612417f6776d8ea8888e04c4e62b98ec2",
+   "bytes": 2909,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_s0_valid_n1/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "c8ff7f7b8225bcf752ddb40b6b3c4de8c2649f66944228c2f69c95d7f1709b5b",
+   "bytes": 1590,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_s0_valid_n2/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "8920dffdcf9f7400f033e997e88a0eaecf66293d5e1878487b02dc1c622c688f",
+   "bytes": 27855,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_s0_valid_n2/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "e77b7488e9123418628a1ddc1a9b56099666f566bc3c8c996e0aa042f8d8abd3",
+   "bytes": 2987,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_s0_valid_n2/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "41e3f2c0965fa07085abef6189a8212683ba16f06277f8cc0122c6383ded6cb4",
+   "bytes": 1580,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_s0_valid_n4/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "683099c42b245f6aee4d3d7513e2ac5797bf753f0ddc5de2067e72ba839782b6",
+   "bytes": 28020,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_s0_valid_n4/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "02357eea12a40ac1f2177a066a9f245041e185f66ffaf8a98e3dc464163d4f4c",
+   "bytes": 2975,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_s0_valid_n4/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "c8df1f2b3a9ac77d3c7c0713446c6c3cebd10d62932c9fa5147d4935087cd0f5",
+   "bytes": 1594,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_s0_valid_n8/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "e9d10bee9431c5b4e7076f844249a9ccdee3b361f84c5a91b39f6cab7773e014",
+   "bytes": 28783,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_s0_valid_n8/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "9bdca46e574da1b670ca8cf8746f94233178adfff11d63f70d7d68145e62828f",
+   "bytes": 2990,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_s0_valid_n8/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "0a6855924f229af0fd79a76fca150e094ee0e39ab833eec8f5661b85f984da6e",
+   "bytes": 1569,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_s0_valid_none/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "62f0d63b53d026a12b671078794176be9c783e6f9c71908a3ed4d3d16a16215b",
+   "bytes": 28273,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_s0_valid_none/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "df16e1a66b089a91934ae7a6dc96674ab917ed0ea3300f5a2d7a5d2de81b4359",
+   "bytes": 2970,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_s0_valid_none/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "41c94b41caeccfff79a8f86be0da7f788fdbd1ed313ca8663a0aab3cb16ca63b",
+   "bytes": 1592,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_s0_valid_scrambled/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "d25474e6c4c8eb5e6ace81739d16536292f14e82ce0ab7b10db3e6a037798b01",
+   "bytes": 28313,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_s0_valid_scrambled/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "acf64f4676f2d79c51c6cd09c9d0e6d97715b1ae90225c3340793a74d677d00a",
+   "bytes": 2919,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_s0_valid_scrambled/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "eeeaa90b8a89f8839d83fab57ec1c5a24cc372bcca91dda411aa55b707ad9319",
+   "bytes": 1600,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_s0_valid_zero_latent/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "82f4b5fb93584dc23582b709d379dc360c7cc3df29dcba0c191093b1952823e6",
+   "bytes": 28179,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_s0_valid_zero_latent/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "110b935a2d7bef18c50845fc4826fbb9a113c92ad5192c063290709e51f46caf",
+   "bytes": 2926,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_s0_valid_zero_latent/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "482b2554d5ad87d89cdec97779f790e4e7c2186a2da9f1283d52faf2e7d0596a",
+   "bytes": 1624,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_shuffled_s0_valid_n0/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "c34b25bedabed04e94e7388c99a0ec8b15e2102bd226772fc0125ef91d7037b9",
+   "bytes": 28051,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_shuffled_s0_valid_n0/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "e2808fb6aac5262d2c2adedcade5a08adbac7e23b149a0d46a55b7a648829e95",
+   "bytes": 2948,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_shuffled_s0_valid_n0/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "8e343edaf46c09bcecabec81141c88af4e7f72ce360a1cb5900e2ce3e71e8e04",
+   "bytes": 1623,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_shuffled_s0_valid_n1/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "a5706d5e63b6631aa95fa5dacb36716a895691e5e0b33a6ab93be5e202096853",
+   "bytes": 27791,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_shuffled_s0_valid_n1/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "d3ec7824b484a7d4eb6bc022d717405bee0d674fde4e5e1ca837ace2aad6c505",
+   "bytes": 2949,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_shuffled_s0_valid_n1/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "bd220b2e0a6db20fc5895f817d5670b2dae8f020f79421081ce122696d2b4e2d",
+   "bytes": 1636,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_shuffled_s0_valid_n2/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "135fb44195f33bb6dc8de7e3e035b58e6cb9c40063af9eb25fafe059c8da3892",
+   "bytes": 27855,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_shuffled_s0_valid_n2/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "686cf1f5086ae738ea89065c61e81c315b9cd70d05952207b12241d1a20ff9cf",
+   "bytes": 3023,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_shuffled_s0_valid_n2/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "3510327455604b02b4633d53763f01e5f886e3cf9798ca127e4756f424103626",
+   "bytes": 1623,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_shuffled_s0_valid_n4/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "a65bd2188898211c2c8d483ca92b872d1611a6b2911cdac5e7e264874c5cc772",
+   "bytes": 28012,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_shuffled_s0_valid_n4/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "8797c6abb94a35cb2621c8cea1c835226f01ca59e2e76f04d83730f687b679e0",
+   "bytes": 3014,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_shuffled_s0_valid_n4/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "da7e17365717a8a040e53fef8e80c4673f11a8d6f094ccbcf8dab3c3834663ba",
+   "bytes": 1641,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_shuffled_s0_valid_n8/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "aafbdeb8f841ec645206a3107e17c60826d42f3b63b33ca58c1bf2657c538809",
+   "bytes": 28783,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_shuffled_s0_valid_n8/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "2a6be5526e373de037deac1dccd2191d053c5c8d5c0c1f3d1b9a2d8cf29c5ad5",
+   "bytes": 3033,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_shuffled_s0_valid_n8/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "df11c8a48433f7ba1618214e1dee7cd2f352fb64f2988c4391826583c271acc8",
+   "bytes": 1616,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_shuffled_s0_valid_none/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "361cc641ee03384c9b5e91d5f999483619b8caf3ea9f8f0c6152c2e87d275b5e",
+   "bytes": 28271,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_shuffled_s0_valid_none/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "b2fda2dcc7e0b051d86e01f797ec870bd098d1b8449ecc55d40033953211e866",
+   "bytes": 3036,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_shuffled_s0_valid_none/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "45b9fc8dc627c00cdbe6dd22e8b8dceec9c88bb81ce5d6d0a15a2f2b13a25125",
+   "bytes": 1635,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_shuffled_s0_valid_scrambled/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "438660f7647a7f7b1fbf95888b6a036861ce960e35972481036841d8427cb680",
+   "bytes": 28313,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_shuffled_s0_valid_scrambled/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "53fbaf98c1226c955face585e00e6750b7c1ca58358d5b809021145b16e9bf10",
+   "bytes": 2964,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_shuffled_s0_valid_scrambled/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "9dc3176eb08af8670a9be4f56a52917fed4161c336d360b0c2875774fa3cef67",
+   "bytes": 1645,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_shuffled_s0_valid_zero_latent/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "c34b25bedabed04e94e7388c99a0ec8b15e2102bd226772fc0125ef91d7037b9",
+   "bytes": 28051,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_shuffled_s0_valid_zero_latent/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "c700c517f2b7010e7d196ded3cca91d599476995218caffd94e93febb0c1a186",
+   "bytes": 2965,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_shuffled_s0_valid_zero_latent/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "14435d5c1004d95108172d2805d5cee2d36fd26924a359a81f7fd4a6d5723ff4",
+   "bytes": 1692,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_coconut_s0_valid_band0-12_timed_bs1/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "e5f03895ccaf549f6b7c29d21555424a01aa2ad3b6cbe26c9222a0bc3f99ca7d",
+   "bytes": 28288,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_coconut_s0_valid_band0-12_timed_bs1/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "7e5e55958585a34b93bddbae386056ddbe847b5c6774fbaccf62b89c2931ff2b",
+   "bytes": 3063,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_coconut_s0_valid_band0-12_timed_bs1/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "7ee3fb3b81f8025bec893ae955eea630f393a10db8df774dd609c8ff6d6e0ca8",
+   "bytes": 1680,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_coconut_s0_valid_band0-12_timed_bs32/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "ed2961d11909a0fafb71815ce4a144724208f01f570d34ce49d9f9bc98ddee6e",
+   "bytes": 28286,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_coconut_s0_valid_band0-12_timed_bs32/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "42f4080988fb7c239f86d97889d51386df93daa60bd5961de5f4ef00bc78d7bd",
+   "bytes": 3064,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_coconut_s0_valid_band0-12_timed_bs32/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "fed81019cc092a30b9bcc288b3e3b8e4beb8e6e22a2f985d7179c3d0b251fb64",
+   "bytes": 1603,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_coconut_s0_valid_n0/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "cd18ca302ab2d1ecb25004f4ade06265552a08e09b222de3412a3bcab11ccbd3",
+   "bytes": 28119,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_coconut_s0_valid_n0/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "3bbf0d12c683ffa8b3dc8e07d59103f621a55d2a48ddb65e974b0dd395c7b577",
+   "bytes": 2934,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_coconut_s0_valid_n0/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "b2d448e324bfc372f54bf1874dcc400fb4f4f2561fdc20beeec35acfb0acc660",
+   "bytes": 1604,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_coconut_s0_valid_n1/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "a357a79ece76d17f032d5f27357759c4520eaa92cc8cad2c8afdc4d21e532435",
+   "bytes": 27809,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_coconut_s0_valid_n1/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "6b9ced6e08a2646e9d5e723d1199f6bfaf7642e086bba80da3965e684aca4fab",
+   "bytes": 2929,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_coconut_s0_valid_n1/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "30e8522a1cf0aa359333fe08795c0a5ce68a6c1c8f5a69959b9ba3eb974981f2",
+   "bytes": 1602,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_coconut_s0_valid_n2/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "6eed7867c8386d83230d5801f7a85267dd7ff98e0bdec6287fb3a765bbdf91ef",
+   "bytes": 27848,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_coconut_s0_valid_n2/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "72f32672cb17116719981563307bda030ca1d26f83c37b67a79ae818a5590912",
+   "bytes": 2993,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_coconut_s0_valid_n2/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "5fb3e63d3b9090a7856dfc3243f1a0913bd01375bd00308faf52ac137aff1451",
+   "bytes": 1616,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_coconut_s0_valid_n4/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "3235820635c490654383ed2f90e8c8605b5df7439a19b0f85076c84e780be023",
+   "bytes": 28031,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_coconut_s0_valid_n4/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "b6c8d13d1d8cbb803dfe0ecfad43b06f58a480f8e2ea2c60b17161657f77a943",
+   "bytes": 3010,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_coconut_s0_valid_n4/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "9e86545ad1eabea73c727a61ec37c9b670ca75b1731507ed3f4b17cdd10d3c4e",
+   "bytes": 1609,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_coconut_s0_valid_n8/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "ae0601daa071dee4639f55ee1bec5018996a307330175fc6298cb3ce53dc0f4d",
+   "bytes": 28784,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_coconut_s0_valid_n8/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "229d6dfbaf6fa489a9b1e3c9854eff8ce3800708fb0922f9ef59a557b5c03df0",
+   "bytes": 3003,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_coconut_s0_valid_n8/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "a1cc9dd2edc9d4448874a292eb2dd7aba4068cb01092891aa2777acb5c4d63c5",
+   "bytes": 1611,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_coconut_s0_valid_none/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "ddd3caf961b7df4ea7e8fdb4fb4ab917c2de896a020a58625c506c6db8adeaba",
+   "bytes": 28287,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_coconut_s0_valid_none/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "359a4e5cbdecdfcb402aef2724e66d7492688aa6a713379b4285276f3285aacb",
+   "bytes": 3002,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_coconut_s0_valid_none/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "a24b2419b68473bc820b334ce30806c0a1c99a06a95b47966fb44159cb8572e5",
+   "bytes": 1617,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_coconut_s0_valid_scrambled/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "7f812d96cdb928c0abc06050eea547df24b5950eb91cc06dc9f4ecaf3bd30c0d",
+   "bytes": 28321,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_coconut_s0_valid_scrambled/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "5ae9a2386920934921ce753f0aee698fb6f4b4c9e43bfbb5d027e381e8a0460a",
+   "bytes": 2945,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_coconut_s0_valid_scrambled/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "ec19fdd68446d21d30be905533e3ca877dc18d1a85a9633d45a657ca5b371a25",
+   "bytes": 1624,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_coconut_s0_valid_zero_latent/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "cd18ca302ab2d1ecb25004f4ade06265552a08e09b222de3412a3bcab11ccbd3",
+   "bytes": 28119,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_coconut_s0_valid_zero_latent/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "dcd9240bfe49756523532a1811226a80f41aaabf6dc198aef2fa15f2f7b495b0",
+   "bytes": 2948,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_coconut_s0_valid_zero_latent/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "93fa882ab37bcf70a40edfdee24b90a6d603d4246c0f961ce230d56bc1439f19",
+   "bytes": 1584,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_pause_s0_valid_none/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "fa0060fc53bf2b74de36600564f3a8d2f61390e936f4367c1561502f826f798e",
+   "bytes": 27818,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_pause_s0_valid_none/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "c7d077a513f83a6f08efcb65fdb6f6b78b2aa6f7dbb7a5343f033b557acb7ca8",
+   "bytes": 2723,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_pause_s0_valid_none/summary.json"
+  },
+  {
+   "role": "ProsQA cot 3-seed SD (final K1 table)",
+   "sha256": "869402375eef0e0546a51d62ce535c4fe77b96d4a808697c4e13ee22dfa81f27",
+   "bytes": 5714,
+   "root": "repo",
+   "path": "results/k1/k1_table_final.json"
+  },
+  {
+   "role": "the first table (cited)",
+   "sha256": "e9769439f0e180c101fce71903f51f0ece72f798c3701f68c93ca38782a6bb9d",
+   "bytes": 90672,
+   "root": "repo",
+   "path": "results/screens/gsm50k/gsm50k_screen.json"
+  },
+  {
+   "role": "the first table (cited)",
+   "sha256": "dfeb31c5e4f6bd21a2377847dce9e40f6c44ec0e169bab8cc9d80e4b08b9055e",
+   "bytes": 22708,
+   "root": "repo",
+   "path": "results/screens/gsm50k/gsm50k_screen.md"
+  },
+  {
+   "role": "the first table (cited)",
+   "sha256": "4c75dca770bc71b5f773efddae68eeeb8238d9b5d1a366245da6f4d26947d487",
+   "bytes": 29755,
+   "root": "repo",
+   "path": "results/screens/gsm50k/gsm50k_screen_provenance.json"
+  },
+  {
+   "role": "the second table (cited)",
+   "sha256": "ae3757719e9a014639d14533751cf2830845c633746fbc8d8fa70ead0e4d8048",
+   "bytes": 307168,
+   "root": "repo",
+   "path": "results/screens/gsm50k/gsm50k_screen_with_eval.json"
+  },
+  {
+   "role": "the second table (cited)",
+   "sha256": "92d6fbb1fa64fd5e9affa86c566c10ba91dbf06cd6c8a38bcf3bbdc5f0db12fd",
+   "bytes": 52729,
+   "root": "repo",
+   "path": "results/screens/gsm50k/gsm50k_screen_with_eval.md"
+  },
+  {
+   "role": "the second table (cited)",
+   "sha256": "1232571006bf210d90331004900d563c97858e806ace58afc247ad195cce4cd5",
+   "bytes": 71953,
+   "root": "repo",
+   "path": "results/screens/gsm50k/gsm50k_screen_with_eval_provenance.json"
+  }
+ ],
+ "outputs": {
+  "json": "gsm50k_screen_with_plain_depth.json",
+  "md": "gsm50k_screen_with_plain_depth.md"
+ },
+ "eval_dir": "results/evals/screen-eval-gsm50k-main",
+ "citations": {
+  "first_table": {
+   "files": [
+    "results/screens/gsm50k/gsm50k_screen.json",
+    "results/screens/gsm50k/gsm50k_screen.md",
+    "results/screens/gsm50k/gsm50k_screen_provenance.json"
+   ],
+   "commit": "a6e282ceb7bbc7c2e60524f91d88a8ad69c7b847",
+   "sha256": {
+    "gsm50k_screen.json": "e9769439f0e180c101fce71903f51f0ece72f798c3701f68c93ca38782a6bb9d",
+    "gsm50k_screen.md": "dfeb31c5e4f6bd21a2377847dce9e40f6c44ec0e169bab8cc9d80e4b08b9055e",
+    "gsm50k_screen_provenance.json": "4c75dca770bc71b5f773efddae68eeeb8238d9b5d1a366245da6f4d26947d487"
+   },
+   "unchanged": true
+  },
+  "second_table": {
+   "files": [
+    "results/screens/gsm50k/gsm50k_screen_with_eval.json",
+    "results/screens/gsm50k/gsm50k_screen_with_eval.md",
+    "results/screens/gsm50k/gsm50k_screen_with_eval_provenance.json"
+   ],
+   "commit": "7484a6e6bdd7963151a313bcf4cd11f1fd84d0ca",
+   "sha256": {
+    "gsm50k_screen_with_eval.json": "ae3757719e9a014639d14533751cf2830845c633746fbc8d8fa70ead0e4d8048",
+    "gsm50k_screen_with_eval.md": "92d6fbb1fa64fd5e9affa86c566c10ba91dbf06cd6c8a38bcf3bbdc5f0db12fd",
+    "gsm50k_screen_with_eval_provenance.json": "1232571006bf210d90331004900d563c97858e806ace58afc247ad195cce4cd5"
+   },
+   "unchanged": true
+  },
+  "eval": {
+   "dir": "results/evals/screen-eval-gsm50k-main",
+   "commit": "342a1f5f9af9f44630c82f3f804cbdc74698d16c",
+   "job": "screen-eval-gsm50k-main",
+   "attempt": "silent-eval-20261020-112122-f7da",
+   "registered_read": "2026-10-20T10:51Z"
+  }
+ },
+ "plain_depth_dir": "<scratch>",
+ "outputs_sha256": {
+  "json": "5aa5a5007091715fa0edb5bcfb6be72de3b9b7a14bbb3d546850202e7e435a7a",
+  "md": "8b3db96aa9e3e2047cfe7702aa2ecdd0347151901ed3421a1e2ab3724de12240"
+ }
+}

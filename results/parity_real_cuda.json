@@ -1,0 +1,39 @@
+{
+  "device": "cuda",
+  "model": "openai-community/gpt2",
+  "data": "/opt/silent/repo/data/prosqa_valid.json",
+  "torch": "2.14.1+cu130",
+  "transformers": "4.57.6",
+  "platform": "Linux-6.8.0-1070-gcp-x86_64-with-glibc2.35",
+  "parity": [
+    {
+      "device": "cuda",
+      "dtype": "float32",
+      "reference": "cpu float64",
+      "stage": 3,
+      "n_latent": 3,
+      "batch": 16,
+      "seq": 530,
+      "max_abs_logit_diff": 0.01797879531363833,
+      "max_rel_logit_diff": 121.47603318847972,
+      "loss": 5.541126328894708,
+      "loss_abs_diff": 1.352837469603685e-06,
+      "loss_rel_diff": 2.441448523830238e-07
+    },
+    {
+      "device": "cuda",
+      "dtype": "float32",
+      "reference": "cpu float64",
+      "stage": 6,
+      "n_latent": 6,
+      "batch": 16,
+      "seq": 512,
+      "max_abs_logit_diff": 0.01797879531363833,
+      "max_rel_logit_diff": 118.78043835517754,
+      "loss": 6.027106385390388,
+      "loss_abs_diff": 1.5308066476649174e-06,
+      "loss_rel_diff": 2.5398699637616635e-07
+    }
+  ],
+  "time": "2026-10-19T00:21:41"
+}

@@ -1,0 +1,27 @@
+
+[jobs] 2026-10-20T21:57:59Z /opt/silent/venv/bin/python /opt/silent/repo/code/run_diag.py --config /opt/silent/repo/configs/screen/prosqa_hard_coconut.json --checkpoint /opt/silent/out/eval_ckpts/prosqa_hard_coconut_s0_valid_band_logits_cuda_float64/ckpt_best_final.pt --out /opt/silent/out/diag-band-prosqa-hard-main/evals/prosqa_hard_coconut_s0_valid_band_logits_cuda_float64 --mode band_logits --split valid --tf32 both --set device="cuda" --set model_id="/opt/silent/out/hf/hub/models--openai-community--gpt2/snapshots/607a30d783dfa663caf39e06633721c8d4cfcd7e" --dtype float64 --strict-only --tol 1e-08 --extra-idx 21,268 --critic-row 2026-10-20T21:33Z --set seed=0 --set name="prosqa_hard_coconut_s0" --commit fd347b32984dd454f31b498ce2adbc61e0ed22b8
+`torch_dtype` is deprecated! Use `dtype` instead!
+The new embeddings will be initialized from a multivariate normal distribution that has old embeddings' mean and covariance. As described in this article: https://nlp.stanford.edu/~johnhew/vocab-expansion.html. To disable this, use `mean_resizing=False`
+load /opt/silent/out/eval_ckpts/prosqa_hard_coconut_s0_valid_band_logits_cuda_float64/ckpt_best_final.pt <All keys matched successfully>
+[W1020 21:58:29.418096483 CUDACachingAllocator.cpp:528] expandable_segments: memory mapping failed with OOM on device 0 while trying to map 20971520 bytes (free: 4653056, total: 42404806656).
+[W1020 21:58:29.482139821 CUDACachingAllocator.cpp:528] expandable_segments: memory mapping failed with OOM on device 0 while trying to map 20971520 bytes (free: 8847360, total: 42404806656).
+Traceback (most recent call last):
+  File "/opt/silent/repo/code/run_diag.py", line 818, in <module>
+    main()
+  File "/opt/silent/repo/code/run_diag.py", line 206, in main
+    return band_main(a, cfg, path)
+  File "/opt/silent/repo/code/run_diag.py", line 476, in band_main
+    rows, s = diag.band_logits(lm, tokenizer, examples, arm=cfg.arm, n_latent=n_latent, batch_size=bs, device=device,
+  File "/opt/silent/repo/common/latent/diag.py", line 949, in band_logits
+    w = swap_check(band, tokenizer, batch, pool, mode=mode, device=device)
+  File "/opt/silent/repo/common/latent/diag.py", line 789, in swap_check
+    _diff(d, "swap", base[r], _prefill(band, sb, mode, device)[r])
+  File "/opt/silent/venv/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+  File "/opt/silent/repo/common/latent/diag.py", line 260, in _prefill
+    out = lm._run(batch["input_ids"].to(device), batch["attention_mask"].to(device), batch["position_ids"].to(device),
+  File "/opt/silent/repo/common/latent/model.py", line 147, in _run
+    return self._run_band(embeds, attention_mask, position_ids, mode, scramble_bank, lat, n_lat, max_n,
+  File "/opt/silent/repo/common/latent/model.py", line 330, in _run_band
+    return _RunOut(torch.cat(logits, dim=-2), embeds, self._collect(embeds, n_lat, first, max_n), state, n_lat)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 10.32 GiB. GPU 0 has a total capacity of 39.49 GiB of which 2.27 GiB is free. Including non-PyTorch memory, this process has 37.21 GiB memory in use. Of the allocated memory 36.47 GiB is allocated by PyTorch, and 250.06 MiB is reserved by PyTorch but unallocated.

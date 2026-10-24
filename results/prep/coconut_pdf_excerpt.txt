@@ -1,0 +1,282 @@
+Coconut PDF excerpt (CANDIDATE for the critic's PDF row; selected by keyword, not verified)
+source: https://arxiv.org/pdf/2412.06769
+pdf sha256: 27db5069d4361a607f02133ab4da4d9dae601bfbff0677191b3ba7febe2f987c
+pages kept (1-based): [4, 5, 9, 10, 17] of 19
+rule: pages containing 'Table 1' or >= 2 of: learning rate, epochs, batch size, optimizer, AdamW, training/implementation details, experimental setup, hyperparameters
+
+===== page 4 =====
+Figure 2 Training procedure of Chain of Continuous Thought (Coconut). Given training data with language reasoning
+steps, at each training stage we integrate c additional continuous thoughts (c = 1 in this example), and remove one
+language reasoning step. The cross-entropy loss is then used on the remaining tokens after continuous thoughts.
+
+
+Method Overview. In the proposed Coconut method, the LLM switches between the “language mode” and
+“latent mode” (Figure 1). In language mode, the model operates as a standard language model, autoregressively
+generating the next token. In latent mode, it directly utilizes the last hidden state as the next input embedding.
+This last hidden state represents the current reasoning state, termed as a “continuous thought”.
+Special tokens <bot> and <eot> are employed to mark the beginning and end of the latent thought
+mode, respectively. As an example, we assume latent reasoning occurs between positions i and j, i.e., xi =
+<bot> and xj = <eot>. When the model is in the latent mode (i < t < j), we use the last hidden state
+from the previous token to replace the input embedding, i.e., Et = [e(x1 ), e(x2 ), ..., e(xi ), hi , hi+1 , ..., ht−1 ].
+After the latent mode finishes (t ≥ j), the input reverts to using the token embedding, i.e., Et =
+[e(x1 ), e(x2 ), ..., e(xi ), hi , hi+1 , ..., hj−1 , e(xj ), ..., e(xt )]. It is worth noting that the last hidden states have
+been processed by the final normalization layer, so they are not too large in magnitude. M(xt+1 | x≤t ) is
+not defined when i < t < j, since the latent thought is not intended to be mapped back to language space.
+However, softmax(W ht ) can still be calculated for probing purposes (see Section 5).
+Training Procedure. In this work, we focus on a problem-solving setting where the model receives a question as
+input and is expected to generate an answer through a reasoning process. We leverage language CoT data
+to supervise continuous thought by implementing a multi-stage training curriculum inspired by Deng et al.
+(2024). As shown in Figure 2, in the initial stage, the model is trained on regular CoT instances. In the
+subsequent stages, at the k-th stage, the first k reasoning steps in the CoT are replaced with k × c continuous
+thoughts1 , where c is a hyperparameter controlling the number of latent thoughts replacing a single language
+reasoning step. Following Deng et al. (2024), we also reset the optimizer state when training stages switch. We
+insert <bot> and <eot> tokens (which are not counted towards c) to encapsulate the continuous thoughts.
+During the training process, we optimize the normal negative log-likelihood loss, but mask the loss on questions
+and latent thoughts. It is important to note that the objective does not encourage the continuous thought to
+compress the removed language thought, but rather to facilitate the prediction of future reasoning. Therefore,
+it’s possible for the LLM to learn more effective representations of reasoning steps compared to human
+language.
+Training Details. Our proposed continuous thoughts are fully differentiable and allow for back-propagation. We
+perform n + 1 forward passes when n latent thoughts are scheduled in the current training stage, computing
+a new latent thought with each pass and finally conducting an additional forward pass to obtain a loss
+   1 If a language reasoning chain is shorter than k steps, then all the language thoughts will be removed.
+
+
+
+
+                                                               4
+
+===== page 5 =====
+on the remaining text sequence. While we can save any repetitive computing by using a KV cache, the
+sequential nature of the multiple forward passes poses challenges for parallelism. Further optimizing the
+training efficiency of Coconut remains an important direction for future research.
+Inference Process. The inference process for Coconut is analogous to standard language model decoding,
+except that in latent mode, we directly feed the last hidden state as the next input embedding. A challenge
+lies in determining when to switch between latent and language modes. As we focus on the problem-solving
+setting, we insert a <bot> token immediately following the question tokens. For <eot>, we consider two
+potential strategies: a) train a binary classifier on latent thoughts to enable the model to autonomously
+decide when to terminate the latent reasoning, or b) always pad the latent thoughts to a constant length. We
+found that both approaches work comparably well. Therefore, we use the second option in our experiment for
+simplicity, unless specified otherwise.
+
+
+4     Continuous Space Enables Latent Tree Search
+In this section, we provide a proof of concept of the advantage of continuous latent space reasoning. On
+ProsQA, a new dataset that requires extensive planning ability, Coconut outperforms language space CoT
+reasoning. Interestingly, our analysis indicates that the continuous representation of reasoning can encode
+multiple alternative next reasoning steps. This allows the model to perform a breadth-first search (BFS) to
+solve the problem, instead of prematurely committing to a single deterministic path like language CoT.
+We start by introducing the experimental setup (Section 4.1). By leveraging Coconut’s ability to switch
+between language and latent space reasoning, we are able to control the model to interpolate between fully
+latent reasoning and fully language reasoning and test their performance (Section 4.2). This also enables us
+to interpret the latent reasoning process as tree search (Section 4.3). Based on this perspective, we explain
+why latent reasoning can help LLMs make better decisions (Section 4.4).
+
+4.1   Experimental Setup
+Dataset. We introduce ProsQA (Proof with Search Question-Answering), a new logical reasoning dataset.
+A visualized example is shown in Figure 4. Each instance in ProsQA consists of a directed acyclic graph
+(DAG) of logical relationships between concepts, presented as natural language statements. The task requires
+models to determine logical relationships by finding valid paths through this graph, demanding sophisticated
+planning and search strategies. Unlike previous logical reasoning datasets like ProntoQA (Saparov and He,
+2022), ProsQA’s DAG structure introduces complex exploration paths, making it particularly challenging for
+models to identify the correct reasoning chain. More comprehensive details about the dataset construction
+and characteristics can be found in Appendix A.
+Setup. We use a pre-trained GPT-2 model as the base model for all experiments. The learning rate is set to
+1 × 10−4 while the effective batch size is 128. We train a Coconut model following the training procedure in
+Section 3. Since the maximum reasoning steps in ProsQA is 6, we set the number of training stages to N = 6
+in the training procedure. In each stage, we train the model for 5 epochs, and stay in the last stage until the
+50 epochs. The checkpoint with the best accuracy in the last stage is used for evaluation. As reference, we
+report the performance of (1) CoT : the model is trained with CoT data, and during inference, the model will
+generate a complete reasoning chain to solve the problem. (2) no-CoT : the model is trained with only the
+question and answer pairs, without any reasoning steps. During inference, the model will output the final
+answer directly.
+To understand the properties of latent and language reasoning space, we manipulate the model to switch
+between fully latent reasoning and fully language reasoning, by manually setting the position of the <eot>
+token during inference. When we enforce Coconut to use k continuous thoughts, the model is expected
+to output the remaining reasoning chain in language, starting from the k + 1 step. In our experiments, we
+test variants of Coconut on ProsQA with k ∈ {0, 1, 2, 3, 4, 5, 6}. Note that all these variants only differ in
+inference time while sharing the same model weights.
+Metrics. We apply two sets of evaluation metrics. One of them is based on the correctness of the final answer,
+regardless of the reasoning process. It is also the main metric used in the later sections (Section 5.3). To
+
+
+                                                      5
+
+===== page 9 =====
+                                        GSM8k                     ProntoQA                     ProsQA
+                    Method
+                                Acc. (%)     # Tokens      Acc. (%)      # Tokens      Acc. (%)     # Tokens
+                        CoT     42.9 ±0.2       25.0        98.8 ±0.8       92.5       77.5 ±1.9       49.4
+                   No-CoT       16.5 ±0.5        2.2       93.8 ±0.7         3.0       76.7 ±1.0        8.2
+                      iCoT       30.0∗           2.2       99.8 ±0.3         3.0       98.2 ±0.3        8.2
+               Pause Token      16.4 ±1.8        2.2       77.7 ±21.0        3.0       75.9 ±0.7        8.2
+         Coconut (Ours)         34.1 ±1.5        8.2       99.8 ±0.2         9.0       97.0 ±0.3       14.2
+         - w/o curriculum       14.4 ±0.8        8.2       52.4 ±0.4         9.0       76.1 ±0.2       14.2
+             - w/o thought      21.6 ±0.5        2.3       99.9 ±0.1         3.0       95.5 ±1.1        8.2
+        - pause as thought      24.1 ±0.7        2.2       100.0 ±0.1        3.0       96.6 ±0.8        8.2
+
+Table 1 Results on three datasets: GSM8k, ProntoQA and ProsQA. Higher accuracy indicates stronger reasoning
+ability, while generating fewer tokens indicates better efficiency. ∗ The result is from Deng et al. (2024).
+
+
+continuous latent space through more comprehensive experiments, highlighting its better reasoning efficiency
+over language space, as well as its potential to enhance the model’s expressivity with test-time scaling.
+
+5.1   Experimental Setup
+Math Reasoning. We use GSM8k (Cobbe et al., 2021) as the dataset for math reasoning. It consists of grade
+school-level math problems. To train the model, we use a synthetic dataset generated by Deng et al. (2023).
+We use two continuous thoughts for each reasoning step (i.e., c = 2). The model goes through 3 stages besides
+the initial stage. We then include an additional stage where still 3 × c continuous thoughts are used as in
+the previous stage, but with all the remaining language reasoning chain removed. This handles the long-tail
+distribution of reasoning chains longer than 3 steps. We train the model for 6 epochs in the initial stage, and
+3 epochs in each remaining stage.
+Logical Reasoning. Logical reasoning involves the proper application of known conditions to prove or disprove a
+conclusion using logical rules. We use the ProntoQA (Saparov and He, 2022) dataset, and our newly proposed
+ProsQA dataset, which is more challenging due to more distracting branches. We use one continuous thought
+for every reasoning step (i.e., c = 1). The model goes through 6 training stages in addition to the initial stage,
+because the maximum number of reasoning steps is 6 in these two datasets. The model then fully reasons
+with continuous thoughts to solve the problems in the last stage. We train the model for 5 epochs per stage.
+For all datasets, after the standard schedule, the model stays in the final training stage, until reaching 50
+epochs. We select the checkpoint based on the accuracy on the validation set. For inference, we manually set
+the number of continuous thoughts to be consistent with their final training stage. We use greedy decoding
+for all experiments.
+
+5.2   Baselines and Variants of Coconut
+We consider the following baselines: (1) CoT, and (2) No-CoT, which were introduced in Section 4. (3)
+iCoT (Deng et al., 2024): The model is trained with language reasoning chains and follows a carefully designed
+schedule that “internalizes” CoT. As the training goes on, tokens at the beginning of the reasoning chain are
+gradually removed until only the answer remains. During inference, the model directly predicts the answer.
+(4) Pause token (Goyal et al., 2023): The model is trained using only the question and answer without a
+reasoning chain. However, different from No-CoT, special <pause> tokens are inserted between the question
+and answer, which provides the model with additional computational capacity to derive the answer. The
+number of <pause> tokens is set the same as continuous thoughts in Coconut.
+We also evaluate some variants of Coconut: (1) w/o curriculum, which directly trains the model in the
+last stage. The model uses continuous thoughts to solve the whole problem. (2) w/o thought: We keep the
+multi-stage training, but don’t add any continuous latent thoughts. While this is similar to iCoT in the
+high-level idea, the exact training schedule is set to be consistent with Coconut, instead of iCoT, for a strict
+
+
+                                                            9
+
+===== page 10 =====
+comparison. (3) Pause as thought: We use special <pause> tokens to replace the continuous thoughts, and
+apply the same multi-stage training curriculum as Coconut.
+
+5.3   Results and Discussion
+We show the overall results in Table 1. Using continuous thoughts effectively enhances LLM reasoning over
+the No-CoT baseline. For example, by using 6 continuous thoughts, Coconut achieves 34.1% accuracy on
+GSM8k, which significantly outperforms No-CoT (16.5%). We highlight several key findings below.
+“Chaining” continuous thoughts enhances reasoning. Language CoT
+proves to increase the effective depth of LLMs and enhance their
+expressiveness (Feng et al., 2023). Thus, generating more tokens
+serves as a way to inference-time scaling for reasoning (Guo et al.,
+2025; Snell et al., 2024). This desirable property holds naturally
+for Coconut too. On GSM8k, Coconut outperformed other
+architectures trained with similar strategies, including Coconut
+(pause as thought) and Coconut (w/o thought). Particularly,
+it surpasses the latest baseline iCoT (Deng et al., 2024), which
+requires a more carefully designed training schedule.
+Additionally, we experimented with adjusting the hyperparameter
+c, which controls the number of latent thoughts corresponding
+to one language reasoning step (Figure 8, II). As we increased
+c from 0 to 1 to 2, the model’s performance steadily improved.2
+This further validates the potential of continuous thoughts to scale
+up to harder problems. In two other synthetic tasks, we found
+that the variants of Coconut (w/o thoughts or pause as thought),
+and the iCoT baseline also achieve impressive accuracy. This
+indicates that the model’s computational capacity may not be
+the bottleneck in these tasks. In contrast, GSM8k involves more          Figure 8 Efficiency comparison of reasoning
+complex contextual understanding and modeling, placing higher            space and Coconut with different c.
+demands on computational capability.
+Continuous thoughts are efficient representations of rea-
+soning. Compared to traditional CoT, Coconut gen-
+erates fewer tokens while achieving higher accuracy
+on ProntoQA and ProsQA (Table 1). Although Co-
+conut does not surpass CoT on GSM8k, it offers a
+superior trade-off between reasoning efficiency and ac-
+curacy (Figure 8, I). To illustrate this, we train a series
+of CoT models that progressively “internalize” (Deng
+et al., 2024) the initial m = {0, 1, 2, 3, ALL} reasoning
+steps, and plot their accuracy versus the number of
+generated tokens (labeled as “language” in the figure).
+These models quickly lose accuracy as more reasoning
+steps are skipped. In contrast, by applying Coconut
+training strategy—replacing each language reasoning
+step with two continuous thoughts—the accuracy drop
+is substantially mitigated, maintaining higher perfor-
+mance even when fewer tokens are generated. Another
+interesting observation is that, when we decode the first
+continuous thought, it often corresponds to possible in-      Figure 9 Decoding a continuous thought into language
+                                                              tokens in a math word problem. The decoded tokens
+termediate variables in the calculation (Figure 9). This
+                                                              correspond to intermediate variables that help solve
+also suggests that the continuous thoughts are more
+                                                              the problem.
+efficient representations of reasoning.
+  2We discuss the case of larger c in Appendix C.1.
+
+
+
+
+                                                         10
+
+===== page 17 =====
+                                         Dataset    Training       Validation      Test
+                                        GSM8k        385,620          500          1319
+                                      ProntoQA        9,000           200          800
+                                        ProsQA       17,886           300          500
+
+                                            Table 3 Statistics of the datasets.
+
+
+
+B     Clock-Time Reasoning Efficiency Metric
+We present a clock-time comparison to evaluate reasoning efficiency. The reported values represent the average
+inference time per test case (in seconds), with a batch size of 1, measured on an Nvidia A100 GPU. For the
+no-CoT and CoT baselines, we employ the standard generate method from the transformers3 library. Our
+results show that clock time is generally proportional to the number of newly generated tokens, as detailed in
+Table 1.
+
+                                     Method         GSM8k      ProntoQA         ProsQA
+                                     No-CoT          0.03          0.03            0.08
+                                     CoT             0.26          0.85            0.47
+                                     Coconut         0.09          0.11            0.15
+
+                       Table 4 Inference time (in seconds) comparison across tasks and methods.
+
+
+
+
+C     More Discussion
+
+C.1    Using More Continuous Thoughts
+In Figure 8 (II), we present the performance of Coconut on GSM8k using c ∈ {0, 1, 2}. When experimenting
+with c = 3, we observe a slight performance drop accompanied by increased variance. Analysis of the training
+logs indicates that adding three continuous thoughts at once – particularly during the final stage transition –
+leads to a sharp spike in training loss, causing instability. Future work will explore finer-grained schedules,
+such as incrementally adding continuous thoughts one at a time while removing fewer language tokens, as
+in iCoT (Deng et al., 2024). Additionally, combining language and latent reasoning—e.g., generating the
+reasoning skeleton in language and completing the reasoning process in latent space—could provide a promising
+direction for improving performance and stability.
+
+C.2     Coconut with Larger Models
+We experimented with Coconut on GSM8k using Llama 3.2-3B and Llama 3-8B (Dubey et al., 2024) with
+c = 1. We train them for 3 epochs in Stage 0, followed by 1 epoch per subsequent stage. The results are
+shown in Table 5.
+
+                                       Model            no-CoT       Coconut (Ours)
+                                       Llama 3.2-3B         26.0            31.7
+                                       Llama 3-8B           42.2            43.6
+
+Table 5 Experimental results of applying Coconut to larger Llama models. We report performance comparisons
+between models without CoT reasoning (no-CoT) and our proposed Coconut method.
+
+
+We observe consistent performance gains across both Llama 3.2-3B and Llama 3-8B models compared to
+the no-CoT baseline, though these improvements are not as pronounced as those previously demonstrated
+    3 https://github.com/huggingface/transformers
+
+
+
+
+                                                             17

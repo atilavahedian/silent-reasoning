@@ -1,0 +1,30 @@
+{
+  "phase1": {
+    "rc": -15,
+    "status": "failed",
+    "killed": true,
+    "log_rows": 1
+  },
+  "restore": {
+    "ok": true,
+    "why": "restored 7 files at log row 1",
+    "snapshot_files": [
+      "ckpt_best.pt",
+      "ckpt_best_final.pt",
+      "ckpt_state.json",
+      "config.json",
+      "log.jsonl",
+      "optimizer_last.pth",
+      "runs_index_row.csv"
+    ]
+  },
+  "phase2": {
+    "rc": 0,
+    "status": "done",
+    "log_epochs": [
+      1,
+      2
+    ],
+    "latest_epoch": 2
+  }
+}

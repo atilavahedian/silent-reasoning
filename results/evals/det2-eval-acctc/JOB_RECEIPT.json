@@ -1,0 +1,185 @@
+{
+ "job": "det2-eval-acctc",
+ "kind": "eval",
+ "attempt": "silent-eval-20261022-070810-bf49",
+ "status": "complete",
+ "spec_sha256": "b873443bf213c19f856fec2e8b77e0e1206808a3bb3047903e5ea704aed80bc9",
+ "spec": {
+  "name": "det2-eval-acctc",
+  "kind": "eval",
+  "provider": "gcp",
+  "project": "cloud-c",
+  "project_alias": "acctc",
+  "bucket": "store://bucket-c",
+  "gpu": "A100-80GB",
+  "max_hours": 1.0,
+  "provisioning": "SPOT",
+  "precision": "fp32-tf32",
+  "tf32": true,
+  "parity_first": false,
+  "evals": [
+   {
+    "name": "prosqa_cot_det2_s0_test_none",
+    "checkpoint": "store://bucket-c/silent/runs/prosqa_cot_det2_s0/ckpt_best_final.pt",
+    "checkpoint_sha256": "f59caa4e8167b45742b910eb470c9cc92065388310114c674ec7c4e6e2761e54",
+    "config": "configs/prosqa_cot.json",
+    "split": "test",
+    "intervention": "none",
+    "n_latent": null,
+    "registered_read": "2026-10-22T06:52Z",
+    "est_hours": 0.014,
+    "seed": 0,
+    "run": "prosqa_cot_det2_s0"
+   },
+   {
+    "name": "prosqa_cot_det2_s0_test_none_audit",
+    "checkpoint": "store://bucket-c/silent/runs/prosqa_cot_det2_s0/ckpt_best_final.pt",
+    "checkpoint_sha256": "f59caa4e8167b45742b910eb470c9cc92065388310114c674ec7c4e6e2761e54",
+    "config": "configs/prosqa_cot.json",
+    "split": "test",
+    "intervention": "none",
+    "n_latent": null,
+    "registered_read": "2026-10-22T06:52Z",
+    "est_hours": 0.069,
+    "seed": 0,
+    "run": "prosqa_cot_det2_s0",
+    "audit_rescore": true,
+    "batch_size": 1
+   }
+  ],
+  "_note": "Closing fact (a) (critic entries 2026-10-21T20:21Z (a) (2) and 2026-10-22T03:18Z (2)): prosqa_cot_det2_s0's registered test read (4.5; A13.3) and its batch-1 audit (A10.3), det1-eval-main's form, on acctc; the checkpoint in acctc's bucket (determinism-acctc trained it; no mirror). read on A100-80GB, trained on A100-80GB: det1 was read on main's A100-40GB, so the pair carries row (a) (2)'s two-type label. max_hours: the read 500 x 0.1 s + its batch-1 audit 500 x 0.5 s (single_read_job's constants, det1-eval-main's form), 1.3x + 0.5 h to the half hour: 1.0 h. us-central1-c / -a only (A2.1). Enters no K1 cell or seed pool (A13.3). Pin: RUN_DONE.json f59caa4e8167b45742b910eb470c9cc92065388310114c674ec7c4e6e2761e54, epoch 23, named by row 2026-10-22T06:52Z.",
+  "critic_rows_required": [
+   "2026-10-21T20:21Z",
+   "2026-10-22T03:18Z",
+   "2026-10-22T06:52Z",
+   "2026-10-22T06:55Z"
+  ],
+  "_launch": {
+   "ledger_id": "silent-eval-20261022-070810-bf49",
+   "provider": "gcp",
+   "project": "cloud-c",
+   "zones": [
+    "us-central1-c",
+    "us-central1-a"
+   ],
+   "bucket": "store://bucket-c",
+   "machine": "a2-ultragpu-1g",
+   "gpu": "A100-80GB",
+   "provisioning": "SPOT",
+   "max_run_s": 3600,
+   "deadline_epoch": 1792656491,
+   "code_uri": "store://bucket-c/silent/code/e78cbe6b67d0f8d384b4e472b4a138d41e8b898b-silent-eval-20261022-070810-bf49.tar.gz",
+   "code_commit": "e78cbe6b67d0f8d384b4e472b4a138d41e8b898b",
+   "code_sha256": "b75ef93f088929f311af74755861484e1a68c56106815096accfeb1d74dcbd65",
+   "admitted": "2026-10-22T07:08:11Z",
+   "critic_rows": [
+    "2026-10-21T20:21Z",
+    "2026-10-22T03:18Z",
+    "2026-10-22T06:52Z",
+    "2026-10-22T06:54Z",
+    "2026-10-22T06:55Z"
+   ],
+   "image_family": "common-cu129-ubuntu-2204-nvidia-580"
+  }
+ },
+ "started": "2026-10-22T07:13:02Z",
+ "ended": "2026-10-22T07:18:41Z",
+ "deadline": "2026-10-22T08:08:11Z",
+ "steps": [
+  {
+   "step": "env_reference",
+   "ok": true,
+   "time": "2026-10-22T07:13:05Z",
+   "mismatches": []
+  },
+  {
+   "step": "data",
+   "ok": true,
+   "time": "2026-10-22T07:13:09Z",
+   "source": "bucket",
+   "tasks": [
+    "prosqa"
+   ],
+   "files": 3
+  },
+  {
+   "step": "model",
+   "ok": true,
+   "time": "2026-10-22T07:13:16Z",
+   "pinned": {
+    "id": "openai-community/gpt2",
+    "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+    "weights_sha256": "248dfc3911869ec493c76e65bf2fcf7f615828b0254c12b473182f0f81d3a707"
+   },
+   "got": {
+    "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+    "weights_sha256": "248dfc3911869ec493c76e65bf2fcf7f615828b0254c12b473182f0f81d3a707",
+    "path": "/opt/silent/out/hf/hub/models--openai-community--gpt2/snapshots/607a30d783dfa663caf39e06633721c8d4cfcd7e"
+   }
+  }
+ ],
+ "runs": [],
+ "evals": [
+  {
+   "name": "prosqa_cot_det2_s0_test_none",
+   "checkpoint": "store://bucket-c/silent/runs/prosqa_cot_det2_s0/ckpt_best_final.pt",
+   "config": "configs/prosqa_cot.json",
+   "intervention": "none",
+   "split": "test",
+   "n_latent": null,
+   "audit_rescore": null,
+   "batch_size": null,
+   "seed": 0,
+   "run": "prosqa_cot_det2_s0",
+   "checkpoint_sha256": "f59caa4e8167b45742b910eb470c9cc92065388310114c674ec7c4e6e2761e54",
+   "rc": 0,
+   "status": "done"
+  },
+  {
+   "name": "prosqa_cot_det2_s0_test_none_audit",
+   "checkpoint": "store://bucket-c/silent/runs/prosqa_cot_det2_s0/ckpt_best_final.pt",
+   "config": "configs/prosqa_cot.json",
+   "intervention": "none",
+   "split": "test",
+   "n_latent": null,
+   "audit_rescore": true,
+   "batch_size": 1,
+   "seed": 0,
+   "run": "prosqa_cot_det2_s0",
+   "checkpoint_sha256": "f59caa4e8167b45742b910eb470c9cc92065388310114c674ec7c4e6e2761e54",
+   "rc": 0,
+   "status": "done"
+  }
+ ],
+ "env": {
+  "host": "silent-eval-20261022-070810-bf49",
+  "python": "3.10.12",
+  "platform": "Linux-6.8.0-1070-gcp-x86_64-with-glibc2.35",
+  "time": "2026-10-22T07:13:03Z",
+  "gpu_name": "NVIDIA A100-SXM4-80GB",
+  "driver": "580.178.04",
+  "gpu_memory": "81920 MiB",
+  "torch": "2.14.1",
+  "transformers": "4.57.6",
+  "numpy": "2.2.6",
+  "scipy": "1.15.3",
+  "huggingface_hub": "0.36.2",
+  "tokenizers": "0.22.2",
+  "safetensors": "0.8.0",
+  "torch_cuda": "13.0",
+  "cudnn": 92400,
+  "git_commit": "e78cbe6b67d0f8d384b4e472b4a138d41e8b898b",
+  "code_sha256": "b75ef93f088929f311af74755861484e1a68c56106815096accfeb1d74dcbd65",
+  "code_uri": "store://bucket-c/silent/code/e78cbe6b67d0f8d384b4e472b4a138d41e8b898b-silent-eval-20261022-070810-bf49.tar.gz",
+  "ledger_id": "silent-eval-20261022-070810-bf49",
+  "image_family": "common-cu129-ubuntu-2204-nvidia-580",
+  "machine": "a2-ultragpu-1g",
+  "gpu": "A100-80GB",
+  "project": "cloud-c",
+  "zones": [
+   "us-central1-c",
+   "us-central1-a"
+  ],
+  "image": "projects/deeplearning-platform-release/global/images/common-cu129-ubuntu-2204-nvidia-580-v20261019"
+ }
+}

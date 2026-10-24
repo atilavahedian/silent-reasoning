@@ -1,0 +1,1747 @@
+{
+ "task": "prosqa_hard",
+ "table": "prosqa_hard_screen_with_eval",
+ "generated_utc": "2026-10-20T20:47:36Z",
+ "argv": [
+  "--task",
+  "prosqa_hard",
+  "--records",
+  "<scratch>",
+  "--source-uri",
+  "store://bucket-b/silent",
+  "--receipts",
+  "<scratch>",
+  "--eval-dir",
+  "results/evals/screen-eval-prosqa-hard-main",
+  "--first-commit",
+  "rev19"
+ ],
+ "records_root": "<scratch>",
+ "source_uri": "store://bucket-b/silent",
+ "receipt_globs": [
+  "<scratch>"
+ ],
+ "git": {
+  "head": "68ecd9a191fa0ca4d2c4aa50472b90393e13258a",
+  "tool_uncommitted": false
+ },
+ "versions": {
+  "python": "3.13.16",
+  "torch": "2.14.1+cu130",
+  "transformers": "4.57.6",
+  "numpy": "2.5.3"
+ },
+ "inputs": [
+  {
+   "role": "job receipt",
+   "sha256": "28ff258db7b6d96c40a46522a95214d16e708d1ce7696894d1eca4a668130ab1",
+   "bytes": 5810,
+   "root": "records",
+   "path": "receipts/screen-prosqa-hard-acctb/silent-train-20261019-172918-8046/JOB_RECEIPT.json",
+   "source_uri": "store://bucket-b/silent/receipts/screen-prosqa-hard-acctb/silent-train-20261019-172918-8046/JOB_RECEIPT.json"
+  },
+  {
+   "role": "job receipt",
+   "sha256": "b56ce222445902526ddcd45b00c27ca87d7deec7e2f6ff466c8e8bdd3007bafa",
+   "bytes": 5810,
+   "root": "records",
+   "path": "receipts/screen-prosqa-hard-acctb/silent-train-20261019-185619-a829/JOB_RECEIPT.json",
+   "source_uri": "store://bucket-b/silent/receipts/screen-prosqa-hard-acctb/silent-train-20261019-185619-a829/JOB_RECEIPT.json"
+  },
+  {
+   "role": "job receipt",
+   "sha256": "74062b7b8c10ca7da278e162db2b1d34bb077faebb1186dcdfd75a9f5b797bb4",
+   "bytes": 5810,
+   "root": "records",
+   "path": "receipts/screen-prosqa-hard-acctb/silent-train-20261019-191352-4285/JOB_RECEIPT.json",
+   "source_uri": "store://bucket-b/silent/receipts/screen-prosqa-hard-acctb/silent-train-20261019-191352-4285/JOB_RECEIPT.json"
+  },
+  {
+   "role": "job receipt",
+   "sha256": "05315342fa2985ba55bbf71013cd3e9a06bf05cce920b81bf5d10490c387ac4f",
+   "bytes": 8819,
+   "root": "records",
+   "path": "receipts/screen-prosqa-hard-acctb/silent-train-20261019-195159-1790/JOB_RECEIPT.json",
+   "source_uri": "store://bucket-b/silent/receipts/screen-prosqa-hard-acctb/silent-train-20261019-195159-1790/JOB_RECEIPT.json"
+  },
+  {
+   "role": "job receipt",
+   "sha256": "e2c217c0d0d2cd3260c6bdeb950007c009f70f96cc0a1f2bb9da14b95b312585",
+   "bytes": 16711,
+   "root": "records",
+   "path": "receipts/screen-prosqa-hard-acctb/silent-train-20261019-213321-0ade/JOB_RECEIPT.json",
+   "source_uri": "store://bucket-b/silent/receipts/screen-prosqa-hard-acctb/silent-train-20261019-213321-0ade/JOB_RECEIPT.json"
+  },
+  {
+   "role": "job receipt",
+   "sha256": "620067a2163e06e7ace3d5dc26416d1b66b0c75899ca040e52adc7d85c0d2059",
+   "bytes": 9911,
+   "root": "records",
+   "path": "receipts/screen-prosqa-hard-acctb/silent-train-20261020-041910-11f9/JOB_RECEIPT.json",
+   "source_uri": "store://bucket-b/silent/receipts/screen-prosqa-hard-acctb/silent-train-20261020-041910-11f9/JOB_RECEIPT.json"
+  },
+  {
+   "role": "job receipt",
+   "sha256": "f334d9540fb66cfeda2281ee0bdbf770a16bcdb6f158ac9d321f48ee42ae1e0b",
+   "bytes": 8289,
+   "root": "records",
+   "path": "receipts/screen-prosqa-hard-acctb/silent-train-20261020-065429-1e3c/JOB_RECEIPT.json",
+   "source_uri": "store://bucket-b/silent/receipts/screen-prosqa-hard-acctb/silent-train-20261020-065429-1e3c/JOB_RECEIPT.json"
+  },
+  {
+   "role": "job receipt",
+   "sha256": "8af37edb9bc84164cfba5fbaffb3c90f14ecff22b29f851b2b557bc8d4aea610",
+   "bytes": 10465,
+   "root": "records",
+   "path": "receipts/screen-prosqa-hard-acctb/silent-train-20261020-130426-a26f/JOB_RECEIPT.json",
+   "source_uri": "store://bucket-b/silent/receipts/screen-prosqa-hard-acctb/silent-train-20261020-130426-a26f/JOB_RECEIPT.json"
+  },
+  {
+   "role": "job receipt",
+   "sha256": "2d4203b0c114eaac8f55d8921a2fb644d4d178a170d9813a9aae3af46ad59e1e",
+   "bytes": 12498,
+   "root": "records",
+   "path": "receipts/screen-prosqa-hard-acctb/silent-train-20261020-144340-865b/JOB_RECEIPT.json",
+   "source_uri": "store://bucket-b/silent/receipts/screen-prosqa-hard-acctb/silent-train-20261020-144340-865b/JOB_RECEIPT.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "809ae96f4df80f03d1f50d201f964a0097980a95c1102897639580dd043efb97",
+   "bytes": 1534,
+   "root": "records",
+   "path": "runs/prosqa_hard_c1b_k4_s0/RUN_DONE.json",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_c1b_k4_s0/RUN_DONE.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "046c8e8e1985964eb910908bc6b857a5c4d46642f922614513e72e5c337a82c6",
+   "bytes": 1160,
+   "root": "records",
+   "path": "runs/prosqa_hard_c1b_k4_s0/SYNC_MANIFEST.json",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_c1b_k4_s0/SYNC_MANIFEST.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "5c78827a548058e13d172bc70b35f45faf064468a07e9bbd7f729973d694908e",
+   "bytes": 783,
+   "root": "records",
+   "path": "runs/prosqa_hard_c1b_k4_s0/ckpt_state.json",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_c1b_k4_s0/ckpt_state.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "faa8e6b399949c137bcdd6d01bdb92f36ef4d6add460c637427e15319b591515",
+   "bytes": 1166,
+   "root": "records",
+   "path": "runs/prosqa_hard_c1b_k4_s0/config.json",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_c1b_k4_s0/config.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "0344cc7dd002600be93f396612c2c90d4ecacfc395e001e86c654ee041a2bee8",
+   "bytes": 27365,
+   "root": "records",
+   "path": "runs/prosqa_hard_c1b_k4_s0/log.jsonl",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_c1b_k4_s0/log.jsonl"
+  },
+  {
+   "role": "run record",
+   "sha256": "2c13685bc2cffe98766e207c0636f7dfa2ba15fb7c22e8181a9cdff9ff359913",
+   "bytes": 132,
+   "root": "records",
+   "path": "runs/prosqa_hard_c1b_k4_s0/runs_index_row.csv",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_c1b_k4_s0/runs_index_row.csv"
+  },
+  {
+   "role": "run record",
+   "sha256": "21b5cf8c986e7ff1c28c2d6da7b2ca43bb336e54266f587250ed1406d0bd8aba",
+   "bytes": 1320,
+   "root": "records",
+   "path": "runs/prosqa_hard_c1b_k8_s0/RUN_DONE.json",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_c1b_k8_s0/RUN_DONE.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "cc12593b5e988cf87979bd38369a8f534cce74be8f03638730d9786b84180c8f",
+   "bytes": 1160,
+   "root": "records",
+   "path": "runs/prosqa_hard_c1b_k8_s0/SYNC_MANIFEST.json",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_c1b_k8_s0/SYNC_MANIFEST.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "9e6804841b71871ed4447b8c3166ba95ab481cf49991cb0d5166ac58ce6808f2",
+   "bytes": 259,
+   "root": "records",
+   "path": "runs/prosqa_hard_c1b_k8_s0/ckpt_state.json",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_c1b_k8_s0/ckpt_state.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "a0019b9f2a94d8aeb09038912c9c1e4c7688b79443cb3cc915614ec551c90d47",
+   "bytes": 1167,
+   "root": "records",
+   "path": "runs/prosqa_hard_c1b_k8_s0/config.json",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_c1b_k8_s0/config.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "9fe0a3816b84fa2eea826aacf31ff39d1425d261326012a8e3540d34b97a701f",
+   "bytes": 26795,
+   "root": "records",
+   "path": "runs/prosqa_hard_c1b_k8_s0/log.jsonl",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_c1b_k8_s0/log.jsonl"
+  },
+  {
+   "role": "run record",
+   "sha256": "5032f99f90b1dac8af4ff706b3956af5071f9e1dc6c3186bea2518f91d352288",
+   "bytes": 132,
+   "root": "records",
+   "path": "runs/prosqa_hard_c1b_k8_s0/runs_index_row.csv",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_c1b_k8_s0/runs_index_row.csv"
+  },
+  {
+   "role": "run record",
+   "sha256": "d73f73a9ed4e36436952857a0d98b259fb4c2f2b9ee4c095a0fc360d79487b29",
+   "bytes": 1521,
+   "root": "records",
+   "path": "runs/prosqa_hard_c2_s0/RUN_DONE.json",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_c2_s0/RUN_DONE.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "4872029b3b0cc9baf7e9d21c25e9a846951ebffb66eda835b6830c9f23af2601",
+   "bytes": 1705,
+   "root": "records",
+   "path": "runs/prosqa_hard_c2_s0/SYNC_MANIFEST.json",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_c2_s0/SYNC_MANIFEST.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "2b9cb77d846997e2ee07f8a731884cb57975a5449efda922f6d5930215c06a22",
+   "bytes": 268,
+   "root": "records",
+   "path": "runs/prosqa_hard_c2_s0/ckpt_state.json",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_c2_s0/ckpt_state.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "0b140128e5807a1e3e53818aedf30288a98e3a1fc60122a3a11215b01a7db409",
+   "bytes": 1418,
+   "root": "records",
+   "path": "runs/prosqa_hard_c2_s0/config.json",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_c2_s0/config.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "fd18eabd9d5abff5b8fc30902f7a529eed0611ffe3bffe055a6ce34288db1517",
+   "bytes": 28899,
+   "root": "records",
+   "path": "runs/prosqa_hard_c2_s0/log.jsonl",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_c2_s0/log.jsonl"
+  },
+  {
+   "role": "run record",
+   "sha256": "1c4b3af3e0596b383915dce501a7a7c3925e3a2a51c8d7770d395ae2e4078e59",
+   "bytes": 128,
+   "root": "records",
+   "path": "runs/prosqa_hard_c2_s0/runs_index_row.csv",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_c2_s0/runs_index_row.csv"
+  },
+  {
+   "role": "run record",
+   "sha256": "6ba524cebe52110bc4b648875e647ca32929bfaf19a17828fa3bb8f6edb9610f",
+   "bytes": 1358,
+   "root": "records",
+   "path": "runs/prosqa_hard_c2_shuffled_s0/RUN_DONE.json",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_c2_shuffled_s0/RUN_DONE.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "746e0d5c5cac05a0e92c1e53086acdc0795fee93dba95f6bbf4acfd07511eb2f",
+   "bytes": 1705,
+   "root": "records",
+   "path": "runs/prosqa_hard_c2_shuffled_s0/SYNC_MANIFEST.json",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_c2_shuffled_s0/SYNC_MANIFEST.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "a7791458353587e212b6adf21253f20e3b78e98da3b5b91ee8c482e548f9f701",
+   "bytes": 277,
+   "root": "records",
+   "path": "runs/prosqa_hard_c2_shuffled_s0/ckpt_state.json",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_c2_shuffled_s0/ckpt_state.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "3a128bd5379ba12dbbec72265151aca1ab6cdc9a4f3ae1dfc2f9c58b92fa760d",
+   "bytes": 1491,
+   "root": "records",
+   "path": "runs/prosqa_hard_c2_shuffled_s0/config.json",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_c2_shuffled_s0/config.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "24eb4d75df4b8d6f19e1f5546271e580efa953bfaa8298dd19677894efee2a92",
+   "bytes": 29072,
+   "root": "records",
+   "path": "runs/prosqa_hard_c2_shuffled_s0/log.jsonl",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_c2_shuffled_s0/log.jsonl"
+  },
+  {
+   "role": "run record",
+   "sha256": "be9d3815198f1aeafac1329d85025d15f5f21662a29e8377d102c24288d96213",
+   "bytes": 137,
+   "root": "records",
+   "path": "runs/prosqa_hard_c2_shuffled_s0/runs_index_row.csv",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_c2_shuffled_s0/runs_index_row.csv"
+  },
+  {
+   "role": "run record",
+   "sha256": "551a941699b90f95a0cd92b4ae11d7720093ff685213ca1030938bc23fe41357",
+   "bytes": 1338,
+   "root": "records",
+   "path": "runs/prosqa_hard_coconut_s0/RUN_DONE.json",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_coconut_s0/RUN_DONE.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "c9f45d7b3255eb26cf4a9c19e9f17f687056b9e4b86e8846d869ede5531c9d11",
+   "bytes": 1160,
+   "root": "records",
+   "path": "runs/prosqa_hard_coconut_s0/SYNC_MANIFEST.json",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_coconut_s0/SYNC_MANIFEST.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "271c305f4ded5edd721ff7606b42638925abe1e677bcfeeb9a5c8489d3b3a630",
+   "bytes": 273,
+   "root": "records",
+   "path": "runs/prosqa_hard_coconut_s0/ckpt_state.json",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_coconut_s0/ckpt_state.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "eca038803790a988579a6e6f152442d68441d3998803dca228c06ed70b281bf0",
+   "bytes": 1154,
+   "root": "records",
+   "path": "runs/prosqa_hard_coconut_s0/config.json",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_coconut_s0/config.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "8c21bf69e48a7190a239d1e7e0f60ce16da5d2c81521e1bc35f429819cc5367f",
+   "bytes": 22900,
+   "root": "records",
+   "path": "runs/prosqa_hard_coconut_s0/log.jsonl",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_coconut_s0/log.jsonl"
+  },
+  {
+   "role": "run record",
+   "sha256": "7f6fc7781182f0b3610c4550de5f73b58e18860039f35b8987980e50bc163cf0",
+   "bytes": 133,
+   "root": "records",
+   "path": "runs/prosqa_hard_coconut_s0/runs_index_row.csv",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_coconut_s0/runs_index_row.csv"
+  },
+  {
+   "role": "run record",
+   "sha256": "e49aab32d45242adb62355340286141da8299e011bf63a294d35973b835f006c",
+   "bytes": 1416,
+   "root": "records",
+   "path": "runs/prosqa_hard_cot_lr1e-4_s0/RUN_DONE.json",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_cot_lr1e-4_s0/RUN_DONE.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "b6e00f80c3ac143c3a8611ab824944346e38f10d232789f1d54ad38427098629",
+   "bytes": 1166,
+   "root": "records",
+   "path": "runs/prosqa_hard_cot_lr1e-4_s0/SYNC_MANIFEST.json",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_cot_lr1e-4_s0/SYNC_MANIFEST.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "40906332219f826afebf394fbaf5cecc0ca792a725eb2cea5f9f908929e19ef7",
+   "bytes": 659,
+   "root": "records",
+   "path": "runs/prosqa_hard_cot_lr1e-4_s0/ckpt_state.json",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_cot_lr1e-4_s0/ckpt_state.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "f2990b96498a684e57323402b3bc414ae05fb361434fc21c001e519664e315ec",
+   "bytes": 1156,
+   "root": "records",
+   "path": "runs/prosqa_hard_cot_lr1e-4_s0/config.json",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_cot_lr1e-4_s0/config.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "93789cb181b8beffacb3053fdfa5f4d4caac414ba1a31f0a002bda291ec43cc2",
+   "bytes": 24960,
+   "root": "records",
+   "path": "runs/prosqa_hard_cot_lr1e-4_s0/log.jsonl",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_cot_lr1e-4_s0/log.jsonl"
+  },
+  {
+   "role": "run record",
+   "sha256": "6d73d8a2f7e5fff01bed406d0536ace968b41fd36489a8b40455d96cacdb1231",
+   "bytes": 136,
+   "root": "records",
+   "path": "runs/prosqa_hard_cot_lr1e-4_s0/runs_index_row.csv",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_cot_lr1e-4_s0/runs_index_row.csv"
+  },
+  {
+   "role": "run record",
+   "sha256": "3fd4022a8f38450d62651605a1a78aa46e56bb68c8578456af4db80c3b1964b8",
+   "bytes": 1238,
+   "root": "records",
+   "path": "runs/prosqa_hard_cot_lr3e-4_s0/RUN_DONE.json",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_cot_lr3e-4_s0/RUN_DONE.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "5d4ddbbe3d72c934d364eebfa2752f286a5745c53779e6a1705f0f79ebaf8d0f",
+   "bytes": 1166,
+   "root": "records",
+   "path": "runs/prosqa_hard_cot_lr3e-4_s0/SYNC_MANIFEST.json",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_cot_lr3e-4_s0/SYNC_MANIFEST.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "62021770b3ca0122dc3426d875f63585a7dedf5a74bc7ddc0d32c60614901f94",
+   "bytes": 377,
+   "root": "records",
+   "path": "runs/prosqa_hard_cot_lr3e-4_s0/ckpt_state.json",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_cot_lr3e-4_s0/ckpt_state.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "f1ba4b6311c8eb1339d9c0ddb1a953805181fa56abdc06c79701690bddabeb51",
+   "bytes": 1156,
+   "root": "records",
+   "path": "runs/prosqa_hard_cot_lr3e-4_s0/config.json",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_cot_lr3e-4_s0/config.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "100e1769a55949c068399d3df02c4c261e3fa200ea2db84a92873596b73551ad",
+   "bytes": 20297,
+   "root": "records",
+   "path": "runs/prosqa_hard_cot_lr3e-4_s0/log.jsonl",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_cot_lr3e-4_s0/log.jsonl"
+  },
+  {
+   "role": "run record",
+   "sha256": "bd48b01e83dfedc4fb1d048c493ec5be952b3081652ad9f153bf8391675ea781",
+   "bytes": 136,
+   "root": "records",
+   "path": "runs/prosqa_hard_cot_lr3e-4_s0/runs_index_row.csv",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_cot_lr3e-4_s0/runs_index_row.csv"
+  },
+  {
+   "role": "run record",
+   "sha256": "c0a9c44257a74ece3f1be482d76f19f2f148b44764c87d347140b74f94a2234d",
+   "bytes": 1516,
+   "root": "records",
+   "path": "runs/prosqa_hard_cot_lr3e-5_s0/RUN_DONE.json",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_cot_lr3e-5_s0/RUN_DONE.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "92b3549702fd47771723aec5b0fbfc9df1d6be67d1362a9f24307fba4dbfe668",
+   "bytes": 1167,
+   "root": "records",
+   "path": "runs/prosqa_hard_cot_lr3e-5_s0/SYNC_MANIFEST.json",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_cot_lr3e-5_s0/SYNC_MANIFEST.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "a72bf994c227e57bde59485a56c5064c096513e8127b9bf3ed96365a6f8b3920",
+   "bytes": 1199,
+   "root": "records",
+   "path": "runs/prosqa_hard_cot_lr3e-5_s0/ckpt_state.json",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_cot_lr3e-5_s0/ckpt_state.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "dc73fe56dc2cc3c81aa684e5e10cbc9a1e9341cea3f3073b789076726b388ce7",
+   "bytes": 1155,
+   "root": "records",
+   "path": "runs/prosqa_hard_cot_lr3e-5_s0/config.json",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_cot_lr3e-5_s0/config.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "b864c5f59f33a517a73093cc906184a812feaa09261ae210f8dbad3bf31dc399",
+   "bytes": 36524,
+   "root": "records",
+   "path": "runs/prosqa_hard_cot_lr3e-5_s0/log.jsonl",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_cot_lr3e-5_s0/log.jsonl"
+  },
+  {
+   "role": "run record",
+   "sha256": "c5ea26a494ea4e32a54dc97a9e0d7b55d70f33c5edf9aba7e33913efb2cd847b",
+   "bytes": 136,
+   "root": "records",
+   "path": "runs/prosqa_hard_cot_lr3e-5_s0/runs_index_row.csv",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_cot_lr3e-5_s0/runs_index_row.csv"
+  },
+  {
+   "role": "run record",
+   "sha256": "50e1c28ee57b948cdeec287334450219ce2652089903644489f033bc82da92fe",
+   "bytes": 1244,
+   "root": "records",
+   "path": "runs/prosqa_hard_no_cot_s0/RUN_DONE.json",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_no_cot_s0/RUN_DONE.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "b2730208e67000aa4c72bbd4a2e6ee7fe7e82c6b58b0d911938a7e16893f0596",
+   "bytes": 1166,
+   "root": "records",
+   "path": "runs/prosqa_hard_no_cot_s0/SYNC_MANIFEST.json",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_no_cot_s0/SYNC_MANIFEST.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "c1af2a6d200a2b1000291193a11202969d23b5b524983316a95fe6b585abc018",
+   "bytes": 398,
+   "root": "records",
+   "path": "runs/prosqa_hard_no_cot_s0/ckpt_state.json",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_no_cot_s0/ckpt_state.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "78b640537815c53d9e81d4978b9008cde9814e97998de0382f3b7b4270dc91c7",
+   "bytes": 1151,
+   "root": "records",
+   "path": "runs/prosqa_hard_no_cot_s0/config.json",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_no_cot_s0/config.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "4314e6017924c2c62c6bed4c5d5dee8112ce7f064a4dc9d33cc262642935f34d",
+   "bytes": 20239,
+   "root": "records",
+   "path": "runs/prosqa_hard_no_cot_s0/log.jsonl",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_no_cot_s0/log.jsonl"
+  },
+  {
+   "role": "run record",
+   "sha256": "fc74dff079d5ed31809e471b982aad49ffc8e9f550dda3e1993cc607cfc09f43",
+   "bytes": 132,
+   "root": "records",
+   "path": "runs/prosqa_hard_no_cot_s0/runs_index_row.csv",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_no_cot_s0/runs_index_row.csv"
+  },
+  {
+   "role": "run record",
+   "sha256": "3226aa1b7a81aa2fa47102b5c6581bcf14701822adeddbbb666b8e894a3d92b4",
+   "bytes": 1329,
+   "root": "records",
+   "path": "runs/prosqa_hard_pause_s0/RUN_DONE.json",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_pause_s0/RUN_DONE.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "f641ca7a3577f566484edd2937a8188c38568d933c7df9e97c24fc00fc91148f",
+   "bytes": 1160,
+   "root": "records",
+   "path": "runs/prosqa_hard_pause_s0/SYNC_MANIFEST.json",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_pause_s0/SYNC_MANIFEST.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "e3accedee8b76eca3ca3e3e2c5aa2f83d6a00dfcb2868fcb90d61fd2830d1cc9",
+   "bytes": 272,
+   "root": "records",
+   "path": "runs/prosqa_hard_pause_s0/ckpt_state.json",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_pause_s0/ckpt_state.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "a86f77399d421e18e282bf3f2aa9a0b55393ae6de2ac37a3faa69816bea4f6a7",
+   "bytes": 1148,
+   "root": "records",
+   "path": "runs/prosqa_hard_pause_s0/config.json",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_pause_s0/config.json"
+  },
+  {
+   "role": "run record",
+   "sha256": "aaada25fefdd1e219ca1b924430f59c745aa33a32c961824afb0b8b21850877f",
+   "bytes": 20510,
+   "root": "records",
+   "path": "runs/prosqa_hard_pause_s0/log.jsonl",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_pause_s0/log.jsonl"
+  },
+  {
+   "role": "run record",
+   "sha256": "dc8558b59b2b05713a33c946df7d619135024291cc1553649f1c08d0aaf6fafc",
+   "bytes": 131,
+   "root": "records",
+   "path": "runs/prosqa_hard_pause_s0/runs_index_row.csv",
+   "source_uri": "store://bucket-b/silent/runs/prosqa_hard_pause_s0/runs_index_row.csv"
+  },
+  {
+   "role": "tokenizer (pinned files)",
+   "sha256": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5",
+   "bytes": 456318,
+   "root": "repo",
+   "path": "common/babylm/recipes/sprint1_port/gpt2_tokenizer/merges.txt"
+  },
+  {
+   "role": "tokenizer (pinned files)",
+   "sha256": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6",
+   "bytes": 1355256,
+   "root": "repo",
+   "path": "common/babylm/recipes/sprint1_port/gpt2_tokenizer/tokenizer.json"
+  },
+  {
+   "role": "tokenizer (pinned files)",
+   "sha256": "5e04eb606e3a1583530a42e36c2a6b6615c86f34fe77e44d9ddeb43ff940931f",
+   "bytes": 26,
+   "root": "repo",
+   "path": "common/babylm/recipes/sprint1_port/gpt2_tokenizer/tokenizer_config.json"
+  },
+  {
+   "role": "tokenizer (pinned files)",
+   "sha256": "196139668be63f3b5d6574427317ae82f612a97c5d1cdaf36ed2256dbf636783",
+   "bytes": 1042301,
+   "root": "repo",
+   "path": "common/babylm/recipes/sprint1_port/gpt2_tokenizer/vocab.json"
+  },
+  {
+   "role": "code (5.1 / 5.3 / 5.5 (c))",
+   "sha256": "06bb503ab21af652e86302fd379d6603a880bdc4e78fe21dcec69d2cbfb59ed0",
+   "bytes": 13381,
+   "root": "repo",
+   "path": "common/latent/accounting.py"
+  },
+  {
+   "role": "code (tokenize_examples)",
+   "sha256": "8cfb7e78bbb96268a60c1455034ab45274ddbbf115b94f4284625adbf29a31a9",
+   "bytes": 14001,
+   "root": "repo",
+   "path": "common/latent/data.py"
+  },
+  {
+   "role": "code (this tool)",
+   "sha256": "297fb1e90d43f66f264297bb3f8bae5b4c748fbf5902341f2e1beae4d5df2f6a",
+   "bytes": 254287,
+   "root": "repo",
+   "path": "code/read_screen.py"
+  },
+  {
+   "role": "data manifest (pins, valid hash)",
+   "sha256": "198c57103082ab6f91133a7b9f73e6be9ef56371d25fab1b38fad8c0eb32d0f4",
+   "bytes": 23828,
+   "root": "repo",
+   "path": "configs/data_manifest.json"
+  },
+  {
+   "role": "registered config",
+   "sha256": "ffdbeede6e5b0e65d0b07242aaa2551268211f5b2a6ca89b58eb71a5f86bb4b1",
+   "bytes": 1302,
+   "root": "repo",
+   "path": "configs/screen/prosqa_hard_c1b_k4.json"
+  },
+  {
+   "role": "registered config",
+   "sha256": "ad5c78a26ed9b0693b8362614e2aed5a448da04103b966ea757aab5a0724be75",
+   "bytes": 1304,
+   "root": "repo",
+   "path": "configs/screen/prosqa_hard_c1b_k8.json"
+  },
+  {
+   "role": "registered config",
+   "sha256": "af6333fd4e466a3b1f2893de87f9974476a5fa2f65991bf5dffa991102dabc77",
+   "bytes": 1256,
+   "root": "repo",
+   "path": "configs/screen/prosqa_hard_c2.json"
+  },
+  {
+   "role": "registered config",
+   "sha256": "02e292031d4013f7d96555a22f8ec2f788ed3ebc37b98bcdd30bcd0dfc664303",
+   "bytes": 1318,
+   "root": "repo",
+   "path": "configs/screen/prosqa_hard_c2_shuffled.json"
+  },
+  {
+   "role": "registered config",
+   "sha256": "f4b47aa40f28b8cc3a180e7817213542aeb55fb2e40cba81a032c688053ee51f",
+   "bytes": 1297,
+   "root": "repo",
+   "path": "configs/screen/prosqa_hard_coconut.json"
+  },
+  {
+   "role": "registered config",
+   "sha256": "dcb5c0994e6270d52eb9f8404299dc80995d1e18bb7043a934a98539f9431c8b",
+   "bytes": 1291,
+   "root": "repo",
+   "path": "configs/screen/prosqa_hard_cot_lr1e-4.json"
+  },
+  {
+   "role": "registered config",
+   "sha256": "bedea90294a60d390fc30caf04eb04ad0ca24bf923252ab9d5bf0482e739e953",
+   "bytes": 1291,
+   "root": "repo",
+   "path": "configs/screen/prosqa_hard_cot_lr3e-4.json"
+  },
+  {
+   "role": "registered config",
+   "sha256": "7ac445b409795f986e777021b404cba24e54bb33879b554e6d5414ac7cda2fab",
+   "bytes": 1290,
+   "root": "repo",
+   "path": "configs/screen/prosqa_hard_cot_lr3e-5.json"
+  },
+  {
+   "role": "registered config",
+   "sha256": "9ae6cc8b9710be68370bebdd2069fdd925fca6c797af833f34fa38e40ec2dda7",
+   "bytes": 1233,
+   "root": "repo",
+   "path": "configs/screen/prosqa_hard_no_cot.json"
+  },
+  {
+   "role": "registered config",
+   "sha256": "ac3d14555400b5c3b8cf141649127340f19b7491c9fb9ebd0f3897d633e7dd08",
+   "bytes": 1271,
+   "root": "repo",
+   "path": "configs/screen/prosqa_hard_pause.json"
+  },
+  {
+   "role": "valid split",
+   "sha256": "2d7123f2cc5e97639cf8cce6eb466b61ec8db09126502c46ddf20b5317075cae",
+   "bytes": 788873,
+   "root": "repo",
+   "path": "data/prosqa_hard_valid.json"
+  },
+  {
+   "role": "rules (critic log)",
+   "sha256": "6ef8d79c6920cbd08a970dd3137ff90b88f038b5c2bb43bc97d84c9f3b7f6433",
+   "bytes": 510333,
+   "root": "repo",
+   "path": "governance/critic_log.md"
+  },
+  {
+   "role": "rules (registration)",
+   "sha256": "5186c4a2bbcaa60dc79752883f58f76f3afe6fba2801c49000c103c954e6200f",
+   "bytes": 192975,
+   "root": "repo",
+   "path": "governance/registration.md"
+  },
+  {
+   "role": "eval job receipt",
+   "sha256": "9fb21dd91640f44ba1b8ab8775b126b63c2cf3d571a9632475f384dca8344c2c",
+   "bytes": 74033,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/JOB_RECEIPT.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "8f614288b5cdd8068a32f4b0d443652879d8c833c58b9b5bad89d00ff3cc5da6",
+   "bytes": 1694,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k4_s0_valid_n0/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "8bfff3cf459e7d78bd5e1d96877184ab48bddd622e9e0c7ae91de69f4025db68",
+   "bytes": 17752,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k4_s0_valid_n0/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "3bce230cb4a6763e90bee603290e9a11449ba0730f0305200da4c5ff09f46b2e",
+   "bytes": 3127,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k4_s0_valid_n0/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "17cbde9630186d9e516aa94a6caab9a6f059f3825d50f0418d644caf75ca9985",
+   "bytes": 1697,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k4_s0_valid_n1/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "e1fefaaa9e33b18586481fd0ce8317f693dded50372f268b2a9e8f3cc7b605d2",
+   "bytes": 17983,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k4_s0_valid_n1/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "6c58cf92d95be59ce9fbecdcbe7eaf8ac89d9dd4ad82e511927be757156af8db",
+   "bytes": 3211,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k4_s0_valid_n1/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "c797aedf77436d68e23a91eb9a32ad5eefed12a67012912efad58c92762af891",
+   "bytes": 1698,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k4_s0_valid_n2/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "5c76ab70b324be78b7272dbf0f3bf89f0256ee967ff1399bf375811b831d6d0e",
+   "bytes": 18009,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k4_s0_valid_n2/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "5fbafc1baa4bc9a8099a55d64c2edb3eb31e4505aa3c0c771f08c3553283b1c3",
+   "bytes": 3210,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k4_s0_valid_n2/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "9e21c80738c2bd6ee2cacc384bea03d665ed223084d519c9deffdd023340aafc",
+   "bytes": 1698,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k4_s0_valid_n4/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "757174b5cf3e912e29837a730f68493aff6db3c471b5af212bcc93f5fe7e3a3e",
+   "bytes": 18013,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k4_s0_valid_n4/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "b76a793f47b5b2eab5b0ebaa781f6f6d47f94a7c40e41f106e250e69d46ef96c",
+   "bytes": 3206,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k4_s0_valid_n4/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "16e170db9ea5b633a535a2d733350c3f246dd8a4726dd4cea27643b81e02c8ef",
+   "bytes": 1695,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k4_s0_valid_n8/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "2bdbac20c0ddf51cbb685eb0ca6b8140143759db71a7ffb0b5e952ca257b03b0",
+   "bytes": 18013,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k4_s0_valid_n8/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "293fcfa4ed143eff9111673ccc4986f9f1203ea648248c12a047f342bcf05960",
+   "bytes": 3209,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k4_s0_valid_n8/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "f274f5ec56fa45be2062c29c7c40e0d38d7d5be80047cd8ce0199f99897700d2",
+   "bytes": 1703,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k4_s0_valid_none/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "2874a9a575705c718966a14b8fd70d4a1de63fa2b1a5ca52f1e900ad0c067d10",
+   "bytes": 18013,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k4_s0_valid_none/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "e38463aee510abefa3f72262412ead608abebd538fdb9273e34247f08189c488",
+   "bytes": 3209,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k4_s0_valid_none/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "6b6d8a4a0c923003ebb15681335ab66a962b073767577dbd875d88a0f943a913",
+   "bytes": 1696,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k4_s0_valid_scrambled/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "cf57fb28585969b0aa7243b271cf4d54ff014b9e938bbf3da1dba37dfded8a7d",
+   "bytes": 18013,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k4_s0_valid_scrambled/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "afd439278ea34b9e6245a64197b0b9c0e7d28e43bb2ae35e29811488b6d10ff5",
+   "bytes": 3188,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k4_s0_valid_scrambled/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "65ec650589746a15415d0079979e7928547b9519f517ea0e613b9e6512ba5c7b",
+   "bytes": 1733,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k4_s0_valid_timed_bs1/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "2874a9a575705c718966a14b8fd70d4a1de63fa2b1a5ca52f1e900ad0c067d10",
+   "bytes": 18013,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k4_s0_valid_timed_bs1/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "547e3299a56b8094b162da7173d4569486a6f8a952a30362af72df2474e9229d",
+   "bytes": 3219,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k4_s0_valid_timed_bs1/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "af25d194b585a26e3794388c66552f0b4c1c4386b8e63fe8b25ca3c0fd73f5db",
+   "bytes": 1715,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k4_s0_valid_zero_latent/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "8bfff3cf459e7d78bd5e1d96877184ab48bddd622e9e0c7ae91de69f4025db68",
+   "bytes": 17752,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k4_s0_valid_zero_latent/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "ecd11a1956145ef730538a2eceb753040d62145a912a707951334c77a7d1cbb0",
+   "bytes": 3145,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k4_s0_valid_zero_latent/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "df4834721a856d6f63227d6f173435bba1573f2896e0bdfe9922a35d90767e77",
+   "bytes": 1680,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k8_s0_valid_n0/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "0e5b25db4dcaaf0fbe05b093aea4c92bb7c05d17f0c0346d825fef1657a5ecd2",
+   "bytes": 17772,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k8_s0_valid_n0/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "3834a261c06de61aa84934c22ff49dce8f0e99acd037b463c4f807e5af424020",
+   "bytes": 3101,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k8_s0_valid_n0/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "1a85119c6075a91824fd55772c16c60b2a4ac246da9ed353cc4d922634a66cf3",
+   "bytes": 1681,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k8_s0_valid_n1/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "85b0832cc6e0e01074184adccc3be321f2152e7544b2fcc637815c40ad0f562f",
+   "bytes": 17984,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k8_s0_valid_n1/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "dba33adafa1dd6dadf67648ed01c1ed6cf92147fe4a52931fa9980299d18b406",
+   "bytes": 3197,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k8_s0_valid_n1/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "b79a8f5b60341cb39110c71b1564ba98a917b83c813d9568da6b7e40e7ac8a46",
+   "bytes": 1644,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k8_s0_valid_n2/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "5c8f6f013c320bef01fc2217fe1a74c01adea1c166136033c3204e578b362620",
+   "bytes": 18008,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k8_s0_valid_n2/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "fcc81f85ed1f5719da63b445d9f7a19179d88395553b689b9314643658d94803",
+   "bytes": 3105,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k8_s0_valid_n2/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "31fde6e3635394221af0e2915937c8a2945ce6b0ba649179fdbb39bf0cc6b7fa",
+   "bytes": 1659,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k8_s0_valid_n4/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "c238632a9090fef81340f97d2db8a70e95c5a9d259c70685819690e59e38d900",
+   "bytes": 18009,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k8_s0_valid_n4/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "16a28feab737258cf0851c0be5c610ad12e9be4d97eebb955e0f5de92e1360bb",
+   "bytes": 3145,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k8_s0_valid_n4/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "bcf1c3f8f526b0da229076edac488e91c8c67db90363b55feeddc346704a76ea",
+   "bytes": 1683,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k8_s0_valid_n8/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "901aecdcd805821a6a3dfe392e266e908b27a45338e7b55e8a660906d73df8c5",
+   "bytes": 18012,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k8_s0_valid_n8/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "bd9d5884bde443dbbdf359f980d1d55f65ddf5ea7d7cddc5dd770b19c81988af",
+   "bytes": 3164,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k8_s0_valid_n8/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "ead81ef1a32ff4400ee5cd8655eb1d86df32859f0b86c72d08a53ba3455dd033",
+   "bytes": 1704,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k8_s0_valid_none/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "32622f8361a755ab57687fcfb6df5506a69538fed50fb4adea10b00d6d057e3d",
+   "bytes": 18013,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k8_s0_valid_none/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "846577bd734e62e62f4edf4c2d6fc53a207894bbe8848ea9fc052a1c9a49df60",
+   "bytes": 3209,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k8_s0_valid_none/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "df12532b9e79b2473c0067699e0a2a9ddf4df27a3787183ce4af6d414e4ef2f1",
+   "bytes": 1710,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k8_s0_valid_scrambled/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "cb71021da662c13127b15faaa7b70550464ce5708f26bbd7ec00f82b45a3df6a",
+   "bytes": 18036,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k8_s0_valid_scrambled/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "3bab48eab3d60f7ece655a3a9ef9c9e2f5693805f4286b5f05412059ceb99855",
+   "bytes": 3189,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k8_s0_valid_scrambled/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "eba87b8522dca8bfc66d4aa604b0738bf62853ce0691a8ac35f9d4c5fdf13e31",
+   "bytes": 1695,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k8_s0_valid_timed_bs1/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "04c2dd4d8a7d5096585f19c891e802ac6a2f24f3aa8b343b6161b61ecb2364a9",
+   "bytes": 18013,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k8_s0_valid_timed_bs1/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "4511224682d74bf89f2819c4fafa88bd7db6b0a545cc5087a9b22244e8a74cfc",
+   "bytes": 3152,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k8_s0_valid_timed_bs1/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "c9e18032d3e8d92892ca8af144148215617e585e67b6d99f8469567d6c8012d9",
+   "bytes": 1701,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k8_s0_valid_zero_latent/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "0e5b25db4dcaaf0fbe05b093aea4c92bb7c05d17f0c0346d825fef1657a5ecd2",
+   "bytes": 17772,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k8_s0_valid_zero_latent/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "7440e47bd7d6bcd4ec15ad3a0fd397d57ff192515340bb49a16e0e6e8a9de7aa",
+   "bytes": 3116,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k8_s0_valid_zero_latent/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "264df809b39d3a74aa64666b2f530163d45c9b2455bf99149cc233e6d9866778",
+   "bytes": 1636,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_s0_valid_n0/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "db507d4baefe325c985fcf5ac45ad46067ebce19b33dadd5ebe0dd706bfe6738",
+   "bytes": 17752,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_s0_valid_n0/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "7ac12d6f5b67909a18e580d22ee2cb7cf4e7b248e30b56bbfdbd4d945faf6818",
+   "bytes": 3027,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_s0_valid_n0/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "41b4214485ab9927a6561c167da71fe5bf807b45580ce95c0e4548d9b8c6cefe",
+   "bytes": 1623,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_s0_valid_n1/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "f234be7098189e4c05905765b40d1cdccf81635a5449d541741575ae63c47b95",
+   "bytes": 17983,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_s0_valid_n1/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "2fbd495e44531c62cc4e5a3cc0a2af510daeade0b4301d34558e4c1cdd5f2e91",
+   "bytes": 2985,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_s0_valid_n1/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "d73a5ea71e733274b52df405190b0d035c7fd6910abed2a44e2b956fbde44319",
+   "bytes": 1625,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_s0_valid_n2/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "86a03095bf1c28d56a2308a082a5f4336b6d895d4999a3156ee8bc1bfc928bf5",
+   "bytes": 18004,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_s0_valid_n2/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "f001151bc73264699678ac820dd3f4cc8ceb09a26443b64129750f7aea2b12f3",
+   "bytes": 3051,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_s0_valid_n2/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "1f719865e9f728f0dbd167836d8ced135b0d8745e6857d9fdfabbdbc497f8fc5",
+   "bytes": 1638,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_s0_valid_n4/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "55c745689b8167ad8b12d2d0870a173a6a1982eeac935e910785423836c4b7fc",
+   "bytes": 18009,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_s0_valid_n4/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "550860a7873a91277f43335ed26f151e049709c9d160d8c62370e81d57e1d84d",
+   "bytes": 3091,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_s0_valid_n4/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "5d651c930e7eacc392cd1fdbf082e4df0c1b5aed0233e200c3f23b20bb4ab148",
+   "bytes": 1638,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_s0_valid_n8/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "92b673e13f8228c07ff0d1136f219cb88eae2dbbc37051459df831831a308ac0",
+   "bytes": 18010,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_s0_valid_n8/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "6b9c9a2c67f49747440e85878ab2010981eb60b731d5a5e42d2328a3611d1c14",
+   "bytes": 3091,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_s0_valid_n8/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "2d2adf7051f8361d8c9abfdb241e2d1c6760bfac8c12443a097e20a34daf7366",
+   "bytes": 1632,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_s0_valid_none/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "72ed260b3900bbc6f51933230261c5d783a6912d670301472e51cd11cc9bf66e",
+   "bytes": 18010,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_s0_valid_none/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "ecd93bb473a7610043c4f39a489ae6bf2e251e075f3fcbd8801cd2709c34fa5f",
+   "bytes": 3096,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_s0_valid_none/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "15eadfd415d98e8c8df290e7edbf4cc19b0131a8cd12eb906666eed498e2822a",
+   "bytes": 1638,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_s0_valid_scrambled/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "014a1e06fe43fcc42cb379a1233dbcff9a6519f76e7a6be1ebd5108aa7777557",
+   "bytes": 18011,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_s0_valid_scrambled/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "42ed4d8c33846a354d4bd6328247b7a9a64a2115e69420717f96ab9d41854efe",
+   "bytes": 3002,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_s0_valid_scrambled/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "eb70c12e3e9a3bd31d113d4ec5ca1a03074109b1c3334fdf27451c1183221471",
+   "bytes": 1657,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_s0_valid_zero_latent/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "db507d4baefe325c985fcf5ac45ad46067ebce19b33dadd5ebe0dd706bfe6738",
+   "bytes": 17752,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_s0_valid_zero_latent/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "68b82e97ef126ab894a2b236485267a73cfd2480f04495fade3bb7c3921f754a",
+   "bytes": 3043,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_s0_valid_zero_latent/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "d015587ba32a818a26c6ff22555e6c6f356f91de7e209094df98f08173ff4cca",
+   "bytes": 1704,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_shuffled_s0_valid_n0/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "ba75a35fc124fe84a588e4bedada3ce763601bf1f18c3b0273e7495cb5e9f88a",
+   "bytes": 17748,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_shuffled_s0_valid_n0/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "6ef93433cc19125de659408511794e5b1a7c3353af0ecb603fa2bf0263222f40",
+   "bytes": 3060,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_shuffled_s0_valid_n0/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "42b35729f0042d9367efbf746ea71d24999a5c6c6a20b4c3e1e1c406a112656b",
+   "bytes": 1707,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_shuffled_s0_valid_n1/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "84f1d875336e744ef47190a771bc86a8a11b99942f80086b7d89960d3a1ae27b",
+   "bytes": 17984,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_shuffled_s0_valid_n1/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "d16b23b36cb814b7a9c22195b80caf6afdb2532a0cb84f79319552fc13460cc6",
+   "bytes": 3065,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_shuffled_s0_valid_n1/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "e22c0f2df8c067bc85290d163a5382606e708ae2ce99ae3ed0e5fc92f819e43c",
+   "bytes": 1709,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_shuffled_s0_valid_n2/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "31471d4521ae52a6d304bf54ad616a49c02a18759b221da1c943c1387e15e585",
+   "bytes": 18008,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_shuffled_s0_valid_n2/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "ff9f28fbbb34ad84d3d707ffe81b6b68ea7eae5bb9a1bcc12e177b39dc10c660",
+   "bytes": 3129,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_shuffled_s0_valid_n2/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "a3cb9f28de01bffb2a816845a6eecc156bfe3045f8de81c77af2db81e02d1d5e",
+   "bytes": 1683,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_shuffled_s0_valid_n4/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "d207b144706fdd45f8633e16d2d6936dc5a81e4777e8c5d6510e1bd789d42bfd",
+   "bytes": 18013,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_shuffled_s0_valid_n4/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "f9b5ed64c015d5663d5e2cd717ef6844adf127c1ace8a415fe13f8dfe54a668d",
+   "bytes": 3129,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_shuffled_s0_valid_n4/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "359f844424f0351c2d45bbfb3f7e6a2719ef91c73d3d9a5820637b4e420d71f8",
+   "bytes": 1720,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_shuffled_s0_valid_n8/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "576ea0ef4fde8c5a7a8f0d53894ab677944a8240b68b5330c87d9ee8fdd15274",
+   "bytes": 18016,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_shuffled_s0_valid_n8/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "d0c151940d0a545b4363439a10a4bfcbf4d1f6b1629c63fcfe092c446f27beb4",
+   "bytes": 3165,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_shuffled_s0_valid_n8/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "c7044967f0b63df3f2af0db9359a9cf3eac169849d6c514d81deea05bceb083b",
+   "bytes": 1715,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_shuffled_s0_valid_none/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "0cbb7189c9349824ae04b976330c87a4387aec052dfa707b092a079c5c407e0b",
+   "bytes": 18014,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_shuffled_s0_valid_none/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "c0c166d5f67bb2d72f239ab39900c2283095985aa687232cbc0acb75c5a81401",
+   "bytes": 3171,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_shuffled_s0_valid_none/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "06bd8eaf1eab9776aefe5c3689a7471e9c133e9df504380f4f8b787f7329e0d5",
+   "bytes": 1683,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_shuffled_s0_valid_scrambled/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "ba13367afef03b1edeee8c52e24a131ddaba32e976acf1a170b59ef308ab39b1",
+   "bytes": 18015,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_shuffled_s0_valid_scrambled/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "258db3b7a015b0ee2362b22f4de352b1502833418a9ed768b0df41aba045638f",
+   "bytes": 3037,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_shuffled_s0_valid_scrambled/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "b510a2052e818231fc64499c85346de26e714ee26759c1e547f72de4cb6679de",
+   "bytes": 1725,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_shuffled_s0_valid_zero_latent/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "ba75a35fc124fe84a588e4bedada3ce763601bf1f18c3b0273e7495cb5e9f88a",
+   "bytes": 17748,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_shuffled_s0_valid_zero_latent/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "89071ebe950b74a9d05a9c76e2637384a812487de69b5483be748935ca9040c8",
+   "bytes": 3075,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_shuffled_s0_valid_zero_latent/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "af021b9fec5ea13c5a4e19420d5411cecda577f8bce361de344c4be59b61b8a6",
+   "bytes": 1790,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_coconut_s0_valid_band0-12_timed_bs1/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "8069a7cfd5b77ec56557ae6308e1da06b2b614201f3f02b27c09faeb66d06ede",
+   "bytes": 18011,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_coconut_s0_valid_band0-12_timed_bs1/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "bc784ebf75290de1ad1c9db8eae3ad2610acd618e84bde8ed4a356dba935c4de",
+   "bytes": 3250,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_coconut_s0_valid_band0-12_timed_bs1/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "81b095e258861f7a8a716bdc9a9646c0c75c5944a5a999d19e599523a29dc399",
+   "bytes": 1778,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_coconut_s0_valid_band0-12_timed_bs32/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "669ecddfbec3c658b7207833c85613b3f7a40e049640ef1b39d1a577c2b5e008",
+   "bytes": 18009,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_coconut_s0_valid_band0-12_timed_bs32/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "26419de122064762777e82b91e9caf2d8759cfd5d4d702ddaeade0afa265d5cb",
+   "bytes": 3244,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_coconut_s0_valid_band0-12_timed_bs32/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "4b512248071641a9e89a604dd677858850a8c040b293944e172aa6dcdffb241b",
+   "bytes": 1699,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_coconut_s0_valid_n0/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "ab03d08eec51309f1d7a6faa6e0ad8f15f291e9696f2d8cde7dd70de87005787",
+   "bytes": 17742,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_coconut_s0_valid_n0/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "0dea6409f7f6f32370207e28cf43f864a3900950febc1b0d9d117854e681ae4e",
+   "bytes": 3107,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_coconut_s0_valid_n0/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "2169ed8b85b62af2a6e933550d7f5be5eb91775e12c99ba0848738e92cb5e064",
+   "bytes": 1702,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_coconut_s0_valid_n1/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "d63c8b272293571a7068c7e42530389faf1680651e4edd896f718147852570bd",
+   "bytes": 17976,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_coconut_s0_valid_n1/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "8314cc613737460a93d1964dff9bc9b57622815c5db15105a6860b651dc81340",
+   "bytes": 3102,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_coconut_s0_valid_n1/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "ac1e54fe126e7ebc70f8f8c8f7b3cd6d518787b639c17e060c9724bac4acde3e",
+   "bytes": 1703,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_coconut_s0_valid_n2/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "2f205370a33d9535d13d35a11513c60c33b09112b9fc8da34ee50c0b84c70cca",
+   "bytes": 18002,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_coconut_s0_valid_n2/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "e7a71134c53de8495941cd67ec211c834db01a89ac986728774240897081f96c",
+   "bytes": 3179,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_coconut_s0_valid_n2/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "d80f7d59a642d4936867e9d06e496cc2ce8db1a82ef3521519db8fb532ff320c",
+   "bytes": 1703,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_coconut_s0_valid_n4/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "f48cb2664caac89d0ad0eb701e8898516fba1cd127e45e3cc3e0f2117adbc174",
+   "bytes": 18007,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_coconut_s0_valid_n4/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "63f7c0251a813198f04949190439f6ddd64fce7103012e0ac9737ca731491d7c",
+   "bytes": 3166,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_coconut_s0_valid_n4/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "07f1b15533031260acd93758f7e15d81b04f778caeec7bf9fff006d2381bfbc4",
+   "bytes": 1700,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_coconut_s0_valid_n8/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "72c2563f8fb6a4cde9fb66489ae7093df4dd80c4bb0285cdc1930ee9db076411",
+   "bytes": 18009,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_coconut_s0_valid_n8/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "9d0366aa5841f2353d20172942c1cc177f08d84d965a3acfe73e970a99faca8d",
+   "bytes": 3177,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_coconut_s0_valid_n8/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "5188f679d6dc5d5d716435a567e2a1da8f64aed8542207bb07bb0e9c0946c50d",
+   "bytes": 1708,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_coconut_s0_valid_none/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "669ecddfbec3c658b7207833c85613b3f7a40e049640ef1b39d1a577c2b5e008",
+   "bytes": 18009,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_coconut_s0_valid_none/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "13b447cbf1502fedd6befc64cc05c47a25c02d0eb745beaa94cdfb5f3ecfeccd",
+   "bytes": 3183,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_coconut_s0_valid_none/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "4d81dbee2f4d91e3325629bc40c87d9de88270a619f2c0e0df276ad62c4b95ce",
+   "bytes": 1715,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_coconut_s0_valid_scrambled/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "669ecddfbec3c658b7207833c85613b3f7a40e049640ef1b39d1a577c2b5e008",
+   "bytes": 18009,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_coconut_s0_valid_scrambled/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "8a3063ede01bf42335ffa758347c6db28357ef9f82590ae5ca715a709b2ca2bc",
+   "bytes": 3129,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_coconut_s0_valid_scrambled/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "2da411f91e3d0ea0e9a73d4b2bff5ff40522a8f86b265907dc30d9f3a1947df7",
+   "bytes": 1720,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_coconut_s0_valid_zero_latent/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "ab03d08eec51309f1d7a6faa6e0ad8f15f291e9696f2d8cde7dd70de87005787",
+   "bytes": 17742,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_coconut_s0_valid_zero_latent/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "10a8e981de60a00416be77fdb6eb9af276cafeae0e1f735b378e16897fe27212",
+   "bytes": 3124,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_coconut_s0_valid_zero_latent/summary.json"
+  },
+  {
+   "role": "eval read (log)",
+   "sha256": "4587f04a069b3452cd83cfebfca8963af7961783526113a95044eff6612042e1",
+   "bytes": 1683,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_pause_s0_valid_none/eval.log"
+  },
+  {
+   "role": "eval read (per-example file)",
+   "sha256": "62093c3fe5c7ef5c17c3d75900e2388dca9085bbc773b14f2bb41362a052ce93",
+   "bytes": 17744,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_pause_s0_valid_none/examples.csv"
+  },
+  {
+   "role": "eval read (summary)",
+   "sha256": "e1666316e8d030fa47652e66a4cbc9784f9ed1c90ae70323e38532fb4b995a1b",
+   "bytes": 2909,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_pause_s0_valid_none/summary.json"
+  },
+  {
+   "role": "ProsQA cot 3-seed SD (final K1 table)",
+   "sha256": "869402375eef0e0546a51d62ce535c4fe77b96d4a808697c4e13ee22dfa81f27",
+   "bytes": 5714,
+   "root": "repo",
+   "path": "results/k1/k1_table_final.json"
+  },
+  {
+   "role": "the first table (cited)",
+   "sha256": "6db6367d59d08ea21de68a4e6266a85bd8dead1a8e6c5c6a2a549e87582b5d48",
+   "bytes": 99872,
+   "root": "repo",
+   "path": "results/screens/prosqa_hard/prosqa_hard_screen.json"
+  },
+  {
+   "role": "the first table (cited)",
+   "sha256": "2c7c0ad24f350e39b2b5ea343e562736509bd7bcbbdb9d6ac0504a63ff893bfa",
+   "bytes": 22465,
+   "root": "repo",
+   "path": "results/screens/prosqa_hard/prosqa_hard_screen.md"
+  },
+  {
+   "role": "the first table (cited)",
+   "sha256": "40749a487437847bf040988d62e897800f0cfba2f7ca433724d38173fd33ccaa",
+   "bytes": 30207,
+   "root": "repo",
+   "path": "results/screens/prosqa_hard/prosqa_hard_screen_provenance.json"
+  }
+ ],
+ "outputs": {
+  "json": "prosqa_hard_screen_with_eval.json",
+  "md": "prosqa_hard_screen_with_eval.md"
+ },
+ "eval_dir": "results/evals/screen-eval-prosqa-hard-main",
+ "citations": {
+  "first_table": {
+   "files": [
+    "results/screens/prosqa_hard/prosqa_hard_screen.json",
+    "results/screens/prosqa_hard/prosqa_hard_screen.md",
+    "results/screens/prosqa_hard/prosqa_hard_screen_provenance.json"
+   ],
+   "commit": "b48a9081c56ab02d19d2d095da8c381e601df30c",
+   "sha256": {
+    "prosqa_hard_screen.json": "6db6367d59d08ea21de68a4e6266a85bd8dead1a8e6c5c6a2a549e87582b5d48",
+    "prosqa_hard_screen.md": "2c7c0ad24f350e39b2b5ea343e562736509bd7bcbbdb9d6ac0504a63ff893bfa",
+    "prosqa_hard_screen_provenance.json": "40749a487437847bf040988d62e897800f0cfba2f7ca433724d38173fd33ccaa"
+   },
+   "unchanged": true
+  },
+  "eval": {
+   "dir": "results/evals/screen-eval-prosqa-hard-main",
+   "commit": "68ecd9a191fa0ca4d2c4aa50472b90393e13258a",
+   "job": "screen-eval-prosqa-hard-main",
+   "attempt": "silent-eval-20261020-195306-b3c4",
+   "registered_read": "2026-10-20T19:15Z"
+  }
+ },
+ "outputs_sha256": {
+  "json": "8bfe5c0fb1bd238e25e9e398c56232770602339f11a668329c76d7a1ab0b835d",
+  "md": "d9c7f50d6d7dfca1a8ef896cd5a91482826f1f1df6594a52d4f55d633bc5074b"
+ }
+}

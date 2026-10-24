@@ -1,0 +1,725 @@
+{
+ "tasks": {
+  "prosqa": {
+   "status": "fetched",
+   "repo": "https://github.com/facebookresearch/coconut",
+   "ref_requested": "main",
+   "commit": "27273cb8cca4bb763c041a63b036d0c3b7cbbb48",
+   "commit_resolution": "`git ls-remote https://github.com/facebookresearch/coconut main` returned 27273cb8cca4bb763c041a63b036d0c3b7cbbb48 at 2026-10-17T21:17:58Z; the three files were downloaded from raw.githubusercontent.com URLs pinned to that commit (`url`), not from the moving `main` URL (`url_as_requested`)",
+   "files": [
+    {
+     "path": "data/prosqa_train.json",
+     "role": "source+output",
+     "sha256": "99e40ce7e9107fd02e35bcd78a7a4479bd57f415bab0a6efd37cc11a72e594f6",
+     "bytes": 30872695,
+     "records": 17886,
+     "url": "https://raw.githubusercontent.com/facebookresearch/coconut/27273cb8cca4bb763c041a63b036d0c3b7cbbb48/data/prosqa_train.json",
+     "url_as_requested": "https://raw.githubusercontent.com/facebookresearch/coconut/main/data/prosqa_train.json"
+    },
+    {
+     "path": "data/prosqa_valid.json",
+     "role": "source+output",
+     "sha256": "c74e0de24f1e90ec48b1a993e6458a7be4caeef3928f5104e3c2e45d689a5249",
+     "bytes": 518208,
+     "records": 300,
+     "url": "https://raw.githubusercontent.com/facebookresearch/coconut/27273cb8cca4bb763c041a63b036d0c3b7cbbb48/data/prosqa_valid.json",
+     "url_as_requested": "https://raw.githubusercontent.com/facebookresearch/coconut/main/data/prosqa_valid.json"
+    },
+    {
+     "path": "data/prosqa_test.json",
+     "role": "source+output",
+     "sha256": "82ddc0afe6ee30eb31bb16fa208e293e55278a20fa987098d48519cae7e12680",
+     "bytes": 856611,
+     "records": 500,
+     "url": "https://raw.githubusercontent.com/facebookresearch/coconut/27273cb8cca4bb763c041a63b036d0c3b7cbbb48/data/prosqa_test.json",
+     "url_as_requested": "https://raw.githubusercontent.com/facebookresearch/coconut/main/data/prosqa_test.json"
+    }
+   ]
+  },
+  "gsm": {
+   "status": "fetched",
+   "repo": "https://github.com/da03/Internalize_CoT_Step_by_Step",
+   "commit": "e06a32ee5e4cd117171daeb4755d2a97ece62761",
+   "files": [
+    {
+     "path": "data/raw/gsm_train.txt",
+     "role": "source",
+     "sha256": "0a3909a9e7d8d2f7ad6b8c7b5608aa744988d835f9bf874d4cf06ca77df6bf8c",
+     "bytes": 87805358,
+     "records": 385620,
+     "url": "https://media.githubusercontent.com/media/da03/Internalize_CoT_Step_by_Step/e06a32ee5e4cd117171daeb4755d2a97ece62761/data/gsm8k/train.txt"
+    },
+    {
+     "path": "data/gsm_train.json",
+     "role": "output",
+     "sha256": "93a266b1f7425a00463bb775de2946f9b30f76514944b5456bbffceb50b5de30",
+     "bytes": 104324531,
+     "records": 385620,
+     "derived_from": "data/raw/gsm_train.txt",
+     "converter": "Coconut preprocessing/gsm_icot.py semantics"
+    },
+    {
+     "path": "data/raw/gsm_valid.txt",
+     "role": "source",
+     "sha256": "04f9bddfe8ac4846571b1e2b612b289c95770b5012fdb34cc36a597b041afb87",
+     "bytes": 143419,
+     "records": 500,
+     "url": "https://raw.githubusercontent.com/da03/Internalize_CoT_Step_by_Step/e06a32ee5e4cd117171daeb4755d2a97ece62761/data/gsm8k/valid.txt"
+    },
+    {
+     "path": "data/gsm_valid.json",
+     "role": "output",
+     "sha256": "1833a3479186e4e6c0183aad32fb7ee343479c958f2a1b57631ec22f5ee3aa7f",
+     "bytes": 165759,
+     "records": 500,
+     "derived_from": "data/raw/gsm_valid.txt",
+     "converter": "Coconut preprocessing/gsm_icot.py semantics"
+    },
+    {
+     "path": "data/raw/gsm_test.txt",
+     "role": "source",
+     "sha256": "e464efa2713fbcf423bdbfb482c543a6a086188c3d97c294b1d19a70c2a515e8",
+     "bytes": 388019,
+     "records": 1319,
+     "url": "https://raw.githubusercontent.com/da03/Internalize_CoT_Step_by_Step/e06a32ee5e4cd117171daeb4755d2a97ece62761/data/gsm8k/test.txt"
+    },
+    {
+     "path": "data/gsm_test.json",
+     "role": "output",
+     "sha256": "46ce5b0c44fde0bfc8cf1e7492aa640b96111d9dcb80a54340d9911141a9caa9",
+     "bytes": 447368,
+     "records": 1319,
+     "derived_from": "data/raw/gsm_test.txt",
+     "converter": "Coconut preprocessing/gsm_icot.py semantics"
+    }
+   ]
+  },
+  "prontoqa": {
+   "status": "fetched",
+   "label": "regenerated data",
+   "repo": "https://github.com/asaparov/prontoqa",
+   "commit": "f0145b867b3c106285ec9ea1941a3f6eb7c6162d",
+   "generator_command": "python run_experiment.py --model-name json --model-size dummy --ordering random --num-trials 10000 --few-shot-examples 0 --ontology fictional --min-hops 5 --max-hops 5 --hops-skip 1",
+   "generator_seed": "none on the command line; run_experiment.py calls random.seed(args.seed) and np.random.seed(args.seed) with the argparse default --seed 62471893",
+   "generator_python": "3.13.16",
+   "generator_invocation": "python3 -I -c <runpy runner> <checkout> <args>, cwd = data/raw/prontoqa_run*/ (holds a copy of bad_patterns.txt); checkout appended to sys.path",
+   "generation_runs": [
+    {
+     "run": 1,
+     "path": "data/raw/prontoqa_run/5hop_0shot_random.json",
+     "role": "source",
+     "sha256": "b8d969259bceb08594dfa5c3d131b8e2f1a0556622cc8ee5723aa27ca68bff5b",
+     "bytes": 10616778,
+     "records": 10000,
+     "generated_by": "python run_experiment.py --model-name json --model-size dummy --ordering random --num-trials 10000 --few-shot-examples 0 --ontology fictional --min-hops 5 --max-hops 5 --hops-skip 1"
+    },
+    {
+     "run": 2,
+     "path": "data/raw/prontoqa_run2/5hop_0shot_random.json",
+     "role": "source (second run, hash only; not used)",
+     "sha256": "b8d969259bceb08594dfa5c3d131b8e2f1a0556622cc8ee5723aa27ca68bff5b",
+     "bytes": 10616778,
+     "records": 10000,
+     "generated_by": "python run_experiment.py --model-name json --model-size dummy --ordering random --num-trials 10000 --few-shot-examples 0 --ontology fictional --min-hops 5 --max-hops 5 --hops-skip 1"
+    }
+   ],
+   "generation_runs_identical": true,
+   "kept_run": 1,
+   "files": [
+    {
+     "path": "<prontoqa checkout outside the repo>/run_experiment.py",
+     "role": "generator",
+     "sha256": "5f6a60f62abba6c58f16ac8feced5e73aea996194a058550e181be08808eb461",
+     "bytes": 86203,
+     "git_commit": "f0145b867b3c106285ec9ea1941a3f6eb7c6162d"
+    },
+    {
+     "run": 1,
+     "path": "data/raw/prontoqa_run/5hop_0shot_random.json",
+     "role": "source",
+     "sha256": "b8d969259bceb08594dfa5c3d131b8e2f1a0556622cc8ee5723aa27ca68bff5b",
+     "bytes": 10616778,
+     "records": 10000,
+     "generated_by": "python run_experiment.py --model-name json --model-size dummy --ordering random --num-trials 10000 --few-shot-examples 0 --ontology fictional --min-hops 5 --max-hops 5 --hops-skip 1"
+    },
+    {
+     "path": "data/prontoqa_train.json",
+     "role": "output",
+     "sha256": "a543304621e69b5b7432e054267d727c88e027dc1d364c3d74209cd676d867a4",
+     "bytes": 8278218,
+     "records": 9000,
+     "derived_from": "data/raw/prontoqa_run/5hop_0shot_random.json",
+     "converter": "Coconut preprocessing/prontoqa.py semantics",
+     "label": "regenerated data"
+    },
+    {
+     "path": "data/prontoqa_valid.json",
+     "role": "output",
+     "sha256": "a37e616669d054c16a09fa0d063c7723ea732ef635bf6bf9847fe701e485c9aa",
+     "bytes": 184382,
+     "records": 200,
+     "derived_from": "data/raw/prontoqa_run/5hop_0shot_random.json",
+     "converter": "Coconut preprocessing/prontoqa.py semantics",
+     "label": "regenerated data"
+    },
+    {
+     "path": "data/prontoqa_test.json",
+     "role": "output",
+     "sha256": "9ad2006edf9af085cb5451243b4987007e72b205063ee10b416e9698cf69c49b",
+     "bytes": 735282,
+     "records": 800,
+     "derived_from": "data/raw/prontoqa_run/5hop_0shot_random.json",
+     "converter": "Coconut preprocessing/prontoqa.py semantics",
+     "label": "regenerated data"
+    }
+   ],
+   "note": "not byte-comparable with the paper's ProntoQA files (never released); every ProntoQA cell is labelled regenerated data"
+  }
+ },
+ "data_dir": "data",
+ "script": "code/fetch_data.py",
+ "generated_at_utc": "2026-10-17T21:17:56Z",
+ "local_date": "2026-10-17",
+ "build_environment": {
+  "python": "3.13.16",
+  "platform": "linux",
+  "torch": "2.14.1+cu130",
+  "transformers": "4.57.6",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1"
+ },
+ "mac_environment": {
+  "python": null,
+  "torch": null,
+  "transformers": null,
+  "status": "not used in the 72-hour window (PLAN.md A2: GPU only)"
+ },
+ "models": [
+  {
+   "id": "openai-community/gpt2",
+   "size": "124M",
+   "n_ne": 85056000,
+   "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+   "weights_sha256": "248dfc3911869ec493c76e65bf2fcf7f615828b0254c12b473182f0f81d3a707",
+   "revision_status": "pinned by the prep VM at 2026-10-19T00:18:58Z: hub revision 607a30d783dfa663caf39e06633721c8d4cfcd7e resolved from main; model.safetensors sha256 248dfc3911869ec493c76e65bf2fcf7f615828b0254c12b473182f0f81d3a707; every later VM fetches this revision by commit and the launcher refuses a different hash",
+   "revision_requested": "main",
+   "weights_file": "model.safetensors",
+   "files_sha256": {
+    "config.json": "0daed7749b4f02b8f76240d5444551d7b08712dab4d0adb8239c56ba823bb7b4",
+    "generation_config.json": "ed0b32ac72c0f5f44a719abb2d7786ea5146c871f83717b7f2018065954de02b",
+    "merges.txt": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5",
+    "model.safetensors": "248dfc3911869ec493c76e65bf2fcf7f615828b0254c12b473182f0f81d3a707",
+    "tokenizer.json": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6",
+    "tokenizer_config.json": "5e04eb606e3a1583530a42e36c2a6b6615c86f34fe77e44d9ddeb43ff940931f",
+    "vocab.json": "196139668be63f3b5d6574427317ae82f612a97c5d1cdaf36ed2256dbf636783"
+   },
+   "pinned_at": "2026-10-19T00:18:58Z"
+  },
+  {
+   "id": "openai-community/gpt2-medium",
+   "size": "355M",
+   "n_ne": 302311424,
+   "revision": "6dcaa7a952f72f9298047fd5137cd6e4f05f41da",
+   "weights_sha256": "fc5a354a19255ad494f3d71549390baca1ccf61d1d822b9408971705c687c9cd",
+   "revision_status": "pinned by the prep VM at 2026-10-19T16:54:07Z: hub revision 6dcaa7a952f72f9298047fd5137cd6e4f05f41da resolved from main; model.safetensors sha256 fc5a354a19255ad494f3d71549390baca1ccf61d1d822b9408971705c687c9cd; every later VM fetches this revision by commit and the launcher refuses a different hash",
+   "revision_requested": "main",
+   "weights_file": "model.safetensors",
+   "files_sha256": {
+    "config.json": "ef1a44d889ad1a0acc7731c78134f1b87d2d222f110e97dd10fd4117331caf22",
+    "generation_config.json": "b90eadacf585a743a30ea51e8b5c88b8d282a2a34dc0c7e556d0987cdbd68805",
+    "merges.txt": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5",
+    "model.safetensors": "fc5a354a19255ad494f3d71549390baca1ccf61d1d822b9408971705c687c9cd",
+    "tokenizer.json": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6",
+    "tokenizer_config.json": "5e04eb606e3a1583530a42e36c2a6b6615c86f34fe77e44d9ddeb43ff940931f",
+    "vocab.json": "196139668be63f3b5d6574427317ae82f612a97c5d1cdaf36ed2256dbf636783"
+   },
+   "pinned_at": "2026-10-19T16:54:07Z"
+  },
+  {
+   "id": "openai-community/gpt2-large",
+   "size": "774M",
+   "n_ne": 708390400,
+   "revision": null,
+   "weights_sha256": null,
+   "revision_status": "placeholder: resolve and pin on the Mac before any training run"
+  }
+ ],
+ "contamination_13gram": {
+  "module": "common/latent/contamination.py",
+  "definition": "fraction of eval items sharing >= 1 word 13-gram (lowercased [a-z0-9]+ words, spans inside one record) with any train record's question + steps",
+  "tasks": {
+   "prosqa": {
+    "train_file": "data/prosqa_train.json",
+    "train_fields": [
+     "question",
+     "steps"
+    ],
+    "n": 13,
+    "valid": {
+     "primary": {
+      "test_items": 300,
+      "test_items_with_overlap": 72,
+      "fraction": 0.24,
+      "test_ngrams": 50553,
+      "test_ngrams_shared": 138,
+      "test_fields": [
+       "question"
+      ]
+     },
+     "secondary": {
+      "test_items": 300,
+      "test_items_with_overlap": 254,
+      "fraction": 0.8466666666666667,
+      "test_ngrams": 57083,
+      "test_ngrams_shared": 741,
+      "test_fields": [
+       "question",
+       "steps",
+       "answer"
+      ]
+     }
+    },
+    "test": {
+     "primary": {
+      "test_items": 500,
+      "test_items_with_overlap": 127,
+      "fraction": 0.254,
+      "test_ngrams": 83167,
+      "test_ngrams_shared": 238,
+      "test_fields": [
+       "question"
+      ]
+     },
+     "secondary": {
+      "test_items": 500,
+      "test_items_with_overlap": 447,
+      "fraction": 0.894,
+      "test_ngrams": 94122,
+      "test_ngrams_shared": 1368,
+      "test_fields": [
+       "question",
+       "steps",
+       "answer"
+      ]
+     }
+    }
+   },
+   "prontoqa": {
+    "train_file": "data/prontoqa_train.json",
+    "train_fields": [
+     "question",
+     "steps"
+    ],
+    "n": 13,
+    "valid": {
+     "primary": {
+      "test_items": 200,
+      "test_items_with_overlap": 198,
+      "fraction": 0.99,
+      "test_ngrams": 18569,
+      "test_ngrams_shared": 327,
+      "test_fields": [
+       "question"
+      ]
+     },
+     "secondary": {
+      "test_items": 200,
+      "test_items_with_overlap": 200,
+      "fraction": 1.0,
+      "test_ngrams": 27493,
+      "test_ngrams_shared": 3906,
+      "test_fields": [
+       "question",
+       "steps",
+       "answer"
+      ]
+     }
+    },
+    "test": {
+     "primary": {
+      "test_items": 800,
+      "test_items_with_overlap": 781,
+      "fraction": 0.97625,
+      "test_ngrams": 73896,
+      "test_ngrams_shared": 1225,
+      "test_fields": [
+       "question"
+      ]
+     },
+     "secondary": {
+      "test_items": 800,
+      "test_items_with_overlap": 800,
+      "fraction": 1.0,
+      "test_ngrams": 109306,
+      "test_ngrams_shared": 15204,
+      "test_fields": [
+       "question",
+       "steps",
+       "answer"
+      ]
+     }
+    }
+   },
+   "gsm": {
+    "train_file": "data/gsm_train.json",
+    "train_fields": [
+     "question",
+     "steps"
+    ],
+    "n": 13,
+    "valid": {
+     "primary": {
+      "test_items": 500,
+      "test_items_with_overlap": 7,
+      "fraction": 0.014,
+      "test_ngrams": 16912,
+      "test_ngrams_shared": 48,
+      "test_fields": [
+       "question"
+      ]
+     },
+     "secondary": {
+      "test_items": 500,
+      "test_items_with_overlap": 11,
+      "fraction": 0.022,
+      "test_ngrams": 22492,
+      "test_ngrams_shared": 56,
+      "test_fields": [
+       "question",
+       "steps",
+       "answer"
+      ]
+     }
+    },
+    "test": {
+     "primary": {
+      "test_items": 1319,
+      "test_items_with_overlap": 7,
+      "fraction": 0.00530705079605762,
+      "test_ngrams": 46295,
+      "test_ngrams_shared": 32,
+      "test_fields": [
+       "question"
+      ]
+     },
+     "secondary": {
+      "test_items": 1319,
+      "test_items_with_overlap": 15,
+      "fraction": 0.011372251705837756,
+      "test_ngrams": 61472,
+      "test_ngrams_shared": 54,
+      "test_fields": [
+       "question",
+       "steps",
+       "answer"
+      ]
+     }
+    }
+   }
+  }
+ },
+ "screen": {
+  "generated_at_utc": "2026-10-18T23:20:50Z",
+  "seconds": 92,
+  "python": "3.13.16",
+  "numpy": "2.5.3",
+  "prosqa_hard": {
+   "rule": "registration A3.4.5: latent.prosqa_gen.generate_record, one random.Random(0) stream, train/valid/test in order 10000/300/500; depth = rng.choice((5, 6, 7)); n_distractor_edges = 2 x (clip(round(rng.gauss(37 - (depth - 3), 6)), 15, 63) - depth); unplaceable records and records over the context cap redrawn (new draw, same depth); every record validate_record + BFS; no cross-split duplicate question",
+   "generator": "common/latent/prosqa_gen.py",
+   "generator_sha256": "e4c8074dd6f0b40bc56271e50ba0f2ccf6bbea4e0df5ca53f2ad605314f6959b",
+   "script": "code/make_screen_data.py",
+   "script_sha256": "8deb7729ac34900ae08bcae0be7e5461a84099c35647ba5370ee259cea35e6f5",
+   "seed": 0,
+   "files": [
+    {
+     "path": "data/prosqa_hard_train.json",
+     "sha256": "65165e1dc841faea13b0036d461c4280e59f3072e6aede76e9f733a0eed58ce7",
+     "bytes": 26454769,
+     "records": 10000
+    },
+    {
+     "path": "data/prosqa_hard_valid.json",
+     "sha256": "2d7123f2cc5e97639cf8cce6eb466b61ec8db09126502c46ddf20b5317075cae",
+     "bytes": 788873,
+     "records": 300
+    },
+    {
+     "path": "data/prosqa_hard_test.json",
+     "sha256": "85a26a32ae6f01bc0961451221292f218e87dd7ed1098426387dd6c5c28aafbf",
+     "bytes": 1325095,
+     "records": 500
+    }
+   ],
+   "redraws": 3,
+   "length_redraws": 81,
+   "requested_distractors_mean": 55.65,
+   "duplicate_questions_within_split": {
+    "train": 0,
+    "valid": 0,
+    "test": 0
+   },
+   "duplicate_questions_across_splits": 0,
+   "stats": {
+    "train": {
+     "records": 10000,
+     "depth": {
+      "mean": 5.988,
+      "sd": 0.817,
+      "min": 5,
+      "max": 7
+     },
+     "depth_counts": {
+      "5": 3397,
+      "6": 3323,
+      "7": 3280
+     },
+     "nodes": {
+      "mean": 22.799,
+      "sd": 2.019,
+      "min": 16,
+      "max": 28
+     },
+     "edges": {
+      "mean": 61.652,
+      "sd": 12.013,
+      "min": 23,
+      "max": 95
+     },
+     "distractor_edges": {
+      "mean": 55.664,
+      "sd": 12.195,
+      "min": 16,
+      "max": 90
+     },
+     "words_per_question": {
+      "mean": 300.394,
+      "sd": 57.536,
+      "min": 114,
+      "max": 451
+     }
+    },
+    "valid": {
+     "records": 300,
+     "depth": {
+      "mean": 6.017,
+      "sd": 0.83,
+      "min": 5,
+      "max": 7
+     },
+     "depth_counts": {
+      "5": 101,
+      "6": 93,
+      "7": 106
+     },
+     "nodes": {
+      "mean": 22.903,
+      "sd": 2.063,
+      "min": 18,
+      "max": 28
+     },
+     "edges": {
+      "mean": 61.103,
+      "sd": 11.841,
+      "min": 33,
+      "max": 89
+     },
+     "distractor_edges": {
+      "mean": 55.087,
+      "sd": 12.005,
+      "min": 26,
+      "max": 84
+     },
+     "words_per_question": {
+      "mean": 297.73,
+      "sd": 57.04,
+      "min": 163,
+      "max": 436
+     }
+    },
+    "test": {
+     "records": 500,
+     "depth": {
+      "mean": 6.008,
+      "sd": 0.812,
+      "min": 5,
+      "max": 7
+     },
+     "depth_counts": {
+      "5": 163,
+      "6": 170,
+      "7": 167
+     },
+     "nodes": {
+      "mean": 22.972,
+      "sd": 2.057,
+      "min": 17,
+      "max": 28
+     },
+     "edges": {
+      "mean": 61.728,
+      "sd": 11.888,
+      "min": 28,
+      "max": 91
+     },
+     "distractor_edges": {
+      "mean": 55.72,
+      "sd": 12.081,
+      "min": 22,
+      "max": 84
+     },
+     "words_per_question": {
+      "mean": 300.806,
+      "sd": 56.737,
+      "min": 139,
+      "max": 434
+     }
+    }
+   },
+   "contamination_13gram": {
+    "vs_own_train": {
+     "valid": {
+      "test_items": 300,
+      "test_items_with_overlap": 111,
+      "fraction": 0.37
+     },
+     "test": {
+      "test_items": 500,
+      "test_items_with_overlap": 180,
+      "fraction": 0.36
+     }
+    },
+    "vs_prosqa_train": {
+     "train": {
+      "test_items": 10000,
+      "test_items_with_overlap": 3835,
+      "fraction": 0.3835
+     },
+     "valid": {
+      "test_items": 300,
+      "test_items_with_overlap": 108,
+      "fraction": 0.36
+     },
+     "test": {
+      "test_items": 500,
+      "test_items_with_overlap": 197,
+      "fraction": 0.394
+     }
+    }
+   }
+  },
+  "gsm50k": {
+   "rule": "registration 7.1 / A3.4.5: the first 50000 records of numpy.random.default_rng(0).permutation(len(data/gsm_train.json)) over the file order, written in permutation order; valid and test are the oracle's files",
+   "rng": "numpy.random.default_rng(0).permutation",
+   "seed": 0,
+   "source": {
+    "path": "data/gsm_train.json",
+    "sha256": "93a266b1f7425a00463bb775de2946f9b30f76514944b5456bbffceb50b5de30",
+    "records": 385620
+   },
+   "index_list_sha256": "1bba60897ef06bbbbc1082d89619e15266faae3f800196c8ae10da7ed8218de8",
+   "index_list_sha256_rule": "sha256 of '\\n'.join(str(i) for i in sorted(indices)), UTF-8, no trailing newline",
+   "first_indices": [
+    166818,
+    90697,
+    330334,
+    377366,
+    251461
+   ],
+   "train": {
+    "path": "data/gsm50k_train.json",
+    "sha256": "00480524d05e67582346a08d78fc42826f306a8db74fa042a07f21d6594d3a86",
+    "bytes": 13513848,
+    "records": 50000
+   },
+   "valid": {
+    "path": "data/gsm_valid.json",
+    "sha256": "1833a3479186e4e6c0183aad32fb7ee343479c958f2a1b57631ec22f5ee3aa7f",
+    "bytes": 165759,
+    "records": 500
+   },
+   "test": {
+    "path": "data/gsm_test.json",
+    "sha256": "46ce5b0c44fde0bfc8cf1e7492aa640b96111d9dcb80a54340d9911141a9caa9",
+    "bytes": 447368,
+    "records": 1319
+   },
+   "stats": {
+    "records": 50000,
+    "steps": {
+     "mean": 2.595,
+     "sd": 1.206,
+     "counts": {
+      "1": 8134,
+      "2": 18776,
+      "3": 13439,
+      "4": 6172,
+      "5": 2337,
+      "6": 757,
+      "7": 292,
+      "8": 71,
+      "9": 19,
+      "10": 3
+     }
+    },
+    "words_per_question": {
+     "mean": 35.316,
+     "sd": 10.942
+    },
+    "last_step_result_equals_answer_frac": 0.9492
+   },
+   "contamination_13gram": {
+    "test_primary": {
+     "test_items": 1319,
+     "test_items_with_overlap": 3,
+     "fraction": 0.002274450341167551
+    }
+   }
+  }
+ },
+ "gpu_environment": {
+  "python": "3.10.12",
+  "platform": "Linux-6.8.0-1070-gcp-x86_64-with-glibc2.35",
+  "torch": "2.14.1",
+  "cudnn": 92400,
+  "driver": "580.178.04",
+  "transformers": "4.57.6",
+  "numpy": "2.2.6",
+  "scipy": "1.15.3",
+  "gpu": "A100-40GB",
+  "gpu_name": "NVIDIA A100-SXM4-40GB",
+  "image": "projects/deeplearning-platform-release/global/images/common-cu129-ubuntu-2204-nvidia-580-v20261016",
+  "machine": "a2-highgpu-1g",
+  "source": "configs/reference_env.json (the prep VM's env.json; registration A3 item 3); pin.json python 3.10.12",
+  "versions_from_pin": {
+   "host": "silent-prep-20261018-233840-a4d5",
+   "python": "3.10.12",
+   "platform": "Linux-6.8.0-1070-gcp-x86_64-with-glibc2.35",
+   "time": "2026-10-18T23:44:37Z",
+   "gpu_name": "NVIDIA A100-SXM4-40GB",
+   "driver": "580.178.04",
+   "gpu_memory": "40960 MiB",
+   "torch": "2.14.1",
+   "transformers": "4.57.6",
+   "numpy": "2.2.6",
+   "scipy": "1.15.3",
+   "huggingface_hub": "0.36.2",
+   "tokenizers": "0.22.2",
+   "safetensors": "0.8.0",
+   "torch_cuda": "13.0",
+   "cudnn": 92400,
+   "git_commit": "917f8db68c4ea6e0cbe83c3be00b0fc54bd064a5",
+   "code_sha256": "133d620b7c29a9ba051d16bb1ae2178fc584333d4e4822988a5b55c131e5cbbd",
+   "code_uri": "store://bucket-main/silent/code/917f8db68c4ea6e0cbe83c3be00b0fc54bd064a5-silent-prep-20261018-233840-a4d5.tar.gz",
+   "ledger_id": "silent-prep-20261018-233840-a4d5",
+   "image_family": "common-cu129-ubuntu-2204-nvidia-580",
+   "machine": "a2-highgpu-1g",
+   "gpu": "A100-40GB",
+   "project": "cloud-main",
+   "zones": [
+    "us-central1-a",
+    "us-central1-c"
+   ],
+   "image": "projects/deeplearning-platform-release/global/images/common-cu129-ubuntu-2204-nvidia-580-v20261016"
+  }
+ }
+}

@@ -1,0 +1,238 @@
+{
+ "job": "diag-band-prosqa-hard-main",
+ "kind": "eval",
+ "attempt": "silent-eval-20261020-215119-2ad4",
+ "status": "failed",
+ "spec_sha256": "0a1bf4bac25de6e2182f5f1f487bbf84a827891af009c9b1aaec1668b0a6782c",
+ "spec": {
+  "name": "diag-band-prosqa-hard-main",
+  "kind": "eval",
+  "provider": "gcp",
+  "project": "cloud-main",
+  "project_alias": "main",
+  "bucket": "store://bucket-main",
+  "gpu": "A100-40GB",
+  "max_hours": 1.0,
+  "provisioning": "SPOT",
+  "precision": "fp32-tf32",
+  "tf32": true,
+  "parity_first": false,
+  "evals": [
+   {
+    "name": "prosqa_hard_coconut_s0_valid_band_logits_cuda_float64",
+    "tool": "diag",
+    "mode": "band_logits",
+    "checkpoint": "store://bucket-b/silent/runs/prosqa_hard_coconut_s0/ckpt_best_final.pt",
+    "checkpoint_sha256": "37cd86030812286333b40185ea5b45fe575764210ce65a6e5c050259da290865",
+    "config": "configs/screen/prosqa_hard_coconut.json",
+    "split": "valid",
+    "seed": 0,
+    "run": "prosqa_hard_coconut_s0",
+    "device": "cuda",
+    "critic_row": "2026-10-20T21:33Z",
+    "dtype": "float64",
+    "strict_only": true,
+    "tol": 1e-08,
+    "extra_idx": [
+     21,
+     268
+    ],
+    "est_hours": 0.125,
+    "_note": "prosqa_hard_coconut_s0, seed 0, ckpt_best_final.pt sha256 37cd86030812286333b40185ea5b45fe575764210ce65a6e5c050259da290865 (the f_meas denominator on ProsQA-hard, A6.2 rule 1; pinned as screen-eval-prosqa-hard-main pinned prosqa_hard_coconut_s0_valid_band0-12_timed_bs1, A10.2), configs/screen/prosqa_hard_coconut.json, valid split (data/prosqa_hard_valid.json, 300), the first file-order batch of 32 (idx 0 to 31) at B = 32 and band [0, 12] at B = 1 on it plus idx 21, 268 (33 targets: idx 21 is inside the batch), device cuda, a diagnostic on valid registered by critic entry 2026-10-20T21:33Z (not a 4.5 read): (i), REQUIRED: rule 3's float64 record (critic entry 2026-10-20T21:03Z row 3) on the A100 (critic entry 2026-10-20T21:33Z): run_diag.py --dtype float64 --strict-only --tol 1e-08, weights and every module output asserted float64 (DtypeWatch; refused otherwise), TF32 off, 'highest', no autocast, read back at the start and the end; checks (1), (1b) (the HF path at B = 1 vs band [0, 12] at B = 1 on the targets), (3), (4); (2) not run; examples.csv 32 + 33 + 33 + 32 = 130 rows. Line (14:54Z row 1 part (5)): <= 1e-08 on all 32 at B = 32 and all 33 at B = 1, the fed latents <= 1e-08, 0 first-argmax differences, 0 diverging generations, the shape comparator likewise. Memory: the first batch pads to 853 tokens; a [32, 853, 50257] logits tensor is 11 GB at float64 (10.2 GiB), so the VM needs the 40 GB card and its 85 GB host RAM (the 14.3 GB container could not hold it on CPU, CHANGELOG 21:35Z); the record carries the peak device memory. On a CUDA out-of-memory no record is written and the CPU fallback of the row's (2) is a second admission (not in this job)."
+   },
+   {
+    "name": "prosqa_hard_coconut_s0_valid_band_logits",
+    "tool": "diag",
+    "mode": "band_logits",
+    "checkpoint": "store://bucket-b/silent/runs/prosqa_hard_coconut_s0/ckpt_best_final.pt",
+    "checkpoint_sha256": "37cd86030812286333b40185ea5b45fe575764210ce65a6e5c050259da290865",
+    "config": "configs/screen/prosqa_hard_coconut.json",
+    "split": "valid",
+    "seed": 0,
+    "run": "prosqa_hard_coconut_s0",
+    "device": "cuda",
+    "critic_row": "2026-10-20T21:33Z",
+    "extra_idx": [
+     21,
+     268
+    ],
+    "est_hours": 0.125,
+    "_note": "prosqa_hard_coconut_s0, seed 0, ckpt_best_final.pt sha256 37cd86030812286333b40185ea5b45fe575764210ce65a6e5c050259da290865 (the f_meas denominator on ProsQA-hard, A6.2 rule 1; pinned as screen-eval-prosqa-hard-main pinned prosqa_hard_coconut_s0_valid_band0-12_timed_bs1, A10.2), configs/screen/prosqa_hard_coconut.json, valid split (data/prosqa_hard_valid.json, 300), the first file-order batch of 32 (idx 0 to 31) at B = 32 and band [0, 12] at B = 1 on it plus idx 21, 268 (33 targets: idx 21 is inside the batch), device cuda, a diagnostic on valid registered by critic entry 2026-10-20T21:33Z (not a 4.5 read): (ii), optional, printed beside, no line: the strict-fp32 GPU figure in the GSM entry's form (12:40Z row 4; tol 1e-4): (1) strict fp32 max |first-answer-token logits| HF path vs band [0, 12] on the batch; (2) the same at bf16 autocast over TF32 on (A10.5) with the diverging greedy generations; (3) strict fp32 band [0, 12] B = 1 vs B = 32 on the targets (diverging generations, top-2 margins); (4) the repeat and the same-shape companion swap at both numerics. Numerics are set per check by run_diag.py (an entry may not set precision)."
+   }
+  ],
+  "_note": "max_hours: critic entry 2026-10-20T21:33Z: about 15 min of work at these lengths (two entries); 1.3 x 0.250 + 0.5 = 0.825 h, up to the quarter hour: 1.0 h (refused above 1.0 h). Measured comparators (not the cap): screen-eval-prosqa-hard-main (silent-eval-20261020-195306-b3c4): in-VM 2026-10-20T19:59:54Z..2026-10-20T20:25:03Z = 1509 s / 45 entries = 33.5 s per entry (ledger close runtime 2274 s incl. boot); prosqa_hard_coconut_s0_valid_band0-12_timed_bs1: 58.9 s for 300 examples at batch 1 (0.196 s each); entry (i) generates 66 examples at batch 1 at float64 (band [0, 12] and the HF path, checks (3) and (1b), on the 33 targets: idx 21 is inside the first batch), entry (ii) 66 (2 numerics sets x 33), about 13 s each at the bf16 rate, plus the batch-32 generations and prefills at 853 tokens. Memory: the first file-order batch pads to 853 prefill tokens; one [32, 853, 50257] logits tensor is 11 GB at float64, so the float64 entry needs the A100's 40 GB and the VM's 85 GB host RAM (CHANGELOG 21:35Z: the CPU run was killed at the container's 14.3 GB). Order (the row's): (i) the required float64 record on cuda, then (ii) the optional strict-fp32 GPU figure; the optional (iii) latent_path is not in this job. Numerics: the job's fp32-tf32 / tf32 fields do not reach a diag entry (--tf32 both); (i) --dtype float64 --strict-only --tol 1e-08 on cuda; (ii) as the GSM-50k entry (strict fp32 for (1), (3), (4), bf16 autocast over TF32 on for (2) and beside). Not a read: no registered_read; each record carries critic_row 2026-10-20T21:33Z (run_diag.py --critic-row) beside the mode's row 2026-10-20T12:40Z. Fetched records: results/diag/diag-band-prosqa-hard-main/<entry>/ (read_screen DIAG_RECORDS).",
+  "critic_rows_required": [
+   "2026-10-20T21:33Z",
+   "2026-10-20T21:03Z"
+  ],
+  "_launch": {
+   "ledger_id": "silent-eval-20261020-215119-2ad4",
+   "provider": "gcp",
+   "project": "cloud-main",
+   "zones": [
+    "us-central1-a",
+    "us-central1-c",
+    "us-central1-b",
+    "us-central1-f"
+   ],
+   "bucket": "store://bucket-main",
+   "machine": "a2-highgpu-1g",
+   "gpu": "A100-40GB",
+   "provisioning": "SPOT",
+   "max_run_s": 3600,
+   "deadline_epoch": 1792536679,
+   "code_uri": "store://bucket-main/silent/code/fd347b32984dd454f31b498ce2adbc61e0ed22b8-silent-eval-20261020-215119-2ad4.tar.gz",
+   "code_commit": "fd347b32984dd454f31b498ce2adbc61e0ed22b8",
+   "code_sha256": "2055d8eab7a9545a207e8877167d58d19e0917b58078f84c0a5379484953e1bb",
+   "admitted": "2026-10-20T21:51:19Z",
+   "critic_rows": [
+    "2026-10-18T22:31Z",
+    "2026-10-18T23:27Z",
+    "2026-10-19T01:06Z",
+    "2026-10-19T01:07Z",
+    "2026-10-19T01:08Z",
+    "2026-10-19T01:09Z",
+    "2026-10-19T01:10Z",
+    "2026-10-19T01:14Z",
+    "2026-10-19T03:00Z",
+    "2026-10-19T03:05Z",
+    "2026-10-19T12:07Z",
+    "2026-10-19T12:11Z",
+    "2026-10-19T15:35Z",
+    "2026-10-19T15:39Z",
+    "2026-10-19T15:40Z",
+    "2026-10-19T15:45Z",
+    "2026-10-19T16:59Z",
+    "2026-10-19T17:01Z",
+    "2026-10-20T12:40Z",
+    "2026-10-20T14:54Z",
+    "2026-10-20T15:26Z",
+    "2026-10-20T19:14Z",
+    "2026-10-20T19:15Z",
+    "2026-10-20T21:03Z",
+    "2026-10-20T21:33Z",
+    "2026-10-20T21:34Z"
+   ],
+   "image_family": "common-cu129-ubuntu-2204-nvidia-580"
+  }
+ },
+ "started": "2026-10-20T21:57:26Z",
+ "ended": "2026-10-20T21:59:43Z",
+ "deadline": "2026-10-20T22:51:19Z",
+ "steps": [
+  {
+   "step": "env_reference",
+   "ok": true,
+   "time": "2026-10-20T21:57:29Z",
+   "mismatches": []
+  },
+  {
+   "step": "data",
+   "ok": true,
+   "time": "2026-10-20T21:57:35Z",
+   "source": "bucket",
+   "tasks": [
+    "prosqa_hard"
+   ],
+   "files": 3
+  },
+  {
+   "step": "model",
+   "ok": true,
+   "time": "2026-10-20T21:57:50Z",
+   "pinned": {
+    "id": "openai-community/gpt2",
+    "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+    "weights_sha256": "248dfc3911869ec493c76e65bf2fcf7f615828b0254c12b473182f0f81d3a707"
+   },
+   "got": {
+    "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+    "weights_sha256": "248dfc3911869ec493c76e65bf2fcf7f615828b0254c12b473182f0f81d3a707",
+    "path": "/opt/silent/out/hf/hub/models--openai-community--gpt2/snapshots/607a30d783dfa663caf39e06633721c8d4cfcd7e"
+   }
+  }
+ ],
+ "runs": [],
+ "evals": [
+  {
+   "name": "prosqa_hard_coconut_s0_valid_band_logits_cuda_float64",
+   "checkpoint": "store://bucket-b/silent/runs/prosqa_hard_coconut_s0/ckpt_best_final.pt",
+   "config": "configs/screen/prosqa_hard_coconut.json",
+   "intervention": null,
+   "split": "valid",
+   "n_latent": null,
+   "audit_rescore": null,
+   "batch_size": null,
+   "seed": 0,
+   "run": "prosqa_hard_coconut_s0",
+   "dtype": "float64",
+   "strict_only": true,
+   "tol": 1e-08,
+   "extra_idx": [
+    21,
+    268
+   ],
+   "device": "cuda",
+   "tool": "diag",
+   "mode": "band_logits",
+   "checkpoint_sha256": "37cd86030812286333b40185ea5b45fe575764210ce65a6e5c050259da290865",
+   "rc": 1,
+   "status": "failed"
+  },
+  {
+   "name": "prosqa_hard_coconut_s0_valid_band_logits",
+   "checkpoint": "store://bucket-b/silent/runs/prosqa_hard_coconut_s0/ckpt_best_final.pt",
+   "config": "configs/screen/prosqa_hard_coconut.json",
+   "intervention": null,
+   "split": "valid",
+   "n_latent": null,
+   "audit_rescore": null,
+   "batch_size": null,
+   "seed": 0,
+   "run": "prosqa_hard_coconut_s0",
+   "extra_idx": [
+    21,
+    268
+   ],
+   "device": "cuda",
+   "tool": "diag",
+   "mode": "band_logits",
+   "checkpoint_sha256": "37cd86030812286333b40185ea5b45fe575764210ce65a6e5c050259da290865",
+   "rc": 0,
+   "status": "done"
+  }
+ ],
+ "env": {
+  "host": "silent-eval-20261020-215119-2ad4",
+  "python": "3.10.12",
+  "platform": "Linux-6.8.0-1070-gcp-x86_64-with-glibc2.35",
+  "time": "2026-10-20T21:57:27Z",
+  "gpu_name": "NVIDIA A100-SXM4-40GB",
+  "driver": "580.178.04",
+  "gpu_memory": "40960 MiB",
+  "torch": "2.14.1",
+  "transformers": "4.57.6",
+  "numpy": "2.2.6",
+  "scipy": "1.15.3",
+  "huggingface_hub": "0.36.2",
+  "tokenizers": "0.22.2",
+  "safetensors": "0.8.0",
+  "torch_cuda": "13.0",
+  "cudnn": 92400,
+  "git_commit": "fd347b32984dd454f31b498ce2adbc61e0ed22b8",
+  "code_sha256": "2055d8eab7a9545a207e8877167d58d19e0917b58078f84c0a5379484953e1bb",
+  "code_uri": "store://bucket-main/silent/code/fd347b32984dd454f31b498ce2adbc61e0ed22b8-silent-eval-20261020-215119-2ad4.tar.gz",
+  "ledger_id": "silent-eval-20261020-215119-2ad4",
+  "image_family": "common-cu129-ubuntu-2204-nvidia-580",
+  "machine": "a2-highgpu-1g",
+  "gpu": "A100-40GB",
+  "project": "cloud-main",
+  "zones": [
+   "us-central1-a",
+   "us-central1-c",
+   "us-central1-b",
+   "us-central1-f"
+  ],
+  "image": "projects/deeplearning-platform-release/global/images/common-cu129-ubuntu-2204-nvidia-580-v20261019"
+ }
+}

@@ -1,0 +1,449 @@
+{
+ "job": "screen-eval-gsm50k-nocur-acctc",
+ "kind": "eval",
+ "attempt": "silent-eval-20261022-064821-aba3",
+ "status": "complete",
+ "spec_sha256": "882da2ff1fec85eacc2b1f2916a78edc829901e354c6276d520282853309c11d",
+ "spec": {
+  "name": "screen-eval-gsm50k-nocur-acctc",
+  "kind": "eval",
+  "provider": "gcp",
+  "project": "cloud-c",
+  "project_alias": "acctc",
+  "bucket": "store://bucket-c",
+  "gpu": "A100-80GB",
+  "max_hours": 1.0,
+  "provisioning": "SPOT",
+  "precision": "fp32-tf32",
+  "tf32": true,
+  "parity_first": false,
+  "evals": [
+   {
+    "name": "gsm50k_coconut_no_curriculum_s0_valid_none",
+    "checkpoint": "store://bucket-c/silent/runs/gsm50k_coconut_no_curriculum_s0/ckpt_best_final.pt",
+    "checkpoint_sha256": "86c714f345e9980617d6790c99f8bc30cff2c67ded67f991dccabf0a26629f73",
+    "config": "configs/screen/gsm50k_coconut_no_curriculum.json",
+    "split": "valid",
+    "intervention": "none",
+    "n_latent": null,
+    "registered_read": "2026-10-22T03:18Z",
+    "est_hours": 0.008,
+    "seed": 0,
+    "run": "gsm50k_coconut_no_curriculum_s0",
+    "_note": "gsm50k_coconut_no_curriculum_s0, seed 0, ckpt_best_final.pt = epoch 20 (epoch_index 19, the selection over every epoch: arm coconut_no_curriculum), registered read 2026-10-22T03:18Z",
+    "time_steps": true
+   },
+   {
+    "name": "gsm50k_coconut_no_curriculum_s0_valid_scrambled",
+    "checkpoint": "store://bucket-c/silent/runs/gsm50k_coconut_no_curriculum_s0/ckpt_best_final.pt",
+    "checkpoint_sha256": "86c714f345e9980617d6790c99f8bc30cff2c67ded67f991dccabf0a26629f73",
+    "config": "configs/screen/gsm50k_coconut_no_curriculum.json",
+    "split": "valid",
+    "intervention": "scrambled",
+    "n_latent": null,
+    "registered_read": "2026-10-22T03:18Z",
+    "est_hours": 0.008,
+    "seed": 0,
+    "run": "gsm50k_coconut_no_curriculum_s0",
+    "_note": "gsm50k_coconut_no_curriculum_s0, seed 0, ckpt_best_final.pt = epoch 20 (epoch_index 19, the selection over every epoch: arm coconut_no_curriculum), registered read 2026-10-22T03:18Z"
+   },
+   {
+    "name": "gsm50k_coconut_no_curriculum_s0_valid_zero_latent",
+    "checkpoint": "store://bucket-c/silent/runs/gsm50k_coconut_no_curriculum_s0/ckpt_best_final.pt",
+    "checkpoint_sha256": "86c714f345e9980617d6790c99f8bc30cff2c67ded67f991dccabf0a26629f73",
+    "config": "configs/screen/gsm50k_coconut_no_curriculum.json",
+    "split": "valid",
+    "intervention": "zero_latent",
+    "n_latent": null,
+    "registered_read": "2026-10-22T03:18Z",
+    "est_hours": 0.008,
+    "seed": 0,
+    "run": "gsm50k_coconut_no_curriculum_s0",
+    "_note": "gsm50k_coconut_no_curriculum_s0, seed 0, ckpt_best_final.pt = epoch 20 (epoch_index 19, the selection over every epoch: arm coconut_no_curriculum), registered read 2026-10-22T03:18Z"
+   },
+   {
+    "name": "gsm50k_coconut_no_curriculum_s0_valid_n0",
+    "checkpoint": "store://bucket-c/silent/runs/gsm50k_coconut_no_curriculum_s0/ckpt_best_final.pt",
+    "checkpoint_sha256": "86c714f345e9980617d6790c99f8bc30cff2c67ded67f991dccabf0a26629f73",
+    "config": "configs/screen/gsm50k_coconut_no_curriculum.json",
+    "split": "valid",
+    "intervention": "none",
+    "n_latent": 0,
+    "registered_read": "2026-10-22T03:18Z",
+    "est_hours": 0.008,
+    "seed": 0,
+    "run": "gsm50k_coconut_no_curriculum_s0",
+    "_note": "gsm50k_coconut_no_curriculum_s0, seed 0, ckpt_best_final.pt = epoch 20 (epoch_index 19, the selection over every epoch: arm coconut_no_curriculum), registered read 2026-10-22T03:18Z; step sweep n_latent 0, trained n 6 (max_latent_stage x c_thought)"
+   },
+   {
+    "name": "gsm50k_coconut_no_curriculum_s0_valid_n1",
+    "checkpoint": "store://bucket-c/silent/runs/gsm50k_coconut_no_curriculum_s0/ckpt_best_final.pt",
+    "checkpoint_sha256": "86c714f345e9980617d6790c99f8bc30cff2c67ded67f991dccabf0a26629f73",
+    "config": "configs/screen/gsm50k_coconut_no_curriculum.json",
+    "split": "valid",
+    "intervention": "none",
+    "n_latent": 1,
+    "registered_read": "2026-10-22T03:18Z",
+    "est_hours": 0.008,
+    "seed": 0,
+    "run": "gsm50k_coconut_no_curriculum_s0",
+    "_note": "gsm50k_coconut_no_curriculum_s0, seed 0, ckpt_best_final.pt = epoch 20 (epoch_index 19, the selection over every epoch: arm coconut_no_curriculum), registered read 2026-10-22T03:18Z; step sweep n_latent 1, trained n 6 (max_latent_stage x c_thought)"
+   },
+   {
+    "name": "gsm50k_coconut_no_curriculum_s0_valid_n2",
+    "checkpoint": "store://bucket-c/silent/runs/gsm50k_coconut_no_curriculum_s0/ckpt_best_final.pt",
+    "checkpoint_sha256": "86c714f345e9980617d6790c99f8bc30cff2c67ded67f991dccabf0a26629f73",
+    "config": "configs/screen/gsm50k_coconut_no_curriculum.json",
+    "split": "valid",
+    "intervention": "none",
+    "n_latent": 2,
+    "registered_read": "2026-10-22T03:18Z",
+    "est_hours": 0.008,
+    "seed": 0,
+    "run": "gsm50k_coconut_no_curriculum_s0",
+    "_note": "gsm50k_coconut_no_curriculum_s0, seed 0, ckpt_best_final.pt = epoch 20 (epoch_index 19, the selection over every epoch: arm coconut_no_curriculum), registered read 2026-10-22T03:18Z; step sweep n_latent 2, trained n 6 (max_latent_stage x c_thought)"
+   },
+   {
+    "name": "gsm50k_coconut_no_curriculum_s0_valid_n4",
+    "checkpoint": "store://bucket-c/silent/runs/gsm50k_coconut_no_curriculum_s0/ckpt_best_final.pt",
+    "checkpoint_sha256": "86c714f345e9980617d6790c99f8bc30cff2c67ded67f991dccabf0a26629f73",
+    "config": "configs/screen/gsm50k_coconut_no_curriculum.json",
+    "split": "valid",
+    "intervention": "none",
+    "n_latent": 4,
+    "registered_read": "2026-10-22T03:18Z",
+    "est_hours": 0.008,
+    "seed": 0,
+    "run": "gsm50k_coconut_no_curriculum_s0",
+    "_note": "gsm50k_coconut_no_curriculum_s0, seed 0, ckpt_best_final.pt = epoch 20 (epoch_index 19, the selection over every epoch: arm coconut_no_curriculum), registered read 2026-10-22T03:18Z; step sweep n_latent 4, trained n 6 (max_latent_stage x c_thought)"
+   },
+   {
+    "name": "gsm50k_coconut_no_curriculum_s0_valid_n8",
+    "checkpoint": "store://bucket-c/silent/runs/gsm50k_coconut_no_curriculum_s0/ckpt_best_final.pt",
+    "checkpoint_sha256": "86c714f345e9980617d6790c99f8bc30cff2c67ded67f991dccabf0a26629f73",
+    "config": "configs/screen/gsm50k_coconut_no_curriculum.json",
+    "split": "valid",
+    "intervention": "none",
+    "n_latent": 8,
+    "registered_read": "2026-10-22T03:18Z",
+    "est_hours": 0.008,
+    "seed": 0,
+    "run": "gsm50k_coconut_no_curriculum_s0",
+    "_note": "gsm50k_coconut_no_curriculum_s0, seed 0, ckpt_best_final.pt = epoch 20 (epoch_index 19, the selection over every epoch: arm coconut_no_curriculum), registered read 2026-10-22T03:18Z; step sweep n_latent 8, trained n 6 (max_latent_stage x c_thought): out of distribution"
+   },
+   {
+    "name": "gsm50k_coconut_no_curriculum_s0_valid_band0-12_timed_bs1",
+    "checkpoint": "store://bucket-c/silent/runs/gsm50k_coconut_no_curriculum_s0/ckpt_best_final.pt",
+    "checkpoint_sha256": "86c714f345e9980617d6790c99f8bc30cff2c67ded67f991dccabf0a26629f73",
+    "config": "configs/screen/gsm50k_coconut_no_curriculum.json",
+    "split": "valid",
+    "intervention": "none",
+    "n_latent": null,
+    "registered_read": "2026-10-22T03:18Z",
+    "est_hours": 0.008,
+    "seed": 0,
+    "run": "gsm50k_coconut_no_curriculum_s0",
+    "_note": "gsm50k_coconut_no_curriculum_s0, seed 0, ckpt_best_final.pt = epoch 20 (epoch_index 19, the selection over every epoch: arm coconut_no_curriculum), registered read 2026-10-22T03:18Z",
+    "time_steps": true,
+    "batch_size": 1,
+    "set": {
+     "latent_band": [
+      0,
+      12
+     ]
+    }
+   },
+   {
+    "name": "gsm50k_coconut_no_curriculum_s0_valid_band0-12_timed_bs32",
+    "checkpoint": "store://bucket-c/silent/runs/gsm50k_coconut_no_curriculum_s0/ckpt_best_final.pt",
+    "checkpoint_sha256": "86c714f345e9980617d6790c99f8bc30cff2c67ded67f991dccabf0a26629f73",
+    "config": "configs/screen/gsm50k_coconut_no_curriculum.json",
+    "split": "valid",
+    "intervention": "none",
+    "n_latent": null,
+    "registered_read": "2026-10-22T03:18Z",
+    "est_hours": 0.008,
+    "seed": 0,
+    "run": "gsm50k_coconut_no_curriculum_s0",
+    "_note": "gsm50k_coconut_no_curriculum_s0, seed 0, ckpt_best_final.pt = epoch 20 (epoch_index 19, the selection over every epoch: arm coconut_no_curriculum), registered read 2026-10-22T03:18Z",
+    "time_steps": true,
+    "set": {
+     "latent_band": [
+      0,
+      12
+     ]
+    }
+   }
+  ],
+  "_note": "Closing fact (b) (critic entries 2026-10-21T20:21Z (b) (4) and, for E2, 2026-10-22T03:18Z (4)): the coconut_no_curriculum arm's valid reads on gsm50k, the coconut control's ten entries (none timed at the eval batch, scrambled, zero_latent, n in {0, 1, 2, 4, 8}, band [0, 12] timed at batch 1 and 32), on acctc, the project that trained it (no mirror); read on A100-80GB, trained on A100-80GB; us-central1-c / -a only (A2.1). max_hours: screen-eval-gsm50k-main (silent-eval-20261020-112122-f7da): in-VM 2026-10-20T11:27:07Z..2026-10-20T11:49:43Z = 1356 s / 45 entries = 30.1 s per entry (ledger close runtime 2056 s incl. boot). 10 entries x 30.1 s = 0.084 h; 1.3 x 0.084 + 0.5 = 0.609 h, up to the half hour: 1.0 h (the registered 1.0 h; the rate is main's A100-40GB, the A100-80GB errs long). Numerics: the checkpoint's own (A10.1, A10.5: bf16 autocast from the config over TF32 on, --tf32 on from tf32 true). Pin: RUN_DONE.json 86c714f345e9980617d6790c99f8bc30cff2c67ded67f991dccabf0a26629f73, epoch 20, named by row 2026-10-22T03:18Z.",
+  "critic_rows_required": [
+   "2026-10-20T10:51Z",
+   "2026-10-20T12:40Z",
+   "2026-10-21T20:21Z",
+   "2026-10-22T03:18Z",
+   "2026-10-22T03:21Z"
+  ],
+  "_launch": {
+   "ledger_id": "silent-eval-20261022-064821-aba3",
+   "provider": "gcp",
+   "project": "cloud-c",
+   "zones": [
+    "us-central1-c",
+    "us-central1-a"
+   ],
+   "bucket": "store://bucket-c",
+   "machine": "a2-ultragpu-1g",
+   "gpu": "A100-80GB",
+   "provisioning": "SPOT",
+   "max_run_s": 3600,
+   "deadline_epoch": 1792655302,
+   "code_uri": "store://bucket-c/silent/code/42d1d38455c6d1953fe6082fbf25cf9c24122fe8-silent-eval-20261022-064821-aba3.tar.gz",
+   "code_commit": "42d1d38455c6d1953fe6082fbf25cf9c24122fe8",
+   "code_sha256": "422f0d0fb236e8a8fa423ca1bb9630f011fd19fc33ef0f20dbf7c8b7e831acbc",
+   "admitted": "2026-10-22T06:48:22Z",
+   "critic_rows": [
+    "2026-10-20T10:51Z",
+    "2026-10-20T12:40Z",
+    "2026-10-21T20:21Z",
+    "2026-10-22T03:18Z",
+    "2026-10-22T03:21Z"
+   ],
+   "image_family": "common-cu129-ubuntu-2204-nvidia-580"
+  }
+ },
+ "started": "2026-10-22T06:53:34Z",
+ "ended": "2026-10-22T06:59:12Z",
+ "deadline": "2026-10-22T07:48:22Z",
+ "steps": [
+  {
+   "step": "env_reference",
+   "ok": true,
+   "time": "2026-10-22T06:53:37Z",
+   "mismatches": []
+  },
+  {
+   "step": "data",
+   "ok": true,
+   "time": "2026-10-22T06:53:42Z",
+   "source": "bucket",
+   "tasks": [
+    "gsm50k"
+   ],
+   "files": 3
+  },
+  {
+   "step": "model",
+   "ok": true,
+   "time": "2026-10-22T06:53:48Z",
+   "pinned": {
+    "id": "openai-community/gpt2",
+    "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+    "weights_sha256": "248dfc3911869ec493c76e65bf2fcf7f615828b0254c12b473182f0f81d3a707"
+   },
+   "got": {
+    "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+    "weights_sha256": "248dfc3911869ec493c76e65bf2fcf7f615828b0254c12b473182f0f81d3a707",
+    "path": "/opt/silent/out/hf/hub/models--openai-community--gpt2/snapshots/607a30d783dfa663caf39e06633721c8d4cfcd7e"
+   }
+  }
+ ],
+ "runs": [],
+ "evals": [
+  {
+   "name": "gsm50k_coconut_no_curriculum_s0_valid_none",
+   "checkpoint": "store://bucket-c/silent/runs/gsm50k_coconut_no_curriculum_s0/ckpt_best_final.pt",
+   "config": "configs/screen/gsm50k_coconut_no_curriculum.json",
+   "intervention": "none",
+   "split": "valid",
+   "n_latent": null,
+   "audit_rescore": null,
+   "batch_size": null,
+   "seed": 0,
+   "run": "gsm50k_coconut_no_curriculum_s0",
+   "time_steps": true,
+   "checkpoint_sha256": "86c714f345e9980617d6790c99f8bc30cff2c67ded67f991dccabf0a26629f73",
+   "rc": 0,
+   "status": "done"
+  },
+  {
+   "name": "gsm50k_coconut_no_curriculum_s0_valid_scrambled",
+   "checkpoint": "store://bucket-c/silent/runs/gsm50k_coconut_no_curriculum_s0/ckpt_best_final.pt",
+   "config": "configs/screen/gsm50k_coconut_no_curriculum.json",
+   "intervention": "scrambled",
+   "split": "valid",
+   "n_latent": null,
+   "audit_rescore": null,
+   "batch_size": null,
+   "seed": 0,
+   "run": "gsm50k_coconut_no_curriculum_s0",
+   "checkpoint_sha256": "86c714f345e9980617d6790c99f8bc30cff2c67ded67f991dccabf0a26629f73",
+   "rc": 0,
+   "status": "done"
+  },
+  {
+   "name": "gsm50k_coconut_no_curriculum_s0_valid_zero_latent",
+   "checkpoint": "store://bucket-c/silent/runs/gsm50k_coconut_no_curriculum_s0/ckpt_best_final.pt",
+   "config": "configs/screen/gsm50k_coconut_no_curriculum.json",
+   "intervention": "zero_latent",
+   "split": "valid",
+   "n_latent": null,
+   "audit_rescore": null,
+   "batch_size": null,
+   "seed": 0,
+   "run": "gsm50k_coconut_no_curriculum_s0",
+   "checkpoint_sha256": "86c714f345e9980617d6790c99f8bc30cff2c67ded67f991dccabf0a26629f73",
+   "rc": 0,
+   "status": "done"
+  },
+  {
+   "name": "gsm50k_coconut_no_curriculum_s0_valid_n0",
+   "checkpoint": "store://bucket-c/silent/runs/gsm50k_coconut_no_curriculum_s0/ckpt_best_final.pt",
+   "config": "configs/screen/gsm50k_coconut_no_curriculum.json",
+   "intervention": "none",
+   "split": "valid",
+   "n_latent": 0,
+   "audit_rescore": null,
+   "batch_size": null,
+   "seed": 0,
+   "run": "gsm50k_coconut_no_curriculum_s0",
+   "checkpoint_sha256": "86c714f345e9980617d6790c99f8bc30cff2c67ded67f991dccabf0a26629f73",
+   "rc": 0,
+   "status": "done"
+  },
+  {
+   "name": "gsm50k_coconut_no_curriculum_s0_valid_n1",
+   "checkpoint": "store://bucket-c/silent/runs/gsm50k_coconut_no_curriculum_s0/ckpt_best_final.pt",
+   "config": "configs/screen/gsm50k_coconut_no_curriculum.json",
+   "intervention": "none",
+   "split": "valid",
+   "n_latent": 1,
+   "audit_rescore": null,
+   "batch_size": null,
+   "seed": 0,
+   "run": "gsm50k_coconut_no_curriculum_s0",
+   "checkpoint_sha256": "86c714f345e9980617d6790c99f8bc30cff2c67ded67f991dccabf0a26629f73",
+   "rc": 0,
+   "status": "done"
+  },
+  {
+   "name": "gsm50k_coconut_no_curriculum_s0_valid_n2",
+   "checkpoint": "store://bucket-c/silent/runs/gsm50k_coconut_no_curriculum_s0/ckpt_best_final.pt",
+   "config": "configs/screen/gsm50k_coconut_no_curriculum.json",
+   "intervention": "none",
+   "split": "valid",
+   "n_latent": 2,
+   "audit_rescore": null,
+   "batch_size": null,
+   "seed": 0,
+   "run": "gsm50k_coconut_no_curriculum_s0",
+   "checkpoint_sha256": "86c714f345e9980617d6790c99f8bc30cff2c67ded67f991dccabf0a26629f73",
+   "rc": 0,
+   "status": "done"
+  },
+  {
+   "name": "gsm50k_coconut_no_curriculum_s0_valid_n4",
+   "checkpoint": "store://bucket-c/silent/runs/gsm50k_coconut_no_curriculum_s0/ckpt_best_final.pt",
+   "config": "configs/screen/gsm50k_coconut_no_curriculum.json",
+   "intervention": "none",
+   "split": "valid",
+   "n_latent": 4,
+   "audit_rescore": null,
+   "batch_size": null,
+   "seed": 0,
+   "run": "gsm50k_coconut_no_curriculum_s0",
+   "checkpoint_sha256": "86c714f345e9980617d6790c99f8bc30cff2c67ded67f991dccabf0a26629f73",
+   "rc": 0,
+   "status": "done"
+  },
+  {
+   "name": "gsm50k_coconut_no_curriculum_s0_valid_n8",
+   "checkpoint": "store://bucket-c/silent/runs/gsm50k_coconut_no_curriculum_s0/ckpt_best_final.pt",
+   "config": "configs/screen/gsm50k_coconut_no_curriculum.json",
+   "intervention": "none",
+   "split": "valid",
+   "n_latent": 8,
+   "audit_rescore": null,
+   "batch_size": null,
+   "seed": 0,
+   "run": "gsm50k_coconut_no_curriculum_s0",
+   "checkpoint_sha256": "86c714f345e9980617d6790c99f8bc30cff2c67ded67f991dccabf0a26629f73",
+   "rc": 0,
+   "status": "done"
+  },
+  {
+   "name": "gsm50k_coconut_no_curriculum_s0_valid_band0-12_timed_bs1",
+   "checkpoint": "store://bucket-c/silent/runs/gsm50k_coconut_no_curriculum_s0/ckpt_best_final.pt",
+   "config": "configs/screen/gsm50k_coconut_no_curriculum.json",
+   "intervention": "none",
+   "split": "valid",
+   "n_latent": null,
+   "audit_rescore": null,
+   "batch_size": 1,
+   "seed": 0,
+   "run": "gsm50k_coconut_no_curriculum_s0",
+   "time_steps": true,
+   "set": {
+    "latent_band": [
+     0,
+     12
+    ]
+   },
+   "checkpoint_sha256": "86c714f345e9980617d6790c99f8bc30cff2c67ded67f991dccabf0a26629f73",
+   "rc": 0,
+   "status": "done"
+  },
+  {
+   "name": "gsm50k_coconut_no_curriculum_s0_valid_band0-12_timed_bs32",
+   "checkpoint": "store://bucket-c/silent/runs/gsm50k_coconut_no_curriculum_s0/ckpt_best_final.pt",
+   "config": "configs/screen/gsm50k_coconut_no_curriculum.json",
+   "intervention": "none",
+   "split": "valid",
+   "n_latent": null,
+   "audit_rescore": null,
+   "batch_size": null,
+   "seed": 0,
+   "run": "gsm50k_coconut_no_curriculum_s0",
+   "time_steps": true,
+   "set": {
+    "latent_band": [
+     0,
+     12
+    ]
+   },
+   "checkpoint_sha256": "86c714f345e9980617d6790c99f8bc30cff2c67ded67f991dccabf0a26629f73",
+   "rc": 0,
+   "status": "done"
+  }
+ ],
+ "env": {
+  "host": "silent-eval-20261022-064821-aba3",
+  "python": "3.10.12",
+  "platform": "Linux-6.8.0-1070-gcp-x86_64-with-glibc2.35",
+  "time": "2026-10-22T06:53:35Z",
+  "gpu_name": "NVIDIA A100-SXM4-80GB",
+  "driver": "580.178.04",
+  "gpu_memory": "81920 MiB",
+  "torch": "2.14.1",
+  "transformers": "4.57.6",
+  "numpy": "2.2.6",
+  "scipy": "1.15.3",
+  "huggingface_hub": "0.36.2",
+  "tokenizers": "0.22.2",
+  "safetensors": "0.8.0",
+  "torch_cuda": "13.0",
+  "cudnn": 92400,
+  "git_commit": "42d1d38455c6d1953fe6082fbf25cf9c24122fe8",
+  "code_sha256": "422f0d0fb236e8a8fa423ca1bb9630f011fd19fc33ef0f20dbf7c8b7e831acbc",
+  "code_uri": "store://bucket-c/silent/code/42d1d38455c6d1953fe6082fbf25cf9c24122fe8-silent-eval-20261022-064821-aba3.tar.gz",
+  "ledger_id": "silent-eval-20261022-064821-aba3",
+  "image_family": "common-cu129-ubuntu-2204-nvidia-580",
+  "machine": "a2-ultragpu-1g",
+  "gpu": "A100-80GB",
+  "project": "cloud-c",
+  "zones": [
+   "us-central1-c",
+   "us-central1-a"
+  ],
+  "image": "projects/deeplearning-platform-release/global/images/common-cu129-ubuntu-2204-nvidia-580-v20261019"
+ }
+}

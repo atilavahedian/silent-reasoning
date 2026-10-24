@@ -1,0 +1,1793 @@
+{
+  "rates": {
+    "tps": 45000.0,
+    "step_s": 0.03,
+    "val_s_per_ex": 0.1,
+    "source": "manual"
+  },
+  "margin": 1.3,
+  "overhead_h": 0.5,
+  "jobs": {
+    "lrtrials-main": {
+      "project_alias": "main",
+      "gpu": "A100-40GB",
+      "current_max_hours": 8,
+      "sum_est_hours": 6.735161728395066,
+      "proposed_max_hours": 9.5,
+      "runs": [
+        {
+          "run": "prosqa_cot_lr3e-5_s0",
+          "config": "configs/prosqa_cot.json",
+          "epochs": 50,
+          "n_train": 17886,
+          "n_val": 300,
+          "train_h": 2.9509141975308664,
+          "val_h": 0.4166666666666667,
+          "hours": 3.367580864197533,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 9560962,
+              "batches": 559,
+              "latent_steps": 0
+            }
+          },
+          "pass_factor": 1.0
+        },
+        {
+          "run": "prosqa_cot_lr3e-4_s0",
+          "config": "configs/prosqa_cot.json",
+          "epochs": 50,
+          "n_train": 17886,
+          "n_val": 300,
+          "train_h": 2.9509141975308664,
+          "val_h": 0.4166666666666667,
+          "hours": 3.367580864197533,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 9560962,
+              "batches": 559,
+              "latent_steps": 0
+            }
+          },
+          "pass_factor": 1.0
+        }
+      ]
+    },
+    "oracle-acctb": {
+      "project_alias": "acctb",
+      "gpu": "A100-80GB",
+      "current_max_hours": 16,
+      "sum_est_hours": 14.824932530864201,
+      "proposed_max_hours": 20.0,
+      "runs": [
+        {
+          "run": "prosqa_cot_s0",
+          "config": "configs/prosqa_cot.json",
+          "epochs": 50,
+          "n_train": 17886,
+          "n_val": 300,
+          "train_h": 2.9509141975308664,
+          "val_h": 0.4166666666666667,
+          "hours": 3.367580864197533,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 9560962,
+              "batches": 559,
+              "latent_steps": 0
+            }
+          },
+          "pass_factor": 1.0
+        },
+        {
+          "run": "prosqa_coconut_s0",
+          "config": "configs/prosqa_coconut.json",
+          "epochs": 50,
+          "n_train": 17886,
+          "n_val": 300,
+          "train_h": 3.7835195061728397,
+          "val_h": 1.2291666666666667,
+          "hours": 5.012686172839507,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 9596734,
+              "batches": 559,
+              "latent_steps": 0
+            },
+            "1": {
+              "padded_tokens_per_epoch": 9855032,
+              "batches": 559,
+              "latent_steps": 1
+            },
+            "2": {
+              "padded_tokens_per_epoch": 9673660,
+              "batches": 559,
+              "latent_steps": 2
+            },
+            "3": {
+              "padded_tokens_per_epoch": 9493298,
+              "batches": 559,
+              "latent_steps": 3
+            },
+            "4": {
+              "padded_tokens_per_epoch": 9308194,
+              "batches": 559,
+              "latent_steps": 4
+            },
+            "5": {
+              "padded_tokens_per_epoch": 9114422,
+              "batches": 559,
+              "latent_steps": 5
+            },
+            "6": {
+              "padded_tokens_per_epoch": 9043122,
+              "batches": 559,
+              "latent_steps": 6
+            },
+            "7": {
+              "padded_tokens_per_epoch": 9026070,
+              "batches": 559,
+              "latent_steps": 6
+            },
+            "8": {
+              "padded_tokens_per_epoch": 9011516,
+              "batches": 559,
+              "latent_steps": 6
+            },
+            "9": {
+              "padded_tokens_per_epoch": 9032634,
+              "batches": 559,
+              "latent_steps": 6
+            }
+          },
+          "pass_factor": 1.0
+        },
+        {
+          "run": "prosqa_pause_s0",
+          "config": "configs/prosqa_pause.json",
+          "epochs": 50,
+          "n_train": 17886,
+          "n_val": 300,
+          "train_h": 2.8751445061728407,
+          "val_h": 0.4166666666666667,
+          "hours": 3.2918111728395076,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 9596734,
+              "batches": 559,
+              "latent_steps": 0
+            },
+            "1": {
+              "padded_tokens_per_epoch": 9855032,
+              "batches": 559,
+              "latent_steps": 0
+            },
+            "2": {
+              "padded_tokens_per_epoch": 9673660,
+              "batches": 559,
+              "latent_steps": 0
+            },
+            "3": {
+              "padded_tokens_per_epoch": 9493298,
+              "batches": 559,
+              "latent_steps": 0
+            },
+            "4": {
+              "padded_tokens_per_epoch": 9308194,
+              "batches": 559,
+              "latent_steps": 0
+            },
+            "5": {
+              "padded_tokens_per_epoch": 9114422,
+              "batches": 559,
+              "latent_steps": 0
+            },
+            "6": {
+              "padded_tokens_per_epoch": 9043122,
+              "batches": 559,
+              "latent_steps": 0
+            },
+            "7": {
+              "padded_tokens_per_epoch": 9026070,
+              "batches": 559,
+              "latent_steps": 0
+            },
+            "8": {
+              "padded_tokens_per_epoch": 9011516,
+              "batches": 559,
+              "latent_steps": 0
+            },
+            "9": {
+              "padded_tokens_per_epoch": 9032634,
+              "batches": 559,
+              "latent_steps": 0
+            }
+          },
+          "pass_factor": 1.0
+        },
+        {
+          "run": "prosqa_no_cot_s0",
+          "config": "configs/prosqa_no_cot.json",
+          "epochs": 50,
+          "n_train": 17886,
+          "n_val": 300,
+          "train_h": 2.7361876543209878,
+          "val_h": 0.4166666666666667,
+          "hours": 3.1528543209876543,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 8865248,
+              "batches": 559,
+              "latent_steps": 0
+            }
+          },
+          "pass_factor": 1.0
+        }
+      ]
+    },
+    "oracle-acctc": {
+      "project_alias": "acctc",
+      "gpu": "A100-80GB",
+      "current_max_hours": 16,
+      "sum_est_hours": 16.76053407407408,
+      "proposed_max_hours": 22.5,
+      "runs": [
+        {
+          "run": "prosqa_coconut_s1",
+          "config": "configs/prosqa_coconut.json",
+          "epochs": 50,
+          "n_train": 17886,
+          "n_val": 300,
+          "train_h": 3.7835195061728397,
+          "val_h": 1.2291666666666667,
+          "hours": 5.012686172839507,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 9596734,
+              "batches": 559,
+              "latent_steps": 0
+            },
+            "1": {
+              "padded_tokens_per_epoch": 9855032,
+              "batches": 559,
+              "latent_steps": 1
+            },
+            "2": {
+              "padded_tokens_per_epoch": 9673660,
+              "batches": 559,
+              "latent_steps": 2
+            },
+            "3": {
+              "padded_tokens_per_epoch": 9493298,
+              "batches": 559,
+              "latent_steps": 3
+            },
+            "4": {
+              "padded_tokens_per_epoch": 9308194,
+              "batches": 559,
+              "latent_steps": 4
+            },
+            "5": {
+              "padded_tokens_per_epoch": 9114422,
+              "batches": 559,
+              "latent_steps": 5
+            },
+            "6": {
+              "padded_tokens_per_epoch": 9043122,
+              "batches": 559,
+              "latent_steps": 6
+            },
+            "7": {
+              "padded_tokens_per_epoch": 9026070,
+              "batches": 559,
+              "latent_steps": 6
+            },
+            "8": {
+              "padded_tokens_per_epoch": 9011516,
+              "batches": 559,
+              "latent_steps": 6
+            },
+            "9": {
+              "padded_tokens_per_epoch": 9032634,
+              "batches": 559,
+              "latent_steps": 6
+            }
+          },
+          "pass_factor": 1.0
+        },
+        {
+          "run": "prosqa_coconut_s2",
+          "config": "configs/prosqa_coconut.json",
+          "epochs": 50,
+          "n_train": 17886,
+          "n_val": 300,
+          "train_h": 3.7835195061728397,
+          "val_h": 1.2291666666666667,
+          "hours": 5.012686172839507,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 9596734,
+              "batches": 559,
+              "latent_steps": 0
+            },
+            "1": {
+              "padded_tokens_per_epoch": 9855032,
+              "batches": 559,
+              "latent_steps": 1
+            },
+            "2": {
+              "padded_tokens_per_epoch": 9673660,
+              "batches": 559,
+              "latent_steps": 2
+            },
+            "3": {
+              "padded_tokens_per_epoch": 9493298,
+              "batches": 559,
+              "latent_steps": 3
+            },
+            "4": {
+              "padded_tokens_per_epoch": 9308194,
+              "batches": 559,
+              "latent_steps": 4
+            },
+            "5": {
+              "padded_tokens_per_epoch": 9114422,
+              "batches": 559,
+              "latent_steps": 5
+            },
+            "6": {
+              "padded_tokens_per_epoch": 9043122,
+              "batches": 559,
+              "latent_steps": 6
+            },
+            "7": {
+              "padded_tokens_per_epoch": 9026070,
+              "batches": 559,
+              "latent_steps": 6
+            },
+            "8": {
+              "padded_tokens_per_epoch": 9011516,
+              "batches": 559,
+              "latent_steps": 6
+            },
+            "9": {
+              "padded_tokens_per_epoch": 9032634,
+              "batches": 559,
+              "latent_steps": 6
+            }
+          },
+          "pass_factor": 1.0
+        },
+        {
+          "run": "prosqa_cot_s1",
+          "config": "configs/prosqa_cot.json",
+          "epochs": 50,
+          "n_train": 17886,
+          "n_val": 300,
+          "train_h": 2.9509141975308664,
+          "val_h": 0.4166666666666667,
+          "hours": 3.367580864197533,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 9560962,
+              "batches": 559,
+              "latent_steps": 0
+            }
+          },
+          "pass_factor": 1.0
+        },
+        {
+          "run": "prosqa_cot_s2",
+          "config": "configs/prosqa_cot.json",
+          "epochs": 50,
+          "n_train": 17886,
+          "n_val": 300,
+          "train_h": 2.9509141975308664,
+          "val_h": 0.4166666666666667,
+          "hours": 3.367580864197533,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 9560962,
+              "batches": 559,
+              "latent_steps": 0
+            }
+          },
+          "pass_factor": 1.0
+        }
+      ]
+    },
+    "oracle-accta": {
+      "project_alias": "accta",
+      "gpu": "A100-80GB",
+      "current_max_hours": 18,
+      "sum_est_hours": 25.27976208599999,
+      "proposed_max_hours": 33.5,
+      "runs": [
+        {
+          "run": "gsm_cot_s0",
+          "config": "configs/gsm_cot.json",
+          "epochs": 25,
+          "n_train": 385620,
+          "n_val": 500,
+          "train_h": 7.553343651851847,
+          "val_h": 0.1736111111111111,
+          "hours": 7.726954762962959,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 48945666,
+              "batches": 12050,
+              "latent_steps": 0
+            }
+          },
+          "pass_factor": 1.0
+        },
+        {
+          "run": "gsm_coconut_s0",
+          "config": "configs/gsm_coconut.json",
+          "epochs": 22,
+          "n_train": 385620,
+          "n_val": 500,
+          "train_h": 17.004196211925922,
+          "val_h": 0.5486111111111112,
+          "hours": 17.552807323037033,
+          "stages": {
+            "1": {
+              "padded_tokens_per_epoch": 51422581,
+              "batches": 12050,
+              "latent_steps": 2
+            },
+            "2": {
+              "padded_tokens_per_epoch": 48436648,
+              "batches": 12050,
+              "latent_steps": 4
+            },
+            "3": {
+              "padded_tokens_per_epoch": 45457194,
+              "batches": 12050,
+              "latent_steps": 6
+            },
+            "4": {
+              "padded_tokens_per_epoch": 35673551,
+              "batches": 12050,
+              "latent_steps": 6
+            },
+            "5": {
+              "padded_tokens_per_epoch": 35728155,
+              "batches": 12050,
+              "latent_steps": 6
+            },
+            "6": {
+              "padded_tokens_per_epoch": 35737719,
+              "batches": 12050,
+              "latent_steps": 6
+            },
+            "7": {
+              "padded_tokens_per_epoch": 35682498,
+              "batches": 12050,
+              "latent_steps": 6
+            },
+            "8": {
+              "padded_tokens_per_epoch": 35673551,
+              "batches": 12050,
+              "latent_steps": 6
+            }
+          },
+          "pass_factor": 1.0
+        }
+      ]
+    },
+    "pair-strict-acctc": {
+      "project_alias": "acctc",
+      "gpu": "A100-80GB",
+      "current_max_hours": 14,
+      "sum_est_hours": 5.012686172839507,
+      "proposed_max_hours": 7.5,
+      "runs": [
+        {
+          "run": "prosqa_coconut_strict_s0",
+          "config": "configs/prosqa_coconut_strict.json",
+          "epochs": 50,
+          "n_train": 17886,
+          "n_val": 300,
+          "train_h": 3.7835195061728397,
+          "val_h": 1.2291666666666667,
+          "hours": 5.012686172839507,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 9596734,
+              "batches": 559,
+              "latent_steps": 0
+            },
+            "1": {
+              "padded_tokens_per_epoch": 9855032,
+              "batches": 559,
+              "latent_steps": 1
+            },
+            "2": {
+              "padded_tokens_per_epoch": 9673660,
+              "batches": 559,
+              "latent_steps": 2
+            },
+            "3": {
+              "padded_tokens_per_epoch": 9493298,
+              "batches": 559,
+              "latent_steps": 3
+            },
+            "4": {
+              "padded_tokens_per_epoch": 9308194,
+              "batches": 559,
+              "latent_steps": 4
+            },
+            "5": {
+              "padded_tokens_per_epoch": 9114422,
+              "batches": 559,
+              "latent_steps": 5
+            },
+            "6": {
+              "padded_tokens_per_epoch": 9043122,
+              "batches": 559,
+              "latent_steps": 6
+            },
+            "7": {
+              "padded_tokens_per_epoch": 9026070,
+              "batches": 559,
+              "latent_steps": 6
+            },
+            "8": {
+              "padded_tokens_per_epoch": 9011516,
+              "batches": 559,
+              "latent_steps": 6
+            },
+            "9": {
+              "padded_tokens_per_epoch": 9032634,
+              "batches": 559,
+              "latent_steps": 6
+            }
+          },
+          "pass_factor": 1.0
+        }
+      ]
+    },
+    "screen-gsm50k": {
+      "project_alias": "tbd",
+      "gpu": "A100-80GB",
+      "current_max_hours": 0,
+      "sum_est_hours": 36.714218024691355,
+      "proposed_max_hours": 48.5,
+      "runs": [
+        {
+          "run": "gsm50k_c1b_k4_s0",
+          "config": "configs/screen/gsm50k_c1b_k4.json",
+          "epochs": 22,
+          "n_train": 50000,
+          "n_val": 500,
+          "train_h": 2.199841913580247,
+          "val_h": 0.5486111111111112,
+          "hours": 2.7484530246913583,
+          "stages": {
+            "1": {
+              "padded_tokens_per_epoch": 6612160,
+              "batches": 1562,
+              "latent_steps": 2
+            },
+            "2": {
+              "padded_tokens_per_epoch": 6246080,
+              "batches": 1562,
+              "latent_steps": 4
+            },
+            "3": {
+              "padded_tokens_per_epoch": 5886920,
+              "batches": 1562,
+              "latent_steps": 6
+            },
+            "4": {
+              "padded_tokens_per_epoch": 4571200,
+              "batches": 1562,
+              "latent_steps": 6
+            },
+            "5": {
+              "padded_tokens_per_epoch": 4587480,
+              "batches": 1562,
+              "latent_steps": 6
+            },
+            "6": {
+              "padded_tokens_per_epoch": 4588760,
+              "batches": 1562,
+              "latent_steps": 6
+            },
+            "7": {
+              "padded_tokens_per_epoch": 4610320,
+              "batches": 1562,
+              "latent_steps": 6
+            },
+            "8": {
+              "padded_tokens_per_epoch": 4596880,
+              "batches": 1562,
+              "latent_steps": 6
+            }
+          },
+          "pass_factor": 1.0
+        },
+        {
+          "run": "gsm50k_c1b_k8_s0",
+          "config": "configs/screen/gsm50k_c1b_k8.json",
+          "epochs": 22,
+          "n_train": 50000,
+          "n_val": 500,
+          "train_h": 2.199841913580247,
+          "val_h": 0.5486111111111112,
+          "hours": 2.7484530246913583,
+          "stages": {
+            "1": {
+              "padded_tokens_per_epoch": 6612160,
+              "batches": 1562,
+              "latent_steps": 2
+            },
+            "2": {
+              "padded_tokens_per_epoch": 6246080,
+              "batches": 1562,
+              "latent_steps": 4
+            },
+            "3": {
+              "padded_tokens_per_epoch": 5886920,
+              "batches": 1562,
+              "latent_steps": 6
+            },
+            "4": {
+              "padded_tokens_per_epoch": 4571200,
+              "batches": 1562,
+              "latent_steps": 6
+            },
+            "5": {
+              "padded_tokens_per_epoch": 4587480,
+              "batches": 1562,
+              "latent_steps": 6
+            },
+            "6": {
+              "padded_tokens_per_epoch": 4588760,
+              "batches": 1562,
+              "latent_steps": 6
+            },
+            "7": {
+              "padded_tokens_per_epoch": 4610320,
+              "batches": 1562,
+              "latent_steps": 6
+            },
+            "8": {
+              "padded_tokens_per_epoch": 4596880,
+              "batches": 1562,
+              "latent_steps": 6
+            }
+          },
+          "pass_factor": 1.0
+        },
+        {
+          "run": "gsm50k_c2_s0",
+          "config": "configs/screen/gsm50k_c2.json",
+          "epochs": 22,
+          "n_train": 50000,
+          "n_val": 500,
+          "train_h": 2.199841913580247,
+          "val_h": 0.5486111111111112,
+          "hours": 2.7484530246913583,
+          "stages": {
+            "1": {
+              "padded_tokens_per_epoch": 6612160,
+              "batches": 1562,
+              "latent_steps": 2
+            },
+            "2": {
+              "padded_tokens_per_epoch": 6246080,
+              "batches": 1562,
+              "latent_steps": 4
+            },
+            "3": {
+              "padded_tokens_per_epoch": 5886920,
+              "batches": 1562,
+              "latent_steps": 6
+            },
+            "4": {
+              "padded_tokens_per_epoch": 4571200,
+              "batches": 1562,
+              "latent_steps": 6
+            },
+            "5": {
+              "padded_tokens_per_epoch": 4587480,
+              "batches": 1562,
+              "latent_steps": 6
+            },
+            "6": {
+              "padded_tokens_per_epoch": 4588760,
+              "batches": 1562,
+              "latent_steps": 6
+            },
+            "7": {
+              "padded_tokens_per_epoch": 4610320,
+              "batches": 1562,
+              "latent_steps": 6
+            },
+            "8": {
+              "padded_tokens_per_epoch": 4596880,
+              "batches": 1562,
+              "latent_steps": 6
+            }
+          },
+          "pass_factor": 1.0
+        },
+        {
+          "run": "gsm50k_c2_shuffled_s0",
+          "config": "configs/screen/gsm50k_c2_shuffled.json",
+          "epochs": 22,
+          "n_train": 50000,
+          "n_val": 500,
+          "train_h": 2.199841913580247,
+          "val_h": 0.5486111111111112,
+          "hours": 2.7484530246913583,
+          "stages": {
+            "1": {
+              "padded_tokens_per_epoch": 6612160,
+              "batches": 1562,
+              "latent_steps": 2
+            },
+            "2": {
+              "padded_tokens_per_epoch": 6246080,
+              "batches": 1562,
+              "latent_steps": 4
+            },
+            "3": {
+              "padded_tokens_per_epoch": 5886920,
+              "batches": 1562,
+              "latent_steps": 6
+            },
+            "4": {
+              "padded_tokens_per_epoch": 4571200,
+              "batches": 1562,
+              "latent_steps": 6
+            },
+            "5": {
+              "padded_tokens_per_epoch": 4587480,
+              "batches": 1562,
+              "latent_steps": 6
+            },
+            "6": {
+              "padded_tokens_per_epoch": 4588760,
+              "batches": 1562,
+              "latent_steps": 6
+            },
+            "7": {
+              "padded_tokens_per_epoch": 4610320,
+              "batches": 1562,
+              "latent_steps": 6
+            },
+            "8": {
+              "padded_tokens_per_epoch": 4596880,
+              "batches": 1562,
+              "latent_steps": 6
+            }
+          },
+          "pass_factor": 1.0
+        },
+        {
+          "run": "gsm50k_c2c3_s0",
+          "config": "configs/screen/gsm50k_c2c3.json",
+          "epochs": 22,
+          "n_train": 50000,
+          "n_val": 500,
+          "train_h": 4.399683827160494,
+          "val_h": 0.5486111111111112,
+          "hours": 4.948294938271606,
+          "stages": {
+            "1": {
+              "padded_tokens_per_epoch": 6612160,
+              "batches": 1562,
+              "latent_steps": 2
+            },
+            "2": {
+              "padded_tokens_per_epoch": 6246080,
+              "batches": 1562,
+              "latent_steps": 4
+            },
+            "3": {
+              "padded_tokens_per_epoch": 5886920,
+              "batches": 1562,
+              "latent_steps": 6
+            },
+            "4": {
+              "padded_tokens_per_epoch": 4571200,
+              "batches": 1562,
+              "latent_steps": 6
+            },
+            "5": {
+              "padded_tokens_per_epoch": 4587480,
+              "batches": 1562,
+              "latent_steps": 6
+            },
+            "6": {
+              "padded_tokens_per_epoch": 4588760,
+              "batches": 1562,
+              "latent_steps": 6
+            },
+            "7": {
+              "padded_tokens_per_epoch": 4610320,
+              "batches": 1562,
+              "latent_steps": 6
+            },
+            "8": {
+              "padded_tokens_per_epoch": 4596880,
+              "batches": 1562,
+              "latent_steps": 6
+            }
+          },
+          "pass_factor": 2.0
+        },
+        {
+          "run": "gsm50k_c3_s0",
+          "config": "configs/screen/gsm50k_c3.json",
+          "epochs": 22,
+          "n_train": 50000,
+          "n_val": 500,
+          "train_h": 4.399683827160494,
+          "val_h": 0.5486111111111112,
+          "hours": 4.948294938271606,
+          "stages": {
+            "1": {
+              "padded_tokens_per_epoch": 6612160,
+              "batches": 1562,
+              "latent_steps": 2
+            },
+            "2": {
+              "padded_tokens_per_epoch": 6246080,
+              "batches": 1562,
+              "latent_steps": 4
+            },
+            "3": {
+              "padded_tokens_per_epoch": 5886920,
+              "batches": 1562,
+              "latent_steps": 6
+            },
+            "4": {
+              "padded_tokens_per_epoch": 4571200,
+              "batches": 1562,
+              "latent_steps": 6
+            },
+            "5": {
+              "padded_tokens_per_epoch": 4587480,
+              "batches": 1562,
+              "latent_steps": 6
+            },
+            "6": {
+              "padded_tokens_per_epoch": 4588760,
+              "batches": 1562,
+              "latent_steps": 6
+            },
+            "7": {
+              "padded_tokens_per_epoch": 4610320,
+              "batches": 1562,
+              "latent_steps": 6
+            },
+            "8": {
+              "padded_tokens_per_epoch": 4596880,
+              "batches": 1562,
+              "latent_steps": 6
+            }
+          },
+          "pass_factor": 2.0
+        },
+        {
+          "run": "gsm50k_c3_foreign_s0",
+          "config": "configs/screen/gsm50k_c3_foreign.json",
+          "epochs": 22,
+          "n_train": 50000,
+          "n_val": 500,
+          "train_h": 6.59952574074074,
+          "val_h": 0.5486111111111112,
+          "hours": 7.148136851851851,
+          "stages": {
+            "1": {
+              "padded_tokens_per_epoch": 6612160,
+              "batches": 1562,
+              "latent_steps": 2
+            },
+            "2": {
+              "padded_tokens_per_epoch": 6246080,
+              "batches": 1562,
+              "latent_steps": 4
+            },
+            "3": {
+              "padded_tokens_per_epoch": 5886920,
+              "batches": 1562,
+              "latent_steps": 6
+            },
+            "4": {
+              "padded_tokens_per_epoch": 4571200,
+              "batches": 1562,
+              "latent_steps": 6
+            },
+            "5": {
+              "padded_tokens_per_epoch": 4587480,
+              "batches": 1562,
+              "latent_steps": 6
+            },
+            "6": {
+              "padded_tokens_per_epoch": 4588760,
+              "batches": 1562,
+              "latent_steps": 6
+            },
+            "7": {
+              "padded_tokens_per_epoch": 4610320,
+              "batches": 1562,
+              "latent_steps": 6
+            },
+            "8": {
+              "padded_tokens_per_epoch": 4596880,
+              "batches": 1562,
+              "latent_steps": 6
+            }
+          },
+          "pass_factor": 3.0
+        },
+        {
+          "run": "gsm50k_coconut_s0",
+          "config": "configs/screen/gsm50k_coconut.json",
+          "epochs": 22,
+          "n_train": 50000,
+          "n_val": 500,
+          "train_h": 2.199841913580247,
+          "val_h": 0.5486111111111112,
+          "hours": 2.7484530246913583,
+          "stages": {
+            "1": {
+              "padded_tokens_per_epoch": 6612160,
+              "batches": 1562,
+              "latent_steps": 2
+            },
+            "2": {
+              "padded_tokens_per_epoch": 6246080,
+              "batches": 1562,
+              "latent_steps": 4
+            },
+            "3": {
+              "padded_tokens_per_epoch": 5886920,
+              "batches": 1562,
+              "latent_steps": 6
+            },
+            "4": {
+              "padded_tokens_per_epoch": 4571200,
+              "batches": 1562,
+              "latent_steps": 6
+            },
+            "5": {
+              "padded_tokens_per_epoch": 4587480,
+              "batches": 1562,
+              "latent_steps": 6
+            },
+            "6": {
+              "padded_tokens_per_epoch": 4588760,
+              "batches": 1562,
+              "latent_steps": 6
+            },
+            "7": {
+              "padded_tokens_per_epoch": 4610320,
+              "batches": 1562,
+              "latent_steps": 6
+            },
+            "8": {
+              "padded_tokens_per_epoch": 4596880,
+              "batches": 1562,
+              "latent_steps": 6
+            }
+          },
+          "pass_factor": 1.0
+        },
+        {
+          "run": "gsm50k_cot_lr1e-4_s0",
+          "config": "configs/screen/gsm50k_cot_lr1e-4.json",
+          "epochs": 25,
+          "n_train": 50000,
+          "n_val": 500,
+          "train_h": 0.9732839506172837,
+          "val_h": 0.1736111111111111,
+          "hours": 1.1468950617283948,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 6306880,
+              "batches": 1562,
+              "latent_steps": 0
+            }
+          },
+          "pass_factor": 1.0
+        },
+        {
+          "run": "gsm50k_cot_lr3e-4_s0",
+          "config": "configs/screen/gsm50k_cot_lr3e-4.json",
+          "epochs": 25,
+          "n_train": 50000,
+          "n_val": 500,
+          "train_h": 0.9732839506172837,
+          "val_h": 0.1736111111111111,
+          "hours": 1.1468950617283948,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 6306880,
+              "batches": 1562,
+              "latent_steps": 0
+            }
+          },
+          "pass_factor": 1.0
+        },
+        {
+          "run": "gsm50k_cot_lr3e-5_s0",
+          "config": "configs/screen/gsm50k_cot_lr3e-5.json",
+          "epochs": 25,
+          "n_train": 50000,
+          "n_val": 500,
+          "train_h": 0.9732839506172837,
+          "val_h": 0.1736111111111111,
+          "hours": 1.1468950617283948,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 6306880,
+              "batches": 1562,
+              "latent_steps": 0
+            }
+          },
+          "pass_factor": 1.0
+        },
+        {
+          "run": "gsm50k_no_cot_s0",
+          "config": "configs/screen/gsm50k_no_cot.json",
+          "epochs": 25,
+          "n_train": 50000,
+          "n_val": 500,
+          "train_h": 0.6355370370370367,
+          "val_h": 0.1736111111111111,
+          "hours": 0.8091481481481478,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 4118280,
+              "batches": 1562,
+              "latent_steps": 0
+            }
+          },
+          "pass_factor": 1.0
+        },
+        {
+          "run": "gsm50k_pause_s0",
+          "config": "configs/screen/gsm50k_pause.json",
+          "epochs": 22,
+          "n_train": 50000,
+          "n_val": 500,
+          "train_h": 0.7154669135802467,
+          "val_h": 0.1527777777777778,
+          "hours": 0.8682446913580245,
+          "stages": {
+            "1": {
+              "padded_tokens_per_epoch": 6612160,
+              "batches": 1562,
+              "latent_steps": 0
+            },
+            "2": {
+              "padded_tokens_per_epoch": 6246080,
+              "batches": 1562,
+              "latent_steps": 0
+            },
+            "3": {
+              "padded_tokens_per_epoch": 5886920,
+              "batches": 1562,
+              "latent_steps": 0
+            },
+            "4": {
+              "padded_tokens_per_epoch": 4571200,
+              "batches": 1562,
+              "latent_steps": 0
+            },
+            "5": {
+              "padded_tokens_per_epoch": 4587480,
+              "batches": 1562,
+              "latent_steps": 0
+            },
+            "6": {
+              "padded_tokens_per_epoch": 4588760,
+              "batches": 1562,
+              "latent_steps": 0
+            },
+            "7": {
+              "padded_tokens_per_epoch": 4610320,
+              "batches": 1562,
+              "latent_steps": 0
+            },
+            "8": {
+              "padded_tokens_per_epoch": 4596880,
+              "batches": 1562,
+              "latent_steps": 0
+            }
+          },
+          "pass_factor": 1.0
+        },
+        {
+          "run": "gsm50k_plain_depth_355m_s0",
+          "config": "configs/screen/gsm50k_plain_depth_355m.json",
+          "epochs": 25,
+          "n_train": 50000,
+          "n_val": 500,
+          "train_h": 0.6355370370370367,
+          "val_h": 0.1736111111111111,
+          "hours": 0.8091481481481478,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 4118280,
+              "batches": 1562,
+              "latent_steps": 0
+            }
+          },
+          "pass_factor": 1.0
+        }
+      ]
+    },
+    "screen-prosqa-hard": {
+      "project_alias": "tbd",
+      "gpu": "A100-80GB",
+      "current_max_hours": 0,
+      "sum_est_hours": 40.74784088888889,
+      "proposed_max_hours": 53.5,
+      "runs": [
+        {
+          "run": "prosqa_hard_c1b_k4_s0",
+          "config": "configs/screen/prosqa_hard_c1b_k4.json",
+          "epochs": 30,
+          "n_train": 10000,
+          "n_val": 300,
+          "train_h": 1.9460088148148147,
+          "val_h": 0.775,
+          "hours": 2.7210088148148146,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 8993056,
+              "batches": 313,
+              "latent_steps": 0
+            },
+            "1": {
+              "padded_tokens_per_epoch": 9103376,
+              "batches": 313,
+              "latent_steps": 1
+            },
+            "2": {
+              "padded_tokens_per_epoch": 8996816,
+              "batches": 313,
+              "latent_steps": 2
+            },
+            "3": {
+              "padded_tokens_per_epoch": 8861440,
+              "batches": 313,
+              "latent_steps": 3
+            },
+            "4": {
+              "padded_tokens_per_epoch": 8776112,
+              "batches": 313,
+              "latent_steps": 4
+            },
+            "5": {
+              "padded_tokens_per_epoch": 8673712,
+              "batches": 313,
+              "latent_steps": 5
+            },
+            "6": {
+              "padded_tokens_per_epoch": 8581808,
+              "batches": 313,
+              "latent_steps": 6
+            },
+            "7": {
+              "padded_tokens_per_epoch": 8473008,
+              "batches": 313,
+              "latent_steps": 7
+            },
+            "8": {
+              "padded_tokens_per_epoch": 8438176,
+              "batches": 313,
+              "latent_steps": 7
+            },
+            "9": {
+              "padded_tokens_per_epoch": 8439872,
+              "batches": 313,
+              "latent_steps": 7
+            }
+          },
+          "pass_factor": 1.0
+        },
+        {
+          "run": "prosqa_hard_c1b_k8_s0",
+          "config": "configs/screen/prosqa_hard_c1b_k8.json",
+          "epochs": 30,
+          "n_train": 10000,
+          "n_val": 300,
+          "train_h": 1.9460088148148147,
+          "val_h": 0.775,
+          "hours": 2.7210088148148146,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 8993056,
+              "batches": 313,
+              "latent_steps": 0
+            },
+            "1": {
+              "padded_tokens_per_epoch": 9103376,
+              "batches": 313,
+              "latent_steps": 1
+            },
+            "2": {
+              "padded_tokens_per_epoch": 8996816,
+              "batches": 313,
+              "latent_steps": 2
+            },
+            "3": {
+              "padded_tokens_per_epoch": 8861440,
+              "batches": 313,
+              "latent_steps": 3
+            },
+            "4": {
+              "padded_tokens_per_epoch": 8776112,
+              "batches": 313,
+              "latent_steps": 4
+            },
+            "5": {
+              "padded_tokens_per_epoch": 8673712,
+              "batches": 313,
+              "latent_steps": 5
+            },
+            "6": {
+              "padded_tokens_per_epoch": 8581808,
+              "batches": 313,
+              "latent_steps": 6
+            },
+            "7": {
+              "padded_tokens_per_epoch": 8473008,
+              "batches": 313,
+              "latent_steps": 7
+            },
+            "8": {
+              "padded_tokens_per_epoch": 8438176,
+              "batches": 313,
+              "latent_steps": 7
+            },
+            "9": {
+              "padded_tokens_per_epoch": 8439872,
+              "batches": 313,
+              "latent_steps": 7
+            }
+          },
+          "pass_factor": 1.0
+        },
+        {
+          "run": "prosqa_hard_c2_s0",
+          "config": "configs/screen/prosqa_hard_c2.json",
+          "epochs": 30,
+          "n_train": 10000,
+          "n_val": 300,
+          "train_h": 1.9460088148148147,
+          "val_h": 0.775,
+          "hours": 2.7210088148148146,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 8993056,
+              "batches": 313,
+              "latent_steps": 0
+            },
+            "1": {
+              "padded_tokens_per_epoch": 9103376,
+              "batches": 313,
+              "latent_steps": 1
+            },
+            "2": {
+              "padded_tokens_per_epoch": 8996816,
+              "batches": 313,
+              "latent_steps": 2
+            },
+            "3": {
+              "padded_tokens_per_epoch": 8861440,
+              "batches": 313,
+              "latent_steps": 3
+            },
+            "4": {
+              "padded_tokens_per_epoch": 8776112,
+              "batches": 313,
+              "latent_steps": 4
+            },
+            "5": {
+              "padded_tokens_per_epoch": 8673712,
+              "batches": 313,
+              "latent_steps": 5
+            },
+            "6": {
+              "padded_tokens_per_epoch": 8581808,
+              "batches": 313,
+              "latent_steps": 6
+            },
+            "7": {
+              "padded_tokens_per_epoch": 8473008,
+              "batches": 313,
+              "latent_steps": 7
+            },
+            "8": {
+              "padded_tokens_per_epoch": 8438176,
+              "batches": 313,
+              "latent_steps": 7
+            },
+            "9": {
+              "padded_tokens_per_epoch": 8439872,
+              "batches": 313,
+              "latent_steps": 7
+            }
+          },
+          "pass_factor": 1.0
+        },
+        {
+          "run": "prosqa_hard_c2_shuffled_s0",
+          "config": "configs/screen/prosqa_hard_c2_shuffled.json",
+          "epochs": 30,
+          "n_train": 10000,
+          "n_val": 300,
+          "train_h": 1.9460088148148147,
+          "val_h": 0.775,
+          "hours": 2.7210088148148146,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 8993056,
+              "batches": 313,
+              "latent_steps": 0
+            },
+            "1": {
+              "padded_tokens_per_epoch": 9103376,
+              "batches": 313,
+              "latent_steps": 1
+            },
+            "2": {
+              "padded_tokens_per_epoch": 8996816,
+              "batches": 313,
+              "latent_steps": 2
+            },
+            "3": {
+              "padded_tokens_per_epoch": 8861440,
+              "batches": 313,
+              "latent_steps": 3
+            },
+            "4": {
+              "padded_tokens_per_epoch": 8776112,
+              "batches": 313,
+              "latent_steps": 4
+            },
+            "5": {
+              "padded_tokens_per_epoch": 8673712,
+              "batches": 313,
+              "latent_steps": 5
+            },
+            "6": {
+              "padded_tokens_per_epoch": 8581808,
+              "batches": 313,
+              "latent_steps": 6
+            },
+            "7": {
+              "padded_tokens_per_epoch": 8473008,
+              "batches": 313,
+              "latent_steps": 7
+            },
+            "8": {
+              "padded_tokens_per_epoch": 8438176,
+              "batches": 313,
+              "latent_steps": 7
+            },
+            "9": {
+              "padded_tokens_per_epoch": 8439872,
+              "batches": 313,
+              "latent_steps": 7
+            }
+          },
+          "pass_factor": 1.0
+        },
+        {
+          "run": "prosqa_hard_c2c3_s0",
+          "config": "configs/screen/prosqa_hard_c2c3.json",
+          "epochs": 30,
+          "n_train": 10000,
+          "n_val": 300,
+          "train_h": 3.8920176296296294,
+          "val_h": 0.775,
+          "hours": 4.667017629629629,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 8993056,
+              "batches": 313,
+              "latent_steps": 0
+            },
+            "1": {
+              "padded_tokens_per_epoch": 9103376,
+              "batches": 313,
+              "latent_steps": 1
+            },
+            "2": {
+              "padded_tokens_per_epoch": 8996816,
+              "batches": 313,
+              "latent_steps": 2
+            },
+            "3": {
+              "padded_tokens_per_epoch": 8861440,
+              "batches": 313,
+              "latent_steps": 3
+            },
+            "4": {
+              "padded_tokens_per_epoch": 8776112,
+              "batches": 313,
+              "latent_steps": 4
+            },
+            "5": {
+              "padded_tokens_per_epoch": 8673712,
+              "batches": 313,
+              "latent_steps": 5
+            },
+            "6": {
+              "padded_tokens_per_epoch": 8581808,
+              "batches": 313,
+              "latent_steps": 6
+            },
+            "7": {
+              "padded_tokens_per_epoch": 8473008,
+              "batches": 313,
+              "latent_steps": 7
+            },
+            "8": {
+              "padded_tokens_per_epoch": 8438176,
+              "batches": 313,
+              "latent_steps": 7
+            },
+            "9": {
+              "padded_tokens_per_epoch": 8439872,
+              "batches": 313,
+              "latent_steps": 7
+            }
+          },
+          "pass_factor": 2.0
+        },
+        {
+          "run": "prosqa_hard_c3_s0",
+          "config": "configs/screen/prosqa_hard_c3.json",
+          "epochs": 30,
+          "n_train": 10000,
+          "n_val": 300,
+          "train_h": 3.8920176296296294,
+          "val_h": 0.775,
+          "hours": 4.667017629629629,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 8993056,
+              "batches": 313,
+              "latent_steps": 0
+            },
+            "1": {
+              "padded_tokens_per_epoch": 9103376,
+              "batches": 313,
+              "latent_steps": 1
+            },
+            "2": {
+              "padded_tokens_per_epoch": 8996816,
+              "batches": 313,
+              "latent_steps": 2
+            },
+            "3": {
+              "padded_tokens_per_epoch": 8861440,
+              "batches": 313,
+              "latent_steps": 3
+            },
+            "4": {
+              "padded_tokens_per_epoch": 8776112,
+              "batches": 313,
+              "latent_steps": 4
+            },
+            "5": {
+              "padded_tokens_per_epoch": 8673712,
+              "batches": 313,
+              "latent_steps": 5
+            },
+            "6": {
+              "padded_tokens_per_epoch": 8581808,
+              "batches": 313,
+              "latent_steps": 6
+            },
+            "7": {
+              "padded_tokens_per_epoch": 8473008,
+              "batches": 313,
+              "latent_steps": 7
+            },
+            "8": {
+              "padded_tokens_per_epoch": 8438176,
+              "batches": 313,
+              "latent_steps": 7
+            },
+            "9": {
+              "padded_tokens_per_epoch": 8439872,
+              "batches": 313,
+              "latent_steps": 7
+            }
+          },
+          "pass_factor": 2.0
+        },
+        {
+          "run": "prosqa_hard_c3_foreign_s0",
+          "config": "configs/screen/prosqa_hard_c3_foreign.json",
+          "epochs": 30,
+          "n_train": 10000,
+          "n_val": 300,
+          "train_h": 5.838026444444444,
+          "val_h": 0.775,
+          "hours": 6.613026444444444,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 8993056,
+              "batches": 313,
+              "latent_steps": 0
+            },
+            "1": {
+              "padded_tokens_per_epoch": 9103376,
+              "batches": 313,
+              "latent_steps": 1
+            },
+            "2": {
+              "padded_tokens_per_epoch": 8996816,
+              "batches": 313,
+              "latent_steps": 2
+            },
+            "3": {
+              "padded_tokens_per_epoch": 8861440,
+              "batches": 313,
+              "latent_steps": 3
+            },
+            "4": {
+              "padded_tokens_per_epoch": 8776112,
+              "batches": 313,
+              "latent_steps": 4
+            },
+            "5": {
+              "padded_tokens_per_epoch": 8673712,
+              "batches": 313,
+              "latent_steps": 5
+            },
+            "6": {
+              "padded_tokens_per_epoch": 8581808,
+              "batches": 313,
+              "latent_steps": 6
+            },
+            "7": {
+              "padded_tokens_per_epoch": 8473008,
+              "batches": 313,
+              "latent_steps": 7
+            },
+            "8": {
+              "padded_tokens_per_epoch": 8438176,
+              "batches": 313,
+              "latent_steps": 7
+            },
+            "9": {
+              "padded_tokens_per_epoch": 8439872,
+              "batches": 313,
+              "latent_steps": 7
+            }
+          },
+          "pass_factor": 3.0
+        },
+        {
+          "run": "prosqa_hard_coconut_s0",
+          "config": "configs/screen/prosqa_hard_coconut.json",
+          "epochs": 30,
+          "n_train": 10000,
+          "n_val": 300,
+          "train_h": 1.9460088148148147,
+          "val_h": 0.775,
+          "hours": 2.7210088148148146,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 8993056,
+              "batches": 313,
+              "latent_steps": 0
+            },
+            "1": {
+              "padded_tokens_per_epoch": 9103376,
+              "batches": 313,
+              "latent_steps": 1
+            },
+            "2": {
+              "padded_tokens_per_epoch": 8996816,
+              "batches": 313,
+              "latent_steps": 2
+            },
+            "3": {
+              "padded_tokens_per_epoch": 8861440,
+              "batches": 313,
+              "latent_steps": 3
+            },
+            "4": {
+              "padded_tokens_per_epoch": 8776112,
+              "batches": 313,
+              "latent_steps": 4
+            },
+            "5": {
+              "padded_tokens_per_epoch": 8673712,
+              "batches": 313,
+              "latent_steps": 5
+            },
+            "6": {
+              "padded_tokens_per_epoch": 8581808,
+              "batches": 313,
+              "latent_steps": 6
+            },
+            "7": {
+              "padded_tokens_per_epoch": 8473008,
+              "batches": 313,
+              "latent_steps": 7
+            },
+            "8": {
+              "padded_tokens_per_epoch": 8438176,
+              "batches": 313,
+              "latent_steps": 7
+            },
+            "9": {
+              "padded_tokens_per_epoch": 8439872,
+              "batches": 313,
+              "latent_steps": 7
+            }
+          },
+          "pass_factor": 1.0
+        },
+        {
+          "run": "prosqa_hard_cot_lr1e-4_s0",
+          "config": "configs/screen/prosqa_hard_cot_lr1e-4.json",
+          "epochs": 30,
+          "n_train": 10000,
+          "n_val": 300,
+          "train_h": 1.6616770370370364,
+          "val_h": 0.25,
+          "hours": 1.9116770370370364,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 8973056,
+              "batches": 313,
+              "latent_steps": 0
+            }
+          },
+          "pass_factor": 1.0
+        },
+        {
+          "run": "prosqa_hard_cot_lr3e-4_s0",
+          "config": "configs/screen/prosqa_hard_cot_lr3e-4.json",
+          "epochs": 30,
+          "n_train": 10000,
+          "n_val": 300,
+          "train_h": 1.6616770370370364,
+          "val_h": 0.25,
+          "hours": 1.9116770370370364,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 8973056,
+              "batches": 313,
+              "latent_steps": 0
+            }
+          },
+          "pass_factor": 1.0
+        },
+        {
+          "run": "prosqa_hard_cot_lr3e-5_s0",
+          "config": "configs/screen/prosqa_hard_cot_lr3e-5.json",
+          "epochs": 30,
+          "n_train": 10000,
+          "n_val": 300,
+          "train_h": 1.6616770370370364,
+          "val_h": 0.25,
+          "hours": 1.9116770370370364,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 8973056,
+              "batches": 313,
+              "latent_steps": 0
+            }
+          },
+          "pass_factor": 1.0
+        },
+        {
+          "run": "prosqa_hard_no_cot_s0",
+          "config": "configs/screen/prosqa_hard_no_cot.json",
+          "epochs": 30,
+          "n_train": 10000,
+          "n_val": 300,
+          "train_h": 1.546672592592593,
+          "val_h": 0.25,
+          "hours": 1.796672592592593,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 8352032,
+              "batches": 313,
+              "latent_steps": 0
+            }
+          },
+          "pass_factor": 1.0
+        },
+        {
+          "run": "prosqa_hard_pause_s0",
+          "config": "configs/screen/prosqa_hard_pause.json",
+          "epochs": 30,
+          "n_train": 10000,
+          "n_val": 300,
+          "train_h": 1.6173588148148148,
+          "val_h": 0.25,
+          "hours": 1.8673588148148148,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 8993056,
+              "batches": 313,
+              "latent_steps": 0
+            },
+            "1": {
+              "padded_tokens_per_epoch": 9103376,
+              "batches": 313,
+              "latent_steps": 0
+            },
+            "2": {
+              "padded_tokens_per_epoch": 8996816,
+              "batches": 313,
+              "latent_steps": 0
+            },
+            "3": {
+              "padded_tokens_per_epoch": 8861440,
+              "batches": 313,
+              "latent_steps": 0
+            },
+            "4": {
+              "padded_tokens_per_epoch": 8776112,
+              "batches": 313,
+              "latent_steps": 0
+            },
+            "5": {
+              "padded_tokens_per_epoch": 8673712,
+              "batches": 313,
+              "latent_steps": 0
+            },
+            "6": {
+              "padded_tokens_per_epoch": 8581808,
+              "batches": 313,
+              "latent_steps": 0
+            },
+            "7": {
+              "padded_tokens_per_epoch": 8473008,
+              "batches": 313,
+              "latent_steps": 0
+            },
+            "8": {
+              "padded_tokens_per_epoch": 8438176,
+              "batches": 313,
+              "latent_steps": 0
+            },
+            "9": {
+              "padded_tokens_per_epoch": 8439872,
+              "batches": 313,
+              "latent_steps": 0
+            }
+          },
+          "pass_factor": 1.0
+        },
+        {
+          "run": "prosqa_hard_plain_depth_355m_s0",
+          "config": "configs/screen/prosqa_hard_plain_depth_355m.json",
+          "epochs": 30,
+          "n_train": 10000,
+          "n_val": 300,
+          "train_h": 1.546672592592593,
+          "val_h": 0.25,
+          "hours": 1.796672592592593,
+          "stages": {
+            "0": {
+              "padded_tokens_per_epoch": 8352032,
+              "batches": 313,
+              "latent_steps": 0
+            }
+          },
+          "pass_factor": 1.0
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,4 @@
+pair,both,only_first,only_second,neither,churn,net,n,source
+s0 / det1,324,51,55,70,106,-4,500,results/k1/prosqa_cot_same_seed_pair.json
+det1 / det2,341,38,48,73,86,-10,500,results/k1/prosqa_cot_same_seed_pair.json
+s0 / det2,333,42,56,69,98,-14,500,results/k1/prosqa_cot_same_seed_pair.json

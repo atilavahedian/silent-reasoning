@@ -1,0 +1,98 @@
+{
+  "summary": {
+    "n": 500,
+    "accuracy": 0.784,
+    "accuracy_ci95": [
+      0.748,
+      0.82
+    ],
+    "cot_em": 0.392,
+    "prefill_tokens_mean": 358.048,
+    "prefill_tokens_median": 355.0,
+    "prefill_tokens_mean_ci95": [
+      352.934,
+      363.16429999999997
+    ],
+    "latent_steps_mean": 0.0,
+    "latent_steps_median": 0.0,
+    "latent_steps_mean_ci95": [
+      0.0,
+      0.0
+    ],
+    "emitted_tokens_mean": 52.704,
+    "emitted_tokens_median": 50.0,
+    "emitted_tokens_mean_ci95": [
+      51.29,
+      54.17
+    ],
+    "sequential_passes_mean": 53.704,
+    "sequential_passes_median": 51.0,
+    "sequential_passes_mean_ci95": [
+      52.29,
+      55.17
+    ],
+    "flops_mean": 77196768989.184,
+    "flops_median": 76341401856.0,
+    "flops_mean_ci95": [
+      76183277235.6096,
+      78227340565.5552
+    ],
+    "reference_flops_mean": 5281640471697.408,
+    "reference_flops_median": 4919430044160.0,
+    "reference_flops_mean_ci95": [
+      5112743330953.036,
+      5458023817237.324
+    ],
+    "paper_style_tokens_mean": 52.704
+  },
+  "task": "prosqa",
+  "run": "prosqa_cot_s2",
+  "arm": "cot",
+  "seed": 2,
+  "variant": {
+    "latent_band": null,
+    "layer_fraction": 1.0,
+    "state_sup": false,
+    "state_null": "none",
+    "dep_loss": false,
+    "dep_null": "none"
+  },
+  "config": "configs/prosqa_cot.json",
+  "overrides": [
+    "device=\"cuda\"",
+    "model_id=\"/opt/silent/out/hf/hub/models--openai-community--gpt2/snapshots/607a30d783dfa663caf39e06633721c8d4cfcd7e\"",
+    "seed=2",
+    "name=\"prosqa_cot_s2\""
+  ],
+  "checkpoint": "/opt/silent/out/eval_ckpts/prosqa_cot_s2_test_none/ckpt_best_final.pt",
+  "checkpoint_sha256": "b622ade455e2a8c7649c0f894587fa27a8ba2cf7d608b7754c221d7135721768",
+  "split": "test",
+  "split_file": "data/prosqa_test.json",
+  "split_sha256": "82ddc0afe6ee30eb31bb16fa208e293e55278a20fa987098d48519cae7e12680",
+  "intervention": "none",
+  "n_latent": 0,
+  "scramble_seed": 0,
+  "max_new_tokens": 128,
+  "precision": "fp32-tf32",
+  "device": "cuda",
+  "gpu_type": "NVIDIA A100-SXM4-40GB",
+  "torch": "2.14.1+cu130",
+  "transformers": "4.57.6",
+  "commit": "536d1d0dff9681c87b2ae1b442558aaa9c980a12",
+  "registered_read": "2026-10-19T15:40Z",
+  "audit_rescore": false,
+  "numerics": {
+    "tf32_requested": true,
+    "cuda.matmul.allow_tf32": true,
+    "cudnn.allow_tf32": true,
+    "float32_matmul_precision": "high",
+    "torch": "2.14.1+cu130",
+    "cuda": "13.0",
+    "cuda.matmul.fp32_precision": "tf32",
+    "cudnn.fp32_precision": "tf32"
+  },
+  "eval_seconds": 25.21200180053711,
+  "timing": null,
+  "examples_csv_sha256": "b901ba4d21e01f1b1d63c1e95699ba38049d2900b9e03b748048f9be2f05258f",
+  "utc": "2026-10-19T16:01:53Z"
+}

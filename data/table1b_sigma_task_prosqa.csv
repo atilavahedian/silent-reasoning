@@ -1,0 +1,3 @@
+reading,pair,d_nd,net_of_500,line_0.2_sd,over_line,sd_3seed,sigma_task,status,source
+strict,det1 / det2,2.0,10,0.7204,True,3.6019,4.12,adopted,results/k1/prosqa_cot_same_seed_pair.json
+alternative reading,s0 / det1,0.8,4,0.7204,True,3.6019,3.69,printed beside,results/k1/prosqa_cot_same_seed_pair.json

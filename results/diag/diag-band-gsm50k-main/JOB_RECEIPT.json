@@ -1,0 +1,181 @@
+{
+ "job": "diag-band-gsm50k-main",
+ "kind": "eval",
+ "attempt": "silent-eval-20261020-143136-82c2",
+ "status": "complete",
+ "spec_sha256": "32100d9abd2b3dadc0cac99b81b7e659025b46fffba9e8233ba0446a6c306687",
+ "spec": {
+  "name": "diag-band-gsm50k-main",
+  "kind": "eval",
+  "provider": "gcp",
+  "project": "cloud-main",
+  "project_alias": "main",
+  "bucket": "store://bucket-main",
+  "gpu": "A100-40GB",
+  "max_hours": 0.75,
+  "provisioning": "SPOT",
+  "precision": "fp32-tf32",
+  "tf32": true,
+  "parity_first": false,
+  "evals": [
+   {
+    "name": "gsm50k_coconut_s0_valid_band_logits",
+    "tool": "diag",
+    "mode": "band_logits",
+    "checkpoint": "store://bucket-c/silent/runs/gsm50k_coconut_s0/ckpt_best_final.pt",
+    "checkpoint_sha256": "ca25839a826f25f4ed9feb9be98fdbff20a9685af9f16582dcfadafac7151da6",
+    "config": "configs/screen/gsm50k_coconut.json",
+    "split": "valid",
+    "seed": 0,
+    "run": "gsm50k_coconut_s0",
+    "est_hours": 0.167,
+    "_note": "gsm50k_coconut_s0, seed 0, ckpt_best_final.pt sha256 ca25839a826f25f4ed9feb9be98fdbff20a9685af9f16582dcfadafac7151da6 (the f_meas denominator, A6.2 rule 1; pinned as screen-eval-gsm50k-main pinned gsm50k_coconut_s0_valid_band0-12_timed_bs1, A10.2), configs/screen/gsm50k_coconut.json, valid split (data/gsm_valid.json, 500), the registered diagnostic of critic entry 2026-10-20T12:40Z (not a 4.5 read): (1) strict fp32 max |first-answer-token logits| HF path vs band [0, 12] on the first 32 valid examples in file order (line 1e-4); (2) the same at bf16 autocast over TF32 on with the diverging greedy generations; (3) strict fp32 band [0, 12] B = 1 vs B = 32 on those 32 plus idx 273, 497, each in its own file-order batch (diverging generations, top-2 margins); (4) the same-shape companion swap on band [0, 12] at B = 32 at both numerics (line 1e-4). Numerics are set per check by run_diag.py (an entry may not set precision)."
+   }
+  ],
+  "_note": "max_hours: critic entry 2026-10-20T12:40Z: about 10 min of work; 1.3 x 0.167 + 0.5 = 0.717 h, up to the quarter hour: 0.75 h (refused above 0.75 h). Measured comparators (not the cap): screen-eval-gsm50k-main (silent-eval-20261020-112122-f7da): in-VM 2026-10-20T11:27:07Z..2026-10-20T11:49:43Z = 1356 s / 45 entries = 30.1 s per entry (ledger close runtime 2056 s incl. boot); gsm50k_coconut_s0_valid_band0-12_timed_bs1: 60.0 s for 500 examples at batch 1 (0.120 s each); the entry generates 68 examples at batch 1 (2 numerics sets x (32 + 2)), about 8 s at that rate, plus a few batch-32 generations and prefills. Numerics: the job's fp32-tf32 / tf32 fields do not reach a diag entry (--tf32 both); run_diag.py --mode band_logits sets strict fp32 (TF32 off, no autocast) for checks (1), (3), (4) and the config's bf16 autocast over TF32 on (A10.5) for (2) and beside (3), (4). Not a read: no registered_read; the summary carries critic_row 2026-10-20T12:40Z. Admission: not before the plain-depth and AcctB admissions the operator has named if the window's headroom does not hold all three (row 2026-10-20T12:40Z).",
+  "critic_rows_required": [
+   "2026-10-20T12:40Z"
+  ],
+  "_launch": {
+   "ledger_id": "silent-eval-20261020-143136-82c2",
+   "provider": "gcp",
+   "project": "cloud-main",
+   "zones": [
+    "us-central1-a",
+    "us-central1-c",
+    "us-central1-b",
+    "us-central1-f"
+   ],
+   "bucket": "store://bucket-main",
+   "machine": "a2-highgpu-1g",
+   "gpu": "A100-40GB",
+   "provisioning": "SPOT",
+   "max_run_s": 2700,
+   "deadline_epoch": 1792509397,
+   "code_uri": "store://bucket-main/silent/code/7eb0d2ff9d7e5e17da497455a8bb62798f5a0877-silent-eval-20261020-143136-82c2.tar.gz",
+   "code_commit": "7eb0d2ff9d7e5e17da497455a8bb62798f5a0877",
+   "code_sha256": "6468ad8ed575d2e126512723491d56d1646ec97f1cc78c7982f1bdcf4c8595c0",
+   "admitted": "2026-10-20T14:31:36Z",
+   "critic_rows": [
+    "2026-10-18T22:31Z",
+    "2026-10-18T23:27Z",
+    "2026-10-19T01:06Z",
+    "2026-10-19T01:07Z",
+    "2026-10-19T01:08Z",
+    "2026-10-19T01:09Z",
+    "2026-10-19T01:10Z",
+    "2026-10-19T01:14Z",
+    "2026-10-19T03:00Z",
+    "2026-10-19T03:05Z",
+    "2026-10-19T09:29Z",
+    "2026-10-19T09:33Z",
+    "2026-10-19T12:07Z",
+    "2026-10-19T12:11Z",
+    "2026-10-19T15:35Z",
+    "2026-10-19T15:39Z",
+    "2026-10-19T15:40Z",
+    "2026-10-19T15:45Z",
+    "2026-10-19T16:59Z",
+    "2026-10-19T17:01Z",
+    "2026-10-19T20:31Z",
+    "2026-10-19T20:32Z",
+    "2026-10-20T10:49Z",
+    "2026-10-20T10:51Z",
+    "2026-10-20T10:52Z",
+    "2026-10-20T12:40Z",
+    "2026-10-20T14:08Z",
+    "2026-10-20T14:10Z"
+   ],
+   "image_family": "common-cu129-ubuntu-2204-nvidia-580"
+  }
+ },
+ "started": "2026-10-20T14:37:55Z",
+ "ended": "2026-10-20T14:38:52Z",
+ "deadline": "2026-10-20T15:16:37Z",
+ "steps": [
+  {
+   "step": "env_reference",
+   "ok": true,
+   "time": "2026-10-20T14:37:58Z",
+   "mismatches": []
+  },
+  {
+   "step": "data",
+   "ok": true,
+   "time": "2026-10-20T14:38:03Z",
+   "source": "bucket",
+   "tasks": [
+    "gsm50k"
+   ],
+   "files": 3
+  },
+  {
+   "step": "model",
+   "ok": true,
+   "time": "2026-10-20T14:38:10Z",
+   "pinned": {
+    "id": "openai-community/gpt2",
+    "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+    "weights_sha256": "248dfc3911869ec493c76e65bf2fcf7f615828b0254c12b473182f0f81d3a707"
+   },
+   "got": {
+    "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+    "weights_sha256": "248dfc3911869ec493c76e65bf2fcf7f615828b0254c12b473182f0f81d3a707",
+    "path": "/opt/silent/out/hf/hub/models--openai-community--gpt2/snapshots/607a30d783dfa663caf39e06633721c8d4cfcd7e"
+   }
+  }
+ ],
+ "runs": [],
+ "evals": [
+  {
+   "name": "gsm50k_coconut_s0_valid_band_logits",
+   "checkpoint": "store://bucket-c/silent/runs/gsm50k_coconut_s0/ckpt_best_final.pt",
+   "config": "configs/screen/gsm50k_coconut.json",
+   "intervention": null,
+   "split": "valid",
+   "n_latent": null,
+   "audit_rescore": null,
+   "batch_size": null,
+   "seed": 0,
+   "run": "gsm50k_coconut_s0",
+   "tool": "diag",
+   "mode": "band_logits",
+   "checkpoint_sha256": "ca25839a826f25f4ed9feb9be98fdbff20a9685af9f16582dcfadafac7151da6",
+   "rc": 0,
+   "status": "done"
+  }
+ ],
+ "env": {
+  "host": "silent-eval-20261020-143136-82c2",
+  "python": "3.10.12",
+  "platform": "Linux-6.8.0-1070-gcp-x86_64-with-glibc2.35",
+  "time": "2026-10-20T14:37:56Z",
+  "gpu_name": "NVIDIA A100-SXM4-40GB",
+  "driver": "580.178.04",
+  "gpu_memory": "40960 MiB",
+  "torch": "2.14.1",
+  "transformers": "4.57.6",
+  "numpy": "2.2.6",
+  "scipy": "1.15.3",
+  "huggingface_hub": "0.36.2",
+  "tokenizers": "0.22.2",
+  "safetensors": "0.8.0",
+  "torch_cuda": "13.0",
+  "cudnn": 92400,
+  "git_commit": "7eb0d2ff9d7e5e17da497455a8bb62798f5a0877",
+  "code_sha256": "6468ad8ed575d2e126512723491d56d1646ec97f1cc78c7982f1bdcf4c8595c0",
+  "code_uri": "store://bucket-main/silent/code/7eb0d2ff9d7e5e17da497455a8bb62798f5a0877-silent-eval-20261020-143136-82c2.tar.gz",
+  "ledger_id": "silent-eval-20261020-143136-82c2",
+  "image_family": "common-cu129-ubuntu-2204-nvidia-580",
+  "machine": "a2-highgpu-1g",
+  "gpu": "A100-40GB",
+  "project": "cloud-main",
+  "zones": [
+   "us-central1-a",
+   "us-central1-c",
+   "us-central1-b",
+   "us-central1-f"
+  ],
+  "image": "projects/deeplearning-platform-release/global/images/common-cu129-ubuntu-2204-nvidia-580-v20261019"
+ }
+}

@@ -1,0 +1,332 @@
+{
+  "rows": [
+    {
+      "task": "prosqa",
+      "arm": "cot",
+      "gates": true,
+      "seeds": {
+        "0": 75.0,
+        "1": 71.2,
+        "2": 78.4
+      },
+      "gpu_types": {
+        "0": "NVIDIA A100-SXM4-40GB",
+        "1": "NVIDIA A100-SXM4-40GB",
+        "2": "NVIDIA A100-SXM4-40GB"
+      },
+      "labels": [],
+      "n": 3,
+      "mean": 74.86666666666667,
+      "sd": 3.601851375797361,
+      "sigma_cell": 2.8795254238618333,
+      "tolerance": 5.759050847723667,
+      "published": 77.5,
+      "diff": -2.6333333333333258,
+      "matched": true,
+      "verdict": "matched"
+    },
+    {
+      "task": "prosqa",
+      "arm": "no_cot",
+      "gates": true,
+      "seeds": {
+        "0": 78.0
+      },
+      "gpu_types": {
+        "0": "NVIDIA A100-SXM4-40GB"
+      },
+      "labels": [
+        "single seed"
+      ],
+      "n": 1,
+      "mean": 78.0,
+      "sd": null,
+      "sigma_cell": 1.0,
+      "tolerance": 2.0,
+      "published": 76.7,
+      "diff": 1.2999999999999972,
+      "matched": true,
+      "verdict": "matched"
+    },
+    {
+      "task": "prosqa",
+      "arm": "coconut",
+      "gates": true,
+      "seeds": {
+        "0": 96.8,
+        "1": 96.2,
+        "2": 95.8
+      },
+      "gpu_types": {
+        "0": "NVIDIA A100-SXM4-40GB",
+        "1": "NVIDIA A100-SXM4-40GB",
+        "2": "NVIDIA A100-SXM4-40GB"
+      },
+      "labels": [],
+      "n": 3,
+      "mean": 96.26666666666667,
+      "sd": 0.5033222956847163,
+      "sigma_cell": 1.0,
+      "tolerance": 2.0,
+      "published": 97.0,
+      "diff": -0.7333333333333343,
+      "matched": true,
+      "verdict": "matched"
+    },
+    {
+      "task": "prosqa",
+      "arm": "pause",
+      "gates": true,
+      "seeds": {
+        "0": 97.0
+      },
+      "gpu_types": {
+        "0": "NVIDIA A100-SXM4-40GB"
+      },
+      "labels": [
+        "single seed"
+      ],
+      "n": 1,
+      "mean": 97.0,
+      "sd": null,
+      "sigma_cell": 1.0,
+      "tolerance": 2.0,
+      "published": 96.6,
+      "diff": 0.4000000000000057,
+      "matched": true,
+      "verdict": "matched"
+    },
+    {
+      "task": "prosqa",
+      "arm": "coconut_no_curriculum",
+      "gates": false,
+      "seeds": {},
+      "gpu_types": {},
+      "labels": [
+        "relative to our no_cot"
+      ],
+      "verdict": "UNTESTED"
+    },
+    {
+      "task": "prontoqa",
+      "arm": "cot",
+      "gates": true,
+      "seeds": {},
+      "gpu_types": {},
+      "labels": [],
+      "verdict": "UNTESTED"
+    },
+    {
+      "task": "prontoqa",
+      "arm": "no_cot",
+      "gates": true,
+      "seeds": {},
+      "gpu_types": {},
+      "labels": [],
+      "verdict": "UNTESTED"
+    },
+    {
+      "task": "prontoqa",
+      "arm": "coconut",
+      "gates": true,
+      "seeds": {},
+      "gpu_types": {},
+      "labels": [],
+      "verdict": "UNTESTED"
+    },
+    {
+      "task": "prontoqa",
+      "arm": "pause",
+      "gates": true,
+      "seeds": {},
+      "gpu_types": {},
+      "labels": [],
+      "verdict": "UNTESTED"
+    },
+    {
+      "task": "prontoqa",
+      "arm": "coconut_no_curriculum",
+      "gates": true,
+      "seeds": {},
+      "gpu_types": {},
+      "labels": [],
+      "verdict": "UNTESTED"
+    },
+    {
+      "task": "gsm",
+      "arm": "cot",
+      "gates": true,
+      "seeds": {
+        "0": 40.94010614101592
+      },
+      "gpu_types": {
+        "0": "NVIDIA A100-SXM4-40GB"
+      },
+      "labels": [
+        "single seed"
+      ],
+      "n": 1,
+      "mean": 40.94010614101592,
+      "sd": null,
+      "sigma_cell": 1.0,
+      "tolerance": 2.0,
+      "published": 42.9,
+      "diff": -1.9598938589840813,
+      "matched": true,
+      "verdict": "matched"
+    },
+    {
+      "task": "gsm",
+      "arm": "no_cot",
+      "gates": true,
+      "seeds": {},
+      "gpu_types": {},
+      "labels": [],
+      "verdict": "UNTESTED"
+    },
+    {
+      "task": "gsm",
+      "arm": "coconut",
+      "gates": true,
+      "seeds": {
+        "0": 34.64746019711903
+      },
+      "gpu_types": {
+        "0": "NVIDIA A100-SXM4-40GB"
+      },
+      "labels": [
+        "single seed"
+      ],
+      "n": 1,
+      "mean": 34.64746019711903,
+      "sd": null,
+      "sigma_cell": 1.5,
+      "tolerance": 3.0,
+      "published": 34.1,
+      "diff": 0.5474601971190296,
+      "matched": true,
+      "verdict": "matched"
+    },
+    {
+      "task": "gsm",
+      "arm": "pause",
+      "gates": false,
+      "seeds": {},
+      "gpu_types": {},
+      "labels": [],
+      "verdict": "UNTESTED"
+    },
+    {
+      "task": "gsm",
+      "arm": "coconut_no_curriculum",
+      "gates": false,
+      "seeds": {},
+      "gpu_types": {},
+      "labels": [],
+      "verdict": "UNTESTED"
+    }
+  ],
+  "tasks": {
+    "prosqa": {
+      "gating": [
+        "cot",
+        "no_cot",
+        "coconut",
+        "pause"
+      ],
+      "missed": [],
+      "untested": [],
+      "provisional": false,
+      "verdict": "pass"
+    },
+    "prontoqa": {
+      "gating": [
+        "cot",
+        "no_cot",
+        "coconut",
+        "pause",
+        "coconut_no_curriculum"
+      ],
+      "missed": [],
+      "untested": [
+        "cot",
+        "no_cot",
+        "coconut",
+        "pause",
+        "coconut_no_curriculum"
+      ],
+      "provisional": true,
+      "verdict": "UNTESTED"
+    },
+    "gsm": {
+      "gating": [
+        "cot",
+        "no_cot",
+        "coconut"
+      ],
+      "missed": [],
+      "untested": [
+        "no_cot"
+      ],
+      "provisional": true,
+      "verdict": "UNTESTED"
+    }
+  },
+  "sentences": {
+    "prosqa": "K1 ProsQA: pass (cot, no_cot, coconut, pause)",
+    "prontoqa": "K1 ProntoQA: UNTESTED (cot, no_cot, coconut, pause, coconut_no_curriculum not read)",
+    "gsm": "K1 GSM8k-Aug: UNTESTED (no_cot not read) [single seed]",
+    "gsm_window": "K1 GSM8k-Aug (window, A1 item 1: cot and coconut): pass (cot 40.94, 540 of 1,319, matched: |40.94 - 42.9| = 1.96 <= 2.0; coconut 34.65, 457 of 1,319, matched: |34.65 - 34.1| = 0.55 <= 3.0) [single seed; no_cot UNTESTED]",
+    "gsm_window_read": "K1 on GSM8k-Aug, 1 seed: pass (cot 40.94, coconut 34.65) against 42.9 / 34.1, tolerances 2.0 / 3.0 [single seed; no_cot UNTESTED; KNOWN (reproduction); fp32-tf32 (footnote: the reference's probable strict fp32, A4; d_prec 0.0 on ProsQA does not transfer to GSM and is not claimed for it); cot trained and read on A100-40GB; coconut: cot stage on A100-40GB, coconut stage on A100-80GB, read on A100-40GB (A3.2 (i) to (iii) on the eval VM); images v20261016 / v20261019; zero resumes; audit label per A10.3 / (v): pending]",
+    "phase1_registered": "K1 (registered, ProsQA and ProntoQA): UNTESTED; ProntoQA UNTESTED (A3.3)",
+    "window": "K1 for the window (A3.3) = K1 on ProsQA: pass; GSM8k-Aug: pass [1 seed]"
+  },
+  "gsm_window": {
+    "verdict": "pass",
+    "critic_log_row": "2026-10-20T12:57Z",
+    "arms": {
+      "cot": {
+        "value": 40.94010614101592,
+        "count": 540,
+        "n": 1319,
+        "published": 42.9,
+        "sigma_cell": 1.0,
+        "tolerance": 2.0,
+        "diff": -1.9598938589840813,
+        "matched": true,
+        "gross_miss": false,
+        "gpu_type": "NVIDIA A100-SXM4-40GB",
+        "precision": "fp32-tf32",
+        "checkpoint_sha256": "6d798e8a3c2f27b3fcccf988b740a00c4f377aa3c94de984e21b64dbaa900200",
+        "summary": "results/evals/k1-eval-gsm-main/gsm_cot_s0_test_none/summary.json"
+      },
+      "coconut": {
+        "value": 34.64746019711903,
+        "count": 457,
+        "n": 1319,
+        "published": 34.1,
+        "sigma_cell": 1.5,
+        "tolerance": 3.0,
+        "diff": 0.5474601971190296,
+        "matched": true,
+        "gross_miss": false,
+        "gpu_type": "NVIDIA A100-SXM4-40GB",
+        "precision": "fp32-tf32",
+        "checkpoint_sha256": "0c18e12384f1706b855c3cb7987e6b863c1067583ace2055587751034e1c9f35",
+        "summary": "results/evals/k1-eval-gsm-main/gsm_coconut_s0_test_none/summary.json"
+      }
+    },
+    "untested": [],
+    "clause": "K1 GSM8k-Aug (window, A1 item 1: cot and coconut): pass (cot 40.94, 540 of 1,319, matched: |40.94 - 42.9| = 1.96 <= 2.0; coconut 34.65, 457 of 1,319, matched: |34.65 - 34.1| = 0.55 <= 3.0) [single seed; no_cot UNTESTED]",
+    "sentence": "K1 on GSM8k-Aug, 1 seed: pass (cot 40.94, coconut 34.65) against 42.9 / 34.1, tolerances 2.0 / 3.0 [single seed; no_cot UNTESTED; KNOWN (reproduction); fp32-tf32 (footnote: the reference's probable strict fp32, A4; d_prec 0.0 on ProsQA does not transfer to GSM and is not claimed for it); cot trained and read on A100-40GB; coconut: cot stage on A100-40GB, coconut stage on A100-80GB, read on A100-40GB (A3.2 (i) to (iii) on the eval VM); images v20261016 / v20261019; zero resumes; audit label per A10.3 / (v): pending]"
+  },
+  "published_source": "pdf",
+  "published_problems": [],
+  "published_file": "governance/oracle_published.json",
+  "summaries": [
+    "results/evals/k1-eval-main/*_test_none/summary.json",
+    "results/evals/k1-eval-s12-main/*_test_none/summary.json",
+    "results/evals/k1-eval-gsm-main/*_test_none/summary.json"
+  ],
+  "utc": "2026-10-20T13:51:52Z"
+}

@@ -1,0 +1,184 @@
+{
+ "job": "det1-eval-main",
+ "kind": "eval",
+ "attempt": "silent-eval-20261019-202638-6c28",
+ "status": "complete",
+ "spec_sha256": "cec7405bde09cc7a8d5d19edc52e41660efbc7d26452fd9d9c9c0e7c053eadda",
+ "spec": {
+  "name": "det1-eval-main",
+  "kind": "eval",
+  "provider": "gcp",
+  "project": "cloud-main",
+  "project_alias": "main",
+  "bucket": "store://bucket-main",
+  "gpu": "A100-40GB",
+  "max_hours": 1.0,
+  "provisioning": "SPOT",
+  "precision": "fp32-tf32",
+  "tf32": true,
+  "parity_first": false,
+  "evals": [
+   {
+    "name": "prosqa_cot_det1_s0_test_none",
+    "checkpoint": "store://bucket-b/silent/runs/prosqa_cot_det1_s0/ckpt_best_final.pt",
+    "checkpoint_sha256": "24eb701e476e59a0fbcee5865a5fb8fb0e4769390f2238907cd7191d0e304481",
+    "config": "configs/prosqa_cot.json",
+    "split": "test",
+    "intervention": "none",
+    "n_latent": null,
+    "registered_read": "2026-10-19T19:20Z",
+    "est_hours": 0.014,
+    "seed": 0,
+    "run": "prosqa_cot_det1_s0"
+   },
+   {
+    "name": "prosqa_cot_det1_s0_test_none_audit",
+    "checkpoint": "store://bucket-b/silent/runs/prosqa_cot_det1_s0/ckpt_best_final.pt",
+    "checkpoint_sha256": "24eb701e476e59a0fbcee5865a5fb8fb0e4769390f2238907cd7191d0e304481",
+    "config": "configs/prosqa_cot.json",
+    "split": "test",
+    "intervention": "none",
+    "n_latent": null,
+    "registered_read": "2026-10-19T19:20Z",
+    "est_hours": 0.069,
+    "seed": 0,
+    "run": "prosqa_cot_det1_s0",
+    "audit_rescore": true,
+    "batch_size": 1
+   }
+  ],
+  "_launch": {
+   "ledger_id": "silent-eval-20261019-202638-6c28",
+   "provider": "gcp",
+   "project": "cloud-main",
+   "zones": [
+    "us-central1-c",
+    "us-central1-a"
+   ],
+   "bucket": "store://bucket-main",
+   "machine": "a2-highgpu-1g",
+   "gpu": "A100-40GB",
+   "provisioning": "SPOT",
+   "max_run_s": 3600,
+   "deadline_epoch": 1792445199,
+   "code_uri": "store://bucket-main/silent/code/35747650c9e411d29f20b5db1a4e37fd34c21053-silent-eval-20261019-202638-6c28.tar.gz",
+   "code_commit": "35747650c9e411d29f20b5db1a4e37fd34c21053",
+   "code_sha256": "c4c143422bf6df0b1ed546d4fe3da66850b8b5b239f0c0fcca027184c494c335",
+   "admitted": "2026-10-19T20:26:38Z",
+   "critic_rows": [
+    "2026-10-19T12:07Z",
+    "2026-10-19T12:11Z",
+    "2026-10-19T15:35Z",
+    "2026-10-19T16:59Z",
+    "2026-10-19T17:01Z",
+    "2026-10-19T17:40Z",
+    "2026-10-19T17:42Z",
+    "2026-10-19T18:32Z",
+    "2026-10-19T18:34Z",
+    "2026-10-19T19:20Z",
+    "2026-10-19T19:22Z"
+   ],
+   "image_family": "common-cu129-ubuntu-2204-nvidia-580"
+  }
+ },
+ "started": "2026-10-19T20:32:00Z",
+ "ended": "2026-10-19T20:37:18Z",
+ "deadline": "2026-10-19T21:26:39Z",
+ "steps": [
+  {
+   "step": "env_reference",
+   "ok": true,
+   "time": "2026-10-19T20:32:03Z",
+   "mismatches": []
+  },
+  {
+   "step": "data",
+   "ok": true,
+   "time": "2026-10-19T20:32:08Z",
+   "source": "bucket",
+   "tasks": [
+    "prosqa"
+   ],
+   "files": 3
+  },
+  {
+   "step": "model",
+   "ok": true,
+   "time": "2026-10-19T20:32:15Z",
+   "pinned": {
+    "id": "openai-community/gpt2",
+    "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+    "weights_sha256": "248dfc3911869ec493c76e65bf2fcf7f615828b0254c12b473182f0f81d3a707"
+   },
+   "got": {
+    "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+    "weights_sha256": "248dfc3911869ec493c76e65bf2fcf7f615828b0254c12b473182f0f81d3a707",
+    "path": "/opt/silent/out/hf/hub/models--openai-community--gpt2/snapshots/607a30d783dfa663caf39e06633721c8d4cfcd7e"
+   }
+  }
+ ],
+ "runs": [],
+ "evals": [
+  {
+   "name": "prosqa_cot_det1_s0_test_none",
+   "checkpoint": "store://bucket-b/silent/runs/prosqa_cot_det1_s0/ckpt_best_final.pt",
+   "config": "configs/prosqa_cot.json",
+   "intervention": "none",
+   "split": "test",
+   "n_latent": null,
+   "audit_rescore": null,
+   "batch_size": null,
+   "seed": 0,
+   "run": "prosqa_cot_det1_s0",
+   "checkpoint_sha256": "24eb701e476e59a0fbcee5865a5fb8fb0e4769390f2238907cd7191d0e304481",
+   "rc": 0,
+   "status": "done"
+  },
+  {
+   "name": "prosqa_cot_det1_s0_test_none_audit",
+   "checkpoint": "store://bucket-b/silent/runs/prosqa_cot_det1_s0/ckpt_best_final.pt",
+   "config": "configs/prosqa_cot.json",
+   "intervention": "none",
+   "split": "test",
+   "n_latent": null,
+   "audit_rescore": true,
+   "batch_size": 1,
+   "seed": 0,
+   "run": "prosqa_cot_det1_s0",
+   "checkpoint_sha256": "24eb701e476e59a0fbcee5865a5fb8fb0e4769390f2238907cd7191d0e304481",
+   "rc": 0,
+   "status": "done"
+  }
+ ],
+ "env": {
+  "host": "silent-eval-20261019-202638-6c28",
+  "python": "3.10.12",
+  "platform": "Linux-6.8.0-1070-gcp-x86_64-with-glibc2.35",
+  "time": "2026-10-19T20:32:01Z",
+  "gpu_name": "NVIDIA A100-SXM4-40GB",
+  "driver": "580.178.04",
+  "gpu_memory": "40960 MiB",
+  "torch": "2.14.1",
+  "transformers": "4.57.6",
+  "numpy": "2.2.6",
+  "scipy": "1.15.3",
+  "huggingface_hub": "0.36.2",
+  "tokenizers": "0.22.2",
+  "safetensors": "0.8.0",
+  "torch_cuda": "13.0",
+  "cudnn": 92400,
+  "git_commit": "35747650c9e411d29f20b5db1a4e37fd34c21053",
+  "code_sha256": "c4c143422bf6df0b1ed546d4fe3da66850b8b5b239f0c0fcca027184c494c335",
+  "code_uri": "store://bucket-main/silent/code/35747650c9e411d29f20b5db1a4e37fd34c21053-silent-eval-20261019-202638-6c28.tar.gz",
+  "ledger_id": "silent-eval-20261019-202638-6c28",
+  "image_family": "common-cu129-ubuntu-2204-nvidia-580",
+  "machine": "a2-highgpu-1g",
+  "gpu": "A100-40GB",
+  "project": "cloud-main",
+  "zones": [
+   "us-central1-c",
+   "us-central1-a"
+  ],
+  "image": "projects/deeplearning-platform-release/global/images/common-cu129-ubuntu-2204-nvidia-580-v20261019"
+ }
+}

@@ -1,0 +1,241 @@
+{
+ "tool": "read_closing.py",
+ "cmd": "det2",
+ "argv": [
+  "det2",
+  "--det2-dir",
+  "results/evals/det2-eval-acctc",
+  "--det2-read",
+  "2026-10-22T06:52Z",
+  "--run-dir",
+  "prosqa_cot_det2_s0=<scratch>",
+  "--run-dir",
+  "prosqa_cot_det1_s0=<scratch>",
+  "--run-dir",
+  "prosqa_cot_s0=<scratch>"
+ ],
+ "generated_utc": "2026-10-22T07:20:31Z",
+ "git": {
+  "head": "94bacd4d6c3b104816541ebbf8688de73aabb68e",
+  "tool_uncommitted": false
+ },
+ "versions": {
+  "python": "3.13.16",
+  "numpy": "2.5.3",
+  "torch": "2.14.1+cu130",
+  "transformers": "4.57.6"
+ },
+ "inputs": [
+  {
+   "role": "run record (prosqa_cot_det1_s0)",
+   "sha256": "0819158e2895ebf47cb795354c7f62597f5698d71ee02decd2910383213a5bff",
+   "bytes": 1213,
+   "root": "other",
+   "path": "<scratch>"
+  },
+  {
+   "role": "run record (prosqa_cot_det1_s0)",
+   "sha256": "f709f98b372df3ce2d1d531f389a414eeed5274fbe80be5a6a04982c1dcdde40",
+   "bytes": 35033,
+   "root": "other",
+   "path": "<scratch>"
+  },
+  {
+   "role": "run record (prosqa_cot_det1_s0)",
+   "sha256": "056a147fdfba27ceba825683bfa4c9c6452449647d30af825b5e76802569f3d1",
+   "bytes": 129,
+   "root": "other",
+   "path": "<scratch>"
+  },
+  {
+   "role": "run record (prosqa_cot_det2_s0)",
+   "sha256": "233f8a2a126928ecf086d36bdb15b67144f1ad34f066ff96dbdb4f95400dc078",
+   "bytes": 1369,
+   "root": "other",
+   "path": "<scratch>"
+  },
+  {
+   "role": "run record (prosqa_cot_det2_s0)",
+   "sha256": "7adeb7a0bf2119b0af05f08744dd06f85946f5b77c745661235a50a32b877d5b",
+   "bytes": 34112,
+   "root": "other",
+   "path": "<scratch>"
+  },
+  {
+   "role": "run record (prosqa_cot_det2_s0)",
+   "sha256": "b795320f6b5796fa67a918cc837c88a0628c5950402eab7c8698aa72b0483e0d",
+   "bytes": 129,
+   "root": "other",
+   "path": "<scratch>"
+  },
+  {
+   "role": "run record (prosqa_cot_s0)",
+   "sha256": "2fb442a30f1bfcfc44b2d2b2a8ab488c0f8bfa07e8ab611dbbf1029f5356596f",
+   "bytes": 1317,
+   "root": "other",
+   "path": "<scratch>"
+  },
+  {
+   "role": "run record (prosqa_cot_s0)",
+   "sha256": "04f892f98b8d3029884bf1016c0557b873ecb116d8e2db7d7fd2f5fb18b627f0",
+   "bytes": 35625,
+   "root": "other",
+   "path": "<scratch>"
+  },
+  {
+   "role": "run record (prosqa_cot_s0)",
+   "sha256": "1c46d5f08578b645f2dc311047749eaadcaf538a5064b7420e2b1a0069e46f59",
+   "bytes": 124,
+   "root": "other",
+   "path": "<scratch>"
+  },
+  {
+   "role": "code (this tool)",
+   "sha256": "ba4c2388bf8ba9114f0b7e0a7f40bb97d55c7924513f134657fc94bf2e418d1c",
+   "bytes": 48353,
+   "root": "repo",
+   "path": "code/read_closing.py"
+  },
+  {
+   "role": "code (read_screen: costs, bootstrap, parsing)",
+   "sha256": "5918d77e3ba1fe8f367338c13e58d6b872ed233b81156fb0132c93d36969b7b7",
+   "bytes": 362730,
+   "root": "repo",
+   "path": "code/read_screen.py"
+  },
+  {
+   "role": "data manifest (test split hash)",
+   "sha256": "198c57103082ab6f91133a7b9f73e6be9ef56371d25fab1b38fad8c0eb32d0f4",
+   "bytes": 23828,
+   "root": "repo",
+   "path": "configs/data_manifest.json"
+  },
+  {
+   "role": "rules (critic log)",
+   "sha256": "6632d9b53588197c2c372d97e5ba7f46a4be6ad0846d3f5f4b959f189e28335b",
+   "bytes": 801674,
+   "root": "repo",
+   "path": "governance/critic_log.md"
+  },
+  {
+   "role": "eval job receipt (prosqa_cot_det1_s0)",
+   "sha256": "f0541ce628d0447270d9cd923e595f6bb83d8942f08734e3f50f46b03c3e8fff",
+   "bytes": 6423,
+   "root": "repo",
+   "path": "results/evals/det1-eval-main/JOB_RECEIPT.json"
+  },
+  {
+   "role": "test read (prosqa_cot_det1_s0, read; per-example file)",
+   "sha256": "abe11f11e6eba059ef35e5807b4431d223864f98a834bbc9df76c752c66b21cc",
+   "bytes": 29936,
+   "root": "repo",
+   "path": "results/evals/det1-eval-main/prosqa_cot_det1_s0_test_none/examples.csv"
+  },
+  {
+   "role": "test read (prosqa_cot_det1_s0, read)",
+   "sha256": "51f760cb5e53f69794a8b28d810ed53df4b2879cfaa7a0e6fd36a176d3c11d71",
+   "bytes": 2766,
+   "root": "repo",
+   "path": "results/evals/det1-eval-main/prosqa_cot_det1_s0_test_none/summary.json"
+  },
+  {
+   "role": "test read (prosqa_cot_det1_s0, audit; per-example file)",
+   "sha256": "d198ec083bed650639f5cc97e7c31c65364cdc1e80b58897f98e81503e5134e1",
+   "bytes": 29933,
+   "root": "repo",
+   "path": "results/evals/det1-eval-main/prosqa_cot_det1_s0_test_none_audit/examples.csv"
+  },
+  {
+   "role": "test read (prosqa_cot_det1_s0, audit)",
+   "sha256": "99c02b65e403998b3be1c2f40784fe75b3daa09462aa1f7ce62c597b47d8a90b",
+   "bytes": 2771,
+   "root": "repo",
+   "path": "results/evals/det1-eval-main/prosqa_cot_det1_s0_test_none_audit/summary.json"
+  },
+  {
+   "role": "eval job receipt (prosqa_cot_det2_s0)",
+   "sha256": "69ed78dce45d24b0d979f05feea093d9bfa2a1145ef2114a14a0d49fa0888e8a",
+   "bytes": 7241,
+   "root": "repo",
+   "path": "results/evals/det2-eval-acctc/JOB_RECEIPT.json"
+  },
+  {
+   "role": "test read (prosqa_cot_det2_s0, read; per-example file)",
+   "sha256": "5ea72cc91177888c52b273aa04208d2a18d1887861441b08f4bdfd77b0cbe397",
+   "bytes": 29957,
+   "root": "repo",
+   "path": "results/evals/det2-eval-acctc/prosqa_cot_det2_s0_test_none/examples.csv"
+  },
+  {
+   "role": "test read (prosqa_cot_det2_s0, read)",
+   "sha256": "14c9c211efa5b37cd3f3a4642560883148da01df56fde2ebb51e6fd639261162",
+   "bytes": 2760,
+   "root": "repo",
+   "path": "results/evals/det2-eval-acctc/prosqa_cot_det2_s0_test_none/summary.json"
+  },
+  {
+   "role": "test read (prosqa_cot_det2_s0, audit; per-example file)",
+   "sha256": "ed3df5aa7de63fd31b42f7bf789b5413c3fb9945b493af1606a7f2ef3b1bad6d",
+   "bytes": 29957,
+   "root": "repo",
+   "path": "results/evals/det2-eval-acctc/prosqa_cot_det2_s0_test_none_audit/examples.csv"
+  },
+  {
+   "role": "test read (prosqa_cot_det2_s0, audit)",
+   "sha256": "f7e2bebd19b5437b427f905f113ba6298e731c8abcf9309f4c8146a12e84d047",
+   "bytes": 2772,
+   "root": "repo",
+   "path": "results/evals/det2-eval-acctc/prosqa_cot_det2_s0_test_none_audit/summary.json"
+  },
+  {
+   "role": "eval job receipt (prosqa_cot_s0)",
+   "sha256": "4f9ba8d49b58a1b1a54ea7a21c3dea95af557f915bd10cec957cd9c0838197a5",
+   "bytes": 19225,
+   "root": "repo",
+   "path": "results/evals/k1-eval-main/JOB_RECEIPT.json"
+  },
+  {
+   "role": "test read (prosqa_cot_s0, read; per-example file)",
+   "sha256": "072145d0f16540604ce4073dadcccc26adeaf75439074e36f2daa09d2dd8015b",
+   "bytes": 29978,
+   "root": "repo",
+   "path": "results/evals/k1-eval-main/prosqa_cot_s0_test_none/examples.csv"
+  },
+  {
+   "role": "test read (prosqa_cot_s0, read)",
+   "sha256": "5949bc0886f2e8b595ddc4e20d13de7b9a8beba142878b1218182da4f3001c04",
+   "bytes": 2687,
+   "root": "repo",
+   "path": "results/evals/k1-eval-main/prosqa_cot_s0_test_none/summary.json"
+  },
+  {
+   "role": "test read (prosqa_cot_s0, audit; per-example file)",
+   "sha256": "072145d0f16540604ce4073dadcccc26adeaf75439074e36f2daa09d2dd8015b",
+   "bytes": 29978,
+   "root": "repo",
+   "path": "results/evals/k1-eval-main/prosqa_cot_s0_test_none_audit/examples.csv"
+  },
+  {
+   "role": "test read (prosqa_cot_s0, audit)",
+   "sha256": "16339c1a3e9b2561561ca5eb30d2f5e34959385428bfcb8b5f1dac5dd60ffa8a",
+   "bytes": 2691,
+   "root": "repo",
+   "path": "results/evals/k1-eval-main/prosqa_cot_s0_test_none_audit/summary.json"
+  },
+  {
+   "role": "the final K1 table (the ProsQA cot 3-seed SD)",
+   "sha256": "869402375eef0e0546a51d62ce535c4fe77b96d4a808697c4e13ee22dfa81f27",
+   "bytes": 5714,
+   "root": "repo",
+   "path": "results/k1/k1_table_final.json"
+  }
+ ],
+ "outputs": {
+  "json": "prosqa_cot_same_seed_pair.json",
+  "md": "prosqa_cot_same_seed_pair.md"
+ },
+ "outputs_sha256": {
+  "json": "7b2000b857c49c10d5d990521b1bfcd328d189180e4d58051d4baa47ca1f4a29",
+  "md": "30302e3933d02e626de0e3fc31c94a02a60fbda59c122945773febf7b346880f"
+ }
+}

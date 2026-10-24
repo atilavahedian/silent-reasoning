@@ -1,0 +1,10 @@
+# Versions of the reference environment the results were produced in (configs/reference_env.json).
+torch==2.14.1
+transformers==4.57.6
+tokenizers==0.22.2
+safetensors==0.8.0
+huggingface_hub==0.36.2
+numpy==2.2.6
+scipy==1.15.3
+matplotlib>=3.8
+pytest>=8

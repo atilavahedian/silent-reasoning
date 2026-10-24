@@ -1,0 +1,7 @@
+task,arm,seeds_test,mean,sd,sigma_cell,tolerance,published,verdict,labels,source
+ProsQA,cot,75.0 / 71.2 / 78.4,74.87,3.60,2.88,5.76,77.50,matched,three seeds; audit cot s1 3 of 500 at batch 1 explained (TF32 near-tie flips),results/k1/k1_table_final.md
+ProsQA,no_cot,78.0,78.00,,1.00,2.00,76.70,matched,single seed,results/k1/k1_table_final.md
+ProsQA,coconut,96.8 / 96.2 / 95.8,96.27,0.50,1.00,2.00,97.00,matched,three seeds,results/k1/k1_table_final.md
+ProsQA,pause,97.0,97.00,,1.00,2.00,96.60,matched,single seed,results/k1/k1_table_final.md
+GSM8k-Aug,cot,40.9 (540 of 1319),40.94,,1.00,2.00,42.90,matched,single seed; on the edge (539 would have missed); secondary oracle flagged,results/k1/k1_table_window.md
+GSM8k-Aug,coconut,34.6 (457 of 1319),34.65,,1.50,3.00,34.10,matched,single seed,results/k1/k1_table_window.md

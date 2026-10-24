@@ -1,0 +1,5 @@
+data/*.json
+data/raw/
+runs/
+__pycache__/
+*.pt

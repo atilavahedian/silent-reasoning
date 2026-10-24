@@ -1,0 +1,52 @@
+{
+  "model": {
+    "id": "openai-community/gpt2-medium",
+    "revision": "6dcaa7a952f72f9298047fd5137cd6e4f05f41da",
+    "revision_requested": "main",
+    "path": "/opt/silent/out/hf/hub/models--openai-community--gpt2-medium/snapshots/6dcaa7a952f72f9298047fd5137cd6e4f05f41da",
+    "files": {
+      "config.json": "ef1a44d889ad1a0acc7731c78134f1b87d2d222f110e97dd10fd4117331caf22",
+      "generation_config.json": "b90eadacf585a743a30ea51e8b5c88b8d282a2a34dc0c7e556d0987cdbd68805",
+      "merges.txt": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5",
+      "model.safetensors": "fc5a354a19255ad494f3d71549390baca1ccf61d1d822b9408971705c687c9cd",
+      "tokenizer.json": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6",
+      "tokenizer_config.json": "5e04eb606e3a1583530a42e36c2a6b6615c86f34fe77e44d9ddeb43ff940931f",
+      "vocab.json": "196139668be63f3b5d6574427317ae82f612a97c5d1cdaf36ed2256dbf636783"
+    },
+    "weights_file": "model.safetensors",
+    "weights_sha256": "fc5a354a19255ad494f3d71549390baca1ccf61d1d822b9408971705c687c9cd"
+  },
+  "python": "3.10.12",
+  "versions": {
+    "host": "silent-prep-20261019-164733-2c65",
+    "python": "3.10.12",
+    "platform": "Linux-6.8.0-1070-gcp-x86_64-with-glibc2.35",
+    "time": "2026-10-19T16:53:48Z",
+    "gpu_name": "NVIDIA A100-SXM4-40GB",
+    "driver": "580.178.04",
+    "gpu_memory": "40960 MiB",
+    "torch": "2.14.1",
+    "transformers": "4.57.6",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "huggingface_hub": "0.36.2",
+    "tokenizers": "0.22.2",
+    "safetensors": "0.8.0",
+    "torch_cuda": "13.0",
+    "cudnn": 92400,
+    "git_commit": "20fd1b9510bbabe8077c7ce6ce7184b8fda750a6",
+    "code_sha256": "305831b48ef97b483960d7bb000ba531a5c5f44afe1f44f7cc2cc4137ffc709d",
+    "code_uri": "store://bucket-main/silent/code/20fd1b9510bbabe8077c7ce6ce7184b8fda750a6-silent-prep-20261019-164733-2c65.tar.gz",
+    "ledger_id": "silent-prep-20261019-164733-2c65",
+    "image_family": "common-cu129-ubuntu-2204-nvidia-580",
+    "machine": "a2-highgpu-1g",
+    "gpu": "A100-40GB",
+    "project": "cloud-main",
+    "zones": [
+      "us-central1-a",
+      "us-central1-c"
+    ],
+    "image": "projects/deeplearning-platform-release/global/images/common-cu129-ubuntu-2204-nvidia-580-v20261019"
+  },
+  "time": "2026-10-19T16:54:07Z"
+}

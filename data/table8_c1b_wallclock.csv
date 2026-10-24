@@ -1,0 +1,7 @@
+task,arm,band,latent_ms_per_pass_batch1,denominator_coconut_band_0_12_ms_batch1,f_meas_batch1,line_of_record,f_meas_batch32,label,ms_per_example_timed_passes_batch1,device
+GSM-50k,C1b k=8,[2;10),8.006,11.120,0.7200,0.7667,0.7396,saving shows,83.82,A100-40GB torch 2.14.1+cu130
+GSM-50k,C1b k=4,[4;8),4.810,11.120,0.4326,0.43,0.4785,nominal,64.90,A100-40GB torch 2.14.1+cu130
+GSM-50k,coconut (band [0;12) denominator),[0;12),11.120,,,,,timing of record for the denominator,103.77,A100-40GB torch 2.14.1+cu130
+ProsQA-hard,C1b k=8,[2;10),8.053,11.063,0.7280,0.7667,0.7499,saving shows,156.73,A100-40GB torch 2.14.1+cu130
+ProsQA-hard,C1b k=4,[4;8),4.858,11.063,0.4391,0.43,0.5291,nominal,134.25,A100-40GB torch 2.14.1+cu130
+ProsQA-hard,coconut (band [0;12) denominator),[0;12),11.063,,,,,timing of record for the denominator,176.44,A100-40GB torch 2.14.1+cu130

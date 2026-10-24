@@ -1,0 +1,4 @@
+member,run,resumes,selected_epoch,checkpoint_sha256_prefix,test_acc,test_lo,test_hi,test_count,read_gpu,train_gpu,batch1_audit_flips,registered_read,source
+s0,prosqa_cot_s0,1,46,4f8c895b3957,75.0,71.2,78.8,375/500,A100-SXM4-40GB,A100-SXM4-80GB,0 of 500,2026-10-19T12:07Z,results/k1/prosqa_cot_same_seed_pair.json
+det1,prosqa_cot_det1_s0,0,25,24eb701e476e,75.8,72.0,79.6,379/500,A100-SXM4-40GB,A100-SXM4-80GB,1 of 500,2026-10-19T19:20Z,results/k1/prosqa_cot_same_seed_pair.json
+det2,prosqa_cot_det2_s0,0,23,f59caa4e8167,77.8,74.2,81.4,389/500,A100-SXM4-80GB,A100-SXM4-80GB,0 of 500,2026-10-22T06:52Z,results/k1/prosqa_cot_same_seed_pair.json

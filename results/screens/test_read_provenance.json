@@ -1,0 +1,969 @@
+{
+ "table": "test_read",
+ "generated_utc": "2026-10-21T16:22:13Z",
+ "argv": [
+  "--gsm50k-dir",
+  "results/evals/screen-test-gsm50k-acctc",
+  "--gsm50k-table",
+  "results/screens/gsm50k/gsm50k_screen_with_hinge.json",
+  "--prosqa-hard-dir",
+  "results/evals/screen-test-prosqa-hard-acctb",
+  "--prosqa-hard-table",
+  "results/screens/prosqa_hard/prosqa_hard_screen_with_plain_depth.json"
+ ],
+ "git": {
+  "head": "7db3c391fe08f701752ac9135214589f7fd4fb0d",
+  "tool_uncommitted": false
+ },
+ "versions": {
+  "python": "3.13.16"
+ },
+ "inputs": [
+  {
+   "role": "data manifest (test split hashes)",
+   "sha256": "198c57103082ab6f91133a7b9f73e6be9ef56371d25fab1b38fad8c0eb32d0f4",
+   "bytes": 23828,
+   "root": "repo",
+   "path": "configs/data_manifest.json"
+  },
+  {
+   "role": "gsm50k job spec (the pins)",
+   "sha256": "b76eed9845eea4469030b905516bdd3f60ae4c2f07589cca96202abae80135f7",
+   "bytes": 24377,
+   "root": "repo",
+   "path": "configs/jobs/screen-test-gsm50k-acctc.json"
+  },
+  {
+   "role": "prosqa_hard job spec (the pins)",
+   "sha256": "884f19b8e710a29791c4bc2adac76862ab751acedf547389b8a602a7ac6b3402",
+   "bytes": 17190,
+   "root": "repo",
+   "path": "configs/jobs/screen-test-prosqa-hard-acctb.json"
+  },
+  {
+   "role": "gsm50k_c1b_k4_s0 config",
+   "sha256": "602c1275b3caffb9e6a7e113b93776ecd4f486f9ef04d4ff293d6347097332ee",
+   "bytes": 1439,
+   "root": "repo",
+   "path": "configs/screen/gsm50k_c1b_k4.json"
+  },
+  {
+   "role": "gsm50k_c1b_k8_s0 config",
+   "sha256": "45b638eb886369342d3c137f5449767526d98f6c459d1c404121b3f828144d15",
+   "bytes": 1441,
+   "root": "repo",
+   "path": "configs/screen/gsm50k_c1b_k8.json"
+  },
+  {
+   "role": "gsm50k_c2_s0 config",
+   "sha256": "ee3025133f98b74fabd7fc2c1fba3845d3c30db73371dd108ac56f603cca58c6",
+   "bytes": 1393,
+   "root": "repo",
+   "path": "configs/screen/gsm50k_c2.json"
+  },
+  {
+   "role": "gsm50k_c2_shuffled_s0 config",
+   "sha256": "0c6efe6c0eba1a37ce85def82962f14216100bf3200af4c5a0f3dd752af754ad",
+   "bytes": 1455,
+   "root": "repo",
+   "path": "configs/screen/gsm50k_c2_shuffled.json"
+  },
+  {
+   "role": "gsm50k_c2c3_s0 config",
+   "sha256": "992d9361715a98f41b6f83db5ef755609aec9bb183a3e0525938ca559c1dadf1",
+   "bytes": 1381,
+   "root": "repo",
+   "path": "configs/screen/gsm50k_c2c3.json"
+  },
+  {
+   "role": "gsm50k_c3_s0 config",
+   "sha256": "2013c7e32cae138d0d624e898828694eda418b686aa15e054987ac49cf6982ab",
+   "bytes": 1428,
+   "root": "repo",
+   "path": "configs/screen/gsm50k_c3.json"
+  },
+  {
+   "role": "gsm50k_c3_foreign_s0 config",
+   "sha256": "e376bacb0df7be484baceb31cf9320d2c9f8bba0f5372ec86e7cf0aec905d6d4",
+   "bytes": 1466,
+   "root": "repo",
+   "path": "configs/screen/gsm50k_c3_foreign.json"
+  },
+  {
+   "role": "gsm50k_coconut_s0 config",
+   "sha256": "d76aa76adaa902bb4d992bf65392980794616d17e5a0621cf836a4b93b5e4b9a",
+   "bytes": 1434,
+   "root": "repo",
+   "path": "configs/screen/gsm50k_coconut.json"
+  },
+  {
+   "role": "gsm50k_cot_lr3e-4_s0 config",
+   "sha256": "bf5a0b6966cf53955b177c0a77338f391323d10478b49ad8c5939b4c7930d6d4",
+   "bytes": 1297,
+   "root": "repo",
+   "path": "configs/screen/gsm50k_cot_lr3e-4.json"
+  },
+  {
+   "role": "gsm50k_no_cot_s0 config",
+   "sha256": "9188c71fce3db7d090a2c9aade632bd3c7de66de486c413b3f94d52383bfc781",
+   "bytes": 1239,
+   "root": "repo",
+   "path": "configs/screen/gsm50k_no_cot.json"
+  },
+  {
+   "role": "gsm50k_pause_s0 config",
+   "sha256": "657efa387b97bab2beee909dcb9f187192ae85eab615999bf7e0a265e296c5f4",
+   "bytes": 1408,
+   "root": "repo",
+   "path": "configs/screen/gsm50k_pause.json"
+  },
+  {
+   "role": "gsm50k_plain_depth_355m_s0 config",
+   "sha256": "221ea6ed6f98a6eafa8bf6047f335a6d10e13b4f279d3e47b806f38a7dbc4af2",
+   "bytes": 1541,
+   "root": "repo",
+   "path": "configs/screen/gsm50k_plain_depth_355m.json"
+  },
+  {
+   "role": "prosqa_hard_c1b_k4_s0 config",
+   "sha256": "ffdbeede6e5b0e65d0b07242aaa2551268211f5b2a6ca89b58eb71a5f86bb4b1",
+   "bytes": 1302,
+   "root": "repo",
+   "path": "configs/screen/prosqa_hard_c1b_k4.json"
+  },
+  {
+   "role": "prosqa_hard_c1b_k8_s0 config",
+   "sha256": "ad5c78a26ed9b0693b8362614e2aed5a448da04103b966ea757aab5a0724be75",
+   "bytes": 1304,
+   "root": "repo",
+   "path": "configs/screen/prosqa_hard_c1b_k8.json"
+  },
+  {
+   "role": "prosqa_hard_c2_s0 config",
+   "sha256": "af6333fd4e466a3b1f2893de87f9974476a5fa2f65991bf5dffa991102dabc77",
+   "bytes": 1256,
+   "root": "repo",
+   "path": "configs/screen/prosqa_hard_c2.json"
+  },
+  {
+   "role": "prosqa_hard_c2_shuffled_s0 config",
+   "sha256": "02e292031d4013f7d96555a22f8ec2f788ed3ebc37b98bcdd30bcd0dfc664303",
+   "bytes": 1318,
+   "root": "repo",
+   "path": "configs/screen/prosqa_hard_c2_shuffled.json"
+  },
+  {
+   "role": "prosqa_hard_coconut_s0 config",
+   "sha256": "f4b47aa40f28b8cc3a180e7817213542aeb55fb2e40cba81a032c688053ee51f",
+   "bytes": 1297,
+   "root": "repo",
+   "path": "configs/screen/prosqa_hard_coconut.json"
+  },
+  {
+   "role": "prosqa_hard_cot_lr3e-5_s0 config",
+   "sha256": "7ac445b409795f986e777021b404cba24e54bb33879b554e6d5414ac7cda2fab",
+   "bytes": 1290,
+   "root": "repo",
+   "path": "configs/screen/prosqa_hard_cot_lr3e-5.json"
+  },
+  {
+   "role": "prosqa_hard_no_cot_s0 config",
+   "sha256": "9ae6cc8b9710be68370bebdd2069fdd925fca6c797af833f34fa38e40ec2dda7",
+   "bytes": 1233,
+   "root": "repo",
+   "path": "configs/screen/prosqa_hard_no_cot.json"
+  },
+  {
+   "role": "prosqa_hard_pause_s0 config",
+   "sha256": "ac3d14555400b5c3b8cf141649127340f19b7491c9fb9ebd0f3897d633e7dd08",
+   "bytes": 1271,
+   "root": "repo",
+   "path": "configs/screen/prosqa_hard_pause.json"
+  },
+  {
+   "role": "prosqa_hard_plain_depth_355m_s0 config",
+   "sha256": "9b64059465938c6742b40f17538bac06a766b5f4a23168e2cf0780d27330df3b",
+   "bytes": 1535,
+   "root": "repo",
+   "path": "configs/screen/prosqa_hard_plain_depth_355m.json"
+  },
+  {
+   "role": "critic log (registered read rows)",
+   "sha256": "d795852fc02dc968095c35c162f7e4a54e0ae3d26aec4ff14f17e2676681d2ef",
+   "bytes": 696948,
+   "root": "repo",
+   "path": "governance/critic_log.md"
+  },
+  {
+   "role": "gsm50k receipt",
+   "sha256": "eb486f69891d8fd49741734dd5a24ba49b498c5bf4d36ad3a69658172b0c6819",
+   "bytes": 42092,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/JOB_RECEIPT.json"
+  },
+  {
+   "role": "gsm50k_c1b_k4_s0_test_best eval log",
+   "sha256": "4ee158f5ccd79ba7f0ebd5bdd1b18aa96ede6f924ffa208c9a5da420dd991c31",
+   "bytes": 1667,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c1b_k4_s0_test_best/eval.log"
+  },
+  {
+   "role": "gsm50k_c1b_k4_s0_test_best per-example file",
+   "sha256": "1d36bfd630284cca40b37f6045eddd10c2e9f1684ba63da2609e4dccb5691564",
+   "bytes": 77891,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c1b_k4_s0_test_best/examples.csv"
+  },
+  {
+   "role": "gsm50k_c1b_k4_s0_test_best summary",
+   "sha256": "a8e296118b640679b1374721f3a5c7ec9f8b2f6e8306da8994f501cfcbd27f2b",
+   "bytes": 3197,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c1b_k4_s0_test_best/summary.json"
+  },
+  {
+   "role": "gsm50k_c1b_k4_s0_test_none eval log",
+   "sha256": "a843eaec4c495501bcb00ca770e8aa655b7cf37209e0acb63048303ee2f8129f",
+   "bytes": 1661,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c1b_k4_s0_test_none/eval.log"
+  },
+  {
+   "role": "gsm50k_c1b_k4_s0_test_none per-example file",
+   "sha256": "1cbf27374a5740735d15d20a7de016a044a5163df2dc31d26721e443ff07e109",
+   "bytes": 74957,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c1b_k4_s0_test_none/examples.csv"
+  },
+  {
+   "role": "gsm50k_c1b_k4_s0_test_none summary",
+   "sha256": "b8b2702d62d3e784f5326a56a1b30f60659836f52c3a2f955c5e0741ac3c2d7e",
+   "bytes": 3196,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c1b_k4_s0_test_none/summary.json"
+  },
+  {
+   "role": "gsm50k_c1b_k8_s0_test_best eval log",
+   "sha256": "63a0cfebf52483580382c408d17d63035c649eb568e4b7910f27224577f1b3c4",
+   "bytes": 1662,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c1b_k8_s0_test_best/eval.log"
+  },
+  {
+   "role": "gsm50k_c1b_k8_s0_test_best per-example file",
+   "sha256": "eb38316fad58441101b961d943a59c678e613eb64f1e4677c917fc4042936315",
+   "bytes": 77898,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c1b_k8_s0_test_best/examples.csv"
+  },
+  {
+   "role": "gsm50k_c1b_k8_s0_test_best summary",
+   "sha256": "4342247728d6186b036e567bff9bdaab033a16115d840031662168c03e96dfe3",
+   "bytes": 3190,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c1b_k8_s0_test_best/summary.json"
+  },
+  {
+   "role": "gsm50k_c1b_k8_s0_test_none eval log",
+   "sha256": "e98c92c4da630a19497705ab74a3f5327eb9c97bc4cb20ec484a949eef7038bc",
+   "bytes": 1658,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c1b_k8_s0_test_none/eval.log"
+  },
+  {
+   "role": "gsm50k_c1b_k8_s0_test_none per-example file",
+   "sha256": "55be25eaa4f2fe831d907626146c8677d750ec42aca7adcde47b353b807a0927",
+   "bytes": 74925,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c1b_k8_s0_test_none/examples.csv"
+  },
+  {
+   "role": "gsm50k_c1b_k8_s0_test_none summary",
+   "sha256": "c20ea199027e5194efcaea97a3603f2cdfe70c01cb798ad441a761f746585e80",
+   "bytes": 3194,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c1b_k8_s0_test_none/summary.json"
+  },
+  {
+   "role": "gsm50k_c2_s0_test_best eval log",
+   "sha256": "8bd07e9c7f93d4d82734d88b9ecea8ae6d6a99b8e627d986afd35e7c550ee69a",
+   "bytes": 1644,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c2_s0_test_best/eval.log"
+  },
+  {
+   "role": "gsm50k_c2_s0_test_best per-example file",
+   "sha256": "2095989aea7b5575d7ef9106d360dfb3bb94b0ed6dc8ae131f5caa9b12b8e8e6",
+   "bytes": 77792,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c2_s0_test_best/examples.csv"
+  },
+  {
+   "role": "gsm50k_c2_s0_test_best summary",
+   "sha256": "903c20d30e728727c89370fdfe43f3c6dfe5307066090e2ce643162268f9ef77",
+   "bytes": 3147,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c2_s0_test_best/summary.json"
+  },
+  {
+   "role": "gsm50k_c2_s0_test_none eval log",
+   "sha256": "de27bdc3e8aa84da833cfdea31f0d1f0476c4ae5fc705c172d26c3ebbca559c5",
+   "bytes": 1640,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c2_s0_test_none/eval.log"
+  },
+  {
+   "role": "gsm50k_c2_s0_test_none per-example file",
+   "sha256": "c597b2305accb3b86634cb5dca4ce254343bd8a9901b0e57b818d49d5b6c3f87",
+   "bytes": 74972,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c2_s0_test_none/examples.csv"
+  },
+  {
+   "role": "gsm50k_c2_s0_test_none summary",
+   "sha256": "6421beee7f8f29f9bccdd5314e1337da45dae3e87fa2a1359efe57d502a3dcda",
+   "bytes": 3147,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c2_s0_test_none/summary.json"
+  },
+  {
+   "role": "gsm50k_c2_shuffled_s0_test_best eval log",
+   "sha256": "2d087fa4ce61a10f4f03a3cc515f8112192bdf611a01c735484898e247e134e5",
+   "bytes": 1690,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c2_shuffled_s0_test_best/eval.log"
+  },
+  {
+   "role": "gsm50k_c2_shuffled_s0_test_best per-example file",
+   "sha256": "2d868b837a260c80c48e183347ce128f64175819e69911938662008816a1549b",
+   "bytes": 77768,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c2_shuffled_s0_test_best/examples.csv"
+  },
+  {
+   "role": "gsm50k_c2_shuffled_s0_test_best summary",
+   "sha256": "5bbbdbe12716e1ebeff16bc42feebb336352b44fdfbe295e6976b15c25285435",
+   "bytes": 3183,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c2_shuffled_s0_test_best/summary.json"
+  },
+  {
+   "role": "gsm50k_c2_shuffled_s0_test_none eval log",
+   "sha256": "cef62edef255afba2c8fd0084f5737c29c1dd3c9e5b3e0af98c2315d0ec65697",
+   "bytes": 1683,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c2_shuffled_s0_test_none/eval.log"
+  },
+  {
+   "role": "gsm50k_c2_shuffled_s0_test_none per-example file",
+   "sha256": "b1be9d43033ec0ec715ae3b69b997be0c40f714f8c81e93f2a9b0a9a7f4af0db",
+   "bytes": 74973,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c2_shuffled_s0_test_none/examples.csv"
+  },
+  {
+   "role": "gsm50k_c2_shuffled_s0_test_none summary",
+   "sha256": "444537c603bb027b747da07d8035c94d53094241a0e8bc2315102e0ca9fd14f0",
+   "bytes": 3183,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c2_shuffled_s0_test_none/summary.json"
+  },
+  {
+   "role": "gsm50k_c2c3_s0_test_best eval log",
+   "sha256": "69970e40c1dcbe0994f822798e096975a9b9b2dc3eb40537be9e1cbae0e5e6df",
+   "bytes": 1655,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c2c3_s0_test_best/eval.log"
+  },
+  {
+   "role": "gsm50k_c2c3_s0_test_best per-example file",
+   "sha256": "be1e8e1da333762440cdac7d6ea3e00003f542b52f7a8eab4ba6e310ad347e2f",
+   "bytes": 77873,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c2c3_s0_test_best/examples.csv"
+  },
+  {
+   "role": "gsm50k_c2c3_s0_test_best summary",
+   "sha256": "b33b94ebcac3384a03ae279fa817eb7c54196c12a1b512f5a6a1d70cd2bb41f2",
+   "bytes": 3151,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c2c3_s0_test_best/summary.json"
+  },
+  {
+   "role": "gsm50k_c2c3_s0_test_none eval log",
+   "sha256": "a6a4d68b25fc015f4e22bcadcea1b35c8a33e5548d429f91f01a1cda7319de53",
+   "bytes": 1650,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c2c3_s0_test_none/eval.log"
+  },
+  {
+   "role": "gsm50k_c2c3_s0_test_none per-example file",
+   "sha256": "7373f7855c152837d1613c33ea03ff4eb2645d12f1dd5aff291cdc2918656e7e",
+   "bytes": 75015,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c2c3_s0_test_none/examples.csv"
+  },
+  {
+   "role": "gsm50k_c2c3_s0_test_none summary",
+   "sha256": "7f8fc3f58608be28d0a059e2d90b31e25c162bfc678d1deec27a99024d09da2c",
+   "bytes": 3154,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c2c3_s0_test_none/summary.json"
+  },
+  {
+   "role": "gsm50k_c3_foreign_s0_test_best eval log",
+   "sha256": "251f5f75c9fd1550fecd9537b2d6764b066f091061a466c8b797678d1c83816f",
+   "bytes": 1686,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c3_foreign_s0_test_best/eval.log"
+  },
+  {
+   "role": "gsm50k_c3_foreign_s0_test_best per-example file",
+   "sha256": "51af78f2be2cb14c02303e5703b077fee0c65380df20af040c36620f35846bae",
+   "bytes": 77924,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c3_foreign_s0_test_best/examples.csv"
+  },
+  {
+   "role": "gsm50k_c3_foreign_s0_test_best summary",
+   "sha256": "eb1ab13b249bdf02c277fefedd250ba33add1d9a9d3a20d9c2b4e8ee9349408d",
+   "bytes": 3179,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c3_foreign_s0_test_best/summary.json"
+  },
+  {
+   "role": "gsm50k_c3_foreign_s0_test_none eval log",
+   "sha256": "82c7b429f18a2f256a31e4ba0d82b0fdb79946b542b2b803dc523b7e020966ca",
+   "bytes": 1682,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c3_foreign_s0_test_none/eval.log"
+  },
+  {
+   "role": "gsm50k_c3_foreign_s0_test_none per-example file",
+   "sha256": "db0084d2bdfa994fb027775a88faabf6f2c8b164b7ef7ec88ce02e7d71ffb21b",
+   "bytes": 74974,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c3_foreign_s0_test_none/examples.csv"
+  },
+  {
+   "role": "gsm50k_c3_foreign_s0_test_none summary",
+   "sha256": "a3a843ede5cc21c2be4258230a4aba974eaad18f100ac57d5f1bea35f543ebf7",
+   "bytes": 3183,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c3_foreign_s0_test_none/summary.json"
+  },
+  {
+   "role": "gsm50k_c3_s0_test_best eval log",
+   "sha256": "41f26a91a2948e0b7987e6aabc7134bb6b733f2ac47b3d6bd640e817c6bd1464",
+   "bytes": 1647,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c3_s0_test_best/eval.log"
+  },
+  {
+   "role": "gsm50k_c3_s0_test_best per-example file",
+   "sha256": "60a3f7b394f0532c4ea55a25048d4700f417f0b74c5f41c7d9260c6d3d26edbc",
+   "bytes": 77811,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c3_s0_test_best/examples.csv"
+  },
+  {
+   "role": "gsm50k_c3_s0_test_best summary",
+   "sha256": "755dd5ef897093364d0f1402089ad0e2a250b69a0389622c6215c21bc4a19406",
+   "bytes": 3146,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c3_s0_test_best/summary.json"
+  },
+  {
+   "role": "gsm50k_c3_s0_test_none eval log",
+   "sha256": "e6a60b613699669ebbf5c5acc1e00b0df86c15df4d0781b0d10cffdd92c182fa",
+   "bytes": 1638,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c3_s0_test_none/eval.log"
+  },
+  {
+   "role": "gsm50k_c3_s0_test_none per-example file",
+   "sha256": "1120ee1f853c8905406f20fb5cdd99a016e2a742f3c0d761031e8b932bb19558",
+   "bytes": 74949,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c3_s0_test_none/examples.csv"
+  },
+  {
+   "role": "gsm50k_c3_s0_test_none summary",
+   "sha256": "937a08f2f93103dba04b4ec0dcc7b113ccb3f03397d8a4b22d1f86d7d2e23dff",
+   "bytes": 3146,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c3_s0_test_none/summary.json"
+  },
+  {
+   "role": "gsm50k_coconut_s0_test_best eval log",
+   "sha256": "382f21bc0f4af3793899894863bc5064731216f48a06ea745f279ce5e2d2ca38",
+   "bytes": 1668,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_coconut_s0_test_best/eval.log"
+  },
+  {
+   "role": "gsm50k_coconut_s0_test_best per-example file",
+   "sha256": "03162c91a0a1ffd25a70b4c0c4629c6ee417dadddcc94fb59f3ce84e9b989875",
+   "bytes": 77781,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_coconut_s0_test_best/examples.csv"
+  },
+  {
+   "role": "gsm50k_coconut_s0_test_best summary",
+   "sha256": "010e40463cc619d9354b79d55822c1f5d77324c9a0dee19f54dd3b6ae18920eb",
+   "bytes": 3168,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_coconut_s0_test_best/summary.json"
+  },
+  {
+   "role": "gsm50k_coconut_s0_test_none eval log",
+   "sha256": "d3f1f10c77551756dea0969e82c29acaf0526ba94d4ded14d92a82eda40961e8",
+   "bytes": 1667,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_coconut_s0_test_none/eval.log"
+  },
+  {
+   "role": "gsm50k_coconut_s0_test_none per-example file",
+   "sha256": "97e945d6007bb7a7f0ea642a4543156faa8be661b28582c88c3615673685286f",
+   "bytes": 75024,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_coconut_s0_test_none/examples.csv"
+  },
+  {
+   "role": "gsm50k_coconut_s0_test_none summary",
+   "sha256": "12b6846323889acb33288beb07120147efc85d6e594762584d399adf3bddbf28",
+   "bytes": 3169,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_coconut_s0_test_none/summary.json"
+  },
+  {
+   "role": "gsm50k_cot_lr3e-4_s0_test_none eval log",
+   "sha256": "5fddcbacf9cd615bac36a250acc8ee6b37132926840dada284aafdcfa66096aa",
+   "bytes": 1443,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_cot_lr3e-4_s0_test_none/eval.log"
+  },
+  {
+   "role": "gsm50k_cot_lr3e-4_s0_test_none per-example file",
+   "sha256": "42da62a2aa536cb06c60a92ed6a27a897d4495b78e5faa56d6c039bd7edef874",
+   "bytes": 77959,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_cot_lr3e-4_s0_test_none/examples.csv"
+  },
+  {
+   "role": "gsm50k_cot_lr3e-4_s0_test_none summary",
+   "sha256": "e837001d782f9c3531ab911a4c1ae2fc84896806d1e1ed00907022422159ca61",
+   "bytes": 2930,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_cot_lr3e-4_s0_test_none/summary.json"
+  },
+  {
+   "role": "gsm50k_no_cot_s0_test_none eval log",
+   "sha256": "d36e3d6439150351563e828a3bd6891c7d91a2d87e9ae50d0eb66d187edd8bb3",
+   "bytes": 1423,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_no_cot_s0_test_none/eval.log"
+  },
+  {
+   "role": "gsm50k_no_cot_s0_test_none per-example file",
+   "sha256": "b8cfc0576600be1978504b7dacc5f3b252ff5c4021fa9cd20e23516a8de17d41",
+   "bytes": 73496,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_no_cot_s0_test_none/examples.csv"
+  },
+  {
+   "role": "gsm50k_no_cot_s0_test_none summary",
+   "sha256": "fa1596bfdb49b5e6483c13330c2ce42c01109af9a0cf59e92e64999e62d470fc",
+   "bytes": 2918,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_no_cot_s0_test_none/summary.json"
+  },
+  {
+   "role": "gsm50k_pause_s0_test_best eval log",
+   "sha256": "8b9fb8d6992ab54f9f3f2e3a639312b4b765f4c1def0faca0a36e35cce73eab8",
+   "bytes": 1659,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_pause_s0_test_best/eval.log"
+  },
+  {
+   "role": "gsm50k_pause_s0_test_best per-example file",
+   "sha256": "5fab3132ed04e7b64f67dcd2ae94d006115ea6e57371589d0f1ac77d6ae2ab03",
+   "bytes": 77851,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_pause_s0_test_best/examples.csv"
+  },
+  {
+   "role": "gsm50k_pause_s0_test_best summary",
+   "sha256": "3c96f0cb14ca03f2f6edb1fad5ee3d06b7496672c1bf668b76c3a308e7687034",
+   "bytes": 2891,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_pause_s0_test_best/summary.json"
+  },
+  {
+   "role": "gsm50k_pause_s0_test_none eval log",
+   "sha256": "b00682e8a5552a8cf0586f650071d74e49ba5328065d6bbcbf493f6d9ea74a1b",
+   "bytes": 1653,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_pause_s0_test_none/eval.log"
+  },
+  {
+   "role": "gsm50k_pause_s0_test_none per-example file",
+   "sha256": "44f3e09fabad8c11a2a8a864893552201b00d7cbf2cc2e562754ed6053c95b66",
+   "bytes": 73773,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_pause_s0_test_none/examples.csv"
+  },
+  {
+   "role": "gsm50k_pause_s0_test_none summary",
+   "sha256": "08fcb94f354deebd33625ffc4c9dd9dd334989ad2b294137b57b01806d1bdab8",
+   "bytes": 2891,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_pause_s0_test_none/summary.json"
+  },
+  {
+   "role": "gsm50k_plain_depth_355m_s0_test_none eval log",
+   "sha256": "77c09ab63de64e9fc3c3004930949d84668b5ba24209f8cf85088edfde70e423",
+   "bytes": 1482,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_plain_depth_355m_s0_test_none/eval.log"
+  },
+  {
+   "role": "gsm50k_plain_depth_355m_s0_test_none per-example file",
+   "sha256": "5dd8a7be36bf35fc79da92ce52553fa9a6c30ae87f188d6d7ecd12ad770a0f52",
+   "bytes": 75112,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_plain_depth_355m_s0_test_none/examples.csv"
+  },
+  {
+   "role": "gsm50k_plain_depth_355m_s0_test_none summary",
+   "sha256": "df1bbe05e5b57900c5443a53a2f505ae09e083d1eb138cd0ca8f920021a6b295",
+   "bytes": 2966,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_plain_depth_355m_s0_test_none/summary.json"
+  },
+  {
+   "role": "prosqa_hard receipt",
+   "sha256": "cf6203dc62505c9638129a989270314afd4389acf2011010fdec989cda62a00a",
+   "bytes": 30951,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/JOB_RECEIPT.json"
+  },
+  {
+   "role": "prosqa_hard_c1b_k4_s0_test_best eval log",
+   "sha256": "d5e0f381e3a14a5d5a5fe1f9fad29d3aa34656a41127e70f21125579a2124e7e",
+   "bytes": 1634,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_c1b_k4_s0_test_best/eval.log"
+  },
+  {
+   "role": "prosqa_hard_c1b_k4_s0_test_best per-example file",
+   "sha256": "5eb3e7cf45624341a5f4590dea8f85318a63d602834f2d0aaf2cef9e09195cac",
+   "bytes": 30434,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_c1b_k4_s0_test_best/examples.csv"
+  },
+  {
+   "role": "prosqa_hard_c1b_k4_s0_test_best summary",
+   "sha256": "8877bcc13fb4c67c12ad83b1456a1f96f9fbf4b7edb38aeea44e8df4da41e189",
+   "bytes": 3110,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_c1b_k4_s0_test_best/summary.json"
+  },
+  {
+   "role": "prosqa_hard_c1b_k4_s0_test_none eval log",
+   "sha256": "5b34b2414a2e23628efb6b61bcd24ce7ea892b524ec2bb93ec04ef05d0420fbe",
+   "bytes": 1632,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_c1b_k4_s0_test_none/eval.log"
+  },
+  {
+   "role": "prosqa_hard_c1b_k4_s0_test_none per-example file",
+   "sha256": "a101b09b67cd99d1f49dd13e07cbe62494e139f11f8b38a02dcc35e6bb6e12d6",
+   "bytes": 30015,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_c1b_k4_s0_test_none/examples.csv"
+  },
+  {
+   "role": "prosqa_hard_c1b_k4_s0_test_none summary",
+   "sha256": "9d97a9747fe7bd9b0cf41e7387a33fa630cbf05236e62ee374c475ac7cbe9ccb",
+   "bytes": 3088,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_c1b_k4_s0_test_none/summary.json"
+  },
+  {
+   "role": "prosqa_hard_c1b_k8_s0_test_best eval log",
+   "sha256": "14d27e848eca44dd67ca874bdad3b81ef4ecdb6a160ffd6b9286808bed47110a",
+   "bytes": 1634,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_c1b_k8_s0_test_best/eval.log"
+  },
+  {
+   "role": "prosqa_hard_c1b_k8_s0_test_best per-example file",
+   "sha256": "57a31267698075dc77e0147282818d2c6cb2bad0fa55d06c151a211308ba7f6c",
+   "bytes": 30567,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_c1b_k8_s0_test_best/examples.csv"
+  },
+  {
+   "role": "prosqa_hard_c1b_k8_s0_test_best summary",
+   "sha256": "56dff8aa5b35649fc01ed43147bff583ff146ecd5fe66cc18c8ba1d8d02f3b94",
+   "bytes": 3090,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_c1b_k8_s0_test_best/summary.json"
+  },
+  {
+   "role": "prosqa_hard_c1b_k8_s0_test_none eval log",
+   "sha256": "63baee0f3eb3ec5be5bbed3792d30b8d2b8681cf4e381abb5f8e5842b4eb888d",
+   "bytes": 1628,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_c1b_k8_s0_test_none/eval.log"
+  },
+  {
+   "role": "prosqa_hard_c1b_k8_s0_test_none per-example file",
+   "sha256": "cc98f3fc7d126a7e56e4b91073575e1459244cdbbede940cddcbf601325222e5",
+   "bytes": 30009,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_c1b_k8_s0_test_none/examples.csv"
+  },
+  {
+   "role": "prosqa_hard_c1b_k8_s0_test_none summary",
+   "sha256": "9ec06221e8460ef56dc8835f5a58b5558570bd4c51a693789ec6d18c38365f30",
+   "bytes": 3087,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_c1b_k8_s0_test_none/summary.json"
+  },
+  {
+   "role": "prosqa_hard_c2_s0_test_best eval log",
+   "sha256": "508c41c5387f6d7cbac1c055ec6c55b85e584ce7e9bb133551cc9f06d6eaab4a",
+   "bytes": 1615,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_c2_s0_test_best/eval.log"
+  },
+  {
+   "role": "prosqa_hard_c2_s0_test_best per-example file",
+   "sha256": "2ae53e7ef803e3ab9d8a90b804107efa8149d2b25e838b0a6378938bab1a1626",
+   "bytes": 30788,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_c2_s0_test_best/examples.csv"
+  },
+  {
+   "role": "prosqa_hard_c2_s0_test_best summary",
+   "sha256": "43857b9fcfc82452986864f079477576c4730dcdce84118d78418ccff119e73d",
+   "bytes": 3045,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_c2_s0_test_best/summary.json"
+  },
+  {
+   "role": "prosqa_hard_c2_s0_test_none eval log",
+   "sha256": "12c78d7e3cf5d46e245498130cc7144e28ec2bdf51deb60a4be95d450ac4365a",
+   "bytes": 1611,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_c2_s0_test_none/eval.log"
+  },
+  {
+   "role": "prosqa_hard_c2_s0_test_none per-example file",
+   "sha256": "4b3191061a0954f46421e8593b8a8a641331ece9005c869103d194cd85bdbf40",
+   "bytes": 30002,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_c2_s0_test_none/examples.csv"
+  },
+  {
+   "role": "prosqa_hard_c2_s0_test_none summary",
+   "sha256": "f2eb91bc581fccbe5a572637d92fdcf98088232f66bd165c67e43cdab9be9bdc",
+   "bytes": 3035,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_c2_s0_test_none/summary.json"
+  },
+  {
+   "role": "prosqa_hard_c2_shuffled_s0_test_best eval log",
+   "sha256": "b328a3edd3dd886af0a7f6cb450b378d3cef10ec3ece570eab09dc99773df448",
+   "bytes": 1660,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_c2_shuffled_s0_test_best/eval.log"
+  },
+  {
+   "role": "prosqa_hard_c2_shuffled_s0_test_best per-example file",
+   "sha256": "89940be6954573669e33bdc1744d11da19797a348fd17c6d48f12b564c760a31",
+   "bytes": 30775,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_c2_shuffled_s0_test_best/examples.csv"
+  },
+  {
+   "role": "prosqa_hard_c2_shuffled_s0_test_best summary",
+   "sha256": "019e5801deba84da3fc787930ddda08e317e0b6e1c5105a42ad03fff742bcd0c",
+   "bytes": 3098,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_c2_shuffled_s0_test_best/summary.json"
+  },
+  {
+   "role": "prosqa_hard_c2_shuffled_s0_test_none eval log",
+   "sha256": "31691c3ab2945f7e1d52af3820f162240edce5295aa2770c44281564de2ab3f9",
+   "bytes": 1657,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_c2_shuffled_s0_test_none/eval.log"
+  },
+  {
+   "role": "prosqa_hard_c2_shuffled_s0_test_none per-example file",
+   "sha256": "e617f462143efe246efb12e9576bf0a96cb3a25e0814f81aaaccf2a5b3d9f193",
+   "bytes": 30017,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_c2_shuffled_s0_test_none/examples.csv"
+  },
+  {
+   "role": "prosqa_hard_c2_shuffled_s0_test_none summary",
+   "sha256": "2dae7aa284ed67a5d99e2050f2c15de2d63d0ddcee1fb0d2ce58faf723a46d15",
+   "bytes": 3078,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_c2_shuffled_s0_test_none/summary.json"
+  },
+  {
+   "role": "prosqa_hard_coconut_s0_test_best eval log",
+   "sha256": "70cd0d9c2809d5678fcc67b8c615b1fbee98a7efbf4654ee93a46a1ee3daaa52",
+   "bytes": 1639,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_coconut_s0_test_best/eval.log"
+  },
+  {
+   "role": "prosqa_hard_coconut_s0_test_best per-example file",
+   "sha256": "bf5ed80812ffdc025b6ca8f9ead9976ae7a6ef14b6daa6cc4ec2a762b72dd5ec",
+   "bytes": 30795,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_coconut_s0_test_best/examples.csv"
+  },
+  {
+   "role": "prosqa_hard_coconut_s0_test_best summary",
+   "sha256": "fe4b6cfeff57b071fd645bacc6977d7791c417b2f1ebe89a23f277bf22e4cacf",
+   "bytes": 3079,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_coconut_s0_test_best/summary.json"
+  },
+  {
+   "role": "prosqa_hard_coconut_s0_test_none eval log",
+   "sha256": "c93a6cda4ae53a0ecac69374d373a118f3c065dbbebd432a80aec7b8e569b8ec",
+   "bytes": 1637,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_coconut_s0_test_none/eval.log"
+  },
+  {
+   "role": "prosqa_hard_coconut_s0_test_none per-example file",
+   "sha256": "ef046104b4114fbf35b0c97b738ac2fcdedc7f0ad17db1b7db4776bf27880e96",
+   "bytes": 30017,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_coconut_s0_test_none/examples.csv"
+  },
+  {
+   "role": "prosqa_hard_coconut_s0_test_none summary",
+   "sha256": "a0ba20522f176871f728fb2c9daf939121bb321dba60fb31f8905fe63bf26bd1",
+   "bytes": 3058,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_coconut_s0_test_none/summary.json"
+  },
+  {
+   "role": "prosqa_hard_cot_lr3e-5_s0_test_none eval log",
+   "sha256": "2b6cc2f11c9bb2f36e779007c2faaa5be92218ec894275ac444ca08c9c5a07b4",
+   "bytes": 1403,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_cot_lr3e-5_s0_test_none/eval.log"
+  },
+  {
+   "role": "prosqa_hard_cot_lr3e-5_s0_test_none per-example file",
+   "sha256": "ba0c189994f5a3ec6d0674cbad1071b8ce5636edd48398aac47c3b7a8275098e",
+   "bytes": 30875,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_cot_lr3e-5_s0_test_none/examples.csv"
+  },
+  {
+   "role": "prosqa_hard_cot_lr3e-5_s0_test_none summary",
+   "sha256": "c43e2412090f739c54c087c0aa92b2f134ce629ca0758e3a57726415ebe43733",
+   "bytes": 2817,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_cot_lr3e-5_s0_test_none/summary.json"
+  },
+  {
+   "role": "prosqa_hard_no_cot_s0_test_none eval log",
+   "sha256": "ab541507b353531c35debf4085a01afc67411cbd7c1e5a58a076b9dad70dca06",
+   "bytes": 1375,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_no_cot_s0_test_none/eval.log"
+  },
+  {
+   "role": "prosqa_hard_no_cot_s0_test_none per-example file",
+   "sha256": "4ec44790b9f343d322222a76bb7b4cb708a06f968c12ba8f99492f4fed517a54",
+   "bytes": 29679,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_no_cot_s0_test_none/examples.csv"
+  },
+  {
+   "role": "prosqa_hard_no_cot_s0_test_none summary",
+   "sha256": "9941ec9ae91658fe1f8ac706e6cb9465a11e5d21602f21628e1b4810590abcee",
+   "bytes": 2784,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_no_cot_s0_test_none/summary.json"
+  },
+  {
+   "role": "prosqa_hard_pause_s0_test_none eval log",
+   "sha256": "133aecd7517c72f0493be1ddc63187096b6579e6186e01bcc7ad998cd842c45d",
+   "bytes": 1624,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_pause_s0_test_none/eval.log"
+  },
+  {
+   "role": "prosqa_hard_pause_s0_test_none per-example file",
+   "sha256": "40c47b5943377a8893194fd3f1dedfcf768c53c1b81c766848f1ffc5ffff9741",
+   "bytes": 29591,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_pause_s0_test_none/examples.csv"
+  },
+  {
+   "role": "prosqa_hard_pause_s0_test_none summary",
+   "sha256": "326001a4b8035b4382b8e77ec0580eb597be00e7d05e0df40ac4bf6628e1e72b",
+   "bytes": 2780,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_pause_s0_test_none/summary.json"
+  },
+  {
+   "role": "prosqa_hard_plain_depth_355m_s0_test_none eval log",
+   "sha256": "1ff238cec12ec2c216e7913b3304f839fcfd0823ff77448aa1fac759fda1fb97",
+   "bytes": 1431,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_plain_depth_355m_s0_test_none/eval.log"
+  },
+  {
+   "role": "prosqa_hard_plain_depth_355m_s0_test_none per-example file",
+   "sha256": "cc8fea4ebfb7b3da84107bed4ab4c408c55ca6f341b4fc5fbd92f5ac5a3e6c51",
+   "bytes": 29830,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_plain_depth_355m_s0_test_none/examples.csv"
+  },
+  {
+   "role": "prosqa_hard_plain_depth_355m_s0_test_none summary",
+   "sha256": "b7ee7bac0f38126fef663abcd4854c487300a6a09e40b3e8d9bc11918bd0ddb9",
+   "bytes": 2829,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_plain_depth_355m_s0_test_none/summary.json"
+  },
+  {
+   "role": "the fourth GSM-50k table (valid of record)",
+   "sha256": "d36b5fbb226761e2239a8079707981ba65b39236b073c1196667fd42790c4a19",
+   "bytes": 503862,
+   "root": "repo",
+   "path": "results/screens/gsm50k/gsm50k_screen_with_hinge.json"
+  },
+  {
+   "role": "the third ProsQA-hard table (valid of record)",
+   "sha256": "ff561a152a39ca42d3546adc2481e96dd8f87323c462802d86b676e6222e0465",
+   "bytes": 351143,
+   "root": "repo",
+   "path": "results/screens/prosqa_hard/prosqa_hard_screen_with_plain_depth.json"
+  }
+ ],
+ "outputs": {
+  "json": "test_read.json",
+  "md": "test_read.md"
+ },
+ "outputs_sha256": {
+  "json": "c28486988f16a5d65b9f9ae1c74f03d9182c1d6d3f66be9dfa5441f63829436a",
+  "md": "187798a6d9f189f16066e917880068e719236414259a06fb02f1f2155a30872b"
+ }
+}

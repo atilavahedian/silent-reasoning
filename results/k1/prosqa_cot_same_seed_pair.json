@@ -1,0 +1,754 @@
+{
+ "title": "The same-seed pair on ProsQA (13.6): prosqa_cot_s0 / det1 / det2, and sigma_task's two readings",
+ "critic_row": "2026-10-21T20:21Z (a)",
+ "members": {
+  "s0": {
+   "run": "prosqa_cot_s0",
+   "dir": "results/evals/k1-eval-main",
+   "job": "k1-eval-main",
+   "attempt": "silent-eval-20261019-144240-f455",
+   "checkpoint_sha256": "4f8c895b39572e234bee476eae906f6eb8a7a17046c5108ba29f29b90379dabb",
+   "project": "cloud-b",
+   "registered_read": "2026-10-19T12:07Z",
+   "read_gpu": "NVIDIA A100-SXM4-40GB",
+   "precision": "fp32-tf32",
+   "test": {
+    "k": 375,
+    "n": 500,
+    "points": 75.0,
+    "se_points": 1.9364916731037085,
+    "ci95": [
+     71.20447632071674,
+     78.79552367928326
+    ]
+   },
+   "audit_k": 375,
+   "audit_flips": 0,
+   "record": {
+    "resumes": 1,
+    "selected_epoch": 46,
+    "checkpoint": "4f8c895b39572e234bee476eae906f6eb8a7a17046c5108ba29f29b90379dabb",
+    "train_gpu": "NVIDIA A100-SXM4-80GB",
+    "curve": [
+     {
+      "epoch": 1,
+      "val_acc": 0.61
+     },
+     {
+      "epoch": 2,
+      "val_acc": 0.6233333333333333
+     },
+     {
+      "epoch": 3,
+      "val_acc": 0.68
+     },
+     {
+      "epoch": 4,
+      "val_acc": 0.7166666666666667
+     },
+     {
+      "epoch": 5,
+      "val_acc": 0.6933333333333334
+     },
+     {
+      "epoch": 6,
+      "val_acc": 0.6366666666666667
+     },
+     {
+      "epoch": 7,
+      "val_acc": 0.6666666666666666
+     },
+     {
+      "epoch": 8,
+      "val_acc": 0.73
+     },
+     {
+      "epoch": 9,
+      "val_acc": 0.7333333333333333
+     },
+     {
+      "epoch": 10,
+      "val_acc": 0.7133333333333334
+     },
+     {
+      "epoch": 11,
+      "val_acc": 0.75
+     },
+     {
+      "epoch": 12,
+      "val_acc": 0.7733333333333333
+     },
+     {
+      "epoch": 13,
+      "val_acc": 0.7733333333333333
+     },
+     {
+      "epoch": 14,
+      "val_acc": 0.7433333333333333
+     },
+     {
+      "epoch": 15,
+      "val_acc": 0.77
+     },
+     {
+      "epoch": 16,
+      "val_acc": 0.7666666666666667
+     },
+     {
+      "epoch": 17,
+      "val_acc": 0.77
+     },
+     {
+      "epoch": 18,
+      "val_acc": 0.7533333333333333
+     },
+     {
+      "epoch": 19,
+      "val_acc": 0.7633333333333333
+     },
+     {
+      "epoch": 20,
+      "val_acc": 0.75
+     },
+     {
+      "epoch": 21,
+      "val_acc": 0.7633333333333333
+     },
+     {
+      "epoch": 22,
+      "val_acc": 0.77
+     },
+     {
+      "epoch": 23,
+      "val_acc": 0.79
+     },
+     {
+      "epoch": 24,
+      "val_acc": 0.7866666666666666
+     },
+     {
+      "epoch": 25,
+      "val_acc": 0.7533333333333333
+     },
+     {
+      "epoch": 26,
+      "val_acc": 0.7866666666666666
+     },
+     {
+      "epoch": 27,
+      "val_acc": 0.7433333333333333
+     },
+     {
+      "epoch": 28,
+      "val_acc": 0.72
+     },
+     {
+      "epoch": 29,
+      "val_acc": 0.75
+     },
+     {
+      "epoch": 30,
+      "val_acc": 0.7766666666666666
+     },
+     {
+      "epoch": 31,
+      "val_acc": 0.75
+     },
+     {
+      "epoch": 32,
+      "val_acc": 0.7633333333333333
+     },
+     {
+      "epoch": 33,
+      "val_acc": 0.7766666666666666
+     },
+     {
+      "epoch": 34,
+      "val_acc": 0.8033333333333333
+     },
+     {
+      "epoch": 35,
+      "val_acc": 0.77
+     },
+     {
+      "epoch": 36,
+      "val_acc": 0.7266666666666667
+     },
+     {
+      "epoch": 37,
+      "val_acc": 0.7833333333333333
+     },
+     {
+      "epoch": 38,
+      "val_acc": 0.8066666666666666
+     },
+     {
+      "epoch": 39,
+      "val_acc": 0.7866666666666666
+     },
+     {
+      "epoch": 40,
+      "val_acc": 0.77
+     },
+     {
+      "epoch": 41,
+      "val_acc": 0.7633333333333333
+     },
+     {
+      "epoch": 42,
+      "val_acc": 0.7733333333333333
+     },
+     {
+      "epoch": 43,
+      "val_acc": 0.74
+     },
+     {
+      "epoch": 44,
+      "val_acc": 0.7866666666666666
+     },
+     {
+      "epoch": 45,
+      "val_acc": 0.7833333333333333
+     },
+     {
+      "epoch": 46,
+      "val_acc": 0.82
+     },
+     {
+      "epoch": 47,
+      "val_acc": 0.79
+     },
+     {
+      "epoch": 48,
+      "val_acc": 0.76
+     },
+     {
+      "epoch": 49,
+      "val_acc": 0.7633333333333333
+     },
+     {
+      "epoch": 50,
+      "val_acc": 0.7866666666666666
+     }
+    ]
+   }
+  },
+  "det1": {
+   "run": "prosqa_cot_det1_s0",
+   "dir": "results/evals/det1-eval-main",
+   "job": "det1-eval-main",
+   "attempt": "silent-eval-20261019-202638-6c28",
+   "checkpoint_sha256": "24eb701e476e59a0fbcee5865a5fb8fb0e4769390f2238907cd7191d0e304481",
+   "project": "cloud-b",
+   "registered_read": "2026-10-19T19:20Z",
+   "read_gpu": "NVIDIA A100-SXM4-40GB",
+   "precision": "fp32-tf32",
+   "test": {
+    "k": 379,
+    "n": 500,
+    "points": 75.8,
+    "se_points": 1.9153902996517445,
+    "ci95": [
+     72.04583501268257,
+     79.55416498731742
+    ]
+   },
+   "audit_k": 380,
+   "audit_flips": 1,
+   "record": {
+    "resumes": 0,
+    "selected_epoch": 25,
+    "checkpoint": "24eb701e476e59a0fbcee5865a5fb8fb0e4769390f2238907cd7191d0e304481",
+    "train_gpu": "NVIDIA A100-SXM4-80GB",
+    "curve": [
+     {
+      "epoch": 1,
+      "val_acc": 0.6066666666666667
+     },
+     {
+      "epoch": 2,
+      "val_acc": 0.63
+     },
+     {
+      "epoch": 3,
+      "val_acc": 0.6833333333333333
+     },
+     {
+      "epoch": 4,
+      "val_acc": 0.6666666666666666
+     },
+     {
+      "epoch": 5,
+      "val_acc": 0.6733333333333333
+     },
+     {
+      "epoch": 6,
+      "val_acc": 0.6333333333333333
+     },
+     {
+      "epoch": 7,
+      "val_acc": 0.6566666666666666
+     },
+     {
+      "epoch": 8,
+      "val_acc": 0.7166666666666667
+     },
+     {
+      "epoch": 9,
+      "val_acc": 0.74
+     },
+     {
+      "epoch": 10,
+      "val_acc": 0.7466666666666667
+     },
+     {
+      "epoch": 11,
+      "val_acc": 0.7366666666666667
+     },
+     {
+      "epoch": 12,
+      "val_acc": 0.7833333333333333
+     },
+     {
+      "epoch": 13,
+      "val_acc": 0.7766666666666666
+     },
+     {
+      "epoch": 14,
+      "val_acc": 0.7833333333333333
+     },
+     {
+      "epoch": 15,
+      "val_acc": 0.7233333333333334
+     },
+     {
+      "epoch": 16,
+      "val_acc": 0.74
+     },
+     {
+      "epoch": 17,
+      "val_acc": 0.78
+     },
+     {
+      "epoch": 18,
+      "val_acc": 0.7066666666666667
+     },
+     {
+      "epoch": 19,
+      "val_acc": 0.7933333333333333
+     },
+     {
+      "epoch": 20,
+      "val_acc": 0.7633333333333333
+     },
+     {
+      "epoch": 21,
+      "val_acc": 0.73
+     },
+     {
+      "epoch": 22,
+      "val_acc": 0.7566666666666667
+     },
+     {
+      "epoch": 23,
+      "val_acc": 0.7666666666666667
+     },
+     {
+      "epoch": 24,
+      "val_acc": 0.7833333333333333
+     },
+     {
+      "epoch": 25,
+      "val_acc": 0.8133333333333334
+     },
+     {
+      "epoch": 26,
+      "val_acc": 0.78
+     },
+     {
+      "epoch": 27,
+      "val_acc": 0.7733333333333333
+     },
+     {
+      "epoch": 28,
+      "val_acc": 0.7533333333333333
+     },
+     {
+      "epoch": 29,
+      "val_acc": 0.7666666666666667
+     },
+     {
+      "epoch": 30,
+      "val_acc": 0.7766666666666666
+     },
+     {
+      "epoch": 31,
+      "val_acc": 0.7466666666666667
+     },
+     {
+      "epoch": 32,
+      "val_acc": 0.7533333333333333
+     },
+     {
+      "epoch": 33,
+      "val_acc": 0.77
+     },
+     {
+      "epoch": 34,
+      "val_acc": 0.75
+     },
+     {
+      "epoch": 35,
+      "val_acc": 0.7433333333333333
+     },
+     {
+      "epoch": 36,
+      "val_acc": 0.7666666666666667
+     },
+     {
+      "epoch": 37,
+      "val_acc": 0.7766666666666666
+     },
+     {
+      "epoch": 38,
+      "val_acc": 0.78
+     },
+     {
+      "epoch": 39,
+      "val_acc": 0.75
+     },
+     {
+      "epoch": 40,
+      "val_acc": 0.7533333333333333
+     },
+     {
+      "epoch": 41,
+      "val_acc": 0.7633333333333333
+     },
+     {
+      "epoch": 42,
+      "val_acc": 0.7566666666666667
+     },
+     {
+      "epoch": 43,
+      "val_acc": 0.75
+     },
+     {
+      "epoch": 44,
+      "val_acc": 0.73
+     },
+     {
+      "epoch": 45,
+      "val_acc": 0.7533333333333333
+     },
+     {
+      "epoch": 46,
+      "val_acc": 0.7733333333333333
+     },
+     {
+      "epoch": 47,
+      "val_acc": 0.7566666666666667
+     },
+     {
+      "epoch": 48,
+      "val_acc": 0.7733333333333333
+     },
+     {
+      "epoch": 49,
+      "val_acc": 0.7733333333333333
+     },
+     {
+      "epoch": 50,
+      "val_acc": 0.77
+     }
+    ]
+   }
+  },
+  "det2": {
+   "run": "prosqa_cot_det2_s0",
+   "dir": "results/evals/det2-eval-acctc",
+   "job": "det2-eval-acctc",
+   "attempt": "silent-eval-20261022-070810-bf49",
+   "checkpoint_sha256": "f59caa4e8167b45742b910eb470c9cc92065388310114c674ec7c4e6e2761e54",
+   "project": "cloud-c",
+   "registered_read": "2026-10-22T06:52Z",
+   "read_gpu": "NVIDIA A100-SXM4-80GB",
+   "precision": "fp32-tf32",
+   "test": {
+    "k": 389,
+    "n": 500,
+    "points": 77.8,
+    "se_points": 1.8585801031970612,
+    "ci95": [
+     74.15718299773376,
+     81.44281700226624
+    ]
+   },
+   "audit_k": 389,
+   "audit_flips": 0,
+   "record": {
+    "resumes": 0,
+    "selected_epoch": 23,
+    "checkpoint": "f59caa4e8167b45742b910eb470c9cc92065388310114c674ec7c4e6e2761e54",
+    "train_gpu": "NVIDIA A100-SXM4-80GB",
+    "curve": [
+     {
+      "epoch": 1,
+      "val_acc": 0.61
+     },
+     {
+      "epoch": 2,
+      "val_acc": 0.6233333333333333
+     },
+     {
+      "epoch": 3,
+      "val_acc": 0.6766666666666666
+     },
+     {
+      "epoch": 4,
+      "val_acc": 0.72
+     },
+     {
+      "epoch": 5,
+      "val_acc": 0.6766666666666666
+     },
+     {
+      "epoch": 6,
+      "val_acc": 0.6233333333333333
+     },
+     {
+      "epoch": 7,
+      "val_acc": 0.7033333333333334
+     },
+     {
+      "epoch": 8,
+      "val_acc": 0.7466666666666667
+     },
+     {
+      "epoch": 9,
+      "val_acc": 0.7666666666666667
+     },
+     {
+      "epoch": 10,
+      "val_acc": 0.73
+     },
+     {
+      "epoch": 11,
+      "val_acc": 0.8033333333333333
+     },
+     {
+      "epoch": 12,
+      "val_acc": 0.7966666666666666
+     },
+     {
+      "epoch": 13,
+      "val_acc": 0.76
+     },
+     {
+      "epoch": 14,
+      "val_acc": 0.7833333333333333
+     },
+     {
+      "epoch": 15,
+      "val_acc": 0.7766666666666666
+     },
+     {
+      "epoch": 16,
+      "val_acc": 0.76
+     },
+     {
+      "epoch": 17,
+      "val_acc": 0.7933333333333333
+     },
+     {
+      "epoch": 18,
+      "val_acc": 0.7733333333333333
+     },
+     {
+      "epoch": 19,
+      "val_acc": 0.7466666666666667
+     },
+     {
+      "epoch": 20,
+      "val_acc": 0.75
+     },
+     {
+      "epoch": 21,
+      "val_acc": 0.7433333333333333
+     },
+     {
+      "epoch": 22,
+      "val_acc": 0.7666666666666667
+     },
+     {
+      "epoch": 23,
+      "val_acc": 0.81
+     },
+     {
+      "epoch": 24,
+      "val_acc": 0.7733333333333333
+     },
+     {
+      "epoch": 25,
+      "val_acc": 0.76
+     },
+     {
+      "epoch": 26,
+      "val_acc": 0.7733333333333333
+     },
+     {
+      "epoch": 27,
+      "val_acc": 0.77
+     },
+     {
+      "epoch": 28,
+      "val_acc": 0.7433333333333333
+     },
+     {
+      "epoch": 29,
+      "val_acc": 0.7766666666666666
+     },
+     {
+      "epoch": 30,
+      "val_acc": 0.78
+     },
+     {
+      "epoch": 31,
+      "val_acc": 0.7733333333333333
+     },
+     {
+      "epoch": 32,
+      "val_acc": 0.7866666666666666
+     },
+     {
+      "epoch": 33,
+      "val_acc": 0.8066666666666666
+     },
+     {
+      "epoch": 34,
+      "val_acc": 0.75
+     },
+     {
+      "epoch": 35,
+      "val_acc": 0.7066666666666667
+     },
+     {
+      "epoch": 36,
+      "val_acc": 0.7633333333333333
+     },
+     {
+      "epoch": 37,
+      "val_acc": 0.7933333333333333
+     },
+     {
+      "epoch": 38,
+      "val_acc": 0.77
+     },
+     {
+      "epoch": 39,
+      "val_acc": 0.78
+     },
+     {
+      "epoch": 40,
+      "val_acc": 0.7433333333333333
+     },
+     {
+      "epoch": 41,
+      "val_acc": 0.7566666666666667
+     },
+     {
+      "epoch": 42,
+      "val_acc": 0.7966666666666666
+     },
+     {
+      "epoch": 43,
+      "val_acc": 0.73
+     },
+     {
+      "epoch": 44,
+      "val_acc": 0.7966666666666666
+     },
+     {
+      "epoch": 45,
+      "val_acc": 0.7733333333333333
+     },
+     {
+      "epoch": 46,
+      "val_acc": 0.7466666666666667
+     },
+     {
+      "epoch": 47,
+      "val_acc": 0.76
+     },
+     {
+      "epoch": 48,
+      "val_acc": 0.71
+     },
+     {
+      "epoch": 49,
+      "val_acc": 0.7633333333333333
+     },
+     {
+      "epoch": 50,
+      "val_acc": 0.7766666666666666
+     }
+    ]
+   }
+  }
+ },
+ "pairs": {
+  "s0|det1": {
+   "both": 324,
+   "only_a": 51,
+   "only_b": 55,
+   "neither": 70,
+   "churn": 106,
+   "net": -4,
+   "n": 500
+  },
+  "det1|det2": {
+   "both": 341,
+   "only_a": 38,
+   "only_b": 48,
+   "neither": 73,
+   "churn": 86,
+   "net": -10,
+   "n": 500
+  },
+  "s0|det2": {
+   "both": 333,
+   "only_a": 42,
+   "only_b": 56,
+   "neither": 69,
+   "churn": 98,
+   "net": -14,
+   "n": 500
+  }
+ },
+ "sd_3seed": 3.601851375797361,
+ "strict": {
+  "d_nd": 2.0,
+  "net": 10,
+  "line": 0.7203702751594723,
+  "over": true,
+  "sigma_task": 4.119870548128102,
+  "sd": 3.601851375797361
+ },
+ "one_run": {
+  "d_nd": 0.8,
+  "net": 4,
+  "line": 0.7203702751594723,
+  "over": true,
+  "sigma_task": 3.6896250938724577,
+  "sd": 3.601851375797361
+ },
+ "labels": [
+  "pair read on two GPU types (A3.2 (ii) parity passed on both types; (iii) the type printed per member; the batch-1 audits beside each bound the eval-path flips, det1 1 of 500)",
+  "d_nd is the pair's difference as read",
+  "det2's accuracy enters no cell, no seed pool and no sigma_cell",
+  "sigma_screen on GSM-50k and ProsQA-hard (A3.4) carries no determinism term: det2 changes no line of any screen table of record; the ProsQA K1 table is unchanged",
+  "the strict pair's figure is the one of record for every ProsQA verdict not yet written; rises, never falls"
+ ],
+ "status": "complete",
+ "generated_utc": "2026-10-22T07:20:31Z"
+}

@@ -1,0 +1,5998 @@
+{
+ "title": "The Pareto read (7.3: secondary, reported, decides nothing): accuracy against cost per task, valid and test apart",
+ "critic_row": "2026-10-21T20:21Z (c)",
+ "point_labels": {
+  "selection": "final selection (3.3 item 1): n latents = the trained count",
+  "earlier": "earlier-stage checkpoint, n latents = its stage; writes the remaining steps (E' as recorded: 21 to 23 tokens on GSM-50k test, 25 to 57 on ProsQA-hard test); secondary read (3.3 item 3); decides nothing",
+  "sweep": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+  "bar": "tuned bar: the pick (3 LRs)",
+  "no_cot": "no_cot (floor; the 124M plain-depth point)",
+  "pause": "pause (control)",
+  "plain_depth": "plain depth 355M (7.7)",
+  "means": "from the training log's means (range); no per-example record on valid",
+  "no_band": "no band"
+ },
+ "test_label": "end-of-round test read (A3.4): reporting only, no decision attached; 1 seed; one registered read per checkpoint (4.5)",
+ "test_read": {
+  "file": "results/screens/test_read.json",
+  "commit": "c6aabb0e2534f226e8d7d7ae8c30f5687a77e822"
+ },
+ "tasks": {
+  "gsm50k": {
+   "valid": [
+    {
+     "id": "cot_lr3e-4:selection",
+     "run": "gsm50k_cot_lr3e-4_s0",
+     "key": "cot_lr3e-4",
+     "label": "tuned bar: the pick (3 LRs)",
+     "kind": "log-mean range",
+     "epoch": 17,
+     "n_latent": 0,
+     "accuracy": 25.6,
+     "k": 128,
+     "n": 500,
+     "emitted_mean": 30.436,
+     "passes_mean": 31.436,
+     "flops_mean": [
+      17312273313.792,
+      17356513873.92
+     ],
+     "reference_flops_mean": [
+      511912779807.744,
+      812748657862.656
+     ],
+     "band": null,
+     "labels": [
+      "from the training log's means (range); no per-example record on valid",
+      "no band"
+     ]
+    },
+    {
+     "id": "no_cot:selection",
+     "run": "gsm50k_no_cot_s0",
+     "key": "no_cot",
+     "label": "no_cot (floor; the 124M plain-depth point)",
+     "kind": "log-mean range",
+     "epoch": 22,
+     "n_latent": 0,
+     "accuracy": 6.2,
+     "k": 31,
+     "n": 500,
+     "emitted_mean": 2.206,
+     "passes_mean": 3.206,
+     "flops_mean": [
+      10260642554.88,
+      10269388981.248
+     ],
+     "reference_flops_mean": [
+      35269523841.024,
+      94780386376.704
+     ],
+     "band": null,
+     "labels": [
+      "from the training log's means (range); no per-example record on valid",
+      "no band"
+     ]
+    },
+    {
+     "id": "plain_depth_355m:selection",
+     "run": "gsm50k_plain_depth_355m_s0",
+     "key": "plain_depth_355m",
+     "label": "plain depth 355M (7.7)",
+     "kind": "log-mean range",
+     "epoch": 24,
+     "n_latent": 0,
+     "accuracy": 8.0,
+     "k": 40,
+     "n": 500,
+     "emitted_mean": 2.332,
+     "passes_mean": 3.332,
+     "flops_mean": [
+      35947744428.032,
+      35972190863.36
+     ],
+     "reference_flops_mean": [
+      104829295718.4,
+      283111569678.336
+     ],
+     "band": null,
+     "labels": [
+      "from the training log's means (range); no per-example record on valid",
+      "no band"
+     ]
+    },
+    {
+     "id": "pause:selection",
+     "run": "gsm50k_pause_s0",
+     "key": "pause",
+     "label": "pause (control)",
+     "kind": "per-example (plain read)",
+     "epoch": 22,
+     "n_latent": 6,
+     "accuracy": 9.6,
+     "k": 48,
+     "n": 500,
+     "emitted_mean": 2.21,
+     "passes_mean": 3.21,
+     "flops_mean": [
+      11642582802.432,
+      11642582802.432
+     ],
+     "flops_parts": {
+      "at 1": [
+       11642582802.432,
+       11642582802.432
+      ]
+     },
+     "reference_flops_mean": [
+      52643887607.808,
+      52643887607.808
+     ],
+     "band": {
+      "accuracy": [
+       7.0,
+       12.4
+      ],
+      "emitted_mean": [
+       2.162,
+       2.262
+      ],
+      "flops_mean": [
+       11335250480.0256,
+       11955936544.9728
+      ],
+      "passes_mean": [
+       3.162,
+       3.262
+      ]
+     },
+     "labels": [],
+     "band_entry": "gsm50k_pause_s0_valid_none",
+     "band_k": 48,
+     "band_layer_fraction": 1.0
+    },
+    {
+     "id": "pause:earlier",
+     "run": "gsm50k_pause_s0",
+     "key": "pause",
+     "label": "earlier",
+     "kind": "log-mean range",
+     "epoch": 5,
+     "stage": 1,
+     "n_latent": 2,
+     "accuracy": 13.600000000000001,
+     "k": 68,
+     "n": 500,
+     "emitted_mean": 22.194,
+     "passes_mean": 23.194,
+     "flops_mean": [
+      15941900943.36,
+      15983748440.064
+     ],
+     "flops_parts": {
+      "at 1": [
+       15941900943.36,
+       15983748440.064
+      ]
+     },
+     "reference_flops_mean": [
+      368782638557.184,
+      653482244616.192
+     ],
+     "band": null,
+     "labels": [
+      "from the training log's means (range); no per-example record on valid",
+      "no band"
+     ],
+     "range_width_frac": 0.002621559624452059
+    },
+    {
+     "id": "coconut:selection",
+     "run": "gsm50k_coconut_s0",
+     "key": "coconut",
+     "label": "final selection (3.3 item 1): n latents = the trained count",
+     "kind": "per-example (plain read)",
+     "epoch": 17,
+     "n_latent": 6,
+     "accuracy": 11.0,
+     "k": 55,
+     "n": 500,
+     "emitted_mean": 2.396,
+     "passes_mean": 9.396,
+     "flops_mean": [
+      11689235982.336,
+      11689235982.336
+     ],
+     "flops_parts": {
+      "at 1": [
+       11689235982.336,
+       11689235982.336
+      ]
+     },
+     "reference_flops_mean": [
+      145337985091.584,
+      145337985091.584
+     ],
+     "band": {
+      "accuracy": [
+       8.4,
+       13.8
+      ],
+      "emitted_mean": [
+       2.232,
+       2.676
+      ],
+      "flops_mean": [
+       11375681881.8048,
+       12013205125.4784
+      ],
+      "passes_mean": [
+       9.232,
+       9.676
+      ]
+     },
+     "labels": [],
+     "band_entry": "gsm50k_coconut_s0_valid_none",
+     "band_k": 55,
+     "band_layer_fraction": 1.0
+    },
+    {
+     "id": "coconut:earlier",
+     "run": "gsm50k_coconut_s0",
+     "key": "coconut",
+     "label": "earlier",
+     "kind": "log-mean range",
+     "epoch": 6,
+     "stage": 1,
+     "n_latent": 2,
+     "accuracy": 12.6,
+     "k": 63,
+     "n": 500,
+     "emitted_mean": 21.384,
+     "passes_mean": 24.384,
+     "flops_mean": [
+      15739209381.888,
+      15780586788.864
+     ],
+     "flops_parts": {
+      "at 1": [
+       15739209381.888,
+       15780586788.864
+      ]
+     },
+     "reference_flops_mean": [
+      375806824243.2,
+      657265019774.976
+     ],
+     "band": null,
+     "labels": [
+      "from the training log's means (range); no per-example record on valid",
+      "no band"
+     ],
+     "range_width_frac": 0.002625486963928717
+    },
+    {
+     "id": "coconut:sweep0",
+     "run": "gsm50k_coconut_s0",
+     "key": "coconut",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 17,
+     "n_latent": 0,
+     "ood": false,
+     "accuracy": 1.0,
+     "k": 5,
+     "n": 500,
+     "emitted_mean": 5.422,
+     "passes_mean": 6.422,
+     "flops_mean": [
+      11409970040.832,
+      11409970040.832
+     ],
+     "reference_flops_mean": [
+      98785464477.696,
+      98785464477.696
+     ],
+     "band": {
+      "accuracy": [
+       0.2,
+       2.0
+      ],
+      "emitted_mean": [
+       5.106,
+       5.79
+      ],
+      "flops_mean": [
+       11087069501.952002,
+       11741519120.640001
+      ],
+      "passes_mean": [
+       6.106,
+       6.79
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_coconut_s0_valid_n0",
+     "layer_fraction": 1.0
+    },
+    {
+     "id": "coconut:sweep1",
+     "run": "gsm50k_coconut_s0",
+     "key": "coconut",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 17,
+     "n_latent": 1,
+     "ood": false,
+     "accuracy": 7.6,
+     "k": 38,
+     "n": 500,
+     "emitted_mean": 2.504,
+     "passes_mean": 4.504,
+     "flops_mean": [
+      10853759883.264,
+      10853759883.264
+     ],
+     "reference_flops_mean": [
+      67539435429.888,
+      67539435429.888
+     ],
+     "band": {
+      "accuracy": [
+       5.4,
+       10.0
+      ],
+      "emitted_mean": [
+       2.314,
+       2.804
+      ],
+      "flops_mean": [
+       10544206029.0048,
+       11176454462.976
+      ],
+      "passes_mean": [
+       4.314,
+       4.804
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_coconut_s0_valid_n1",
+     "layer_fraction": 1.0
+    },
+    {
+     "id": "coconut:sweep2",
+     "run": "gsm50k_coconut_s0",
+     "key": "coconut",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 17,
+     "n_latent": 2,
+     "ood": false,
+     "accuracy": 9.0,
+     "k": 45,
+     "n": 500,
+     "emitted_mean": 2.274,
+     "passes_mean": 5.274,
+     "flops_mean": [
+      10968569487.36,
+      10968569487.36
+     ],
+     "reference_flops_mean": [
+      78083935746.048,
+      78083935746.048
+     ],
+     "band": {
+      "accuracy": [
+       6.6,
+       11.6
+      ],
+      "emitted_mean": [
+       2.22,
+       2.336
+      ],
+      "flops_mean": [
+       10661769155.7888,
+       11281610270.822401
+      ],
+      "passes_mean": [
+       5.22,
+       5.336
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_coconut_s0_valid_n2",
+     "layer_fraction": 1.0
+    },
+    {
+     "id": "coconut:sweep4",
+     "run": "gsm50k_coconut_s0",
+     "key": "coconut",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 17,
+     "n_latent": 4,
+     "ood": false,
+     "accuracy": 10.6,
+     "k": 53,
+     "n": 500,
+     "emitted_mean": 2.28,
+     "passes_mean": 7.28,
+     "flops_mean": [
+      11314999154.688,
+      11314999154.688
+     ],
+     "reference_flops_mean": [
+      109677815949.312,
+      109677815949.312
+     ],
+     "band": {
+      "accuracy": [
+       8.0,
+       13.4
+      ],
+      "emitted_mean": [
+       2.224,
+       2.342
+      ],
+      "flops_mean": [
+       11008325566.924799,
+       11627208713.0112
+      ],
+      "passes_mean": [
+       7.224,
+       7.342
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_coconut_s0_valid_n4",
+     "layer_fraction": 1.0
+    },
+    {
+     "id": "coconut:sweep8",
+     "run": "gsm50k_coconut_s0",
+     "key": "coconut",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 17,
+     "n_latent": 8,
+     "ood": true,
+     "accuracy": 11.6,
+     "k": 58,
+     "n": 500,
+     "emitted_mean": 2.262,
+     "passes_mean": 11.262,
+     "flops_mean": [
+      12000764399.616,
+      12000764399.616
+     ],
+     "reference_flops_mean": [
+      175073117700.096,
+      175073117700.096
+     ],
+     "band": {
+      "accuracy": [
+       8.8,
+       14.4
+      ],
+      "emitted_mean": [
+       2.21,
+       2.318
+      ],
+      "flops_mean": [
+       11694340327.065601,
+       12312872235.4176
+      ],
+      "passes_mean": [
+       11.21,
+       11.318
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_coconut_s0_valid_n8",
+     "layer_fraction": 1.0
+    },
+    {
+     "id": "c1b_k8:selection",
+     "run": "gsm50k_c1b_k8_s0",
+     "key": "c1b_k8",
+     "label": "final selection (3.3 item 1): n latents = the trained count",
+     "kind": "per-example (plain read)",
+     "epoch": 19,
+     "n_latent": 6,
+     "accuracy": 9.4,
+     "k": 47,
+     "n": 500,
+     "emitted_mean": 2.28,
+     "passes_mean": 9.28,
+     "flops_mean": [
+      11660047030.272,
+      11660047030.272
+     ],
+     "flops_parts": {
+      "at 1": [
+       11660047030.272,
+       11660047030.272
+      ],
+      "nominal 0.6667": [
+       11315380918.272,
+       11315380918.272
+      ],
+      "measured 0.7200": [
+       11370527496.192,
+       11370527496.192
+      ]
+     },
+     "reference_flops_mean": [
+      141963476649.984,
+      141963476649.984
+     ],
+     "band": {
+      "accuracy": [
+       7.0,
+       12.0
+      ],
+      "emitted_mean": [
+       2.226,
+       2.338
+      ],
+      "flops_mean": [
+       11008491115.9296,
+       11627553890.6112
+      ],
+      "passes_mean": [
+       9.226,
+       9.338
+      ]
+     },
+     "labels": [],
+     "band_entry": "gsm50k_c1b_k8_s0_valid_none",
+     "band_k": 47,
+     "band_layer_fraction": 0.6666666666666666
+    },
+    {
+     "id": "c1b_k8:earlier",
+     "run": "gsm50k_c1b_k8_s0",
+     "key": "c1b_k8",
+     "label": "earlier",
+     "kind": "log-mean range",
+     "epoch": 6,
+     "stage": 1,
+     "n_latent": 2,
+     "accuracy": 14.000000000000002,
+     "k": 70,
+     "n": 500,
+     "emitted_mean": 21.724,
+     "passes_mean": 24.724,
+     "flops_mean": [
+      15824287180.8,
+      15865854216.192
+     ],
+     "flops_parts": {
+      "at 1": [
+       15824287180.8,
+       15865854216.192
+      ],
+      "nominal 0.6667": [
+       15709447628.8,
+       15751014664.192
+      ],
+      "measured 0.7200": [
+       15727821957.12,
+       15769388992.512
+      ]
+     },
+     "reference_flops_mean": [
+      382458193938.432,
+      665206799560.704
+     ],
+     "band": null,
+     "labels": [
+      "from the training log's means (range); no per-example record on valid",
+      "no band"
+     ],
+     "range_width_frac": 0.0026233417434953893
+    },
+    {
+     "id": "c1b_k8:sweep0",
+     "run": "gsm50k_c1b_k8_s0",
+     "key": "c1b_k8",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 19,
+     "n_latent": 0,
+     "ood": false,
+     "accuracy": 8.0,
+     "k": 40,
+     "n": 500,
+     "emitted_mean": 2.254,
+     "passes_mean": 3.254,
+     "flops_mean": [
+      10618831073.28,
+      10618831073.28
+     ],
+     "reference_flops_mean": [
+      47534361698.304,
+      47534361698.304
+     ],
+     "band": {
+      "accuracy": [
+       5.795000000000004,
+       10.4
+      ],
+      "emitted_mean": [
+       2.202,
+       2.31
+      ],
+      "flops_mean": [
+       10313571492.710402,
+       10931101042.4832
+      ],
+      "passes_mean": [
+       3.202,
+       3.31
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c1b_k8_s0_valid_n0",
+     "layer_fraction": 0.6666666666666666
+    },
+    {
+     "id": "c1b_k8:sweep1",
+     "run": "gsm50k_c1b_k8_s0",
+     "key": "c1b_k8",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 19,
+     "n_latent": 1,
+     "ood": false,
+     "accuracy": 8.8,
+     "k": 44,
+     "n": 500,
+     "emitted_mean": 2.264,
+     "passes_mean": 4.264,
+     "flops_mean": [
+      10736287643.648,
+      10736287643.648
+     ],
+     "reference_flops_mean": [
+      62816316549.12,
+      62816316549.12
+     ],
+     "band": {
+      "accuracy": [
+       6.4,
+       11.4
+      ],
+      "emitted_mean": [
+       2.208,
+       2.322
+      ],
+      "flops_mean": [
+       10429785302.528,
+       11047740980.787199
+      ],
+      "passes_mean": [
+       4.208,
+       4.322
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c1b_k8_s0_valid_n1",
+     "layer_fraction": 0.6666666666666666
+    },
+    {
+     "id": "c1b_k8:sweep2",
+     "run": "gsm50k_c1b_k8_s0",
+     "key": "c1b_k8",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 19,
+     "n_latent": 2,
+     "ood": false,
+     "accuracy": 8.8,
+     "k": 44,
+     "n": 500,
+     "emitted_mean": 2.274,
+     "passes_mean": 5.274,
+     "flops_mean": [
+      10853757583.36,
+      10853757583.36
+     ],
+     "reference_flops_mean": [
+      78271891402.752,
+      78271891402.752
+     ],
+     "band": {
+      "accuracy": [
+       6.4,
+       11.4
+      ],
+      "emitted_mean": [
+       2.218,
+       2.334
+      ],
+      "flops_mean": [
+       10545192056.6272,
+       11165634318.2848
+      ],
+      "passes_mean": [
+       5.218,
+       5.334
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c1b_k8_s0_valid_n2",
+     "layer_fraction": 0.6666666666666666
+    },
+    {
+     "id": "c1b_k8:sweep4",
+     "run": "gsm50k_c1b_k8_s0",
+     "key": "c1b_k8",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 19,
+     "n_latent": 4,
+     "ood": false,
+     "accuracy": 9.6,
+     "k": 48,
+     "n": 500,
+     "emitted_mean": 2.26,
+     "passes_mean": 7.26,
+     "flops_mean": [
+      11080277633.024,
+      11080277633.024
+     ],
+     "reference_flops_mean": [
+      109363212435.456,
+      109363212435.456
+     ],
+     "band": {
+      "accuracy": [
+       7.0,
+       12.4
+      ],
+      "emitted_mean": [
+       2.208,
+       2.316
+      ],
+      "flops_mean": [
+       10773243546.214401,
+       11392893391.1552
+      ],
+      "passes_mean": [
+       7.208,
+       7.316
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c1b_k8_s0_valid_n4",
+     "layer_fraction": 0.6666666666666666
+    },
+    {
+     "id": "c1b_k8:sweep8",
+     "run": "gsm50k_c1b_k8_s0",
+     "key": "c1b_k8",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 19,
+     "n_latent": 8,
+     "ood": true,
+     "accuracy": 9.4,
+     "k": 47,
+     "n": 500,
+     "emitted_mean": 2.282,
+     "passes_mean": 11.282,
+     "flops_mean": [
+      11546105872.384,
+      11546105872.384
+     ],
+     "reference_flops_mean": [
+      175396655020.032,
+      175396655020.032
+     ],
+     "band": {
+      "accuracy": [
+       7.0,
+       12.0
+      ],
+      "emitted_mean": [
+       2.224,
+       2.346
+      ],
+      "flops_mean": [
+       11239422568.4992,
+       11858862654.8224
+      ],
+      "passes_mean": [
+       11.224,
+       11.346
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c1b_k8_s0_valid_n8",
+     "layer_fraction": 0.6666666666666666
+    },
+    {
+     "id": "c1b_k4:selection",
+     "run": "gsm50k_c1b_k4_s0",
+     "key": "c1b_k4",
+     "label": "final selection (3.3 item 1): n latents = the trained count",
+     "kind": "per-example (plain read)",
+     "epoch": 15,
+     "n_latent": 6,
+     "accuracy": 9.4,
+     "k": 47,
+     "n": 500,
+     "emitted_mean": 2.284,
+     "passes_mean": 9.283999999999999,
+     "flops_mean": [
+      11661037529.088,
+      11661037529.088
+     ],
+     "flops_parts": {
+      "at 1": [
+       11661037529.088,
+       11661037529.088
+      ],
+      "nominal 0.3333": [
+       10971705305.088,
+       10971705305.088
+      ],
+      "measured 0.4326": [
+       11074324341.670523,
+       11074324341.670523
+      ]
+     },
+     "reference_flops_mean": [
+      141971047925.76,
+      141971047925.76
+     ],
+     "band": {
+      "accuracy": [
+       7.0,
+       12.0
+      ],
+      "emitted_mean": [
+       2.23,
+       2.342
+      ],
+      "flops_mean": [
+       10664155926.9888,
+       11284890276.4032
+      ],
+      "passes_mean": [
+       9.23,
+       9.342
+      ]
+     },
+     "labels": [],
+     "band_entry": "gsm50k_c1b_k4_s0_valid_none",
+     "band_k": 47,
+     "band_layer_fraction": 0.3333333333333333
+    },
+    {
+     "id": "c1b_k4:earlier",
+     "run": "gsm50k_c1b_k4_s0",
+     "key": "c1b_k4",
+     "label": "earlier",
+     "kind": "log-mean range",
+     "epoch": 6,
+     "stage": 1,
+     "n_latent": 2,
+     "accuracy": 14.6,
+     "k": 73,
+     "n": 500,
+     "emitted_mean": 22.858,
+     "passes_mean": 25.858,
+     "flops_mean": [
+      16108080611.328,
+      16150295273.472
+     ],
+     "flops_parts": {
+      "at 1": [
+       16108080611.328,
+       16150295273.472
+      ],
+      "nominal 0.3333": [
+       15878401507.328,
+       15920616169.472
+      ],
+      "measured 0.4326": [
+       15912593218.60308,
+       15954807880.74708
+      ]
+     },
+     "reference_flops_mean": [
+      404872902531.072,
+      692029994213.376
+     ],
+     "band": null,
+     "labels": [
+      "from the training log's means (range); no per-example record on valid",
+      "no band"
+     ],
+     "range_width_frac": 0.0026172837897826323
+    },
+    {
+     "id": "c1b_k4:sweep0",
+     "run": "gsm50k_c1b_k4_s0",
+     "key": "c1b_k4",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 15,
+     "n_latent": 0,
+     "ood": false,
+     "accuracy": 8.2,
+     "k": 41,
+     "n": 500,
+     "emitted_mean": 2.296,
+     "passes_mean": 3.296,
+     "flops_mean": [
+      10629308798.976,
+      10629308798.976
+     ],
+     "reference_flops_mean": [
+      48139721717.76,
+      48139721717.76
+     ],
+     "band": {
+      "accuracy": [
+       5.8,
+       10.6
+      ],
+      "emitted_mean": [
+       2.24,
+       2.358
+      ],
+      "flops_mean": [
+       10321969832.2944,
+       10941434641.7664
+      ],
+      "passes_mean": [
+       3.24,
+       3.358
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c1b_k4_s0_valid_n0",
+     "layer_fraction": 0.3333333333333333
+    },
+    {
+     "id": "c1b_k4:sweep1",
+     "run": "gsm50k_c1b_k4_s0",
+     "key": "c1b_k4",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 15,
+     "n_latent": 1,
+     "ood": false,
+     "accuracy": 8.6,
+     "k": 43,
+     "n": 500,
+     "emitted_mean": 2.306,
+     "passes_mean": 4.306,
+     "flops_mean": [
+      10689337507.84,
+      10689337507.84
+     ],
+     "reference_flops_mean": [
+      63325396703.232,
+      63325396703.232
+     ],
+     "band": {
+      "accuracy": [
+       6.2,
+       11.0
+      ],
+      "emitted_mean": [
+       2.25,
+       2.368
+      ],
+      "flops_mean": [
+       10382392252.8256,
+       11000833982.463999
+      ],
+      "passes_mean": [
+       4.25,
+       4.368
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c1b_k4_s0_valid_n1",
+     "layer_fraction": 0.3333333333333333
+    },
+    {
+     "id": "c1b_k4:sweep2",
+     "run": "gsm50k_c1b_k4_s0",
+     "key": "c1b_k4",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 15,
+     "n_latent": 2,
+     "ood": false,
+     "accuracy": 8.8,
+     "k": 44,
+     "n": 500,
+     "emitted_mean": 2.292,
+     "passes_mean": 5.292,
+     "flops_mean": [
+      10743391348.736,
+      10743391348.736
+     ],
+     "reference_flops_mean": [
+      78415242043.392,
+      78415242043.392
+     ],
+     "band": {
+      "accuracy": [
+       6.4,
+       11.4
+      ],
+      "emitted_mean": [
+       2.238,
+       2.35
+      ],
+      "flops_mean": [
+       10436039107.6352,
+       11055671584.5632
+      ],
+      "passes_mean": [
+       5.238,
+       5.35
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c1b_k4_s0_valid_n2",
+     "layer_fraction": 0.3333333333333333
+    },
+    {
+     "id": "c1b_k4:sweep4",
+     "run": "gsm50k_c1b_k4_s0",
+     "key": "c1b_k4",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 15,
+     "n_latent": 4,
+     "ood": false,
+     "accuracy": 9.2,
+     "k": 46,
+     "n": 500,
+     "emitted_mean": 2.292,
+     "passes_mean": 7.292,
+     "flops_mean": [
+      10858531244.032,
+      10858531244.032
+     ],
+     "reference_flops_mean": [
+      109816942159.872,
+      109816942159.872
+     ],
+     "band": {
+      "accuracy": [
+       6.8,
+       11.8
+      ],
+      "emitted_mean": [
+       2.236,
+       2.352
+      ],
+      "flops_mean": [
+       10549784755.456001,
+       11170700752.844799
+      ],
+      "passes_mean": [
+       7.236,
+       7.352
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c1b_k4_s0_valid_n4",
+     "layer_fraction": 0.3333333333333333
+    },
+    {
+     "id": "c1b_k4:sweep8",
+     "run": "gsm50k_c1b_k4_s0",
+     "key": "c1b_k4",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 15,
+     "n_latent": 8,
+     "ood": true,
+     "accuracy": 9.6,
+     "k": 48,
+     "n": 500,
+     "emitted_mean": 2.276,
+     "passes_mean": 11.276,
+     "flops_mean": [
+      11084947245.056,
+      11084947245.056
+     ],
+     "reference_flops_mean": [
+      175251449198.592,
+      175251449198.592
+     ],
+     "band": {
+      "accuracy": [
+       7.2,
+       12.2
+      ],
+      "emitted_mean": [
+       2.222,
+       2.332
+      ],
+      "flops_mean": [
+       10777178688.2048,
+       11398074134.528
+      ],
+      "passes_mean": [
+       11.222,
+       11.332
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c1b_k4_s0_valid_n8",
+     "layer_fraction": 0.3333333333333333
+    },
+    {
+     "id": "c2:selection",
+     "run": "gsm50k_c2_s0",
+     "key": "c2",
+     "label": "final selection (3.3 item 1): n latents = the trained count",
+     "kind": "per-example (plain read)",
+     "epoch": 20,
+     "n_latent": 6,
+     "accuracy": 12.0,
+     "k": 60,
+     "n": 500,
+     "emitted_mean": 2.31,
+     "passes_mean": 9.31,
+     "flops_mean": [
+      11667628683.264,
+      11667628683.264
+     ],
+     "flops_parts": {
+      "at 1": [
+       11667628683.264,
+       11667628683.264
+      ]
+     },
+     "reference_flops_mean": [
+      143059771054.08,
+      143059771054.08
+     ],
+     "band": {
+      "accuracy": [
+       9.2,
+       15.0
+      ],
+      "emitted_mean": [
+       2.224,
+       2.43
+      ],
+      "flops_mean": [
+       11358511056.9984,
+       11984710681.0368
+      ],
+      "passes_mean": [
+       9.224,
+       9.43
+      ]
+     },
+     "labels": [],
+     "band_entry": "gsm50k_c2_s0_valid_none",
+     "band_k": 60,
+     "band_layer_fraction": 1.0
+    },
+    {
+     "id": "c2:earlier",
+     "run": "gsm50k_c2_s0",
+     "key": "c2",
+     "label": "earlier",
+     "kind": "log-mean range",
+     "epoch": 6,
+     "stage": 1,
+     "n_latent": 2,
+     "accuracy": 12.6,
+     "k": 63,
+     "n": 500,
+     "emitted_mean": 21.47,
+     "passes_mean": 24.47,
+     "flops_mean": [
+      15760727027.712,
+      15802139308.032
+     ],
+     "flops_parts": {
+      "at 1": [
+       15760727027.712,
+       15802139308.032
+      ]
+     },
+     "reference_flops_mean": [
+      377475432910.848,
+      659170741026.816
+     ],
+     "band": null,
+     "labels": [
+      "from the training log's means (range); no per-example record on valid",
+      "no band"
+     ],
+     "range_width_frac": 0.002624114038280581
+    },
+    {
+     "id": "c2:sweep0",
+     "run": "gsm50k_c2_s0",
+     "key": "c2",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 20,
+     "n_latent": 0,
+     "ood": false,
+     "accuracy": 1.0,
+     "k": 5,
+     "n": 500,
+     "emitted_mean": 5.884,
+     "passes_mean": 6.884,
+     "flops_mean": [
+      11525133084.672,
+      11525133084.672
+     ],
+     "reference_flops_mean": [
+      104824361023.488,
+      104824361023.488
+     ],
+     "band": {
+      "accuracy": [
+       0.2,
+       2.0
+      ],
+      "emitted_mean": [
+       5.66,
+       6.118
+      ],
+      "flops_mean": [
+       11209348988.6208,
+       11846318496.1536
+      ],
+      "passes_mean": [
+       6.66,
+       7.118
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c2_s0_valid_n0",
+     "layer_fraction": 1.0
+    },
+    {
+     "id": "c2:sweep1",
+     "run": "gsm50k_c2_s0",
+     "key": "c2",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 20,
+     "n_latent": 1,
+     "ood": false,
+     "accuracy": 5.8,
+     "k": 29,
+     "n": 500,
+     "emitted_mean": 2.392,
+     "passes_mean": 4.392,
+     "flops_mean": [
+      10825729013.76,
+      10825729013.76
+     ],
+     "reference_flops_mean": [
+      65310516946.944,
+      65310516946.944
+     ],
+     "band": {
+      "accuracy": [
+       3.8,
+       7.8
+      ],
+      "emitted_mean": [
+       2.302,
+       2.496
+      ],
+      "flops_mean": [
+       10516704191.6928,
+       11142148249.1904
+      ],
+      "passes_mean": [
+       4.302,
+       4.496
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c2_s0_valid_n1",
+     "layer_fraction": 1.0
+    },
+    {
+     "id": "c2:sweep2",
+     "run": "gsm50k_c2_s0",
+     "key": "c2",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 20,
+     "n_latent": 2,
+     "ood": false,
+     "accuracy": 9.2,
+     "k": 46,
+     "n": 500,
+     "emitted_mean": 2.312,
+     "passes_mean": 5.312,
+     "flops_mean": [
+      10978106849.28,
+      10978106849.28
+     ],
+     "reference_flops_mean": [
+      79022389358.592,
+      79022389358.592
+     ],
+     "band": {
+      "accuracy": [
+       6.8,
+       11.8
+      ],
+      "emitted_mean": [
+       2.238,
+       2.398
+      ],
+      "flops_mean": [
+       10671888548.0448,
+       11292272151.705599
+      ],
+      "passes_mean": [
+       5.238,
+       5.398
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c2_s0_valid_n2",
+     "layer_fraction": 1.0
+    },
+    {
+     "id": "c2:sweep4",
+     "run": "gsm50k_c2_s0",
+     "key": "c2",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 20,
+     "n_latent": 4,
+     "ood": false,
+     "accuracy": 11.2,
+     "k": 56,
+     "n": 500,
+     "emitted_mean": 2.386,
+     "passes_mean": 7.386,
+     "flops_mean": [
+      11341817659.392,
+      11341817659.392
+     ],
+     "reference_flops_mean": [
+      113758940233.728,
+      113758940233.728
+     ],
+     "band": {
+      "accuracy": [
+       8.4,
+       14.0
+      ],
+      "emitted_mean": [
+       2.222,
+       2.674
+      ],
+      "flops_mean": [
+       11024502970.9824,
+       11665479576.7296
+      ],
+      "passes_mean": [
+       7.222,
+       7.674
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c2_s0_valid_n4",
+     "layer_fraction": 1.0
+    },
+    {
+     "id": "c2:sweep8",
+     "run": "gsm50k_c2_s0",
+     "key": "c2",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 20,
+     "n_latent": 8,
+     "ood": true,
+     "accuracy": 12.0,
+     "k": 60,
+     "n": 500,
+     "emitted_mean": 2.306,
+     "passes_mean": 11.306,
+     "flops_mean": [
+      12011842068.48,
+      12011842068.48
+     ],
+     "reference_flops_mean": [
+      176395073181.696,
+      176395073181.696
+     ],
+     "band": {
+      "accuracy": [
+       9.2,
+       14.8
+      ],
+      "emitted_mean": [
+       2.218,
+       2.43
+      ],
+      "flops_mean": [
+       11703505175.808,
+       12328901762.9184
+      ],
+      "passes_mean": [
+       11.218,
+       11.43
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c2_s0_valid_n8",
+     "layer_fraction": 1.0
+    },
+    {
+     "id": "c2_shuffled:selection",
+     "run": "gsm50k_c2_shuffled_s0",
+     "key": "c2_shuffled",
+     "label": "final selection (3.3 item 1): n latents = the trained count",
+     "kind": "per-example (plain read)",
+     "epoch": 17,
+     "n_latent": 6,
+     "accuracy": 11.6,
+     "k": 58,
+     "n": 500,
+     "emitted_mean": 2.23,
+     "passes_mean": 9.23,
+     "flops_mean": [
+      11647548715.008,
+      11647548715.008
+     ],
+     "flops_parts": {
+      "at 1": [
+       11647548715.008,
+       11647548715.008
+      ]
+     },
+     "reference_flops_mean": [
+      141074123360.256,
+      141074123360.256
+     ],
+     "band": {
+      "accuracy": [
+       8.8,
+       14.404999999999928
+      ],
+      "emitted_mean": [
+       2.182,
+       2.282
+      ],
+      "flops_mean": [
+       11341246792.396801,
+       11959581077.299198
+      ],
+      "passes_mean": [
+       9.182,
+       9.282
+      ]
+     },
+     "labels": [],
+     "band_entry": "gsm50k_c2_shuffled_s0_valid_none",
+     "band_k": 58,
+     "band_layer_fraction": 1.0
+    },
+    {
+     "id": "c2_shuffled:earlier",
+     "run": "gsm50k_c2_shuffled_s0",
+     "key": "c2_shuffled",
+     "label": "earlier",
+     "kind": "log-mean range",
+     "epoch": 6,
+     "stage": 1,
+     "n_latent": 2,
+     "accuracy": 13.0,
+     "k": 65,
+     "n": 500,
+     "emitted_mean": 21.302,
+     "passes_mean": 24.302,
+     "flops_mean": [
+      15718692556.8,
+      15759986356.224
+     ],
+     "flops_parts": {
+      "at 1": [
+       15718692556.8,
+       15759986356.224
+      ]
+     },
+     "reference_flops_mean": [
+      374215825281.024,
+      655105021839.36
+     ],
+     "band": null,
+     "labels": [
+      "from the training log's means (range); no per-example record on valid",
+      "no band"
+     ],
+     "range_width_frac": 0.0026236043474439953
+    },
+    {
+     "id": "c2_shuffled:sweep0",
+     "run": "gsm50k_c2_shuffled_s0",
+     "key": "c2_shuffled",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 17,
+     "n_latent": 0,
+     "ood": false,
+     "accuracy": 1.6,
+     "k": 8,
+     "n": 500,
+     "emitted_mean": 5.166,
+     "passes_mean": 6.166,
+     "flops_mean": [
+      11345737617.408,
+      11345737617.408
+     ],
+     "reference_flops_mean": [
+      92596891428.864,
+      92596891428.864
+     ],
+     "band": {
+      "accuracy": [
+       0.6,
+       2.8
+      ],
+      "emitted_mean": [
+       4.942,
+       5.396
+      ],
+      "flops_mean": [
+       11036426148.4032,
+       11667362434.56
+      ],
+      "passes_mean": [
+       5.942,
+       6.396
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c2_shuffled_s0_valid_n0",
+     "layer_fraction": 1.0
+    },
+    {
+     "id": "c2_shuffled:sweep1",
+     "run": "gsm50k_c2_shuffled_s0",
+     "key": "c2_shuffled",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 17,
+     "n_latent": 1,
+     "ood": false,
+     "accuracy": 6.2,
+     "k": 31,
+     "n": 500,
+     "emitted_mean": 2.238,
+     "passes_mean": 4.238,
+     "flops_mean": [
+      10787186651.136,
+      10787186651.136
+     ],
+     "reference_flops_mean": [
+      62248881457.152,
+      62248881457.152
+     ],
+     "band": {
+      "accuracy": [
+       4.2,
+       8.4
+      ],
+      "emitted_mean": [
+       2.192,
+       2.288
+      ],
+      "flops_mean": [
+       10481853884.16,
+       11098087169.4336
+      ],
+      "passes_mean": [
+       4.192,
+       4.288
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c2_shuffled_s0_valid_n1",
+     "layer_fraction": 1.0
+    },
+    {
+     "id": "c2_shuffled:sweep2",
+     "run": "gsm50k_c2_shuffled_s0",
+     "key": "c2_shuffled",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 17,
+     "n_latent": 2,
+     "ood": false,
+     "accuracy": 6.6,
+     "k": 33,
+     "n": 500,
+     "emitted_mean": 2.236,
+     "passes_mean": 5.236,
+     "flops_mean": [
+      10959082407.936,
+      10959082407.936
+     ],
+     "reference_flops_mean": [
+      77487484391.424,
+      77487484391.424
+     ],
+     "band": {
+      "accuracy": [
+       4.4,
+       8.8
+      ],
+      "emitted_mean": [
+       2.19,
+       2.286
+      ],
+      "flops_mean": [
+       10653456544.9728,
+       11271587562.5472
+      ],
+      "passes_mean": [
+       5.19,
+       5.286
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c2_shuffled_s0_valid_n2",
+     "layer_fraction": 1.0
+    },
+    {
+     "id": "c2_shuffled:sweep4",
+     "run": "gsm50k_c2_shuffled_s0",
+     "key": "c2_shuffled",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 17,
+     "n_latent": 4,
+     "ood": false,
+     "accuracy": 11.0,
+     "k": 55,
+     "n": 500,
+     "emitted_mean": 2.216,
+     "passes_mean": 7.216,
+     "flops_mean": [
+      11299002390.528,
+      11299002390.528
+     ],
+     "reference_flops_mean": [
+      108546734315.52,
+      108546734315.52
+     ],
+     "band": {
+      "accuracy": [
+       8.2,
+       13.8
+      ],
+      "emitted_mean": [
+       2.17,
+       2.264
+      ],
+      "flops_mean": [
+       10993136607.5904,
+       11610855165.8496
+      ],
+      "passes_mean": [
+       7.17,
+       7.264
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c2_shuffled_s0_valid_n4",
+     "layer_fraction": 1.0
+    },
+    {
+     "id": "c2_shuffled:sweep8",
+     "run": "gsm50k_c2_shuffled_s0",
+     "key": "c2_shuffled",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 17,
+     "n_latent": 8,
+     "ood": true,
+     "accuracy": 11.8,
+     "k": 59,
+     "n": 500,
+     "emitted_mean": 2.226,
+     "passes_mean": 11.226,
+     "flops_mean": [
+      11991755907.072,
+      11991755907.072
+     ],
+     "reference_flops_mean": [
+      174366995023.872,
+      174366995023.872
+     ],
+     "band": {
+      "accuracy": [
+       9.0,
+       14.8
+      ],
+      "emitted_mean": [
+       2.178,
+       2.276
+      ],
+      "flops_mean": [
+       11686073450.9568,
+       12304704903.168
+      ],
+      "passes_mean": [
+       11.178,
+       11.276
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c2_shuffled_s0_valid_n8",
+     "layer_fraction": 1.0
+    },
+    {
+     "id": "c3:selection",
+     "run": "gsm50k_c3_s0",
+     "key": "c3",
+     "label": "final selection (3.3 item 1): n latents = the trained count",
+     "kind": "per-example (plain read)",
+     "epoch": 25,
+     "n_latent": 6,
+     "accuracy": 10.4,
+     "k": 52,
+     "n": 500,
+     "emitted_mean": 2.226,
+     "passes_mean": 9.225999999999999,
+     "flops_mean": [
+      11646542217.216,
+      11646542217.216
+     ],
+     "flops_parts": {
+      "at 1": [
+       11646542217.216,
+       11646542217.216
+      ]
+     },
+     "reference_flops_mean": [
+      140957639073.792,
+      140957639073.792
+     ],
+     "band": {
+      "accuracy": [
+       7.8,
+       13.2
+      ],
+      "emitted_mean": [
+       2.176,
+       2.278
+      ],
+      "flops_mean": [
+       11340780798.72,
+       11958398561.28
+      ],
+      "passes_mean": [
+       9.176,
+       9.278
+      ]
+     },
+     "labels": [],
+     "band_entry": "gsm50k_c3_s0_valid_none",
+     "band_k": 52,
+     "band_layer_fraction": 1.0
+    },
+    {
+     "id": "c3:earlier",
+     "run": "gsm50k_c3_s0",
+     "key": "c3",
+     "label": "earlier",
+     "kind": "log-mean range",
+     "epoch": 6,
+     "stage": 1,
+     "n_latent": 2,
+     "accuracy": 13.4,
+     "k": 67,
+     "n": 500,
+     "emitted_mean": 21.536,
+     "passes_mean": 24.536,
+     "flops_mean": [
+      15777241675.776,
+      15818696570.88
+     ],
+     "flops_parts": {
+      "at 1": [
+       15777241675.776,
+       15818696570.88
+      ]
+     },
+     "reference_flops_mean": [
+      378763499206.656,
+      660749128611.84
+     ],
+     "band": null,
+     "labels": [
+      "from the training log's means (range); no per-example record on valid",
+      "no band"
+     ],
+     "range_width_frac": 0.0026240648263317536
+    },
+    {
+     "id": "c3:sweep0",
+     "run": "gsm50k_c3_s0",
+     "key": "c3",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 25,
+     "n_latent": 0,
+     "ood": false,
+     "accuracy": 0.0,
+     "k": 0,
+     "n": 500,
+     "emitted_mean": 5.96,
+     "passes_mean": 6.96,
+     "flops_mean": [
+      11544652462.08,
+      11544652462.08
+     ],
+     "reference_flops_mean": [
+      109722852679.68,
+      109722852679.68
+     ],
+     "band": {
+      "accuracy": [
+       0.0,
+       0.0
+      ],
+      "emitted_mean": [
+       5.466,
+       6.538
+      ],
+      "flops_mean": [
+       11208508967.8848,
+       11890284364.9536
+      ],
+      "passes_mean": [
+       6.466,
+       7.538
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c3_s0_valid_n0",
+     "layer_fraction": 1.0
+    },
+    {
+     "id": "c3:sweep1",
+     "run": "gsm50k_c3_s0",
+     "key": "c3",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 25,
+     "n_latent": 1,
+     "ood": false,
+     "accuracy": 6.2,
+     "k": 31,
+     "n": 500,
+     "emitted_mean": 2.706,
+     "passes_mean": 4.706,
+     "flops_mean": [
+      10904076828.672,
+      10904076828.672
+     ],
+     "reference_flops_mean": [
+      69937596868.608,
+      69937596868.608
+     ],
+     "band": {
+      "accuracy": [
+       4.2,
+       8.4
+      ],
+      "emitted_mean": [
+       2.574,
+       2.846
+      ],
+      "flops_mean": [
+       10595675493.427198,
+       11217638039.1936
+      ],
+      "passes_mean": [
+       4.574,
+       4.846
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c3_s0_valid_n1",
+     "layer_fraction": 1.0
+    },
+    {
+     "id": "c3:sweep2",
+     "run": "gsm50k_c3_s0",
+     "key": "c3",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 25,
+     "n_latent": 2,
+     "ood": false,
+     "accuracy": 8.4,
+     "k": 42,
+     "n": 500,
+     "emitted_mean": 2.282,
+     "passes_mean": 5.282,
+     "flops_mean": [
+      10970568843.264,
+      10970568843.264
+     ],
+     "reference_flops_mean": [
+      78223897313.28,
+      78223897313.28
+     ],
+     "band": {
+      "accuracy": [
+       6.0,
+       11.0
+      ],
+      "emitted_mean": [
+       2.222,
+       2.348
+      ],
+      "flops_mean": [
+       10665046535.270401,
+       11283796608.0
+      ],
+      "passes_mean": [
+       5.222,
+       5.348
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c3_s0_valid_n2",
+     "layer_fraction": 1.0
+    },
+    {
+     "id": "c3:sweep4",
+     "run": "gsm50k_c3_s0",
+     "key": "c3",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 25,
+     "n_latent": 4,
+     "ood": false,
+     "accuracy": 10.6,
+     "k": 53,
+     "n": 500,
+     "emitted_mean": 2.206,
+     "passes_mean": 7.206,
+     "flops_mean": [
+      11296483454.976,
+      11296483454.976
+     ],
+     "reference_flops_mean": [
+      108238017282.048,
+      108238017282.048
+     ],
+     "band": {
+      "accuracy": [
+       8.0,
+       13.4
+      ],
+      "emitted_mean": [
+       2.16,
+       2.256
+      ],
+      "flops_mean": [
+       10991239886.8992,
+       11607617203.3536
+      ],
+      "passes_mean": [
+       7.16,
+       7.256
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c3_s0_valid_n4",
+     "layer_fraction": 1.0
+    },
+    {
+     "id": "c3:sweep8",
+     "run": "gsm50k_c3_s0",
+     "key": "c3",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 25,
+     "n_latent": 8,
+     "ood": true,
+     "accuracy": 10.4,
+     "k": 52,
+     "n": 500,
+     "emitted_mean": 2.204,
+     "passes_mean": 11.204,
+     "flops_mean": [
+      11986248296.448,
+      11986248296.448
+     ],
+     "reference_flops_mean": [
+      173918778329.088,
+      173918778329.088
+     ],
+     "band": {
+      "accuracy": [
+       7.8,
+       13.2
+      ],
+      "emitted_mean": [
+       2.156,
+       2.254
+      ],
+      "flops_mean": [
+       11679938957.2608,
+       12297312966.2976
+      ],
+      "passes_mean": [
+       11.156,
+       11.254
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c3_s0_valid_n8",
+     "layer_fraction": 1.0
+    },
+    {
+     "id": "c3_foreign:selection",
+     "run": "gsm50k_c3_foreign_s0",
+     "key": "c3_foreign",
+     "label": "final selection (3.3 item 1): n latents = the trained count",
+     "kind": "per-example (plain read)",
+     "epoch": 16,
+     "n_latent": 6,
+     "accuracy": 10.0,
+     "k": 50,
+     "n": 500,
+     "emitted_mean": 2.216,
+     "passes_mean": 9.216000000000001,
+     "flops_mean": [
+      11644050634.752,
+      11644050634.752
+     ],
+     "flops_parts": {
+      "at 1": [
+       11644050634.752,
+       11644050634.752
+      ]
+     },
+     "reference_flops_mean": [
+      140834723586.048,
+      140834723586.048
+     ],
+     "band": {
+      "accuracy": [
+       7.4,
+       12.8
+      ],
+      "emitted_mean": [
+       2.168,
+       2.268
+      ],
+      "flops_mean": [
+       11339345416.3968,
+       11955579299.328001
+      ],
+      "passes_mean": [
+       9.168,
+       9.268
+      ]
+     },
+     "labels": [],
+     "band_entry": "gsm50k_c3_foreign_s0_valid_none",
+     "band_k": 50,
+     "band_layer_fraction": 1.0
+    },
+    {
+     "id": "c3_foreign:earlier",
+     "run": "gsm50k_c3_foreign_s0",
+     "key": "c3_foreign",
+     "label": "earlier",
+     "kind": "log-mean range",
+     "epoch": 6,
+     "stage": 1,
+     "n_latent": 2,
+     "accuracy": 11.0,
+     "k": 55,
+     "n": 500,
+     "emitted_mean": 22.856,
+     "passes_mean": 25.856,
+     "flops_mean": [
+      16107580053.504,
+      16149793314.816
+     ],
+     "flops_parts": {
+      "at 1": [
+       16107580053.504,
+       16149793314.816
+      ]
+     },
+     "reference_flops_mean": [
+      404833096783.872,
+      691980665260.032
+     ],
+     "band": null,
+     "labels": [
+      "from the training log's means (range); no per-example record on valid",
+      "no band"
+     ],
+     "range_width_frac": 0.0026172782780545896
+    },
+    {
+     "id": "c3_foreign:sweep0",
+     "run": "gsm50k_c3_foreign_s0",
+     "key": "c3_foreign",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 16,
+     "n_latent": 0,
+     "ood": false,
+     "accuracy": 7.4,
+     "k": 37,
+     "n": 500,
+     "emitted_mean": 2.598,
+     "passes_mean": 3.598,
+     "flops_mean": [
+      10705100500.992,
+      10705100500.992
+     ],
+     "reference_flops_mean": [
+      55565687384.064,
+      55565687384.064
+     ],
+     "band": {
+      "accuracy": [
+       5.2,
+       9.8
+      ],
+      "emitted_mean": [
+       2.378,
+       2.92
+      ],
+      "flops_mean": [
+       10389960265.420801,
+       11031448450.56
+      ],
+      "passes_mean": [
+       3.378,
+       3.92
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c3_foreign_s0_valid_n0",
+     "layer_fraction": 1.0
+    },
+    {
+     "id": "c3_foreign:sweep1",
+     "run": "gsm50k_c3_foreign_s0",
+     "key": "c3_foreign",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 16,
+     "n_latent": 1,
+     "ood": false,
+     "accuracy": 9.0,
+     "k": 45,
+     "n": 500,
+     "emitted_mean": 2.22,
+     "passes_mean": 4.22,
+     "flops_mean": [
+      10782702643.2,
+      10782702643.2
+     ],
+     "reference_flops_mean": [
+      62032848924.672,
+      62032848924.672
+     ],
+     "band": {
+      "accuracy": [
+       6.6,
+       11.6
+      ],
+      "emitted_mean": [
+       2.174,
+       2.27
+      ],
+      "flops_mean": [
+       10476315349.0944,
+       11093419266.9696
+      ],
+      "passes_mean": [
+       4.174,
+       4.27
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c3_foreign_s0_valid_n1",
+     "layer_fraction": 1.0
+    },
+    {
+     "id": "c3_foreign:sweep2",
+     "run": "gsm50k_c3_foreign_s0",
+     "key": "c3_foreign",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 16,
+     "n_latent": 2,
+     "ood": false,
+     "accuracy": 9.8,
+     "k": 49,
+     "n": 500,
+     "emitted_mean": 2.222,
+     "passes_mean": 5.222,
+     "flops_mean": [
+      10955591553.024,
+      10955591553.024
+     ],
+     "reference_flops_mean": [
+      77297219500.032,
+      77297219500.032
+     ],
+     "band": {
+      "accuracy": [
+       7.4,
+       12.4
+      ],
+      "emitted_mean": [
+       2.176,
+       2.272
+      ],
+      "flops_mean": [
+       10649499283.0464,
+       11266083710.361599
+      ],
+      "passes_mean": [
+       5.176,
+       5.272
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c3_foreign_s0_valid_n2",
+     "layer_fraction": 1.0
+    },
+    {
+     "id": "c3_foreign:sweep4",
+     "run": "gsm50k_c3_foreign_s0",
+     "key": "c3_foreign",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 16,
+     "n_latent": 4,
+     "ood": false,
+     "accuracy": 10.4,
+     "k": 52,
+     "n": 500,
+     "emitted_mean": 2.222,
+     "passes_mean": 7.222,
+     "flops_mean": [
+      11300501114.88,
+      11300501114.88
+     ],
+     "reference_flops_mean": [
+      108646078814.208,
+      108646078814.208
+     ],
+     "band": {
+      "accuracy": [
+       7.8,
+       13.2
+      ],
+      "emitted_mean": [
+       2.176,
+       2.274
+      ],
+      "flops_mean": [
+       10994765026.0992,
+       11611417352.2944
+      ],
+      "passes_mean": [
+       7.176,
+       7.274
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c3_foreign_s0_valid_n4",
+     "layer_fraction": 1.0
+    },
+    {
+     "id": "c3_foreign:sweep8",
+     "run": "gsm50k_c3_foreign_s0",
+     "key": "c3_foreign",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 16,
+     "n_latent": 8,
+     "ood": true,
+     "accuracy": 9.8,
+     "k": 49,
+     "n": 500,
+     "emitted_mean": 2.222,
+     "passes_mean": 11.222,
+     "flops_mean": [
+      11990749409.28,
+      11990749409.28
+     ],
+     "reference_flops_mean": [
+      174250826661.888,
+      174250826661.888
+     ],
+     "band": {
+      "accuracy": [
+       7.4,
+       12.4
+      ],
+      "emitted_mean": [
+       2.174,
+       2.274
+      ],
+      "flops_mean": [
+       11684659748.352001,
+       12302152800.0
+      ],
+      "passes_mean": [
+       11.174,
+       11.274
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c3_foreign_s0_valid_n8",
+     "layer_fraction": 1.0
+    },
+    {
+     "id": "c2c3:selection",
+     "run": "gsm50k_c2c3_s0",
+     "key": "c2c3",
+     "label": "final selection (3.3 item 1): n latents = the trained count",
+     "kind": "per-example (plain read)",
+     "epoch": 21,
+     "n_latent": 6,
+     "accuracy": 12.0,
+     "k": 60,
+     "n": 500,
+     "emitted_mean": 2.268,
+     "passes_mean": 9.268,
+     "flops_mean": [
+      11657049434.112,
+      11657049434.112
+     ],
+     "flops_parts": {
+      "at 1": [
+       11657049434.112,
+       11657049434.112
+      ]
+     },
+     "reference_flops_mean": [
+      141763529889.792,
+      141763529889.792
+     ],
+     "band": {
+      "accuracy": [
+       9.2,
+       15.0
+      ],
+      "emitted_mean": [
+       2.216,
+       2.324
+      ],
+      "flops_mean": [
+       11350791037.900799,
+       11967777294.1824
+      ],
+      "passes_mean": [
+       9.216,
+       9.324
+      ]
+     },
+     "labels": [],
+     "band_entry": "gsm50k_c2c3_s0_valid_none",
+     "band_k": 60,
+     "band_layer_fraction": 1.0
+    },
+    {
+     "id": "c2c3:earlier",
+     "run": "gsm50k_c2c3_s0",
+     "key": "c2c3",
+     "label": "earlier",
+     "kind": "log-mean range",
+     "epoch": 5,
+     "stage": 1,
+     "n_latent": 2,
+     "accuracy": 12.8,
+     "k": 64,
+     "n": 500,
+     "emitted_mean": 22.756,
+     "passes_mean": 25.756,
+     "flops_mean": [
+      16082552162.304,
+      16124723324.928
+     ],
+     "flops_parts": {
+      "at 1": [
+       16082552162.304,
+       16124723324.928
+      ]
+     },
+     "reference_flops_mean": [
+      402842809423.872,
+      689703623258.112
+     ],
+     "band": null,
+     "labels": [
+      "from the training log's means (range); no per-example record on valid",
+      "no band"
+     ],
+     "range_width_frac": 0.002618735176200585
+    },
+    {
+     "id": "c2c3:sweep0",
+     "run": "gsm50k_c2c3_s0",
+     "key": "c2c3",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 21,
+     "n_latent": 0,
+     "ood": false,
+     "accuracy": 0.0,
+     "k": 0,
+     "n": 500,
+     "emitted_mean": 6.424,
+     "passes_mean": 7.424,
+     "flops_mean": [
+      11660196845.568,
+      11660196845.568
+     ],
+     "reference_flops_mean": [
+      114984889214.976,
+      114984889214.976
+     ],
+     "band": {
+      "accuracy": [
+       0.0,
+       0.0
+      ],
+      "emitted_mean": [
+       6.01795,
+       6.91
+      ],
+      "flops_mean": [
+       11333514471.475199,
+       11986006381.6704
+      ],
+      "passes_mean": [
+       7.01795,
+       7.91
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c2c3_s0_valid_n0",
+     "layer_fraction": 1.0
+    },
+    {
+     "id": "c2c3:sweep1",
+     "run": "gsm50k_c2c3_s0",
+     "key": "c2c3",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 21,
+     "n_latent": 1,
+     "ood": false,
+     "accuracy": 6.8,
+     "k": 34,
+     "n": 500,
+     "emitted_mean": 2.694,
+     "passes_mean": 4.694,
+     "flops_mean": [
+      10901156720.64,
+      10901156720.64
+     ],
+     "reference_flops_mean": [
+      70261115351.04,
+      70261115351.04
+     ],
+     "band": {
+      "accuracy": [
+       4.6,
+       9.0
+      ],
+      "emitted_mean": [
+       2.472,
+       3.006
+      ],
+      "flops_mean": [
+       10588312217.2416,
+       11216964776.7552
+      ],
+      "passes_mean": [
+       4.472,
+       5.006
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c2c3_s0_valid_n1",
+     "layer_fraction": 1.0
+    },
+    {
+     "id": "c2c3:sweep2",
+     "run": "gsm50k_c2c3_s0",
+     "key": "c2c3",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 21,
+     "n_latent": 2,
+     "ood": false,
+     "accuracy": 8.2,
+     "k": 41,
+     "n": 500,
+     "emitted_mean": 2.348,
+     "passes_mean": 5.348,
+     "flops_mean": [
+      10987030038.528,
+      10987030038.528
+     ],
+     "reference_flops_mean": [
+      79150064173.056,
+      79150064173.056
+     ],
+     "band": {
+      "accuracy": [
+       5.8,
+       10.8
+      ],
+      "emitted_mean": [
+       2.276,
+       2.422
+      ],
+      "flops_mean": [
+       10681754325.0432,
+       11297193800.448
+      ],
+      "passes_mean": [
+       5.276,
+       5.422
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c2c3_s0_valid_n2",
+     "layer_fraction": 1.0
+    },
+    {
+     "id": "c2c3:sweep4",
+     "run": "gsm50k_c2c3_s0",
+     "key": "c2c3",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 21,
+     "n_latent": 4,
+     "ood": false,
+     "accuracy": 11.6,
+     "k": 58,
+     "n": 500,
+     "emitted_mean": 2.282,
+     "passes_mean": 7.282,
+     "flops_mean": [
+      11315489980.416,
+      11315489980.416
+     ],
+     "reference_flops_mean": [
+      109651538257.92,
+      109651538257.92
+     ],
+     "band": {
+      "accuracy": [
+       8.8,
+       14.4
+      ],
+      "emitted_mean": [
+       2.228,
+       2.34
+      ],
+      "flops_mean": [
+       11009223406.5408,
+       11628062217.8304
+      ],
+      "passes_mean": [
+       7.228,
+       7.34
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c2c3_s0_valid_n4",
+     "layer_fraction": 1.0
+    },
+    {
+     "id": "c2c3:sweep8",
+     "run": "gsm50k_c2c3_s0",
+     "key": "c2c3",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 21,
+     "n_latent": 8,
+     "ood": true,
+     "accuracy": 12.2,
+     "k": 61,
+     "n": 500,
+     "emitted_mean": 2.244,
+     "passes_mean": 11.244,
+     "flops_mean": [
+      11996242790.4,
+      11996242790.4
+     ],
+     "reference_flops_mean": [
+      174602253662.208,
+      174602253662.208
+     ],
+     "band": {
+      "accuracy": [
+       9.4,
+       15.2
+      ],
+      "emitted_mean": [
+       2.194,
+       2.298
+      ],
+      "flops_mean": [
+       11690633220.7104,
+       12308159922.2784
+      ],
+      "passes_mean": [
+       11.194,
+       11.298
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c2c3_s0_valid_n8",
+     "layer_fraction": 1.0
+    }
+   ],
+   "test": [
+    {
+     "id": "cot_lr3e-4:selection",
+     "run": "gsm50k_cot_lr3e-4_s0",
+     "key": "cot_lr3e-4",
+     "label": "tuned bar: the pick (3 LRs)",
+     "kind": "per-example",
+     "epoch": 17,
+     "n_latent": 0,
+     "accuracy": 21.00075815011372,
+     "k": 277,
+     "n": 1319,
+     "emitted_mean": 30.68385140257771,
+     "passes_mean": 31.68385140257771,
+     "flops_mean": [
+      17661922942.544353,
+      17661922942.544353
+     ],
+     "reference_flops_mean": [
+      622786765537.5284,
+      622786765537.5284
+     ],
+     "layer_fraction": 1.0,
+     "band": {
+      "accuracy": [
+       18.877937831690677,
+       23.199393479909023
+      ],
+      "emitted_mean": [
+       30.05686125852919,
+       31.292664897649736
+      ],
+      "flops_mean": [
+       17362899633.705536,
+       17970155654.82214
+      ],
+      "passes_mean": [
+       31.05686125852919,
+       32.292664897649736
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_cot_lr3e-4_s0_test_none"
+    },
+    {
+     "id": "no_cot:selection",
+     "run": "gsm50k_no_cot_s0",
+     "key": "no_cot",
+     "label": "no_cot (floor; the 124M plain-depth point)",
+     "kind": "per-example",
+     "epoch": 22,
+     "n_latent": 0,
+     "accuracy": 6.444275966641395,
+     "k": 85,
+     "n": 1319,
+     "emitted_mean": 2.2797573919636087,
+     "passes_mean": 3.2797573919636087,
+     "flops_mean": [
+      10552924154.56558,
+      10552924154.56558
+     ],
+     "reference_flops_mean": [
+      48702444137.19485,
+      48702444137.19485
+     ],
+     "layer_fraction": 1.0,
+     "band": {
+      "accuracy": [
+       5.155420773313116,
+       7.808946171341925
+      ],
+      "emitted_mean": [
+       2.2077331311599697,
+       2.395754359363154
+      ],
+      "flops_mean": [
+       10355702116.847307,
+       10756052250.221075
+      ],
+      "passes_mean": [
+       3.2077331311599697,
+       3.395754359363154
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_no_cot_s0_test_none"
+    },
+    {
+     "id": "plain_depth_355m:selection",
+     "run": "gsm50k_plain_depth_355m_s0",
+     "key": "plain_depth_355m",
+     "label": "plain depth 355M (7.7)",
+     "kind": "per-example",
+     "epoch": 24,
+     "n_latent": 0,
+     "accuracy": 7.429871114480667,
+     "k": 98,
+     "n": 1319,
+     "emitted_mean": 2.3510235026535256,
+     "passes_mean": 3.3510235026535256,
+     "flops_mean": [
+      36929537782.48976,
+      36929537782.48976
+     ],
+     "reference_flops_mean": [
+      141536148379.8514,
+      141536148379.8514
+     ],
+     "layer_fraction": 1.0,
+     "band": {
+      "accuracy": [
+       6.0652009097801365,
+       8.870356330553449
+      ],
+      "emitted_mean": [
+       2.312357846853677,
+       2.3896891584533737
+      ],
+      "flops_mean": [
+       36234065051.92903,
+       37644061566.389084
+      ],
+      "passes_mean": [
+       3.312357846853677,
+       3.3896891584533737
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_plain_depth_355m_s0_test_none"
+    },
+    {
+     "id": "pause:selection",
+     "run": "gsm50k_pause_s0",
+     "key": "pause",
+     "label": "pause (control)",
+     "kind": "per-example",
+     "epoch": 22,
+     "n_latent": 6,
+     "accuracy": 6.899166034874905,
+     "k": 91,
+     "n": 1319,
+     "emitted_mean": 2.205458680818802,
+     "passes_mean": 3.205458680818802,
+     "flops_mean": [
+      11914098723.711903,
+      11914098723.711903
+     ],
+     "reference_flops_mean": [
+      53440962470.720245,
+      53440962470.720245
+     ],
+     "layer_fraction": 1.0,
+     "band": {
+      "accuracy": [
+       5.610310841546626,
+       8.263836239575436
+      ],
+      "emitted_mean": [
+       2.1766489764973467,
+       2.23502653525398
+      ],
+      "flops_mean": [
+       11719291300.818195,
+       12116025520.638058
+      ],
+      "passes_mean": [
+       3.1766489764973467,
+       3.23502653525398
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_pause_s0_test_none"
+    },
+    {
+     "id": "coconut:selection",
+     "run": "gsm50k_coconut_s0",
+     "key": "coconut",
+     "label": "final selection (3.3 item 1): n latents = the trained count",
+     "kind": "per-example",
+     "epoch": 17,
+     "n_latent": 6,
+     "accuracy": 9.173616376042457,
+     "k": 121,
+     "n": 1319,
+     "emitted_mean": 2.3002274450341167,
+     "passes_mean": 9.300227445034118,
+     "flops_mean": [
+      11937774446.047005,
+      11937774446.047005
+     ],
+     "reference_flops_mean": [
+      145701623842.93555,
+      145701623842.93555
+     ],
+     "layer_fraction": 1.0,
+     "band": {
+      "accuracy": [
+       7.657316148597422,
+       10.765731614859742
+      ],
+      "emitted_mean": [
+       2.265352539802881,
+       2.335860500379075
+      ],
+      "flops_mean": [
+       11741199309.285215,
+       12140426212.905535
+      ],
+      "passes_mean": [
+       9.265352539802882,
+       9.335860500379075
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_coconut_s0_test_none"
+    },
+    {
+     "id": "c1b_k8:selection",
+     "run": "gsm50k_c1b_k8_s0",
+     "key": "c1b_k8",
+     "label": "final selection (3.3 item 1): n latents = the trained count",
+     "kind": "per-example",
+     "epoch": 19,
+     "n_latent": 6,
+     "accuracy": 8.263836239575436,
+     "k": 109,
+     "n": 1319,
+     "emitted_mean": 2.256254738438211,
+     "passes_mean": 9.25625473843821,
+     "flops_mean": [
+      11581998966.586807,
+      11581998966.586807
+     ],
+     "reference_flops_mean": [
+      144909137641.2919,
+      144909137641.2919
+     ],
+     "layer_fraction": 0.6666666666666666,
+     "band": {
+      "accuracy": [
+       6.823351023502654,
+       9.780136467020471
+      ],
+      "emitted_mean": [
+       2.22289613343442,
+       2.2896133434420016
+      ],
+      "flops_mean": [
+       11387098790.89492,
+       11784762073.299166
+      ],
+      "passes_mean": [
+       9.22289613343442,
+       9.289613343442001
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c1b_k8_s0_test_none"
+    },
+    {
+     "id": "c1b_k4:selection",
+     "run": "gsm50k_c1b_k4_s0",
+     "key": "c1b_k4",
+     "label": "final selection (3.3 item 1): n latents = the trained count",
+     "kind": "per-example",
+     "epoch": 15,
+     "n_latent": 6,
+     "accuracy": 7.505686125852919,
+     "k": 99,
+     "n": 1319,
+     "emitted_mean": 2.3540561031084155,
+     "passes_mean": 9.354056103108416,
+     "flops_mean": [
+      11261660767.878696,
+      11261660767.878696
+     ],
+     "reference_flops_mean": [
+      146627976937.2919,
+      146627976937.2919
+     ],
+     "layer_fraction": 0.3333333333333333,
+     "band": {
+      "accuracy": [
+       6.1410159211523885,
+       8.870356330553449
+      ],
+      "emitted_mean": [
+       2.291887793783169,
+       2.44275966641395
+      ],
+      "flops_mean": [
+       11066112665.871721,
+       11462528659.73859
+      ],
+      "passes_mean": [
+       9.29188779378317,
+       9.44275966641395
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c1b_k4_s0_test_none"
+    },
+    {
+     "id": "c2:selection",
+     "run": "gsm50k_c2_s0",
+     "key": "c2",
+     "label": "final selection (3.3 item 1): n latents = the trained count",
+     "kind": "per-example",
+     "epoch": 20,
+     "n_latent": 6,
+     "accuracy": 10.159211523881728,
+     "k": 134,
+     "n": 1319,
+     "emitted_mean": 2.2691432903714936,
+     "passes_mean": 9.269143290371494,
+     "flops_mean": [
+      11930005721.3768,
+      11930005721.3768
+     ],
+     "reference_flops_mean": [
+      145157252826.54132,
+      145157252826.54132
+     ],
+     "layer_fraction": 1.0,
+     "band": {
+      "accuracy": [
+       8.491281273692191,
+       11.827141774071267
+      ],
+      "emitted_mean": [
+       2.235784685367703,
+       2.3025018953752845
+      ],
+      "flops_mean": [
+       11733946354.54981,
+       12131711524.177711
+      ],
+      "passes_mean": [
+       9.235784685367703,
+       9.302501895375284
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c2_s0_test_none"
+    },
+    {
+     "id": "c2_shuffled:selection",
+     "run": "gsm50k_c2_shuffled_s0",
+     "key": "c2_shuffled",
+     "label": "final selection (3.3 item 1): n latents = the trained count",
+     "kind": "per-example",
+     "epoch": 17,
+     "n_latent": 6,
+     "accuracy": 9.931766489764973,
+     "k": 131,
+     "n": 1319,
+     "emitted_mean": 2.2592873388931007,
+     "passes_mean": 9.2592873388931,
+     "flops_mean": [
+      11927567156.597422,
+      11927567156.597422
+     ],
+     "reference_flops_mean": [
+      145152171156.28204,
+      145152171156.28204
+     ],
+     "layer_fraction": 1.0,
+     "band": {
+      "accuracy": [
+       8.339651250947687,
+       11.599696739954512
+      ],
+      "emitted_mean": [
+       2.2282031842304777,
+       2.291887793783169
+      ],
+      "flops_mean": [
+       11731727880.345716,
+       12129549512.355421
+      ],
+      "passes_mean": [
+       9.228203184230477,
+       9.29188779378317
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c2_shuffled_s0_test_none"
+    },
+    {
+     "id": "c3:selection",
+     "run": "gsm50k_c3_s0",
+     "key": "c3",
+     "label": "final selection (3.3 item 1): n latents = the trained count",
+     "kind": "per-example",
+     "epoch": 25,
+     "n_latent": 6,
+     "accuracy": 8.946171341925702,
+     "k": 118,
+     "n": 1319,
+     "emitted_mean": 2.2289613343442003,
+     "passes_mean": 9.2289613343442,
+     "flops_mean": [
+      11919965402.929493,
+      11919965402.929493
+     ],
+     "reference_flops_mean": [
+      144468264568.72177,
+      144468264568.72177
+     ],
+     "layer_fraction": 1.0,
+     "band": {
+      "accuracy": [
+       7.429871114480667,
+       10.538286580742987
+      ],
+      "emitted_mean": [
+       2.197877179681577,
+       2.2600454890068233
+      ],
+      "flops_mean": [
+       11724846121.728582,
+       12121721361.370735
+      ],
+      "passes_mean": [
+       9.197877179681576,
+       9.260045489006824
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c3_s0_test_none"
+    },
+    {
+     "id": "c3_foreign:selection",
+     "run": "gsm50k_c3_foreign_s0",
+     "key": "c3_foreign",
+     "label": "final selection (3.3 item 1): n latents = the trained count",
+     "kind": "per-example",
+     "epoch": 16,
+     "n_latent": 6,
+     "accuracy": 9.021986353297953,
+     "k": 119,
+     "n": 1319,
+     "emitted_mean": 2.2312357846853677,
+     "passes_mean": 9.231235784685367,
+     "flops_mean": [
+      11920549183.078089,
+      11920549183.078089
+     ],
+     "reference_flops_mean": [
+      144612379611.51175,
+      144612379611.51175
+     ],
+     "layer_fraction": 1.0,
+     "band": {
+      "accuracy": [
+       7.505686125852919,
+       10.614101592115238
+      ],
+      "emitted_mean": [
+       2.2016679302501894,
+       2.2615617892342685
+      ],
+      "flops_mean": [
+       11724567445.62123,
+       12122795071.835026
+      ],
+      "passes_mean": [
+       9.20166793025019,
+       9.261561789234268
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c3_foreign_s0_test_none"
+    },
+    {
+     "id": "c2c3:selection",
+     "run": "gsm50k_c2c3_s0",
+     "key": "c2c3",
+     "label": "final selection (3.3 item 1): n latents = the trained count",
+     "kind": "per-example",
+     "epoch": 21,
+     "n_latent": 6,
+     "accuracy": 9.325246398786959,
+     "k": 123,
+     "n": 1319,
+     "emitted_mean": 2.278241091736164,
+     "passes_mean": 9.278241091736163,
+     "flops_mean": [
+      11932289444.779379,
+      11932289444.779379
+     ],
+     "reference_flops_mean": [
+      145384310311.20544,
+      145384310311.20544
+     ],
+     "layer_fraction": 1.0,
+     "band": {
+      "accuracy": [
+       7.808946171341925,
+       10.917361637604246
+      ],
+      "emitted_mean": [
+       2.2456406368460957,
+       2.3123768006065197
+      ],
+      "flops_mean": [
+       11736083289.745565,
+       12134779755.970282
+      ],
+      "passes_mean": [
+       9.245640636846096,
+       9.31237680060652
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c2c3_s0_test_none"
+    },
+    {
+     "id": "pause:earlier",
+     "run": "gsm50k_pause_s0",
+     "key": "pause",
+     "label": "earlier",
+     "kind": "per-example",
+     "epoch": 5,
+     "n_latent": 2,
+     "accuracy": 11.827141774071267,
+     "k": 156,
+     "n": 1319,
+     "emitted_mean": 22.45489006823351,
+     "passes_mean": 23.45489006823351,
+     "flops_mean": [
+      16293509575.714935,
+      16293509575.714935
+     ],
+     "reference_flops_mean": [
+      469393547139.78467,
+      469393547139.78467
+     ],
+     "layer_fraction": 1.0,
+     "band": {
+      "accuracy": [
+       10.083396512509477,
+       13.570887035633055
+      ],
+      "emitted_mean": [
+       21.82560652009098,
+       23.08874147081122
+      ],
+      "flops_mean": [
+       15999682849.382866,
+       16594581829.599394
+      ],
+      "passes_mean": [
+       22.82560652009098,
+       24.08874147081122
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_pause_s0_test_best"
+    },
+    {
+     "id": "coconut:earlier",
+     "run": "gsm50k_coconut_s0",
+     "key": "coconut",
+     "label": "earlier",
+     "kind": "per-example",
+     "epoch": 6,
+     "n_latent": 2,
+     "accuracy": 12.661106899166034,
+     "k": 167,
+     "n": 1319,
+     "emitted_mean": 21.47990902198635,
+     "passes_mean": 24.47990902198635,
+     "flops_mean": [
+      16049403308.542835,
+      16049403308.542835
+     ],
+     "reference_flops_mean": [
+      472998488620.6399,
+      472998488620.6399
+     ],
+     "layer_fraction": 1.0,
+     "band": {
+      "accuracy": [
+       10.841546626231993,
+       14.480667172100075
+      ],
+      "emitted_mean": [
+       20.853677028051553,
+       22.103127369219106
+      ],
+      "flops_mean": [
+       15757051579.079908,
+       16347031604.830326
+      ],
+      "passes_mean": [
+       23.853677028051553,
+       25.103127369219106
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_coconut_s0_test_best"
+    },
+    {
+     "id": "c1b_k8:earlier",
+     "run": "gsm50k_c1b_k8_s0",
+     "key": "c1b_k8",
+     "label": "earlier",
+     "kind": "per-example",
+     "epoch": 6,
+     "n_latent": 2,
+     "accuracy": 11.978771796815769,
+     "k": 158,
+     "n": 1319,
+     "emitted_mean": 21.90447308567096,
+     "passes_mean": 24.90447308567096,
+     "flops_mean": [
+      16040715563.669447,
+      16040715563.669447
+     ],
+     "reference_flops_mean": [
+      480980138958.3139,
+      480980138958.3139
+     ],
+     "layer_fraction": 0.6666666666666666,
+     "band": {
+      "accuracy": [
+       10.310841546626232,
+       13.722517058377559
+      ],
+      "emitted_mean": [
+       21.30477634571645,
+       22.50193328278999
+      ],
+      "flops_mean": [
+       15752863464.224413,
+       16341788181.058376
+      ],
+      "passes_mean": [
+       24.30477634571645,
+       25.50193328278999
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c1b_k8_s0_test_best"
+    },
+    {
+     "id": "c1b_k4:earlier",
+     "run": "gsm50k_c1b_k4_s0",
+     "key": "c1b_k4",
+     "label": "earlier",
+     "kind": "per-example",
+     "epoch": 6,
+     "n_latent": 2,
+     "accuracy": 13.949962092494314,
+     "k": 184,
+     "n": 1319,
+     "emitted_mean": 23.016679302501895,
+     "passes_mean": 26.016679302501895,
+     "flops_mean": [
+      16204837272.357847,
+      16204837272.357847
+     ],
+     "reference_flops_mean": [
+      507470264635.19635,
+      507470264635.19635
+     ],
+     "layer_fraction": 0.3333333333333333,
+     "band": {
+      "accuracy": [
+       12.130401819560273,
+       15.845337376800607
+      ],
+      "emitted_mean": [
+       22.36770280515542,
+       23.66491660348749
+      ],
+      "flops_mean": [
+       15904905078.54799,
+       16510388236.732069
+      ],
+      "passes_mean": [
+       25.36770280515542,
+       26.66491660348749
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c1b_k4_s0_test_best"
+    },
+    {
+     "id": "c2:earlier",
+     "run": "gsm50k_c2_s0",
+     "key": "c2",
+     "label": "earlier",
+     "kind": "per-example",
+     "epoch": 6,
+     "n_latent": 2,
+     "accuracy": 13.495072024260804,
+     "k": 178,
+     "n": 1319,
+     "emitted_mean": 21.322971948445794,
+     "passes_mean": 24.322971948445794,
+     "flops_mean": [
+      16010214535.8605,
+      16010214535.8605
+     ],
+     "reference_flops_mean": [
+      470485952312.4791,
+      470485952312.4791
+     ],
+     "layer_fraction": 1.0,
+     "band": {
+      "accuracy": [
+       11.675511751326763,
+       15.314632297194844
+      ],
+      "emitted_mean": [
+       20.706595905989385,
+       21.942399545109932
+      ],
+      "flops_mean": [
+       15718362035.568766,
+       16310881039.623959
+      ],
+      "passes_mean": [
+       23.706595905989385,
+       24.942399545109932
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c2_s0_test_best"
+    },
+    {
+     "id": "c2_shuffled:earlier",
+     "run": "gsm50k_c2_shuffled_s0",
+     "key": "c2_shuffled",
+     "label": "earlier",
+     "kind": "per-example",
+     "epoch": 6,
+     "n_latent": 2,
+     "accuracy": 13.419257012888552,
+     "k": 177,
+     "n": 1319,
+     "emitted_mean": 21.347232752084913,
+     "passes_mean": 24.347232752084913,
+     "flops_mean": [
+      16016379264.29113,
+      16016379264.29113
+     ],
+     "reference_flops_mean": [
+      471594600996.1001,
+      471594600996.1001
+     ],
+     "layer_fraction": 1.0,
+     "band": {
+      "accuracy": [
+       11.675511751326763,
+       15.238817285822593
+      ],
+      "emitted_mean": [
+       20.72401440485216,
+       21.98788855193328
+      ],
+      "flops_mean": [
+       15722675851.56755,
+       16320566987.848976
+      ],
+      "passes_mean": [
+       23.72401440485216,
+       24.98788855193328
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c2_shuffled_s0_test_best"
+    },
+    {
+     "id": "c3:earlier",
+     "run": "gsm50k_c3_s0",
+     "key": "c3",
+     "label": "earlier",
+     "kind": "per-example",
+     "epoch": 6,
+     "n_latent": 2,
+     "accuracy": 12.509476876421532,
+     "k": 165,
+     "n": 1319,
+     "emitted_mean": 20.989385898407885,
+     "passes_mean": 23.989385898407885,
+     "flops_mean": [
+      15926509471.733131,
+      15926509471.733131
+     ],
+     "reference_flops_mean": [
+      462370431343.98785,
+      462370431343.98785
+     ],
+     "layer_fraction": 1.0,
+     "band": {
+      "accuracy": [
+       10.765731614859742,
+       14.329037149355573
+      ],
+      "emitted_mean": [
+       20.373730098559516,
+       21.61182714177407
+      ],
+      "flops_mean": [
+       15633435750.24473,
+       16225151264.955875
+      ],
+      "passes_mean": [
+       23.373730098559516,
+       24.61182714177407
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c3_s0_test_best"
+    },
+    {
+     "id": "c3_foreign:earlier",
+     "run": "gsm50k_c3_foreign_s0",
+     "key": "c3_foreign",
+     "label": "earlier",
+     "kind": "per-example",
+     "epoch": 6,
+     "n_latent": 2,
+     "accuracy": 11.751326762699014,
+     "k": 155,
+     "n": 1319,
+     "emitted_mean": 22.815011372251707,
+     "passes_mean": 25.815011372251707,
+     "flops_mean": [
+      16384293107.772554,
+      16384293107.772554
+     ],
+     "reference_flops_mean": [
+      504635906361.6437,
+      504635906361.6437
+     ],
+     "layer_fraction": 1.0,
+     "band": {
+      "accuracy": [
+       10.007581501137226,
+       13.570887035633055
+      ],
+      "emitted_mean": [
+       22.20087187263078,
+       23.44505307050796
+      ],
+      "flops_mean": [
+       16082072480.548294,
+       16691457105.749205
+      ],
+      "passes_mean": [
+       25.20087187263078,
+       26.44505307050796
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c3_foreign_s0_test_best"
+    },
+    {
+     "id": "c2c3:earlier",
+     "run": "gsm50k_c2c3_s0",
+     "key": "c2c3",
+     "label": "earlier",
+     "kind": "per-example",
+     "epoch": 5,
+     "n_latent": 2,
+     "accuracy": 12.88855193328279,
+     "k": 170,
+     "n": 1319,
+     "emitted_mean": 23.197877179681576,
+     "passes_mean": 26.197877179681576,
+     "flops_mean": [
+      16480307708.506445,
+      16480307708.506445
+     ],
+     "reference_flops_mean": [
+      513560365384.3942,
+      513560365384.3942
+     ],
+     "layer_fraction": 1.0,
+     "band": {
+      "accuracy": [
+       11.068991660348749,
+       14.70811220621683
+      ],
+      "emitted_mean": [
+       22.55191432903715,
+       23.858984078847612
+      ],
+      "flops_mean": [
+       16179881801.151175,
+       16790014039.707659
+      ],
+      "passes_mean": [
+       25.55191432903715,
+       26.858984078847612
+      ]
+     },
+     "labels": [],
+     "entry": "gsm50k_c2c3_s0_test_best"
+    }
+   ],
+   "widths": [
+    {
+     "run": "gsm50k_pause_s0",
+     "width_frac": 0.002621559624452059
+    },
+    {
+     "run": "gsm50k_coconut_s0",
+     "width_frac": 0.002625486963928717
+    },
+    {
+     "run": "gsm50k_c1b_k8_s0",
+     "width_frac": 0.0026233417434953893
+    },
+    {
+     "run": "gsm50k_c1b_k4_s0",
+     "width_frac": 0.0026172837897826323
+    },
+    {
+     "run": "gsm50k_c2_s0",
+     "width_frac": 0.002624114038280581
+    },
+    {
+     "run": "gsm50k_c2_shuffled_s0",
+     "width_frac": 0.0026236043474439953
+    },
+    {
+     "run": "gsm50k_c3_s0",
+     "width_frac": 0.0026240648263317536
+    },
+    {
+     "run": "gsm50k_c3_foreign_s0",
+     "width_frac": 0.0026172782780545896
+    },
+    {
+     "run": "gsm50k_c2c3_s0",
+     "width_frac": 0.002618735176200585
+    }
+   ],
+   "n_valid": 500,
+   "n_test": 1319,
+   "bar": {
+    "run": "gsm50k_cot_lr3e-4_s0",
+    "key": "cot_lr3e-4",
+    "k": 128,
+    "points": 25.6,
+    "epoch": 17
+   },
+   "sentences": [
+    "valid: the earlier-stage checkpoint of gsm50k_pause_s0 (epoch 5, n latents 2) scores 13.6 at 22.19 tokens and [15.942, 15.984] GFLOPs; its selection (epoch 22, n latents 6) 9.6 at 2.21 and 11.643 (gaps: accuracy +4.0 points, tokens +19.98, FLOPs +4.320 GFLOPs at the range midpoints)",
+    "valid: the earlier-stage checkpoint of gsm50k_coconut_s0 (epoch 6, n latents 2) scores 12.6 at 21.38 tokens and [15.739, 15.781] GFLOPs; its selection (epoch 17, n latents 6) 11.0 at 2.40 and 11.689 (gaps: accuracy +1.6 points, tokens +18.99, FLOPs +4.071 GFLOPs at the range midpoints)",
+    "valid: the earlier-stage checkpoint of gsm50k_c1b_k8_s0 (epoch 6, n latents 2) scores 14.0 at 21.72 tokens and [15.824, 15.866] GFLOPs; its selection (epoch 19, n latents 6) 9.4 at 2.28 and 11.660 (gaps: accuracy +4.6 points, tokens +19.44, FLOPs +4.185 GFLOPs at the range midpoints)",
+    "valid: the earlier-stage checkpoint of gsm50k_c1b_k4_s0 (epoch 6, n latents 2) scores 14.6 at 22.86 tokens and [16.108, 16.150] GFLOPs; its selection (epoch 15, n latents 6) 9.4 at 2.28 and 11.661 (gaps: accuracy +5.2 points, tokens +20.57, FLOPs +4.468 GFLOPs at the range midpoints)",
+    "valid: the earlier-stage checkpoint of gsm50k_c2_s0 (epoch 6, n latents 2) scores 12.6 at 21.47 tokens and [15.761, 15.802] GFLOPs; its selection (epoch 20, n latents 6) 12.0 at 2.31 and 11.668 (gaps: accuracy +0.6 points, tokens +19.16, FLOPs +4.114 GFLOPs at the range midpoints)",
+    "valid: the earlier-stage checkpoint of gsm50k_c2_shuffled_s0 (epoch 6, n latents 2) scores 13.0 at 21.30 tokens and [15.719, 15.760] GFLOPs; its selection (epoch 17, n latents 6) 11.6 at 2.23 and 11.648 (gaps: accuracy +1.4 points, tokens +19.07, FLOPs +4.092 GFLOPs at the range midpoints)",
+    "valid: the earlier-stage checkpoint of gsm50k_c3_s0 (epoch 6, n latents 2) scores 13.4 at 21.54 tokens and [15.777, 15.819] GFLOPs; its selection (epoch 25, n latents 6) 10.4 at 2.23 and 11.647 (gaps: accuracy +3.0 points, tokens +19.31, FLOPs +4.151 GFLOPs at the range midpoints)",
+    "valid: the earlier-stage checkpoint of gsm50k_c3_foreign_s0 (epoch 6, n latents 2) scores 11.0 at 22.86 tokens and [16.108, 16.150] GFLOPs; its selection (epoch 16, n latents 6) 10.0 at 2.22 and 11.644 (gaps: accuracy +1.0 points, tokens +20.64, FLOPs +4.485 GFLOPs at the range midpoints)",
+    "valid: the earlier-stage checkpoint of gsm50k_c2c3_s0 (epoch 5, n latents 2) scores 12.8 at 22.76 tokens and [16.083, 16.125] GFLOPs; its selection (epoch 21, n latents 6) 12.0 at 2.27 and 11.657 (gaps: accuracy +0.8 points, tokens +20.49, FLOPs +4.447 GFLOPs at the range midpoints)",
+    "test: the earlier-stage checkpoint of gsm50k_pause_s0 (epoch 5, n latents 2) scores 11.8 at 22.45 tokens and 16.294 GFLOPs; its selection (epoch 22, n latents 6) 6.9 at 2.21 and 11.914 (gaps: accuracy +4.9 points, tokens +20.25, FLOPs +4.379 GFLOPs)",
+    "test: the earlier-stage checkpoint of gsm50k_coconut_s0 (epoch 6, n latents 2) scores 12.7 at 21.48 tokens and 16.049 GFLOPs; its selection (epoch 17, n latents 6) 9.2 at 2.30 and 11.938 (gaps: accuracy +3.5 points, tokens +19.18, FLOPs +4.112 GFLOPs)",
+    "test: the earlier-stage checkpoint of gsm50k_c1b_k8_s0 (epoch 6, n latents 2) scores 12.0 at 21.90 tokens and 16.041 GFLOPs; its selection (epoch 19, n latents 6) 8.3 at 2.26 and 11.582 (gaps: accuracy +3.7 points, tokens +19.65, FLOPs +4.459 GFLOPs)",
+    "test: the earlier-stage checkpoint of gsm50k_c1b_k4_s0 (epoch 6, n latents 2) scores 13.9 at 23.02 tokens and 16.205 GFLOPs; its selection (epoch 15, n latents 6) 7.5 at 2.35 and 11.262 (gaps: accuracy +6.4 points, tokens +20.66, FLOPs +4.943 GFLOPs)",
+    "test: the earlier-stage checkpoint of gsm50k_c2_s0 (epoch 6, n latents 2) scores 13.5 at 21.32 tokens and 16.010 GFLOPs; its selection (epoch 20, n latents 6) 10.2 at 2.27 and 11.930 (gaps: accuracy +3.3 points, tokens +19.05, FLOPs +4.080 GFLOPs)",
+    "test: the earlier-stage checkpoint of gsm50k_c2_shuffled_s0 (epoch 6, n latents 2) scores 13.4 at 21.35 tokens and 16.016 GFLOPs; its selection (epoch 17, n latents 6) 9.9 at 2.26 and 11.928 (gaps: accuracy +3.5 points, tokens +19.09, FLOPs +4.089 GFLOPs)",
+    "test: the earlier-stage checkpoint of gsm50k_c3_s0 (epoch 6, n latents 2) scores 12.5 at 20.99 tokens and 15.927 GFLOPs; its selection (epoch 25, n latents 6) 8.9 at 2.23 and 11.920 (gaps: accuracy +3.6 points, tokens +18.76, FLOPs +4.007 GFLOPs)",
+    "test: the earlier-stage checkpoint of gsm50k_c3_foreign_s0 (epoch 6, n latents 2) scores 11.8 at 22.82 tokens and 16.384 GFLOPs; its selection (epoch 16, n latents 6) 9.0 at 2.23 and 11.921 (gaps: accuracy +2.7 points, tokens +20.58, FLOPs +4.464 GFLOPs)",
+    "test: the earlier-stage checkpoint of gsm50k_c2c3_s0 (epoch 5, n latents 2) scores 12.9 at 23.20 tokens and 16.480 GFLOPs; its selection (epoch 21, n latents 6) 9.3 at 2.28 and 11.932 (gaps: accuracy +3.6 points, tokens +20.92, FLOPs +4.548 GFLOPs)"
+   ],
+   "table": {
+    "file": "results/screens/gsm50k/gsm50k_screen_with_hinge.json",
+    "commit": "4a0e33d4d9e1f0dda3144f91f99e2e9a26c88cc5",
+    "sha256": "d36b5fbb226761e2239a8079707981ba65b39236b073c1196667fd42790c4a19"
+   }
+  },
+  "prosqa_hard": {
+   "valid": [
+    {
+     "id": "cot_lr3e-5:selection",
+     "run": "prosqa_hard_cot_lr3e-5_s0",
+     "key": "cot_lr3e-5",
+     "label": "tuned bar: the pick (3 LRs)",
+     "kind": "log-mean range",
+     "epoch": 14,
+     "n_latent": 0,
+     "accuracy": 80.33333333333333,
+     "k": 241,
+     "n": 300,
+     "emitted_mean": 76.07,
+     "passes_mean": 77.07,
+     "flops_mean": [
+      128522845957.12,
+      128959869045.76
+     ],
+     "reference_flops_mean": [
+      11546838148316.16,
+      14766932287365.12
+     ],
+     "band": null,
+     "labels": [
+      "from the training log's means (range); no per-example record on valid",
+      "no band"
+     ]
+    },
+    {
+     "id": "no_cot:selection",
+     "run": "prosqa_hard_no_cot_s0",
+     "key": "no_cot",
+     "label": "no_cot (floor; the 124M plain-depth point)",
+     "kind": "log-mean range",
+     "epoch": 8,
+     "n_latent": 0,
+     "accuracy": 57.666666666666664,
+     "k": 173,
+     "n": 300,
+     "emitted_mean": 8.19,
+     "passes_mean": 9.19,
+     "flops_mean": [
+      110239283215.36,
+      110376434621.44
+     ],
+     "reference_flops_mean": [
+      1047183253647.36,
+      2057250727541.76
+     ],
+     "band": null,
+     "labels": [
+      "from the training log's means (range); no per-example record on valid",
+      "no band"
+     ]
+    },
+    {
+     "id": "plain_depth_355m:selection",
+     "run": "prosqa_hard_plain_depth_355m_s0",
+     "key": "plain_depth_355m",
+     "label": "plain depth 355M (7.7)",
+     "kind": "log-mean range",
+     "epoch": 28,
+     "n_latent": 0,
+     "accuracy": 61.666666666666664,
+     "k": 185,
+     "n": 300,
+     "emitted_mean": 8.18,
+     "passes_mean": 9.18,
+     "flops_mean": [
+      384111272768.85333,
+      384476688397.6533
+     ],
+     "reference_flops_mean": [
+      2985861003325.44,
+      5855679193231.36
+     ],
+     "band": null,
+     "labels": [
+      "from the training log's means (range); no per-example record on valid",
+      "no band"
+     ]
+    },
+    {
+     "id": "pause:selection",
+     "run": "prosqa_hard_pause_s0",
+     "key": "pause",
+     "label": "pause (control)",
+     "kind": "per-example (plain read)",
+     "epoch": 30,
+     "n_latent": 7,
+     "accuracy": 74.66666666666667,
+     "k": 224,
+     "n": 300,
+     "emitted_mean": 8.153333333333334,
+     "passes_mean": 9.153333333333334,
+     "flops_mean": [
+      112014115102.72,
+      112014115102.72
+     ],
+     "flops_parts": {
+      "at 1": [
+       112014115102.72,
+       112014115102.72
+      ]
+     },
+     "reference_flops_mean": [
+      1441224388669.44,
+      1441224388669.44
+     ],
+     "band": {
+      "accuracy": [
+       69.66666666666667,
+       79.66666666666667
+      ],
+      "emitted_mean": [
+       8.093333333333334,
+       8.216666666666667
+      ],
+      "flops_mean": [
+       109439658449.664,
+       114553996637.43999
+      ],
+      "passes_mean": [
+       9.093333333333334,
+       9.216666666666667
+      ]
+     },
+     "labels": [],
+     "band_entry": "prosqa_hard_pause_s0_valid_none",
+     "band_k": 224,
+     "band_layer_fraction": 1.0
+    },
+    {
+     "id": "coconut:selection",
+     "run": "prosqa_hard_coconut_s0",
+     "key": "coconut",
+     "label": "final selection (3.3 item 1): n latents = the trained count",
+     "kind": "per-example (plain read)",
+     "epoch": 30,
+     "n_latent": 7,
+     "accuracy": 73.33333333333333,
+     "k": 220,
+     "n": 300,
+     "emitted_mean": 8.146666666666667,
+     "passes_mean": 16.14666666666667,
+     "flops_mean": [
+      112012274913.28,
+      112012274913.28
+     ],
+     "flops_parts": {
+      "at 1": [
+       112012274913.28,
+       112012274913.28
+      ]
+     },
+     "reference_flops_mean": [
+      2522588167403.52,
+      2522588167403.52
+     ],
+     "band": {
+      "accuracy": [
+       68.33333333333333,
+       78.33333333333333
+      ],
+      "emitted_mean": [
+       8.086666666666666,
+       8.206666666666667
+      ],
+      "flops_mean": [
+       109433860068.86401,
+       114552712755.456
+      ],
+      "passes_mean": [
+       16.086666666666666,
+       16.206666666666667
+      ]
+     },
+     "labels": [],
+     "band_entry": "prosqa_hard_coconut_s0_valid_none",
+     "band_k": 220,
+     "band_layer_fraction": 1.0
+    },
+    {
+     "id": "coconut:earlier",
+     "run": "prosqa_hard_coconut_s0",
+     "key": "coconut",
+     "label": "earlier",
+     "kind": "log-mean range",
+     "epoch": 8,
+     "stage": 2,
+     "n_latent": 2,
+     "accuracy": 76.66666666666667,
+     "k": 230,
+     "n": 300,
+     "emitted_mean": 54.026666666666664,
+     "passes_mean": 57.026666666666664,
+     "flops_mean": [
+      123308782120.96,
+      123750517288.96
+     ],
+     "flops_parts": {
+      "at 1": [
+       123308782120.96,
+       123750517288.96
+      ]
+     },
+     "reference_flops_mean": [
+      8099721010544.64,
+      11355349426237.44
+     ],
+     "band": null,
+     "labels": [
+      "from the training log's means (range); no per-example record on valid",
+      "no band"
+     ],
+     "range_width_frac": 0.0035759444720765148
+    },
+    {
+     "id": "coconut:sweep0",
+     "run": "prosqa_hard_coconut_s0",
+     "key": "coconut",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 30,
+     "n_latent": 0,
+     "ood": false,
+     "accuracy": 72.66666666666667,
+     "k": 218,
+     "n": 300,
+     "emitted_mean": 8.146666666666667,
+     "passes_mean": 9.146666666666667,
+     "flops_mean": [
+      110664401612.8,
+      110664401612.8
+     ],
+     "reference_flops_mean": [
+      1420136607098.88,
+      1420136607098.88
+     ],
+     "band": {
+      "accuracy": [
+       67.66666666666667,
+       77.66666666666667
+      ],
+      "emitted_mean": [
+       8.086666666666666,
+       8.206666666666667
+      ],
+      "flops_mean": [
+       108089412441.6,
+       113201417243.904
+      ],
+      "passes_mean": [
+       9.086666666666666,
+       9.206666666666667
+      ]
+     },
+     "labels": [],
+     "entry": "prosqa_hard_coconut_s0_valid_n0",
+     "layer_fraction": 1.0
+    },
+    {
+     "id": "coconut:sweep1",
+     "run": "prosqa_hard_coconut_s0",
+     "key": "coconut",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 30,
+     "n_latent": 1,
+     "ood": false,
+     "accuracy": 73.66666666666667,
+     "k": 221,
+     "n": 300,
+     "emitted_mean": 8.146666666666667,
+     "passes_mean": 10.146666666666667,
+     "flops_mean": [
+      110856844349.44,
+      110856844349.44
+     ],
+     "reference_flops_mean": [
+      1576820576532.48,
+      1576820576532.48
+     ],
+     "band": {
+      "accuracy": [
+       69.0,
+       78.66666666666667
+      ],
+      "emitted_mean": [
+       8.086666666666666,
+       8.206666666666667
+      ],
+      "flops_mean": [
+       108281365796.352,
+       113394348867.84001
+      ],
+      "passes_mean": [
+       10.086666666666666,
+       10.206666666666667
+      ]
+     },
+     "labels": [],
+     "entry": "prosqa_hard_coconut_s0_valid_n1",
+     "layer_fraction": 1.0
+    },
+    {
+     "id": "coconut:sweep2",
+     "run": "prosqa_hard_coconut_s0",
+     "key": "coconut",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 30,
+     "n_latent": 2,
+     "ood": false,
+     "accuracy": 73.33333333333333,
+     "k": 220,
+     "n": 300,
+     "emitted_mean": 8.146666666666667,
+     "passes_mean": 11.146666666666667,
+     "flops_mean": [
+      111049323950.08,
+      111049323950.08
+     ],
+     "reference_flops_mean": [
+      1733774188062.72,
+      1733774188062.72
+     ],
+     "band": {
+      "accuracy": [
+       68.33333333333333,
+       78.33333333333333
+      ],
+      "emitted_mean": [
+       8.086666666666666,
+       8.206666666666667
+      ],
+      "flops_mean": [
+       108473356015.104,
+       113587317355.776
+      ],
+      "passes_mean": [
+       11.086666666666666,
+       11.206666666666667
+      ]
+     },
+     "labels": [],
+     "entry": "prosqa_hard_coconut_s0_valid_n2",
+     "layer_fraction": 1.0
+    },
+    {
+     "id": "coconut:sweep4",
+     "run": "prosqa_hard_coconut_s0",
+     "key": "coconut",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 30,
+     "n_latent": 4,
+     "ood": false,
+     "accuracy": 73.66666666666667,
+     "k": 221,
+     "n": 300,
+     "emitted_mean": 8.146666666666667,
+     "passes_mean": 13.146666666666667,
+     "flops_mean": [
+      111434393743.36,
+      111434393743.36
+     ],
+     "reference_flops_mean": [
+      2048490484869.12,
+      2048490484869.12
+     ],
+     "band": {
+      "accuracy": [
+       69.0,
+       78.66666666666667
+      ],
+      "emitted_mean": [
+       8.086666666666666,
+       8.206666666666667
+      ],
+      "flops_mean": [
+       108857447044.608,
+       113973364923.648
+      ],
+      "passes_mean": [
+       13.086666666666666,
+       13.206666666666667
+      ]
+     },
+     "labels": [],
+     "entry": "prosqa_hard_coconut_s0_valid_n4",
+     "layer_fraction": 1.0
+    },
+    {
+     "id": "coconut:sweep8",
+     "run": "prosqa_hard_coconut_s0",
+     "key": "coconut",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 30,
+     "n_latent": 8,
+     "ood": true,
+     "accuracy": 73.33333333333333,
+     "k": 220,
+     "n": 300,
+     "emitted_mean": 8.146666666666667,
+     "passes_mean": 17.14666666666667,
+     "flops_mean": [
+      112204975697.92,
+      112204975697.92
+     ],
+     "reference_flops_mean": [
+      2681160405657.6,
+      2681160405657.6
+     ],
+     "band": {
+      "accuracy": [
+       68.33333333333333,
+       78.33333333333333
+      ],
+      "emitted_mean": [
+       8.086666666666666,
+       8.206666666666667
+      ],
+      "flops_mean": [
+       109626071471.61601,
+       114745902427.392
+      ],
+      "passes_mean": [
+       17.086666666666666,
+       17.206666666666667
+      ]
+     },
+     "labels": [],
+     "entry": "prosqa_hard_coconut_s0_valid_n8",
+     "layer_fraction": 1.0
+    },
+    {
+     "id": "c1b_k8:selection",
+     "run": "prosqa_hard_c1b_k8_s0",
+     "key": "c1b_k8",
+     "label": "final selection (3.3 item 1): n latents = the trained count",
+     "kind": "per-example (plain read)",
+     "epoch": 27,
+     "n_latent": 7,
+     "accuracy": 71.66666666666667,
+     "k": 215,
+     "n": 300,
+     "emitted_mean": 8.163333333333334,
+     "passes_mean": 16.163333333333334,
+     "flops_mean": [
+      112016809461.76,
+      112016809461.76
+     ],
+     "flops_parts": {
+      "at 1": [
+       112016809461.76,
+       112016809461.76
+      ],
+      "nominal 0.6667": [
+       111568305121.28,
+       111568305121.28
+      ],
+      "measured 0.7280": [
+       111650788678.14989,
+       111650788678.14989
+      ]
+     },
+     "reference_flops_mean": [
+      2525493060311.04,
+      2525493060311.04
+     ],
+     "band": {
+      "accuracy": [
+       66.66666666666667,
+       76.66666666666667
+      ],
+      "emitted_mean": [
+       8.103333333333333,
+       8.223333333333333
+      ],
+      "flops_mean": [
+       108993863506.68799,
+       114107091084.8
+      ],
+      "passes_mean": [
+       16.10333333333333,
+       16.223333333333333
+      ]
+     },
+     "labels": [],
+     "band_entry": "prosqa_hard_c1b_k8_s0_valid_none",
+     "band_k": 215,
+     "band_layer_fraction": 0.6666666666666666
+    },
+    {
+     "id": "c1b_k8:earlier",
+     "run": "prosqa_hard_c1b_k8_s0",
+     "key": "c1b_k8",
+     "label": "earlier",
+     "kind": "log-mean range",
+     "epoch": 14,
+     "stage": 4,
+     "n_latent": 4,
+     "accuracy": 75.0,
+     "k": 225,
+     "n": 300,
+     "emitted_mean": 34.306666666666665,
+     "passes_mean": 39.306666666666665,
+     "flops_mean": [
+      118372794388.48,
+      118741313720.32
+     ],
+     "flops_parts": {
+      "at 1": [
+       118372794388.48,
+       118741313720.32
+      ],
+      "nominal 0.6667": [
+       118116579921.92,
+       118485099253.76
+      ],
+      "measured 0.7280": [
+       118163699823.8161,
+       118532219155.6561
+      ]
+     },
+     "reference_flops_mean": [
+      5301922401423.36,
+      8018029572587.52
+     ],
+     "band": null,
+     "labels": [
+      "from the training log's means (range); no per-example record on valid",
+      "no band"
+     ],
+     "range_width_frac": 0.003108371195449207
+    },
+    {
+     "id": "c1b_k8:sweep0",
+     "run": "prosqa_hard_c1b_k8_s0",
+     "key": "c1b_k8",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 27,
+     "n_latent": 0,
+     "ood": false,
+     "accuracy": 64.0,
+     "k": 192,
+     "n": 300,
+     "emitted_mean": 8.146666666666667,
+     "passes_mean": 9.146666666666667,
+     "flops_mean": [
+      110664360816.64,
+      110664360816.64
+     ],
+     "reference_flops_mean": [
+      1419839166720.0,
+      1419839166720.0
+     ],
+     "band": {
+      "accuracy": [
+       58.666666666666664,
+       69.33333333333333
+      ],
+      "emitted_mean": [
+       8.086666666666666,
+       8.21
+      ],
+      "flops_mean": [
+       108091358784.0,
+       113200834476.288
+      ],
+      "passes_mean": [
+       9.086666666666666,
+       9.21
+      ]
+     },
+     "labels": [],
+     "entry": "prosqa_hard_c1b_k8_s0_valid_n0",
+     "layer_fraction": 0.6666666666666666
+    },
+    {
+     "id": "c1b_k8:sweep1",
+     "run": "prosqa_hard_c1b_k8_s0",
+     "key": "c1b_k8",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 27,
+     "n_latent": 1,
+     "ood": false,
+     "accuracy": 70.0,
+     "k": 210,
+     "n": 300,
+     "emitted_mean": 8.143333333333333,
+     "passes_mean": 10.143333333333333,
+     "flops_mean": [
+      110791909406.72,
+      110791909406.72
+     ],
+     "reference_flops_mean": [
+      1576291134873.6,
+      1576291134873.6
+     ],
+     "band": {
+      "accuracy": [
+       64.66666666666667,
+       75.33333333333333
+      ],
+      "emitted_mean": [
+       8.083333333333334,
+       8.203333333333333
+      ],
+      "flops_mean": [
+       108219139214.336,
+       113328972151.04001
+      ],
+      "passes_mean": [
+       10.083333333333334,
+       10.203333333333333
+      ]
+     },
+     "labels": [],
+     "entry": "prosqa_hard_c1b_k8_s0_valid_n1",
+     "layer_fraction": 0.6666666666666666
+    },
+    {
+     "id": "c1b_k8:sweep2",
+     "run": "prosqa_hard_c1b_k8_s0",
+     "key": "c1b_k8",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 27,
+     "n_latent": 2,
+     "ood": false,
+     "accuracy": 71.0,
+     "k": 213,
+     "n": 300,
+     "emitted_mean": 8.15,
+     "passes_mean": 11.15,
+     "flops_mean": [
+      110922185779.2,
+      110922185779.2
+     ],
+     "reference_flops_mean": [
+      1734628830781.44,
+      1734628830781.44
+     ],
+     "band": {
+      "accuracy": [
+       66.0,
+       76.0
+      ],
+      "emitted_mean": [
+       8.09,
+       8.213333333333333
+      ],
+      "flops_mean": [
+       108349376841.216,
+       113458621915.648
+      ],
+      "passes_mean": [
+       11.09,
+       11.213333333333333
+      ]
+     },
+     "labels": [],
+     "entry": "prosqa_hard_c1b_k8_s0_valid_n2",
+     "layer_fraction": 0.6666666666666666
+    },
+    {
+     "id": "c1b_k8:sweep4",
+     "run": "prosqa_hard_c1b_k8_s0",
+     "key": "c1b_k8",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 27,
+     "n_latent": 4,
+     "ood": false,
+     "accuracy": 72.33333333333333,
+     "k": 217,
+     "n": 300,
+     "emitted_mean": 8.16,
+     "passes_mean": 13.16,
+     "flops_mean": [
+      111181832622.08,
+      111181832622.08
+     ],
+     "reference_flops_mean": [
+      2051001007626.24,
+      2051001007626.24
+     ],
+     "band": {
+      "accuracy": [
+       67.33333333333333,
+       77.33333333333333
+      ],
+      "emitted_mean": [
+       8.1,
+       8.223333333333333
+      ],
+      "flops_mean": [
+       108609235241.98401,
+       113719780192.256
+      ],
+      "passes_mean": [
+       13.1,
+       13.223333333333333
+      ]
+     },
+     "labels": [],
+     "entry": "prosqa_hard_c1b_k8_s0_valid_n4",
+     "layer_fraction": 0.6666666666666666
+    },
+    {
+     "id": "c1b_k8:sweep8",
+     "run": "prosqa_hard_c1b_k8_s0",
+     "key": "c1b_k8",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 27,
+     "n_latent": 8,
+     "ood": true,
+     "accuracy": 72.0,
+     "k": 216,
+     "n": 300,
+     "emitted_mean": 8.166666666666666,
+     "passes_mean": 17.166666666666668,
+     "flops_mean": [
+      111697755217.92,
+      111697755217.92
+     ],
+     "reference_flops_mean": [
+      2684383261593.6,
+      2684383261593.6
+     ],
+     "band": {
+      "accuracy": [
+       67.0,
+       77.0
+      ],
+      "emitted_mean": [
+       8.106666666666667,
+       8.226666666666667
+      ],
+      "flops_mean": [
+       109122962903.04001,
+       114237732347.392
+      ],
+      "passes_mean": [
+       17.106666666666666,
+       17.226666666666667
+      ]
+     },
+     "labels": [],
+     "entry": "prosqa_hard_c1b_k8_s0_valid_n8",
+     "layer_fraction": 0.6666666666666666
+    },
+    {
+     "id": "c1b_k4:selection",
+     "run": "prosqa_hard_c1b_k4_s0",
+     "key": "c1b_k4",
+     "label": "final selection (3.3 item 1): n latents = the trained count",
+     "kind": "per-example (plain read)",
+     "epoch": 30,
+     "n_latent": 7,
+     "accuracy": 70.66666666666667,
+     "k": 212,
+     "n": 300,
+     "emitted_mean": 8.146666666666667,
+     "passes_mean": 16.14666666666667,
+     "flops_mean": [
+      112012358348.8,
+      112012358348.8
+     ],
+     "flops_parts": {
+      "at 1": [
+       112012358348.8,
+       112012358348.8
+      ],
+      "nominal 0.3333": [
+       111115349667.84,
+       111115349667.84
+      ],
+      "measured 0.4391": [
+       111257670942.26334,
+       111257670942.26334
+      ]
+     },
+     "reference_flops_mean": [
+      2523202628935.68,
+      2523202628935.68
+     ],
+     "band": {
+      "accuracy": [
+       65.33333333333333,
+       75.66666666666667
+      ],
+      "emitted_mean": [
+       8.086666666666666,
+       8.206666666666667
+      ],
+      "flops_mean": [
+       108541797200.896,
+       113653574076.16
+      ],
+      "passes_mean": [
+       16.086666666666666,
+       16.206666666666667
+      ]
+     },
+     "labels": [],
+     "band_entry": "prosqa_hard_c1b_k4_s0_valid_none",
+     "band_k": 212,
+     "band_layer_fraction": 0.3333333333333333
+    },
+    {
+     "id": "c1b_k4:earlier",
+     "run": "prosqa_hard_c1b_k4_s0",
+     "key": "c1b_k4",
+     "label": "earlier",
+     "kind": "log-mean range",
+     "epoch": 18,
+     "stage": 5,
+     "n_latent": 5,
+     "accuracy": 74.33333333333333,
+     "k": 223,
+     "n": 300,
+     "emitted_mean": 22.763333333333332,
+     "passes_mean": 28.763333333333332,
+     "flops_mean": [
+      115468902246.4,
+      115758382827.52
+     ],
+     "flops_parts": {
+      "at 1": [
+       115468902246.4,
+       115758382827.52
+      ],
+      "nominal 0.3333": [
+       114828304640.0,
+       115117785221.12
+      ],
+      "measured 0.4391": [
+       114929943196.76158,
+       115219423777.88158
+      ]
+     },
+     "reference_flops_mean": [
+      3771090931353.6,
+      5904657165127.68
+     ],
+     "band": null,
+     "labels": [
+      "from the training log's means (range); no per-example record on valid",
+      "no band"
+     ],
+     "range_width_frac": 0.002503861782812246
+    },
+    {
+     "id": "c1b_k4:sweep0",
+     "run": "prosqa_hard_c1b_k4_s0",
+     "key": "c1b_k4",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 30,
+     "n_latent": 0,
+     "ood": false,
+     "accuracy": 70.33333333333333,
+     "k": 211,
+     "n": 300,
+     "emitted_mean": 8.153333333333334,
+     "passes_mean": 9.153333333333334,
+     "flops_mean": [
+      110666289356.8,
+      110666289356.8
+     ],
+     "reference_flops_mean": [
+      1421842473093.12,
+      1421842473093.12
+     ],
+     "band": {
+      "accuracy": [
+       65.0,
+       75.66666666666667
+      ],
+      "emitted_mean": [
+       8.093333333333334,
+       8.213333333333333
+      ],
+      "flops_mean": [
+       108093223703.04001,
+       113203334963.968
+      ],
+      "passes_mean": [
+       9.093333333333334,
+       9.213333333333333
+      ]
+     },
+     "labels": [],
+     "entry": "prosqa_hard_c1b_k4_s0_valid_n0",
+     "layer_fraction": 0.3333333333333333
+    },
+    {
+     "id": "c1b_k4:sweep1",
+     "run": "prosqa_hard_c1b_k4_s0",
+     "key": "c1b_k4",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 30,
+     "n_latent": 1,
+     "ood": false,
+     "accuracy": 70.33333333333333,
+     "k": 211,
+     "n": 300,
+     "emitted_mean": 8.146666666666667,
+     "passes_mean": 10.146666666666667,
+     "flops_mean": [
+      110728857415.68,
+      110728857415.68
+     ],
+     "reference_flops_mean": [
+      1577434537451.52,
+      1577434537451.52
+     ],
+     "band": {
+      "accuracy": [
+       65.325,
+       75.33333333333333
+      ],
+      "emitted_mean": [
+       8.086666666666666,
+       8.206666666666667
+      ],
+      "flops_mean": [
+       108156300301.31201,
+       113266104565.504
+      ],
+      "passes_mean": [
+       10.086666666666666,
+       10.206666666666667
+      ]
+     },
+     "labels": [],
+     "entry": "prosqa_hard_c1b_k4_s0_valid_n1",
+     "layer_fraction": 0.3333333333333333
+    },
+    {
+     "id": "c1b_k4:sweep2",
+     "run": "prosqa_hard_c1b_k4_s0",
+     "key": "c1b_k4",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 30,
+     "n_latent": 2,
+     "ood": false,
+     "accuracy": 70.33333333333333,
+     "k": 211,
+     "n": 300,
+     "emitted_mean": 8.146666666666667,
+     "passes_mean": 11.146666666666667,
+     "flops_mean": [
+      110793242071.04,
+      110793242071.04
+     ],
+     "reference_flops_mean": [
+      1734388232417.28,
+      1734388232417.28
+     ],
+     "band": {
+      "accuracy": [
+       65.325,
+       75.33333333333333
+      ],
+      "emitted_mean": [
+       8.086666666666666,
+       8.206666666666667
+      ],
+      "flops_mean": [
+       108220519064.576,
+       113330652097.28
+      ],
+      "passes_mean": [
+       11.086666666666666,
+       11.206666666666667
+      ]
+     },
+     "labels": [],
+     "entry": "prosqa_hard_c1b_k4_s0_valid_n2",
+     "layer_fraction": 0.3333333333333333
+    },
+    {
+     "id": "c1b_k4:sweep4",
+     "run": "prosqa_hard_c1b_k4_s0",
+     "key": "c1b_k4",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 30,
+     "n_latent": 4,
+     "ood": false,
+     "accuracy": 70.66666666666667,
+     "k": 212,
+     "n": 300,
+     "emitted_mean": 8.146666666666667,
+     "passes_mean": 13.146666666666667,
+     "flops_mean": [
+      110922048245.76,
+      110922048245.76
+     ],
+     "reference_flops_mean": [
+      2049104696094.72,
+      2049104696094.72
+     ],
+     "band": {
+      "accuracy": [
+       65.33333333333333,
+       75.66666666666667
+      ],
+      "emitted_mean": [
+       8.086666666666666,
+       8.206666666666667
+      ],
+      "flops_mean": [
+       108348993455.104,
+       113459784024.832
+      ],
+      "passes_mean": [
+       13.086666666666666,
+       13.206666666666667
+      ]
+     },
+     "labels": [],
+     "entry": "prosqa_hard_c1b_k4_s0_valid_n4",
+     "layer_fraction": 0.3333333333333333
+    },
+    {
+     "id": "c1b_k4:sweep8",
+     "run": "prosqa_hard_c1b_k4_s0",
+     "key": "c1b_k4",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 30,
+     "n_latent": 8,
+     "ood": true,
+     "accuracy": 70.66666666666667,
+     "k": 212,
+     "n": 300,
+     "emitted_mean": 8.146666666666667,
+     "passes_mean": 17.14666666666667,
+     "flops_mean": [
+      111179808051.2,
+      111179808051.2
+     ],
+     "reference_flops_mean": [
+      2681774950625.28,
+      2681774950625.28
+     ],
+     "band": {
+      "accuracy": [
+       65.33333333333333,
+       75.66666666666667
+      ],
+      "emitted_mean": [
+       8.086666666666666,
+       8.206666666666667
+      ],
+      "flops_mean": [
+       108606089692.15999,
+       113718195335.936
+      ],
+      "passes_mean": [
+       17.086666666666666,
+       17.206666666666667
+      ]
+     },
+     "labels": [],
+     "entry": "prosqa_hard_c1b_k4_s0_valid_n8",
+     "layer_fraction": 0.3333333333333333
+    },
+    {
+     "id": "c2:selection",
+     "run": "prosqa_hard_c2_s0",
+     "key": "c2",
+     "label": "final selection (3.3 item 1): n latents = the trained count",
+     "kind": "per-example (plain read)",
+     "epoch": 27,
+     "n_latent": 7,
+     "accuracy": 72.33333333333333,
+     "k": 217,
+     "n": 300,
+     "emitted_mean": 8.18,
+     "passes_mean": 16.18,
+     "flops_mean": [
+      112021313413.12,
+      112021313413.12
+     ],
+     "flops_parts": {
+      "at 1": [
+       112021313413.12,
+       112021313413.12
+      ]
+     },
+     "reference_flops_mean": [
+      2528186686586.88,
+      2528186686586.88
+     ],
+     "band": {
+      "accuracy": [
+       67.33333333333333,
+       77.33333333333333
+      ],
+      "emitted_mean": [
+       8.123333333333333,
+       8.24
+      ],
+      "flops_mean": [
+       109449474763.00801,
+       114559874830.336
+      ],
+      "passes_mean": [
+       16.123333333333335,
+       16.24
+      ]
+     },
+     "labels": [],
+     "band_entry": "prosqa_hard_c2_s0_valid_none",
+     "band_k": 217,
+     "band_layer_fraction": 1.0
+    },
+    {
+     "id": "c2:earlier",
+     "run": "prosqa_hard_c2_s0",
+     "key": "c2",
+     "label": "earlier",
+     "kind": "log-mean range",
+     "epoch": 9,
+     "stage": 2,
+     "n_latent": 2,
+     "accuracy": 81.66666666666667,
+     "k": 245,
+     "n": 300,
+     "emitted_mean": 55.97,
+     "passes_mean": 58.97,
+     "flops_mean": [
+      123835385559.04,
+      124280516884.48
+     ],
+     "flops_parts": {
+      "at 1": [
+       123835385559.04,
+       124280516884.48
+      ]
+     },
+     "reference_flops_mean": [
+      8422792236472.32,
+      11703516472842.24
+     ],
+     "band": null,
+     "labels": [
+      "from the training log's means (range); no per-example record on valid",
+      "no band"
+     ],
+     "range_width_frac": 0.003588091863973372
+    },
+    {
+     "id": "c2:sweep0",
+     "run": "prosqa_hard_c2_s0",
+     "key": "c2",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 27,
+     "n_latent": 0,
+     "ood": false,
+     "accuracy": 71.66666666666667,
+     "k": 215,
+     "n": 300,
+     "emitted_mean": 8.18,
+     "passes_mean": 9.18,
+     "flops_mean": [
+      110673431511.04,
+      110673431511.04
+     ],
+     "reference_flops_mean": [
+      1425671891189.76,
+      1425671891189.76
+     ],
+     "band": {
+      "accuracy": [
+       66.66666666666667,
+       76.66666666666667
+      ],
+      "emitted_mean": [
+       8.123333333333333,
+       8.24
+      ],
+      "flops_mean": [
+       108105040661.76001,
+       113208573362.176
+      ],
+      "passes_mean": [
+       9.123333333333333,
+       9.24
+      ]
+     },
+     "labels": [],
+     "entry": "prosqa_hard_c2_s0_valid_n0",
+     "layer_fraction": 1.0
+    },
+    {
+     "id": "c2:sweep1",
+     "run": "prosqa_hard_c2_s0",
+     "key": "c2",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 27,
+     "n_latent": 1,
+     "ood": false,
+     "accuracy": 72.0,
+     "k": 216,
+     "n": 300,
+     "emitted_mean": 8.18,
+     "passes_mean": 10.18,
+     "flops_mean": [
+      110865875476.48,
+      110865875476.48
+     ],
+     "reference_flops_mean": [
+      1582364890521.6,
+      1582364890521.6
+     ],
+     "band": {
+      "accuracy": [
+       67.0,
+       77.0
+      ],
+      "emitted_mean": [
+       8.123333333333333,
+       8.24
+      ],
+      "flops_mean": [
+       108296992084.224,
+       113401505837.056
+      ],
+      "passes_mean": [
+       10.123333333333333,
+       10.24
+      ]
+     },
+     "labels": [],
+     "entry": "prosqa_hard_c2_s0_valid_n1",
+     "layer_fraction": 1.0
+    },
+    {
+     "id": "c2:sweep2",
+     "run": "prosqa_hard_c2_s0",
+     "key": "c2",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 27,
+     "n_latent": 2,
+     "ood": false,
+     "accuracy": 72.0,
+     "k": 216,
+     "n": 300,
+     "emitted_mean": 8.18,
+     "passes_mean": 11.18,
+     "flops_mean": [
+      111058356305.92,
+      111058356305.92
+     ],
+     "reference_flops_mean": [
+      1739327533178.88,
+      1739327533178.88
+     ],
+     "band": {
+      "accuracy": [
+       67.0,
+       77.0
+      ],
+      "emitted_mean": [
+       8.123333333333333,
+       8.24
+      ],
+      "flops_mean": [
+       108488980370.688,
+       113594475175.936
+      ],
+      "passes_mean": [
+       11.123333333333333,
+       11.24
+      ]
+     },
+     "labels": [],
+     "entry": "prosqa_hard_c2_s0_valid_n2",
+     "layer_fraction": 1.0
+    },
+    {
+     "id": "c2:sweep4",
+     "run": "prosqa_hard_c2_s0",
+     "key": "c2",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 27,
+     "n_latent": 4,
+     "ood": false,
+     "accuracy": 72.33333333333333,
+     "k": 217,
+     "n": 300,
+     "emitted_mean": 8.18,
+     "passes_mean": 13.18,
+     "flops_mean": [
+      111443428556.8,
+      111443428556.8
+     ],
+     "reference_flops_mean": [
+      2054061895925.76,
+      2054061895925.76
+     ],
+     "band": {
+      "accuracy": [
+       67.33333333333333,
+       77.33333333333333
+      ],
+      "emitted_mean": [
+       8.123333333333333,
+       8.24
+      ],
+      "flops_mean": [
+       108873067535.616,
+       113980524445.696
+      ],
+      "passes_mean": [
+       13.123333333333333,
+       13.24
+      ]
+     },
+     "labels": [],
+     "entry": "prosqa_hard_c2_s0_valid_n4",
+     "layer_fraction": 1.0
+    },
+    {
+     "id": "c2:sweep8",
+     "run": "prosqa_hard_c2_s0",
+     "key": "c2",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 27,
+     "n_latent": 8,
+     "ood": true,
+     "accuracy": 72.33333333333333,
+     "k": 217,
+     "n": 300,
+     "emitted_mean": 8.18,
+     "passes_mean": 17.18,
+     "flops_mean": [
+      112214015426.56,
+      112214015426.56
+     ],
+     "reference_flops_mean": [
+      2686767963340.8,
+      2686767963340.8
+     ],
+     "band": {
+      "accuracy": [
+       67.33333333333333,
+       77.33333333333333
+      ],
+      "emitted_mean": [
+       8.123333333333333,
+       8.24
+      ],
+      "flops_mean": [
+       109641684233.472,
+       114753065353.216
+      ],
+      "passes_mean": [
+       17.123333333333335,
+       17.24
+      ]
+     },
+     "labels": [],
+     "entry": "prosqa_hard_c2_s0_valid_n8",
+     "layer_fraction": 1.0
+    },
+    {
+     "id": "c2_shuffled:selection",
+     "run": "prosqa_hard_c2_shuffled_s0",
+     "key": "c2_shuffled",
+     "label": "final selection (3.3 item 1): n latents = the trained count",
+     "kind": "per-example (plain read)",
+     "epoch": 30,
+     "n_latent": 7,
+     "accuracy": 71.33333333333333,
+     "k": 214,
+     "n": 300,
+     "emitted_mean": 8.146666666666667,
+     "passes_mean": 16.14666666666667,
+     "flops_mean": [
+      112012249845.76,
+      112012249845.76
+     ],
+     "flops_parts": {
+      "at 1": [
+       112012249845.76,
+       112012249845.76
+      ]
+     },
+     "reference_flops_mean": [
+      2522416222648.32,
+      2522416222648.32
+     ],
+     "band": {
+      "accuracy": [
+       66.33333333333333,
+       76.33333333333333
+      ],
+      "emitted_mean": [
+       8.09,
+       8.206666666666667
+      ],
+      "flops_mean": [
+       109438851756.544,
+       114553532230.912
+      ],
+      "passes_mean": [
+       16.09,
+       16.206666666666667
+      ]
+     },
+     "labels": [],
+     "band_entry": "prosqa_hard_c2_shuffled_s0_valid_none",
+     "band_k": 214,
+     "band_layer_fraction": 1.0
+    },
+    {
+     "id": "c2_shuffled:earlier",
+     "run": "prosqa_hard_c2_shuffled_s0",
+     "key": "c2_shuffled",
+     "label": "earlier",
+     "kind": "log-mean range",
+     "epoch": 9,
+     "stage": 2,
+     "n_latent": 2,
+     "accuracy": 76.66666666666667,
+     "k": 230,
+     "n": 300,
+     "emitted_mean": 57.06,
+     "passes_mean": 60.06,
+     "flops_mean": [
+      124130912665.6,
+      124577564139.52
+     ],
+     "flops_parts": {
+      "at 1": [
+       124130912665.6,
+       124577564139.52
+      ]
+     },
+     "reference_flops_mean": [
+      8605172821463.04,
+      11897129126492.16
+     ],
+     "band": null,
+     "labels": [
+      "from the training log's means (range); no per-example record on valid",
+      "no band"
+     ],
+     "range_width_frac": 0.0035917671939262445
+    },
+    {
+     "id": "c2_shuffled:sweep0",
+     "run": "prosqa_hard_c2_shuffled_s0",
+     "key": "c2_shuffled",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 30,
+     "n_latent": 0,
+     "ood": false,
+     "accuracy": 70.0,
+     "k": 210,
+     "n": 300,
+     "emitted_mean": 8.136666666666667,
+     "passes_mean": 9.136666666666667,
+     "flops_mean": [
+      110661733427.2,
+      110661733427.2
+     ],
+     "reference_flops_mean": [
+      1418786424330.24,
+      1418786424330.24
+     ],
+     "band": {
+      "accuracy": [
+       65.0,
+       75.0
+      ],
+      "emitted_mean": [
+       8.08,
+       8.193333333333333
+      ],
+      "flops_mean": [
+       108089155491.84,
+       113200232415.744
+      ],
+      "passes_mean": [
+       9.08,
+       9.193333333333333
+      ]
+     },
+     "labels": [],
+     "entry": "prosqa_hard_c2_shuffled_s0_valid_n0",
+     "layer_fraction": 1.0
+    },
+    {
+     "id": "c2_shuffled:sweep1",
+     "run": "prosqa_hard_c2_shuffled_s0",
+     "key": "c2_shuffled",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 30,
+     "n_latent": 1,
+     "ood": false,
+     "accuracy": 71.0,
+     "k": 213,
+     "n": 300,
+     "emitted_mean": 8.146666666666667,
+     "passes_mean": 10.146666666666667,
+     "flops_mean": [
+      110856819281.92,
+      110856819281.92
+     ],
+     "reference_flops_mean": [
+      1576648782182.4,
+      1576648782182.4
+     ],
+     "band": {
+      "accuracy": [
+       66.0,
+       76.0
+      ],
+      "emitted_mean": [
+       8.09,
+       8.206666666666667
+      ],
+      "flops_mean": [
+       108286397886.976,
+       113395168417.024
+      ],
+      "passes_mean": [
+       10.09,
+       10.206666666666667
+      ]
+     },
+     "labels": [],
+     "entry": "prosqa_hard_c2_shuffled_s0_valid_n1",
+     "layer_fraction": 1.0
+    },
+    {
+     "id": "c2_shuffled:sweep2",
+     "run": "prosqa_hard_c2_shuffled_s0",
+     "key": "c2_shuffled",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 30,
+     "n_latent": 2,
+     "ood": false,
+     "accuracy": 71.0,
+     "k": 213,
+     "n": 300,
+     "emitted_mean": 8.146666666666667,
+     "passes_mean": 11.146666666666667,
+     "flops_mean": [
+      111049298882.56,
+      111049298882.56
+     ],
+     "reference_flops_mean": [
+      1733602368645.12,
+      1733602368645.12
+     ],
+     "band": {
+      "accuracy": [
+       66.0,
+       76.0
+      ],
+      "emitted_mean": [
+       8.09,
+       8.206666666666667
+      ],
+      "flops_mean": [
+       108478381371.904,
+       113588136892.672
+      ],
+      "passes_mean": [
+       11.09,
+       11.206666666666667
+      ]
+     },
+     "labels": [],
+     "entry": "prosqa_hard_c2_shuffled_s0_valid_n2",
+     "layer_fraction": 1.0
+    },
+    {
+     "id": "c2_shuffled:sweep4",
+     "run": "prosqa_hard_c2_shuffled_s0",
+     "key": "c2_shuffled",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 30,
+     "n_latent": 4,
+     "ood": false,
+     "accuracy": 71.33333333333333,
+     "k": 214,
+     "n": 300,
+     "emitted_mean": 8.15,
+     "passes_mean": 13.15,
+     "flops_mean": [
+      111435264256.0,
+      111435264256.0
+     ],
+     "reference_flops_mean": [
+      2048816523448.32,
+      2048816523448.32
+     ],
+     "band": {
+      "accuracy": [
+       66.33333333333333,
+       76.33333333333333
+      ],
+      "emitted_mean": [
+       8.093333333333334,
+       8.21
+      ],
+      "flops_mean": [
+       108863354513.92,
+       113974184435.968
+      ],
+      "passes_mean": [
+       13.093333333333334,
+       13.21
+      ]
+     },
+     "labels": [],
+     "entry": "prosqa_hard_c2_shuffled_s0_valid_n4",
+     "layer_fraction": 1.0
+    },
+    {
+     "id": "c2_shuffled:sweep8",
+     "run": "prosqa_hard_c2_shuffled_s0",
+     "key": "c2_shuffled",
+     "label": "step sweep n = k of the final checkpoint (7.3; n = 8 out-of-distribution)",
+     "kind": "per-example",
+     "epoch": 30,
+     "n_latent": 8,
+     "ood": true,
+     "accuracy": 70.66666666666667,
+     "k": 212,
+     "n": 300,
+     "emitted_mean": 8.146666666666667,
+     "passes_mean": 17.14666666666667,
+     "flops_mean": [
+      112204950630.4,
+      112204950630.4
+     ],
+     "reference_flops_mean": [
+      2680988435834.88,
+      2680988435834.88
+     ],
+     "band": {
+      "accuracy": [
+       65.66666666666667,
+       75.66666666666667
+      ],
+      "emitted_mean": [
+       8.09,
+       8.206666666666667
+      ],
+      "flops_mean": [
+       109631056425.472,
+       114746721890.56
+      ],
+      "passes_mean": [
+       17.09,
+       17.206666666666667
+      ]
+     },
+     "labels": [],
+     "entry": "prosqa_hard_c2_shuffled_s0_valid_n8",
+     "layer_fraction": 1.0
+    }
+   ],
+   "test": [
+    {
+     "id": "cot_lr3e-5:selection",
+     "run": "prosqa_hard_cot_lr3e-5_s0",
+     "key": "cot_lr3e-5",
+     "label": "tuned bar: the pick (3 LRs)",
+     "kind": "per-example",
+     "epoch": 14,
+     "n_latent": 0,
+     "accuracy": 83.4,
+     "k": 417,
+     "n": 500,
+     "emitted_mean": 77.794,
+     "passes_mean": 78.794,
+     "flops_mean": [
+      130374378808.32,
+      130374378808.32
+     ],
+     "reference_flops_mean": [
+      13062068462324.736,
+      13062068462324.736
+     ],
+     "layer_fraction": 1.0,
+     "band": {
+      "accuracy": [
+       80.0,
+       86.6
+      ],
+      "emitted_mean": [
+       76.476,
+       79.14005
+      ],
+      "flops_mean": [
+       128388481955.4816,
+       132291369305.31839
+      ],
+      "passes_mean": [
+       77.476,
+       80.14005
+      ]
+     },
+     "labels": [],
+     "entry": "prosqa_hard_cot_lr3e-5_s0_test_none"
+    },
+    {
+     "id": "no_cot:selection",
+     "run": "prosqa_hard_no_cot_s0",
+     "key": "no_cot",
+     "label": "no_cot (floor; the 124M plain-depth point)",
+     "kind": "per-example",
+     "epoch": 8,
+     "n_latent": 0,
+     "accuracy": 53.2,
+     "k": 266,
+     "n": 500,
+     "emitted_mean": 8.186,
+     "passes_mean": 9.186,
+     "flops_mean": [
+      111510340211.712,
+      111510340211.712
+     ],
+     "reference_flops_mean": [
+      1439435668257.792,
+      1439435668257.792
+     ],
+     "layer_fraction": 1.0,
+     "band": {
+      "accuracy": [
+       48.8,
+       57.6
+      ],
+      "emitted_mean": [
+       8.14,
+       8.234
+      ],
+      "flops_mean": [
+       109557558393.7536,
+       113430828577.92
+      ],
+      "passes_mean": [
+       9.14,
+       9.234
+      ]
+     },
+     "labels": [],
+     "entry": "prosqa_hard_no_cot_s0_test_none"
+    },
+    {
+     "id": "plain_depth_355m:selection",
+     "run": "prosqa_hard_plain_depth_355m_s0",
+     "key": "plain_depth_355m",
+     "label": "plain depth 355M (7.7)",
+     "kind": "per-example",
+     "epoch": 28,
+     "n_latent": 0,
+     "accuracy": 60.4,
+     "k": 302,
+     "n": 500,
+     "emitted_mean": 8.172,
+     "passes_mean": 9.172,
+     "flops_mean": [
+      388459472822.272,
+      388459472822.272
+     ],
+     "reference_flops_mean": [
+      4101041829642.24,
+      4101041829642.24
+     ],
+     "layer_fraction": 1.0,
+     "band": {
+      "accuracy": [
+       56.0,
+       64.6
+      ],
+      "emitted_mean": [
+       8.124,
+       8.22
+      ],
+      "flops_mean": [
+       381695660610.56,
+       395080681849.7536
+      ],
+      "passes_mean": [
+       9.124,
+       9.22
+      ]
+     },
+     "labels": [],
+     "entry": "prosqa_hard_plain_depth_355m_s0_test_none"
+    },
+    {
+     "id": "pause:selection",
+     "run": "prosqa_hard_pause_s0",
+     "key": "pause",
+     "label": "pause (control)",
+     "kind": "per-example",
+     "epoch": 30,
+     "n_latent": 7,
+     "accuracy": 74.8,
+     "k": 374,
+     "n": 500,
+     "emitted_mean": 8.182,
+     "passes_mean": 9.182,
+     "flops_mean": [
+      113244026161.152,
+      113244026161.152
+     ],
+     "reference_flops_mean": [
+      1460757371332.608,
+      1460757371332.608
+     ],
+     "layer_fraction": 1.0,
+     "band": {
+      "accuracy": [
+       71.0,
+       78.6
+      ],
+      "emitted_mean": [
+       8.134,
+       8.23
+      ],
+      "flops_mean": [
+       111287072672.7168,
+       115168163904.76799
+      ],
+      "passes_mean": [
+       9.134,
+       9.23
+      ]
+     },
+     "labels": [],
+     "entry": "prosqa_hard_pause_s0_test_none"
+    },
+    {
+     "id": "coconut:selection",
+     "run": "prosqa_hard_coconut_s0",
+     "key": "coconut",
+     "label": "final selection (3.3 item 1): n latents = the trained count",
+     "kind": "per-example",
+     "epoch": 30,
+     "n_latent": 7,
+     "accuracy": 72.8,
+     "k": 364,
+     "n": 500,
+     "emitted_mean": 8.178,
+     "passes_mean": 16.178,
+     "flops_mean": [
+      113243125905.408,
+      113243125905.408
+     ],
+     "reference_flops_mean": [
+      2556130394898.432,
+      2556130394898.432
+     ],
+     "layer_fraction": 1.0,
+     "band": {
+      "accuracy": [
+       69.0,
+       76.6
+      ],
+      "emitted_mean": [
+       8.134,
+       8.224
+      ],
+      "flops_mean": [
+       111285361665.4848,
+       115168849616.79361
+      ],
+      "passes_mean": [
+       16.134,
+       16.224
+      ]
+     },
+     "labels": [],
+     "entry": "prosqa_hard_coconut_s0_test_none"
+    },
+    {
+     "id": "c1b_k8:selection",
+     "run": "prosqa_hard_c1b_k8_s0",
+     "key": "c1b_k8",
+     "label": "final selection (3.3 item 1): n latents = the trained count",
+     "kind": "per-example",
+     "epoch": 27,
+     "n_latent": 7,
+     "accuracy": 73.6,
+     "k": 368,
+     "n": 500,
+     "emitted_mean": 8.18,
+     "passes_mean": 16.18,
+     "flops_mean": [
+      112794486923.264,
+      112794486923.264
+     ],
+     "reference_flops_mean": [
+      2555519799306.24,
+      2555519799306.24
+     ],
+     "layer_fraction": 0.6666666666666666,
+     "band": {
+      "accuracy": [
+       69.8,
+       77.4
+      ],
+      "emitted_mean": [
+       8.134,
+       8.228
+      ],
+      "flops_mean": [
+       110839406079.9488,
+       114717395594.3936
+      ],
+      "passes_mean": [
+       16.134,
+       16.228
+      ]
+     },
+     "labels": [],
+     "entry": "prosqa_hard_c1b_k8_s0_test_none"
+    },
+    {
+     "id": "c1b_k4:selection",
+     "run": "prosqa_hard_c1b_k4_s0",
+     "key": "c1b_k4",
+     "label": "final selection (3.3 item 1): n latents = the trained count",
+     "kind": "per-example",
+     "epoch": 30,
+     "n_latent": 7,
+     "accuracy": 71.2,
+     "k": 356,
+     "n": 500,
+     "emitted_mean": 8.178,
+     "passes_mean": 16.178,
+     "flops_mean": [
+      112344926451.712,
+      112344926451.712
+     ],
+     "reference_flops_mean": [
+      2555431891955.712,
+      2555431891955.712
+     ],
+     "layer_fraction": 0.3333333333333333,
+     "band": {
+      "accuracy": [
+       67.2,
+       75.0
+      ],
+      "emitted_mean": [
+       8.132,
+       8.226
+      ],
+      "flops_mean": [
+       110387843907.63521,
+       114268341755.0848
+      ],
+      "passes_mean": [
+       16.132,
+       16.226
+      ]
+     },
+     "labels": [],
+     "entry": "prosqa_hard_c1b_k4_s0_test_none"
+    },
+    {
+     "id": "c2:selection",
+     "run": "prosqa_hard_c2_s0",
+     "key": "c2",
+     "label": "final selection (3.3 item 1): n latents = the trained count",
+     "kind": "per-example",
+     "epoch": 27,
+     "n_latent": 7,
+     "accuracy": 75.8,
+     "k": 379,
+     "n": 500,
+     "emitted_mean": 8.198,
+     "passes_mean": 16.198,
+     "flops_mean": [
+      113248417695.744,
+      113248417695.744
+     ],
+     "reference_flops_mean": [
+      2558518915829.76,
+      2558518915829.76
+     ],
+     "layer_fraction": 1.0,
+     "band": {
+      "accuracy": [
+       72.0,
+       79.6
+      ],
+      "emitted_mean": [
+       8.154,
+       8.244
+      ],
+      "flops_mean": [
+       111291247887.51361,
+       115174180189.5936
+      ],
+      "passes_mean": [
+       16.154,
+       16.244
+      ]
+     },
+     "labels": [],
+     "entry": "prosqa_hard_c2_s0_test_none"
+    },
+    {
+     "id": "c2_shuffled:selection",
+     "run": "prosqa_hard_c2_shuffled_s0",
+     "key": "c2_shuffled",
+     "label": "final selection (3.3 item 1): n latents = the trained count",
+     "kind": "per-example",
+     "epoch": 30,
+     "n_latent": 7,
+     "accuracy": 72.6,
+     "k": 363,
+     "n": 500,
+     "emitted_mean": 8.182,
+     "passes_mean": 16.182,
+     "flops_mean": [
+      113244096423.936,
+      113244096423.936
+     ],
+     "reference_flops_mean": [
+      2555961113290.752,
+      2555961113290.752
+     ],
+     "layer_fraction": 1.0,
+     "band": {
+      "accuracy": [
+       68.6,
+       76.6
+      ],
+      "emitted_mean": [
+       8.136,
+       8.228
+      ],
+      "flops_mean": [
+       111286356236.85121,
+       115168993522.0224
+      ],
+      "passes_mean": [
+       16.136,
+       16.228
+      ]
+     },
+     "labels": [],
+     "entry": "prosqa_hard_c2_shuffled_s0_test_none"
+    },
+    {
+     "id": "coconut:earlier",
+     "run": "prosqa_hard_coconut_s0",
+     "key": "coconut",
+     "label": "earlier",
+     "kind": "per-example",
+     "epoch": 8,
+     "n_latent": 2,
+     "accuracy": 73.8,
+     "k": 369,
+     "n": 500,
+     "emitted_mean": 55.262,
+     "passes_mean": 58.262,
+     "flops_mean": [
+      125030174484.48,
+      125030174484.48
+     ],
+     "reference_flops_mean": [
+      9541464242264.064,
+      9541464242264.064
+     ],
+     "layer_fraction": 1.0,
+     "band": {
+      "accuracy": [
+       70.0,
+       77.6
+      ],
+      "emitted_mean": [
+       53.848,
+       56.770050000000005
+      ],
+      "flops_mean": [
+       123034667772.67201,
+       126975122161.6128
+      ],
+      "passes_mean": [
+       56.848,
+       59.770050000000005
+      ]
+     },
+     "labels": [],
+     "entry": "prosqa_hard_coconut_s0_test_best"
+    },
+    {
+     "id": "c1b_k8:earlier",
+     "run": "prosqa_hard_c1b_k8_s0",
+     "key": "c1b_k8",
+     "label": "earlier",
+     "kind": "per-example",
+     "epoch": 14,
+     "n_latent": 4,
+     "accuracy": 76.8,
+     "k": 384,
+     "n": 500,
+     "emitted_mean": 32.546,
+     "passes_mean": 37.546,
+     "flops_mean": [
+      119001603921.92,
+      119001603921.92
+     ],
+     "reference_flops_mean": [
+      6063188800720.896,
+      6063188800720.896
+     ],
+     "layer_fraction": 0.6666666666666666,
+     "band": {
+      "accuracy": [
+       73.0,
+       80.4
+      ],
+      "emitted_mean": [
+       31.31395,
+       33.828
+      ],
+      "flops_mean": [
+       117001242611.7632,
+       120946699714.9184
+      ],
+      "passes_mean": [
+       36.31395,
+       38.828
+      ]
+     },
+     "labels": [],
+     "entry": "prosqa_hard_c1b_k8_s0_test_best"
+    },
+    {
+     "id": "c1b_k4:earlier",
+     "run": "prosqa_hard_c1b_k4_s0",
+     "key": "c1b_k4",
+     "label": "earlier",
+     "kind": "per-example",
+     "epoch": 18,
+     "n_latent": 5,
+     "accuracy": 71.2,
+     "k": 356,
+     "n": 500,
+     "emitted_mean": 25.164,
+     "passes_mean": 31.164,
+     "flops_mean": [
+      116793509765.12,
+      116793509765.12
+     ],
+     "reference_flops_mean": [
+      4878190349125.632,
+      4878190349125.632
+     ],
+     "layer_fraction": 0.3333333333333333,
+     "band": {
+      "accuracy": [
+       67.2,
+       75.2
+      ],
+      "emitted_mean": [
+       23.539949999999997,
+       26.872
+      ],
+      "flops_mean": [
+       114922176866.2016,
+       118653470526.464
+      ],
+      "passes_mean": [
+       29.539949999999997,
+       32.872
+      ]
+     },
+     "labels": [],
+     "entry": "prosqa_hard_c1b_k4_s0_test_best"
+    },
+    {
+     "id": "c2:earlier",
+     "run": "prosqa_hard_c2_s0",
+     "key": "c2",
+     "label": "earlier",
+     "kind": "per-example",
+     "epoch": 9,
+     "n_latent": 2,
+     "accuracy": 78.6,
+     "k": 393,
+     "n": 500,
+     "emitted_mean": 56.804,
+     "passes_mean": 59.804,
+     "flops_mean": [
+      125452301697.024,
+      125452301697.024
+     ],
+     "reference_flops_mean": [
+      9829983711154.176,
+      9829983711154.176
+     ],
+     "layer_fraction": 1.0,
+     "band": {
+      "accuracy": [
+       74.8,
+       82.2
+      ],
+      "emitted_mean": [
+       55.20395,
+       58.47605
+      ],
+      "flops_mean": [
+       123429451830.22081,
+       127430436746.0352
+      ],
+      "passes_mean": [
+       58.20395,
+       61.47605
+      ]
+     },
+     "labels": [],
+     "entry": "prosqa_hard_c2_s0_test_best"
+    },
+    {
+     "id": "c2_shuffled:earlier",
+     "run": "prosqa_hard_c2_shuffled_s0",
+     "key": "c2_shuffled",
+     "label": "earlier",
+     "kind": "per-example",
+     "epoch": 9,
+     "n_latent": 2,
+     "accuracy": 78.8,
+     "k": 394,
+     "n": 500,
+     "emitted_mean": 55.312,
+     "passes_mean": 58.312,
+     "flops_mean": [
+      125045400367.104,
+      125045400367.104
+     ],
+     "reference_flops_mean": [
+      9562288513241.088,
+      9562288513241.088
+     ],
+     "layer_fraction": 1.0,
+     "band": {
+      "accuracy": [
+       75.2,
+       82.20499999999993
+      ],
+      "emitted_mean": [
+       53.83795,
+       56.81805
+      ],
+      "flops_mean": [
+       123044027452.416,
+       127012900535.65439
+      ],
+      "passes_mean": [
+       56.83795,
+       59.81805
+      ]
+     },
+     "labels": [],
+     "entry": "prosqa_hard_c2_shuffled_s0_test_best"
+    }
+   ],
+   "widths": [
+    {
+     "run": "prosqa_hard_coconut_s0",
+     "width_frac": 0.0035759444720765148
+    },
+    {
+     "run": "prosqa_hard_c1b_k8_s0",
+     "width_frac": 0.003108371195449207
+    },
+    {
+     "run": "prosqa_hard_c1b_k4_s0",
+     "width_frac": 0.002503861782812246
+    },
+    {
+     "run": "prosqa_hard_c2_s0",
+     "width_frac": 0.003588091863973372
+    },
+    {
+     "run": "prosqa_hard_c2_shuffled_s0",
+     "width_frac": 0.0035917671939262445
+    }
+   ],
+   "n_valid": 300,
+   "n_test": 500,
+   "bar": {
+    "run": "prosqa_hard_cot_lr3e-5_s0",
+    "key": "cot_lr3e-5",
+    "k": 241,
+    "points": 80.33333333333333,
+    "epoch": 14
+   },
+   "sentences": [
+    "valid: the earlier-stage checkpoint of prosqa_hard_coconut_s0 (epoch 8, n latents 2) scores 76.7 at 54.03 tokens and [123.309, 123.751] GFLOPs; its selection (epoch 30, n latents 7) 73.3 at 8.15 and 112.012 (gaps: accuracy +3.3 points, tokens +45.88, FLOPs +11.517 GFLOPs at the range midpoints)",
+    "valid: the earlier-stage checkpoint of prosqa_hard_c1b_k8_s0 (epoch 14, n latents 4) scores 75.0 at 34.31 tokens and [118.373, 118.741] GFLOPs; its selection (epoch 27, n latents 7) 71.7 at 8.16 and 112.017 (gaps: accuracy +3.3 points, tokens +26.14, FLOPs +6.540 GFLOPs at the range midpoints)",
+    "valid: the earlier-stage checkpoint of prosqa_hard_c1b_k4_s0 (epoch 18, n latents 5) scores 74.3 at 22.76 tokens and [115.469, 115.758] GFLOPs; its selection (epoch 30, n latents 7) 70.7 at 8.15 and 112.012 (gaps: accuracy +3.7 points, tokens +14.62, FLOPs +3.601 GFLOPs at the range midpoints)",
+    "valid: the earlier-stage checkpoint of prosqa_hard_c2_s0 (epoch 9, n latents 2) scores 81.7 at 55.97 tokens and [123.835, 124.281] GFLOPs; its selection (epoch 27, n latents 7) 72.3 at 8.18 and 112.021 (gaps: accuracy +9.3 points, tokens +47.79, FLOPs +12.037 GFLOPs at the range midpoints)",
+    "valid: the earlier-stage checkpoint of prosqa_hard_c2_shuffled_s0 (epoch 9, n latents 2) scores 76.7 at 57.06 tokens and [124.131, 124.578] GFLOPs; its selection (epoch 30, n latents 7) 71.3 at 8.15 and 112.012 (gaps: accuracy +5.3 points, tokens +48.91, FLOPs +12.342 GFLOPs at the range midpoints)",
+    "test: the earlier-stage checkpoint of prosqa_hard_coconut_s0 (epoch 8, n latents 2) scores 73.8 at 55.26 tokens and 125.030 GFLOPs; its selection (epoch 30, n latents 7) 72.8 at 8.18 and 113.243 (gaps: accuracy +1.0 points, tokens +47.08, FLOPs +11.787 GFLOPs)",
+    "test: the earlier-stage checkpoint of prosqa_hard_c1b_k8_s0 (epoch 14, n latents 4) scores 76.8 at 32.55 tokens and 119.002 GFLOPs; its selection (epoch 27, n latents 7) 73.6 at 8.18 and 112.794 (gaps: accuracy +3.2 points, tokens +24.37, FLOPs +6.207 GFLOPs)",
+    "test: the earlier-stage checkpoint of prosqa_hard_c1b_k4_s0 (epoch 18, n latents 5) scores 71.2 at 25.16 tokens and 116.794 GFLOPs; its selection (epoch 30, n latents 7) 71.2 at 8.18 and 112.345 (gaps: accuracy +0.0 points, tokens +16.99, FLOPs +4.449 GFLOPs)",
+    "test: the earlier-stage checkpoint of prosqa_hard_c2_s0 (epoch 9, n latents 2) scores 78.6 at 56.80 tokens and 125.452 GFLOPs; its selection (epoch 27, n latents 7) 75.8 at 8.20 and 113.248 (gaps: accuracy +2.8 points, tokens +48.61, FLOPs +12.204 GFLOPs)",
+    "test: the earlier-stage checkpoint of prosqa_hard_c2_shuffled_s0 (epoch 9, n latents 2) scores 78.8 at 55.31 tokens and 125.045 GFLOPs; its selection (epoch 30, n latents 7) 72.6 at 8.18 and 113.244 (gaps: accuracy +6.2 points, tokens +47.13, FLOPs +11.801 GFLOPs)"
+   ],
+   "table": {
+    "file": "results/screens/prosqa_hard/prosqa_hard_screen_with_plain_depth.json",
+    "commit": "af1f57398a061a7dc58e3b3d6e831a194a3d04cd",
+    "sha256": "ff561a152a39ca42d3546adc2481e96dd8f87323c462802d86b676e6222e0465"
+   }
+  }
+ },
+ "untested": [
+  "The 7.3 FLOP multiplier: UNTESTED (no budgeted-CoT read exists; it would be a new read of the bar checkpoint, outside (c)).",
+  "The 7.3 budgeted-CoT curve: UNTESTED."
+ ],
+ "notes": [
+  "A compilation from the committed records (row (c) (2)): no VM, no new read of any checkpoint; it decides nothing and changes no line of any table.",
+  "Valid and test are separate panels and never share an axis; every test point carries the test read's label: end-of-round test read (A3.4): reporting only, no decision attached; 1 seed; one registered read per checkpoint (4.5).",
+  "Valid final selections: accuracy of record (the training log's selection, the screen table's); costs the table's cost row (exact means from the plain read's per-example file); the band from that plain read's per-example file. Valid earlier-stage points: the training log's epoch row (valid accuracy, val_emitted_mean), FLOPs by read_screen.Screen.costs on the logged mean (the exact range over every per-example E' with the logged total), passes exact (1 + latent steps + E'); no band.",
+  "The bar, no_cot and plain depth 355M on valid: the tables' ranges (no per-example read of them on valid); on test every point is per-example (the test read's files). C1b FLOPs: on valid at the fractions the table charges (nominal, measured, at 1); on test at the read's own layer fraction, as the file records.",
+  "Bands: example bootstrap, 10,000 draws, numpy default_rng(0), the 95% percentile interval of each mean on the same draws per point. FLOPs are 5.1's (the head charged as 5.4 says); the reference-cost FLOPs (5.5 (c)) beside them; the passes panel is 5.4 (b)'s matched-passes side.",
+  "Not said here (row (c) (4)): no comparison of a test point with a valid point, no K3 beyond the tables' lines, nothing about what the latents carry (A11.3), no multiplier, no claim about the written steps of an earlier-stage checkpoint."
+ ],
+ "generated_utc": "2026-10-21T21:21:06Z"
+}

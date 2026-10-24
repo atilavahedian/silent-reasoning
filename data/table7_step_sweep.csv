@@ -1,0 +1,20 @@
+task,arm,n0,n1,n2,n4,trained_n,trained_acc,n8_out_of_distribution,scrambled,zero_latent
+GSM-50k,coconut,1.0,7.6,9.0,10.6,6,11.0,11.6,4.0,1.0
+GSM-50k,C1b k=8,8.0,8.8,8.8,9.6,6,9.4,9.4,5.4,8.0
+GSM-50k,C1b k=4,8.2,8.6,8.8,9.2,6,9.4,9.6,8.0,8.2
+GSM-50k,C2,1.0,5.8,9.2,11.2,6,12.0,12.0,3.4,1.0
+GSM-50k,C2-shuffled,1.6,6.2,6.6,11.0,6,11.6,11.8,3.0,1.6
+GSM-50k,C3,0.0,6.2,8.4,10.6,6,10.4,10.4,0.0,0.0
+GSM-50k,C3-foreign,7.4,9.0,9.8,10.4,6,10.0,9.8,8.0,7.4
+GSM-50k,C2+C3,0.0,6.8,8.2,11.6,6,12.0,12.2,0.2,0.0
+ProsQA-hard,coconut,72.7,73.7,73.3,73.7,7,73.3,73.3,73.3,72.7
+ProsQA-hard,C1b k=8,64.0,70.0,71.0,72.3,7,71.7,72.0,63.7,64.0
+ProsQA-hard,C1b k=4,70.3,70.3,70.3,70.7,7,70.7,70.7,71.0,70.3
+ProsQA-hard,C2,71.7,72.0,72.0,72.3,7,72.3,72.3,72.0,71.7
+ProsQA-hard,C2-shuffled,70.0,71.0,71.0,71.3,7,71.3,70.7,71.0,70.0
+GSM8k-Aug (Phase 1 oracle; test 1319; 1 seed),coconut,6.52,9.10,18.42,30.10,6,34.65,34.80,3.94,6.52
+ProsQA (Phase 1 oracle; test 500; seed 0),coconut,97.2,97.0,97.0,96.8,6,96.8,97.0,96.8,97.2
+ProsQA (Phase 1 oracle; test 500; seed 1),coconut,96.4,96.2,96.2,96.2,6,96.2,96.2,96.2,96.4
+ProsQA (Phase 1 oracle; test 500; seed 2),coconut,95.8,95.8,95.8,95.8,6,95.8,95.8,95.8,95.8
+GSM-50k,coconut without curriculum,8.8,9.0,9.8,9.2,6,9.8,9.8,8.2,8.8
+ProsQA-hard,coconut without curriculum,57.0,57.7,58.7,58.7,7,58.0,58.3,59.0,57.0

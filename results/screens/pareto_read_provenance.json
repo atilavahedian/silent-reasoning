@@ -1,0 +1,1218 @@
+{
+ "tool": "read_closing.py",
+ "cmd": "pareto",
+ "argv": [
+  "pareto"
+ ],
+ "generated_utc": "2026-10-21T21:21:06Z",
+ "git": {
+  "head": "61ea42f92ebc948247783e5677ada5546001716d",
+  "tool_uncommitted": false
+ },
+ "versions": {
+  "python": "3.13.16",
+  "numpy": "2.5.3",
+  "torch": "2.14.1+cu130",
+  "transformers": "4.57.6"
+ },
+ "inputs": [
+  {
+   "role": "code (this tool)",
+   "sha256": "625bb55cf3adc771ee4ff7ee84d46efbe566da73a68ae2a2d92fc98c2a3363e6",
+   "bytes": 48353,
+   "root": "repo",
+   "path": "code/read_closing.py"
+  },
+  {
+   "role": "code (read_screen: costs, bootstrap, parsing)",
+   "sha256": "98a1681126adfb2d3c114eec8e9b94568c05fa3f66ff9fa7342b07a4d6ee0f73",
+   "bytes": 361150,
+   "root": "repo",
+   "path": "code/read_screen.py"
+  },
+  {
+   "role": "registered config",
+   "sha256": "602c1275b3caffb9e6a7e113b93776ecd4f486f9ef04d4ff293d6347097332ee",
+   "bytes": 1439,
+   "root": "repo",
+   "path": "configs/screen/gsm50k_c1b_k4.json"
+  },
+  {
+   "role": "registered config",
+   "sha256": "45b638eb886369342d3c137f5449767526d98f6c459d1c404121b3f828144d15",
+   "bytes": 1441,
+   "root": "repo",
+   "path": "configs/screen/gsm50k_c1b_k8.json"
+  },
+  {
+   "role": "registered config",
+   "sha256": "ee3025133f98b74fabd7fc2c1fba3845d3c30db73371dd108ac56f603cca58c6",
+   "bytes": 1393,
+   "root": "repo",
+   "path": "configs/screen/gsm50k_c2.json"
+  },
+  {
+   "role": "registered config",
+   "sha256": "0c6efe6c0eba1a37ce85def82962f14216100bf3200af4c5a0f3dd752af754ad",
+   "bytes": 1455,
+   "root": "repo",
+   "path": "configs/screen/gsm50k_c2_shuffled.json"
+  },
+  {
+   "role": "registered config",
+   "sha256": "992d9361715a98f41b6f83db5ef755609aec9bb183a3e0525938ca559c1dadf1",
+   "bytes": 1381,
+   "root": "repo",
+   "path": "configs/screen/gsm50k_c2c3.json"
+  },
+  {
+   "role": "registered config",
+   "sha256": "2013c7e32cae138d0d624e898828694eda418b686aa15e054987ac49cf6982ab",
+   "bytes": 1428,
+   "root": "repo",
+   "path": "configs/screen/gsm50k_c3.json"
+  },
+  {
+   "role": "registered config",
+   "sha256": "e376bacb0df7be484baceb31cf9320d2c9f8bba0f5372ec86e7cf0aec905d6d4",
+   "bytes": 1466,
+   "root": "repo",
+   "path": "configs/screen/gsm50k_c3_foreign.json"
+  },
+  {
+   "role": "registered config",
+   "sha256": "d76aa76adaa902bb4d992bf65392980794616d17e5a0621cf836a4b93b5e4b9a",
+   "bytes": 1434,
+   "root": "repo",
+   "path": "configs/screen/gsm50k_coconut.json"
+  },
+  {
+   "role": "registered config",
+   "sha256": "657efa387b97bab2beee909dcb9f187192ae85eab615999bf7e0a265e296c5f4",
+   "bytes": 1408,
+   "root": "repo",
+   "path": "configs/screen/gsm50k_pause.json"
+  },
+  {
+   "role": "registered config",
+   "sha256": "ffdbeede6e5b0e65d0b07242aaa2551268211f5b2a6ca89b58eb71a5f86bb4b1",
+   "bytes": 1302,
+   "root": "repo",
+   "path": "configs/screen/prosqa_hard_c1b_k4.json"
+  },
+  {
+   "role": "registered config",
+   "sha256": "ad5c78a26ed9b0693b8362614e2aed5a448da04103b966ea757aab5a0724be75",
+   "bytes": 1304,
+   "root": "repo",
+   "path": "configs/screen/prosqa_hard_c1b_k8.json"
+  },
+  {
+   "role": "registered config",
+   "sha256": "af6333fd4e466a3b1f2893de87f9974476a5fa2f65991bf5dffa991102dabc77",
+   "bytes": 1256,
+   "root": "repo",
+   "path": "configs/screen/prosqa_hard_c2.json"
+  },
+  {
+   "role": "registered config",
+   "sha256": "02e292031d4013f7d96555a22f8ec2f788ed3ebc37b98bcdd30bcd0dfc664303",
+   "bytes": 1318,
+   "root": "repo",
+   "path": "configs/screen/prosqa_hard_c2_shuffled.json"
+  },
+  {
+   "role": "registered config",
+   "sha256": "f4b47aa40f28b8cc3a180e7817213542aeb55fb2e40cba81a032c688053ee51f",
+   "bytes": 1297,
+   "root": "repo",
+   "path": "configs/screen/prosqa_hard_coconut.json"
+  },
+  {
+   "role": "rules (critic log)",
+   "sha256": "51a9285b6883bbe9021392e65d9dd98215685e9f54b9d318704ef96a0694bfee",
+   "bytes": 740861,
+   "root": "repo",
+   "path": "governance/critic_log.md"
+  },
+  {
+   "role": "valid read gsm50k_c2c3_s0_valid_n0 (per-example file)",
+   "sha256": "233d20c14ded1984a342a8b0a7d3c539e1d61c3a82a90316fd5d7c5411b41848",
+   "bytes": 28172,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-hinge-main/gsm50k_c2c3_s0_valid_n0/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_c2c3_s0_valid_n1 (per-example file)",
+   "sha256": "dcd7e6a8e2b655a250e7b123cdc691b5dab59816df3d0ddc00bc0acad7cf30c3",
+   "bytes": 27831,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-hinge-main/gsm50k_c2c3_s0_valid_n1/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_c2c3_s0_valid_n2 (per-example file)",
+   "sha256": "50a678385f06c2d35f626a116e3f81ee21752e17b1bb67f8e952ceaa0374fc4c",
+   "bytes": 27864,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-hinge-main/gsm50k_c2c3_s0_valid_n2/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_c2c3_s0_valid_n4 (per-example file)",
+   "sha256": "399aee6053d0e807fe337ee901d883f6e5eb543391a13db24c53cde466c311ff",
+   "bytes": 28016,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-hinge-main/gsm50k_c2c3_s0_valid_n4/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_c2c3_s0_valid_n8 (per-example file)",
+   "sha256": "c733901b553f79e76f6e224a987ccba1a6205f78c4ae5ba14410000f7fda66a0",
+   "bytes": 28783,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-hinge-main/gsm50k_c2c3_s0_valid_n8/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_c2c3_s0_valid_none (per-example file)",
+   "sha256": "3356cfcd910599ac87d21dc983c1e0f0a00a435432cb35a635e8cc9e98eb72db",
+   "bytes": 28277,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-hinge-main/gsm50k_c2c3_s0_valid_none/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_c3_foreign_s0_valid_n0 (per-example file)",
+   "sha256": "cc754ac6e36836395a710465af5d8d6464b08fca557ca83f1b31530481baebcf",
+   "bytes": 27784,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-hinge-main/gsm50k_c3_foreign_s0_valid_n0/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_c3_foreign_s0_valid_n1 (per-example file)",
+   "sha256": "a0405b4d3f5cdd58d948f41740c2c463eaf38f53810c9f64b6b12ceba974cdfb",
+   "bytes": 27777,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-hinge-main/gsm50k_c3_foreign_s0_valid_n1/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_c3_foreign_s0_valid_n2 (per-example file)",
+   "sha256": "28931eceb769d32b7ca41b6ebe8e05ba4785ab5705371bd998f7ca40bb661a9c",
+   "bytes": 27838,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-hinge-main/gsm50k_c3_foreign_s0_valid_n2/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_c3_foreign_s0_valid_n4 (per-example file)",
+   "sha256": "4b59a3e956aecec4a2cad241065986bcfd345d678df453d94c09164828eefd3f",
+   "bytes": 28021,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-hinge-main/gsm50k_c3_foreign_s0_valid_n4/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_c3_foreign_s0_valid_n8 (per-example file)",
+   "sha256": "b87520aa296da53ccbe4b2780b447861183e379c6778ce5541ab2ccfd20d79cc",
+   "bytes": 28793,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-hinge-main/gsm50k_c3_foreign_s0_valid_n8/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_c3_foreign_s0_valid_none (per-example file)",
+   "sha256": "74d69d4c41d59248702c90be689f3d3d188834d2520933af422c035b4af10a51",
+   "bytes": 28269,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-hinge-main/gsm50k_c3_foreign_s0_valid_none/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_c3_s0_valid_n0 (per-example file)",
+   "sha256": "9f093770ffa9cebfe38e8e1fa1d62d35ec92a5f8aa5c0f02f290f78fab56d772",
+   "bytes": 28120,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-hinge-main/gsm50k_c3_s0_valid_n0/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_c3_s0_valid_n1 (per-example file)",
+   "sha256": "3c1b606c544c0a8800c1734df6af339550e2504191842898bcc45f12059d3d44",
+   "bytes": 27848,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-hinge-main/gsm50k_c3_s0_valid_n1/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_c3_s0_valid_n2 (per-example file)",
+   "sha256": "b840c0571bcc984b275b5b89d33a83a0b52d05477cffd77abc5444977c7ee4d8",
+   "bytes": 27856,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-hinge-main/gsm50k_c3_s0_valid_n2/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_c3_s0_valid_n4 (per-example file)",
+   "sha256": "6ecbd3a2fef44617c01e564374a5926ee156b501965a79ef703c2f73fd2e4f23",
+   "bytes": 28020,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-hinge-main/gsm50k_c3_s0_valid_n4/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_c3_s0_valid_n8 (per-example file)",
+   "sha256": "50e3810e8419d9904ca51767fb512659ec6f5967c49d0a9b25e769f7bfcb1322",
+   "bytes": 28788,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-hinge-main/gsm50k_c3_s0_valid_n8/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_c3_s0_valid_none (per-example file)",
+   "sha256": "b1e6b7e44e68c64367d12253c6ccfe5da49b29a3f9c9ad945d9efe1cf3346534",
+   "bytes": 28266,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-hinge-main/gsm50k_c3_s0_valid_none/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_c1b_k4_s0_valid_n0 (per-example file)",
+   "sha256": "ea7069edc07adc60909d9445f80eed0386e3a81e80753240e137f3f8b2ec5a75",
+   "bytes": 27748,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k4_s0_valid_n0/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_c1b_k4_s0_valid_n1 (per-example file)",
+   "sha256": "fc1c5e841700f92766293e418757653a7c3f673227743ed2b329e24b8c629a07",
+   "bytes": 27788,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k4_s0_valid_n1/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_c1b_k4_s0_valid_n2 (per-example file)",
+   "sha256": "0ee9e5c9fe570af59335bdf012df793283407dd03d54f0bc9712a57fae19d22a",
+   "bytes": 27841,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k4_s0_valid_n2/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_c1b_k4_s0_valid_n4 (per-example file)",
+   "sha256": "1ed5e364bf5ba7b1fe3bf01f7fe92e6e72defd7bbe61e381a168e4dee5c33e05",
+   "bytes": 28008,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k4_s0_valid_n4/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_c1b_k4_s0_valid_n8 (per-example file)",
+   "sha256": "0563e8e29471be61414b4f74e89e77ddc54e451f9af03f3bac1777c1ce378f0a",
+   "bytes": 28740,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k4_s0_valid_n8/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_c1b_k4_s0_valid_none (per-example file)",
+   "sha256": "844ebf02e536f9a7a11339d4c3bc68b2dbf9c98be4a9e507ef35f08da7aa34e2",
+   "bytes": 28249,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k4_s0_valid_none/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_c1b_k8_s0_valid_n0 (per-example file)",
+   "sha256": "02d7d6ed303eadfb2cb6b77bea47817f435b42b87c46c8ec469588ea6806dc74",
+   "bytes": 27748,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k8_s0_valid_n0/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_c1b_k8_s0_valid_n1 (per-example file)",
+   "sha256": "2ccaf264bb7d3a7ddd2ba73d8b47e4e2a74020e9451b2270b075a51990e1d14a",
+   "bytes": 27785,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k8_s0_valid_n1/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_c1b_k8_s0_valid_n2 (per-example file)",
+   "sha256": "273377726eaebdb4278354b2225face8e5ebd01b8c094858f7cbc009df1684d0",
+   "bytes": 27845,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k8_s0_valid_n2/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_c1b_k8_s0_valid_n4 (per-example file)",
+   "sha256": "69e264dd755c381399b55f775d9356f359707e8828e148af4527ef246a5358e1",
+   "bytes": 28003,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k8_s0_valid_n4/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_c1b_k8_s0_valid_n8 (per-example file)",
+   "sha256": "23930af3b12d5ab1a1ce4fe805e39cb360ee63e756b6bc8033f151c0513388df",
+   "bytes": 28774,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k8_s0_valid_n8/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_c1b_k8_s0_valid_none (per-example file)",
+   "sha256": "97b06039c205e712fe8148f1120efc8911a115e77a70bde2f2a29997b9ffb2e5",
+   "bytes": 28268,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c1b_k8_s0_valid_none/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_c2_s0_valid_n0 (per-example file)",
+   "sha256": "82f4b5fb93584dc23582b709d379dc360c7cc3df29dcba0c191093b1952823e6",
+   "bytes": 28179,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_s0_valid_n0/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_c2_s0_valid_n1 (per-example file)",
+   "sha256": "eeb47e251e0c39f26027344d77bfd0a02c26b455a6efee452898b2e3d9c01781",
+   "bytes": 27815,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_s0_valid_n1/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_c2_s0_valid_n2 (per-example file)",
+   "sha256": "8920dffdcf9f7400f033e997e88a0eaecf66293d5e1878487b02dc1c622c688f",
+   "bytes": 27855,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_s0_valid_n2/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_c2_s0_valid_n4 (per-example file)",
+   "sha256": "683099c42b245f6aee4d3d7513e2ac5797bf753f0ddc5de2067e72ba839782b6",
+   "bytes": 28020,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_s0_valid_n4/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_c2_s0_valid_n8 (per-example file)",
+   "sha256": "e9d10bee9431c5b4e7076f844249a9ccdee3b361f84c5a91b39f6cab7773e014",
+   "bytes": 28783,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_s0_valid_n8/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_c2_s0_valid_none (per-example file)",
+   "sha256": "62f0d63b53d026a12b671078794176be9c783e6f9c71908a3ed4d3d16a16215b",
+   "bytes": 28273,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_s0_valid_none/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_c2_shuffled_s0_valid_n0 (per-example file)",
+   "sha256": "c34b25bedabed04e94e7388c99a0ec8b15e2102bd226772fc0125ef91d7037b9",
+   "bytes": 28051,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_shuffled_s0_valid_n0/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_c2_shuffled_s0_valid_n1 (per-example file)",
+   "sha256": "a5706d5e63b6631aa95fa5dacb36716a895691e5e0b33a6ab93be5e202096853",
+   "bytes": 27791,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_shuffled_s0_valid_n1/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_c2_shuffled_s0_valid_n2 (per-example file)",
+   "sha256": "135fb44195f33bb6dc8de7e3e035b58e6cb9c40063af9eb25fafe059c8da3892",
+   "bytes": 27855,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_shuffled_s0_valid_n2/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_c2_shuffled_s0_valid_n4 (per-example file)",
+   "sha256": "a65bd2188898211c2c8d483ca92b872d1611a6b2911cdac5e7e264874c5cc772",
+   "bytes": 28012,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_shuffled_s0_valid_n4/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_c2_shuffled_s0_valid_n8 (per-example file)",
+   "sha256": "aafbdeb8f841ec645206a3107e17c60826d42f3b63b33ca58c1bf2657c538809",
+   "bytes": 28783,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_shuffled_s0_valid_n8/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_c2_shuffled_s0_valid_none (per-example file)",
+   "sha256": "361cc641ee03384c9b5e91d5f999483619b8caf3ea9f8f0c6152c2e87d275b5e",
+   "bytes": 28271,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_c2_shuffled_s0_valid_none/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_coconut_s0_valid_n0 (per-example file)",
+   "sha256": "cd18ca302ab2d1ecb25004f4ade06265552a08e09b222de3412a3bcab11ccbd3",
+   "bytes": 28119,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_coconut_s0_valid_n0/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_coconut_s0_valid_n1 (per-example file)",
+   "sha256": "a357a79ece76d17f032d5f27357759c4520eaa92cc8cad2c8afdc4d21e532435",
+   "bytes": 27809,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_coconut_s0_valid_n1/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_coconut_s0_valid_n2 (per-example file)",
+   "sha256": "6eed7867c8386d83230d5801f7a85267dd7ff98e0bdec6287fb3a765bbdf91ef",
+   "bytes": 27848,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_coconut_s0_valid_n2/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_coconut_s0_valid_n4 (per-example file)",
+   "sha256": "3235820635c490654383ed2f90e8c8605b5df7439a19b0f85076c84e780be023",
+   "bytes": 28031,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_coconut_s0_valid_n4/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_coconut_s0_valid_n8 (per-example file)",
+   "sha256": "ae0601daa071dee4639f55ee1bec5018996a307330175fc6298cb3ce53dc0f4d",
+   "bytes": 28784,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_coconut_s0_valid_n8/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_coconut_s0_valid_none (per-example file)",
+   "sha256": "ddd3caf961b7df4ea7e8fdb4fb4ab917c2de896a020a58625c506c6db8adeaba",
+   "bytes": 28287,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_coconut_s0_valid_none/examples.csv"
+  },
+  {
+   "role": "valid read gsm50k_pause_s0_valid_none (per-example file)",
+   "sha256": "fa0060fc53bf2b74de36600564f3a8d2f61390e936f4367c1561502f826f798e",
+   "bytes": 27818,
+   "root": "repo",
+   "path": "results/evals/screen-eval-gsm50k-main/gsm50k_pause_s0_valid_none/examples.csv"
+  },
+  {
+   "role": "valid read prosqa_hard_c1b_k4_s0_valid_n0 (per-example file)",
+   "sha256": "8bfff3cf459e7d78bd5e1d96877184ab48bddd622e9e0c7ae91de69f4025db68",
+   "bytes": 17752,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k4_s0_valid_n0/examples.csv"
+  },
+  {
+   "role": "valid read prosqa_hard_c1b_k4_s0_valid_n1 (per-example file)",
+   "sha256": "e1fefaaa9e33b18586481fd0ce8317f693dded50372f268b2a9e8f3cc7b605d2",
+   "bytes": 17983,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k4_s0_valid_n1/examples.csv"
+  },
+  {
+   "role": "valid read prosqa_hard_c1b_k4_s0_valid_n2 (per-example file)",
+   "sha256": "5c76ab70b324be78b7272dbf0f3bf89f0256ee967ff1399bf375811b831d6d0e",
+   "bytes": 18009,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k4_s0_valid_n2/examples.csv"
+  },
+  {
+   "role": "valid read prosqa_hard_c1b_k4_s0_valid_n4 (per-example file)",
+   "sha256": "757174b5cf3e912e29837a730f68493aff6db3c471b5af212bcc93f5fe7e3a3e",
+   "bytes": 18013,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k4_s0_valid_n4/examples.csv"
+  },
+  {
+   "role": "valid read prosqa_hard_c1b_k4_s0_valid_n8 (per-example file)",
+   "sha256": "2bdbac20c0ddf51cbb685eb0ca6b8140143759db71a7ffb0b5e952ca257b03b0",
+   "bytes": 18013,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k4_s0_valid_n8/examples.csv"
+  },
+  {
+   "role": "valid read prosqa_hard_c1b_k4_s0_valid_none (per-example file)",
+   "sha256": "2874a9a575705c718966a14b8fd70d4a1de63fa2b1a5ca52f1e900ad0c067d10",
+   "bytes": 18013,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k4_s0_valid_none/examples.csv"
+  },
+  {
+   "role": "valid read prosqa_hard_c1b_k8_s0_valid_n0 (per-example file)",
+   "sha256": "0e5b25db4dcaaf0fbe05b093aea4c92bb7c05d17f0c0346d825fef1657a5ecd2",
+   "bytes": 17772,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k8_s0_valid_n0/examples.csv"
+  },
+  {
+   "role": "valid read prosqa_hard_c1b_k8_s0_valid_n1 (per-example file)",
+   "sha256": "85b0832cc6e0e01074184adccc3be321f2152e7544b2fcc637815c40ad0f562f",
+   "bytes": 17984,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k8_s0_valid_n1/examples.csv"
+  },
+  {
+   "role": "valid read prosqa_hard_c1b_k8_s0_valid_n2 (per-example file)",
+   "sha256": "5c8f6f013c320bef01fc2217fe1a74c01adea1c166136033c3204e578b362620",
+   "bytes": 18008,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k8_s0_valid_n2/examples.csv"
+  },
+  {
+   "role": "valid read prosqa_hard_c1b_k8_s0_valid_n4 (per-example file)",
+   "sha256": "c238632a9090fef81340f97d2db8a70e95c5a9d259c70685819690e59e38d900",
+   "bytes": 18009,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k8_s0_valid_n4/examples.csv"
+  },
+  {
+   "role": "valid read prosqa_hard_c1b_k8_s0_valid_n8 (per-example file)",
+   "sha256": "901aecdcd805821a6a3dfe392e266e908b27a45338e7b55e8a660906d73df8c5",
+   "bytes": 18012,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k8_s0_valid_n8/examples.csv"
+  },
+  {
+   "role": "valid read prosqa_hard_c1b_k8_s0_valid_none (per-example file)",
+   "sha256": "32622f8361a755ab57687fcfb6df5506a69538fed50fb4adea10b00d6d057e3d",
+   "bytes": 18013,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c1b_k8_s0_valid_none/examples.csv"
+  },
+  {
+   "role": "valid read prosqa_hard_c2_s0_valid_n0 (per-example file)",
+   "sha256": "db507d4baefe325c985fcf5ac45ad46067ebce19b33dadd5ebe0dd706bfe6738",
+   "bytes": 17752,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_s0_valid_n0/examples.csv"
+  },
+  {
+   "role": "valid read prosqa_hard_c2_s0_valid_n1 (per-example file)",
+   "sha256": "f234be7098189e4c05905765b40d1cdccf81635a5449d541741575ae63c47b95",
+   "bytes": 17983,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_s0_valid_n1/examples.csv"
+  },
+  {
+   "role": "valid read prosqa_hard_c2_s0_valid_n2 (per-example file)",
+   "sha256": "86a03095bf1c28d56a2308a082a5f4336b6d895d4999a3156ee8bc1bfc928bf5",
+   "bytes": 18004,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_s0_valid_n2/examples.csv"
+  },
+  {
+   "role": "valid read prosqa_hard_c2_s0_valid_n4 (per-example file)",
+   "sha256": "55c745689b8167ad8b12d2d0870a173a6a1982eeac935e910785423836c4b7fc",
+   "bytes": 18009,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_s0_valid_n4/examples.csv"
+  },
+  {
+   "role": "valid read prosqa_hard_c2_s0_valid_n8 (per-example file)",
+   "sha256": "92b673e13f8228c07ff0d1136f219cb88eae2dbbc37051459df831831a308ac0",
+   "bytes": 18010,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_s0_valid_n8/examples.csv"
+  },
+  {
+   "role": "valid read prosqa_hard_c2_s0_valid_none (per-example file)",
+   "sha256": "72ed260b3900bbc6f51933230261c5d783a6912d670301472e51cd11cc9bf66e",
+   "bytes": 18010,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_s0_valid_none/examples.csv"
+  },
+  {
+   "role": "valid read prosqa_hard_c2_shuffled_s0_valid_n0 (per-example file)",
+   "sha256": "ba75a35fc124fe84a588e4bedada3ce763601bf1f18c3b0273e7495cb5e9f88a",
+   "bytes": 17748,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_shuffled_s0_valid_n0/examples.csv"
+  },
+  {
+   "role": "valid read prosqa_hard_c2_shuffled_s0_valid_n1 (per-example file)",
+   "sha256": "84f1d875336e744ef47190a771bc86a8a11b99942f80086b7d89960d3a1ae27b",
+   "bytes": 17984,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_shuffled_s0_valid_n1/examples.csv"
+  },
+  {
+   "role": "valid read prosqa_hard_c2_shuffled_s0_valid_n2 (per-example file)",
+   "sha256": "31471d4521ae52a6d304bf54ad616a49c02a18759b221da1c943c1387e15e585",
+   "bytes": 18008,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_shuffled_s0_valid_n2/examples.csv"
+  },
+  {
+   "role": "valid read prosqa_hard_c2_shuffled_s0_valid_n4 (per-example file)",
+   "sha256": "d207b144706fdd45f8633e16d2d6936dc5a81e4777e8c5d6510e1bd789d42bfd",
+   "bytes": 18013,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_shuffled_s0_valid_n4/examples.csv"
+  },
+  {
+   "role": "valid read prosqa_hard_c2_shuffled_s0_valid_n8 (per-example file)",
+   "sha256": "576ea0ef4fde8c5a7a8f0d53894ab677944a8240b68b5330c87d9ee8fdd15274",
+   "bytes": 18016,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_shuffled_s0_valid_n8/examples.csv"
+  },
+  {
+   "role": "valid read prosqa_hard_c2_shuffled_s0_valid_none (per-example file)",
+   "sha256": "0cbb7189c9349824ae04b976330c87a4387aec052dfa707b092a079c5c407e0b",
+   "bytes": 18014,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_c2_shuffled_s0_valid_none/examples.csv"
+  },
+  {
+   "role": "valid read prosqa_hard_coconut_s0_valid_n0 (per-example file)",
+   "sha256": "ab03d08eec51309f1d7a6faa6e0ad8f15f291e9696f2d8cde7dd70de87005787",
+   "bytes": 17742,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_coconut_s0_valid_n0/examples.csv"
+  },
+  {
+   "role": "valid read prosqa_hard_coconut_s0_valid_n1 (per-example file)",
+   "sha256": "d63c8b272293571a7068c7e42530389faf1680651e4edd896f718147852570bd",
+   "bytes": 17976,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_coconut_s0_valid_n1/examples.csv"
+  },
+  {
+   "role": "valid read prosqa_hard_coconut_s0_valid_n2 (per-example file)",
+   "sha256": "2f205370a33d9535d13d35a11513c60c33b09112b9fc8da34ee50c0b84c70cca",
+   "bytes": 18002,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_coconut_s0_valid_n2/examples.csv"
+  },
+  {
+   "role": "valid read prosqa_hard_coconut_s0_valid_n4 (per-example file)",
+   "sha256": "f48cb2664caac89d0ad0eb701e8898516fba1cd127e45e3cc3e0f2117adbc174",
+   "bytes": 18007,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_coconut_s0_valid_n4/examples.csv"
+  },
+  {
+   "role": "valid read prosqa_hard_coconut_s0_valid_n8 (per-example file)",
+   "sha256": "72c2563f8fb6a4cde9fb66489ae7093df4dd80c4bb0285cdc1930ee9db076411",
+   "bytes": 18009,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_coconut_s0_valid_n8/examples.csv"
+  },
+  {
+   "role": "valid read prosqa_hard_coconut_s0_valid_none (per-example file)",
+   "sha256": "669ecddfbec3c658b7207833c85613b3f7a40e049640ef1b39d1a577c2b5e008",
+   "bytes": 18009,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_coconut_s0_valid_none/examples.csv"
+  },
+  {
+   "role": "valid read prosqa_hard_pause_s0_valid_none (per-example file)",
+   "sha256": "62093c3fe5c7ef5c17c3d75900e2388dca9085bbc773b14f2bb41362a052ce93",
+   "bytes": 17744,
+   "root": "repo",
+   "path": "results/evals/screen-eval-prosqa-hard-main/prosqa_hard_pause_s0_valid_none/examples.csv"
+  },
+  {
+   "role": "test read gsm50k_c1b_k4_s0_test_best (per-example file)",
+   "sha256": "1d36bfd630284cca40b37f6045eddd10c2e9f1684ba63da2609e4dccb5691564",
+   "bytes": 77891,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c1b_k4_s0_test_best/examples.csv"
+  },
+  {
+   "role": "test read gsm50k_c1b_k4_s0_test_best (summary)",
+   "sha256": "a8e296118b640679b1374721f3a5c7ec9f8b2f6e8306da8994f501cfcbd27f2b",
+   "bytes": 3197,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c1b_k4_s0_test_best/summary.json"
+  },
+  {
+   "role": "test read gsm50k_c1b_k4_s0_test_none (per-example file)",
+   "sha256": "1cbf27374a5740735d15d20a7de016a044a5163df2dc31d26721e443ff07e109",
+   "bytes": 74957,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c1b_k4_s0_test_none/examples.csv"
+  },
+  {
+   "role": "test read gsm50k_c1b_k4_s0_test_none (summary)",
+   "sha256": "b8b2702d62d3e784f5326a56a1b30f60659836f52c3a2f955c5e0741ac3c2d7e",
+   "bytes": 3196,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c1b_k4_s0_test_none/summary.json"
+  },
+  {
+   "role": "test read gsm50k_c1b_k8_s0_test_best (per-example file)",
+   "sha256": "eb38316fad58441101b961d943a59c678e613eb64f1e4677c917fc4042936315",
+   "bytes": 77898,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c1b_k8_s0_test_best/examples.csv"
+  },
+  {
+   "role": "test read gsm50k_c1b_k8_s0_test_best (summary)",
+   "sha256": "4342247728d6186b036e567bff9bdaab033a16115d840031662168c03e96dfe3",
+   "bytes": 3190,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c1b_k8_s0_test_best/summary.json"
+  },
+  {
+   "role": "test read gsm50k_c1b_k8_s0_test_none (per-example file)",
+   "sha256": "55be25eaa4f2fe831d907626146c8677d750ec42aca7adcde47b353b807a0927",
+   "bytes": 74925,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c1b_k8_s0_test_none/examples.csv"
+  },
+  {
+   "role": "test read gsm50k_c1b_k8_s0_test_none (summary)",
+   "sha256": "c20ea199027e5194efcaea97a3603f2cdfe70c01cb798ad441a761f746585e80",
+   "bytes": 3194,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c1b_k8_s0_test_none/summary.json"
+  },
+  {
+   "role": "test read gsm50k_c2_s0_test_best (per-example file)",
+   "sha256": "2095989aea7b5575d7ef9106d360dfb3bb94b0ed6dc8ae131f5caa9b12b8e8e6",
+   "bytes": 77792,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c2_s0_test_best/examples.csv"
+  },
+  {
+   "role": "test read gsm50k_c2_s0_test_best (summary)",
+   "sha256": "903c20d30e728727c89370fdfe43f3c6dfe5307066090e2ce643162268f9ef77",
+   "bytes": 3147,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c2_s0_test_best/summary.json"
+  },
+  {
+   "role": "test read gsm50k_c2_s0_test_none (per-example file)",
+   "sha256": "c597b2305accb3b86634cb5dca4ce254343bd8a9901b0e57b818d49d5b6c3f87",
+   "bytes": 74972,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c2_s0_test_none/examples.csv"
+  },
+  {
+   "role": "test read gsm50k_c2_s0_test_none (summary)",
+   "sha256": "6421beee7f8f29f9bccdd5314e1337da45dae3e87fa2a1359efe57d502a3dcda",
+   "bytes": 3147,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c2_s0_test_none/summary.json"
+  },
+  {
+   "role": "test read gsm50k_c2_shuffled_s0_test_best (per-example file)",
+   "sha256": "2d868b837a260c80c48e183347ce128f64175819e69911938662008816a1549b",
+   "bytes": 77768,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c2_shuffled_s0_test_best/examples.csv"
+  },
+  {
+   "role": "test read gsm50k_c2_shuffled_s0_test_best (summary)",
+   "sha256": "5bbbdbe12716e1ebeff16bc42feebb336352b44fdfbe295e6976b15c25285435",
+   "bytes": 3183,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c2_shuffled_s0_test_best/summary.json"
+  },
+  {
+   "role": "test read gsm50k_c2_shuffled_s0_test_none (per-example file)",
+   "sha256": "b1be9d43033ec0ec715ae3b69b997be0c40f714f8c81e93f2a9b0a9a7f4af0db",
+   "bytes": 74973,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c2_shuffled_s0_test_none/examples.csv"
+  },
+  {
+   "role": "test read gsm50k_c2_shuffled_s0_test_none (summary)",
+   "sha256": "444537c603bb027b747da07d8035c94d53094241a0e8bc2315102e0ca9fd14f0",
+   "bytes": 3183,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c2_shuffled_s0_test_none/summary.json"
+  },
+  {
+   "role": "test read gsm50k_c2c3_s0_test_best (per-example file)",
+   "sha256": "be1e8e1da333762440cdac7d6ea3e00003f542b52f7a8eab4ba6e310ad347e2f",
+   "bytes": 77873,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c2c3_s0_test_best/examples.csv"
+  },
+  {
+   "role": "test read gsm50k_c2c3_s0_test_best (summary)",
+   "sha256": "b33b94ebcac3384a03ae279fa817eb7c54196c12a1b512f5a6a1d70cd2bb41f2",
+   "bytes": 3151,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c2c3_s0_test_best/summary.json"
+  },
+  {
+   "role": "test read gsm50k_c2c3_s0_test_none (per-example file)",
+   "sha256": "7373f7855c152837d1613c33ea03ff4eb2645d12f1dd5aff291cdc2918656e7e",
+   "bytes": 75015,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c2c3_s0_test_none/examples.csv"
+  },
+  {
+   "role": "test read gsm50k_c2c3_s0_test_none (summary)",
+   "sha256": "7f8fc3f58608be28d0a059e2d90b31e25c162bfc678d1deec27a99024d09da2c",
+   "bytes": 3154,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c2c3_s0_test_none/summary.json"
+  },
+  {
+   "role": "test read gsm50k_c3_foreign_s0_test_best (per-example file)",
+   "sha256": "51af78f2be2cb14c02303e5703b077fee0c65380df20af040c36620f35846bae",
+   "bytes": 77924,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c3_foreign_s0_test_best/examples.csv"
+  },
+  {
+   "role": "test read gsm50k_c3_foreign_s0_test_best (summary)",
+   "sha256": "eb1ab13b249bdf02c277fefedd250ba33add1d9a9d3a20d9c2b4e8ee9349408d",
+   "bytes": 3179,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c3_foreign_s0_test_best/summary.json"
+  },
+  {
+   "role": "test read gsm50k_c3_foreign_s0_test_none (per-example file)",
+   "sha256": "db0084d2bdfa994fb027775a88faabf6f2c8b164b7ef7ec88ce02e7d71ffb21b",
+   "bytes": 74974,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c3_foreign_s0_test_none/examples.csv"
+  },
+  {
+   "role": "test read gsm50k_c3_foreign_s0_test_none (summary)",
+   "sha256": "a3a843ede5cc21c2be4258230a4aba974eaad18f100ac57d5f1bea35f543ebf7",
+   "bytes": 3183,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c3_foreign_s0_test_none/summary.json"
+  },
+  {
+   "role": "test read gsm50k_c3_s0_test_best (per-example file)",
+   "sha256": "60a3f7b394f0532c4ea55a25048d4700f417f0b74c5f41c7d9260c6d3d26edbc",
+   "bytes": 77811,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c3_s0_test_best/examples.csv"
+  },
+  {
+   "role": "test read gsm50k_c3_s0_test_best (summary)",
+   "sha256": "755dd5ef897093364d0f1402089ad0e2a250b69a0389622c6215c21bc4a19406",
+   "bytes": 3146,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c3_s0_test_best/summary.json"
+  },
+  {
+   "role": "test read gsm50k_c3_s0_test_none (per-example file)",
+   "sha256": "1120ee1f853c8905406f20fb5cdd99a016e2a742f3c0d761031e8b932bb19558",
+   "bytes": 74949,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c3_s0_test_none/examples.csv"
+  },
+  {
+   "role": "test read gsm50k_c3_s0_test_none (summary)",
+   "sha256": "937a08f2f93103dba04b4ec0dcc7b113ccb3f03397d8a4b22d1f86d7d2e23dff",
+   "bytes": 3146,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_c3_s0_test_none/summary.json"
+  },
+  {
+   "role": "test read gsm50k_coconut_s0_test_best (per-example file)",
+   "sha256": "03162c91a0a1ffd25a70b4c0c4629c6ee417dadddcc94fb59f3ce84e9b989875",
+   "bytes": 77781,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_coconut_s0_test_best/examples.csv"
+  },
+  {
+   "role": "test read gsm50k_coconut_s0_test_best (summary)",
+   "sha256": "010e40463cc619d9354b79d55822c1f5d77324c9a0dee19f54dd3b6ae18920eb",
+   "bytes": 3168,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_coconut_s0_test_best/summary.json"
+  },
+  {
+   "role": "test read gsm50k_coconut_s0_test_none (per-example file)",
+   "sha256": "97e945d6007bb7a7f0ea642a4543156faa8be661b28582c88c3615673685286f",
+   "bytes": 75024,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_coconut_s0_test_none/examples.csv"
+  },
+  {
+   "role": "test read gsm50k_coconut_s0_test_none (summary)",
+   "sha256": "12b6846323889acb33288beb07120147efc85d6e594762584d399adf3bddbf28",
+   "bytes": 3169,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_coconut_s0_test_none/summary.json"
+  },
+  {
+   "role": "test read gsm50k_cot_lr3e-4_s0_test_none (per-example file)",
+   "sha256": "42da62a2aa536cb06c60a92ed6a27a897d4495b78e5faa56d6c039bd7edef874",
+   "bytes": 77959,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_cot_lr3e-4_s0_test_none/examples.csv"
+  },
+  {
+   "role": "test read gsm50k_cot_lr3e-4_s0_test_none (summary)",
+   "sha256": "e837001d782f9c3531ab911a4c1ae2fc84896806d1e1ed00907022422159ca61",
+   "bytes": 2930,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_cot_lr3e-4_s0_test_none/summary.json"
+  },
+  {
+   "role": "test read gsm50k_no_cot_s0_test_none (per-example file)",
+   "sha256": "b8cfc0576600be1978504b7dacc5f3b252ff5c4021fa9cd20e23516a8de17d41",
+   "bytes": 73496,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_no_cot_s0_test_none/examples.csv"
+  },
+  {
+   "role": "test read gsm50k_no_cot_s0_test_none (summary)",
+   "sha256": "fa1596bfdb49b5e6483c13330c2ce42c01109af9a0cf59e92e64999e62d470fc",
+   "bytes": 2918,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_no_cot_s0_test_none/summary.json"
+  },
+  {
+   "role": "test read gsm50k_pause_s0_test_best (per-example file)",
+   "sha256": "5fab3132ed04e7b64f67dcd2ae94d006115ea6e57371589d0f1ac77d6ae2ab03",
+   "bytes": 77851,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_pause_s0_test_best/examples.csv"
+  },
+  {
+   "role": "test read gsm50k_pause_s0_test_best (summary)",
+   "sha256": "3c96f0cb14ca03f2f6edb1fad5ee3d06b7496672c1bf668b76c3a308e7687034",
+   "bytes": 2891,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_pause_s0_test_best/summary.json"
+  },
+  {
+   "role": "test read gsm50k_pause_s0_test_none (per-example file)",
+   "sha256": "44f3e09fabad8c11a2a8a864893552201b00d7cbf2cc2e562754ed6053c95b66",
+   "bytes": 73773,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_pause_s0_test_none/examples.csv"
+  },
+  {
+   "role": "test read gsm50k_pause_s0_test_none (summary)",
+   "sha256": "08fcb94f354deebd33625ffc4c9dd9dd334989ad2b294137b57b01806d1bdab8",
+   "bytes": 2891,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_pause_s0_test_none/summary.json"
+  },
+  {
+   "role": "test read gsm50k_plain_depth_355m_s0_test_none (per-example file)",
+   "sha256": "5dd8a7be36bf35fc79da92ce52553fa9a6c30ae87f188d6d7ecd12ad770a0f52",
+   "bytes": 75112,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_plain_depth_355m_s0_test_none/examples.csv"
+  },
+  {
+   "role": "test read gsm50k_plain_depth_355m_s0_test_none (summary)",
+   "sha256": "df1bbe05e5b57900c5443a53a2f505ae09e083d1eb138cd0ca8f920021a6b295",
+   "bytes": 2966,
+   "root": "repo",
+   "path": "results/evals/screen-test-gsm50k-acctc/gsm50k_plain_depth_355m_s0_test_none/summary.json"
+  },
+  {
+   "role": "test read prosqa_hard_c1b_k4_s0_test_best (per-example file)",
+   "sha256": "5eb3e7cf45624341a5f4590dea8f85318a63d602834f2d0aaf2cef9e09195cac",
+   "bytes": 30434,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_c1b_k4_s0_test_best/examples.csv"
+  },
+  {
+   "role": "test read prosqa_hard_c1b_k4_s0_test_best (summary)",
+   "sha256": "8877bcc13fb4c67c12ad83b1456a1f96f9fbf4b7edb38aeea44e8df4da41e189",
+   "bytes": 3110,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_c1b_k4_s0_test_best/summary.json"
+  },
+  {
+   "role": "test read prosqa_hard_c1b_k4_s0_test_none (per-example file)",
+   "sha256": "a101b09b67cd99d1f49dd13e07cbe62494e139f11f8b38a02dcc35e6bb6e12d6",
+   "bytes": 30015,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_c1b_k4_s0_test_none/examples.csv"
+  },
+  {
+   "role": "test read prosqa_hard_c1b_k4_s0_test_none (summary)",
+   "sha256": "9d97a9747fe7bd9b0cf41e7387a33fa630cbf05236e62ee374c475ac7cbe9ccb",
+   "bytes": 3088,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_c1b_k4_s0_test_none/summary.json"
+  },
+  {
+   "role": "test read prosqa_hard_c1b_k8_s0_test_best (per-example file)",
+   "sha256": "57a31267698075dc77e0147282818d2c6cb2bad0fa55d06c151a211308ba7f6c",
+   "bytes": 30567,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_c1b_k8_s0_test_best/examples.csv"
+  },
+  {
+   "role": "test read prosqa_hard_c1b_k8_s0_test_best (summary)",
+   "sha256": "56dff8aa5b35649fc01ed43147bff583ff146ecd5fe66cc18c8ba1d8d02f3b94",
+   "bytes": 3090,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_c1b_k8_s0_test_best/summary.json"
+  },
+  {
+   "role": "test read prosqa_hard_c1b_k8_s0_test_none (per-example file)",
+   "sha256": "cc98f3fc7d126a7e56e4b91073575e1459244cdbbede940cddcbf601325222e5",
+   "bytes": 30009,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_c1b_k8_s0_test_none/examples.csv"
+  },
+  {
+   "role": "test read prosqa_hard_c1b_k8_s0_test_none (summary)",
+   "sha256": "9ec06221e8460ef56dc8835f5a58b5558570bd4c51a693789ec6d18c38365f30",
+   "bytes": 3087,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_c1b_k8_s0_test_none/summary.json"
+  },
+  {
+   "role": "test read prosqa_hard_c2_s0_test_best (per-example file)",
+   "sha256": "2ae53e7ef803e3ab9d8a90b804107efa8149d2b25e838b0a6378938bab1a1626",
+   "bytes": 30788,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_c2_s0_test_best/examples.csv"
+  },
+  {
+   "role": "test read prosqa_hard_c2_s0_test_best (summary)",
+   "sha256": "43857b9fcfc82452986864f079477576c4730dcdce84118d78418ccff119e73d",
+   "bytes": 3045,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_c2_s0_test_best/summary.json"
+  },
+  {
+   "role": "test read prosqa_hard_c2_s0_test_none (per-example file)",
+   "sha256": "4b3191061a0954f46421e8593b8a8a641331ece9005c869103d194cd85bdbf40",
+   "bytes": 30002,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_c2_s0_test_none/examples.csv"
+  },
+  {
+   "role": "test read prosqa_hard_c2_s0_test_none (summary)",
+   "sha256": "f2eb91bc581fccbe5a572637d92fdcf98088232f66bd165c67e43cdab9be9bdc",
+   "bytes": 3035,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_c2_s0_test_none/summary.json"
+  },
+  {
+   "role": "test read prosqa_hard_c2_shuffled_s0_test_best (per-example file)",
+   "sha256": "89940be6954573669e33bdc1744d11da19797a348fd17c6d48f12b564c760a31",
+   "bytes": 30775,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_c2_shuffled_s0_test_best/examples.csv"
+  },
+  {
+   "role": "test read prosqa_hard_c2_shuffled_s0_test_best (summary)",
+   "sha256": "019e5801deba84da3fc787930ddda08e317e0b6e1c5105a42ad03fff742bcd0c",
+   "bytes": 3098,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_c2_shuffled_s0_test_best/summary.json"
+  },
+  {
+   "role": "test read prosqa_hard_c2_shuffled_s0_test_none (per-example file)",
+   "sha256": "e617f462143efe246efb12e9576bf0a96cb3a25e0814f81aaaccf2a5b3d9f193",
+   "bytes": 30017,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_c2_shuffled_s0_test_none/examples.csv"
+  },
+  {
+   "role": "test read prosqa_hard_c2_shuffled_s0_test_none (summary)",
+   "sha256": "2dae7aa284ed67a5d99e2050f2c15de2d63d0ddcee1fb0d2ce58faf723a46d15",
+   "bytes": 3078,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_c2_shuffled_s0_test_none/summary.json"
+  },
+  {
+   "role": "test read prosqa_hard_coconut_s0_test_best (per-example file)",
+   "sha256": "bf5ed80812ffdc025b6ca8f9ead9976ae7a6ef14b6daa6cc4ec2a762b72dd5ec",
+   "bytes": 30795,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_coconut_s0_test_best/examples.csv"
+  },
+  {
+   "role": "test read prosqa_hard_coconut_s0_test_best (summary)",
+   "sha256": "fe4b6cfeff57b071fd645bacc6977d7791c417b2f1ebe89a23f277bf22e4cacf",
+   "bytes": 3079,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_coconut_s0_test_best/summary.json"
+  },
+  {
+   "role": "test read prosqa_hard_coconut_s0_test_none (per-example file)",
+   "sha256": "ef046104b4114fbf35b0c97b738ac2fcdedc7f0ad17db1b7db4776bf27880e96",
+   "bytes": 30017,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_coconut_s0_test_none/examples.csv"
+  },
+  {
+   "role": "test read prosqa_hard_coconut_s0_test_none (summary)",
+   "sha256": "a0ba20522f176871f728fb2c9daf939121bb321dba60fb31f8905fe63bf26bd1",
+   "bytes": 3058,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_coconut_s0_test_none/summary.json"
+  },
+  {
+   "role": "test read prosqa_hard_cot_lr3e-5_s0_test_none (per-example file)",
+   "sha256": "ba0c189994f5a3ec6d0674cbad1071b8ce5636edd48398aac47c3b7a8275098e",
+   "bytes": 30875,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_cot_lr3e-5_s0_test_none/examples.csv"
+  },
+  {
+   "role": "test read prosqa_hard_cot_lr3e-5_s0_test_none (summary)",
+   "sha256": "c43e2412090f739c54c087c0aa92b2f134ce629ca0758e3a57726415ebe43733",
+   "bytes": 2817,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_cot_lr3e-5_s0_test_none/summary.json"
+  },
+  {
+   "role": "test read prosqa_hard_no_cot_s0_test_none (per-example file)",
+   "sha256": "4ec44790b9f343d322222a76bb7b4cb708a06f968c12ba8f99492f4fed517a54",
+   "bytes": 29679,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_no_cot_s0_test_none/examples.csv"
+  },
+  {
+   "role": "test read prosqa_hard_no_cot_s0_test_none (summary)",
+   "sha256": "9941ec9ae91658fe1f8ac706e6cb9465a11e5d21602f21628e1b4810590abcee",
+   "bytes": 2784,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_no_cot_s0_test_none/summary.json"
+  },
+  {
+   "role": "test read prosqa_hard_pause_s0_test_none (per-example file)",
+   "sha256": "40c47b5943377a8893194fd3f1dedfcf768c53c1b81c766848f1ffc5ffff9741",
+   "bytes": 29591,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_pause_s0_test_none/examples.csv"
+  },
+  {
+   "role": "test read prosqa_hard_pause_s0_test_none (summary)",
+   "sha256": "326001a4b8035b4382b8e77ec0580eb597be00e7d05e0df40ac4bf6628e1e72b",
+   "bytes": 2780,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_pause_s0_test_none/summary.json"
+  },
+  {
+   "role": "test read prosqa_hard_plain_depth_355m_s0_test_none (per-example file)",
+   "sha256": "cc8fea4ebfb7b3da84107bed4ab4c408c55ca6f341b4fc5fbd92f5ac5a3e6c51",
+   "bytes": 29830,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_plain_depth_355m_s0_test_none/examples.csv"
+  },
+  {
+   "role": "test read prosqa_hard_plain_depth_355m_s0_test_none (summary)",
+   "sha256": "b7ee7bac0f38126fef663abcd4854c487300a6a09e40b3e8d9bc11918bd0ddb9",
+   "bytes": 2829,
+   "root": "repo",
+   "path": "results/evals/screen-test-prosqa-hard-acctb/prosqa_hard_plain_depth_355m_s0_test_none/summary.json"
+  },
+  {
+   "role": "the fourth GSM-50k table (valid of record)",
+   "sha256": "d36b5fbb226761e2239a8079707981ba65b39236b073c1196667fd42790c4a19",
+   "bytes": 503862,
+   "root": "repo",
+   "path": "results/screens/gsm50k/gsm50k_screen_with_hinge.json"
+  },
+  {
+   "role": "the third ProsQA-hard table (valid of record)",
+   "sha256": "ff561a152a39ca42d3546adc2481e96dd8f87323c462802d86b676e6222e0465",
+   "bytes": 351143,
+   "root": "repo",
+   "path": "results/screens/prosqa_hard/prosqa_hard_screen_with_plain_depth.json"
+  },
+  {
+   "role": "the test read (results/screens/test_read.json)",
+   "sha256": "c28486988f16a5d65b9f9ae1c74f03d9182c1d6d3f66be9dfa5441f63829436a",
+   "bytes": 43571,
+   "root": "repo",
+   "path": "results/screens/test_read.json"
+  }
+ ],
+ "outputs": {
+  "json": "pareto_read.json",
+  "md": "pareto_read.md"
+ },
+ "outputs_sha256": {
+  "json": "68d5193234c58b3cfd918952c583e426ac230f8f98c3db3a3c4fbc8f58b0dbcf",
+  "md": "93aca5362aee07d6c44f06bd26ea8c0481c7b5ab2839824ddb9735d890f45279"
+ }
+}
